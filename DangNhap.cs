@@ -34,15 +34,20 @@ namespace QuanLyNhaTro
             pnDangnhap.Visible=true;
         }
 
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnSignupforfree_Click(object sender, EventArgs e)
         {
-            pnDangky.Visible=false ;
-            pnYourname.Visible=true ;
+            pnDangky.Visible=false;
+            pnYourname.Visible = true;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            pnYourname.Visible = false ;
+            pnYourname.Visible=false;
             pnDangnhap.Visible = true;
         }
     }

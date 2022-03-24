@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonBoGoc.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +63,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuaPhongTro%28DaThue%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaPhongTro%28DaThue%29.Designer.cs">
+      <DependentUpon>SuaPhongTro%28DaThue%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinKhachTro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinKhachTro.Designer.cs">
+      <DependentUpon>ThongTinKhachTro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinPhongThue%28TRONG%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinPhongThue%28TRONG%29.Designer.cs">
+      <DependentUpon>ThongTinPhongThue%28TRONG%29.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +97,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SuaPhongTro%28DaThue%29.resx">
+      <DependentUpon>SuaPhongTro%28DaThue%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinKhachTro.resx">
+      <DependentUpon>ThongTinKhachTro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinPhongThue%28TRONG%29.resx">
+      <DependentUpon>ThongTinPhongThue%28TRONG%29.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,6 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo-scs-key2294502.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dodger-Blue-768x1366.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

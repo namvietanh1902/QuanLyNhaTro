@@ -164,9 +164,11 @@ namespace QuanLyNhaTro
                 btnDangxuat.Location = new Point(8, 791);
                 btnDangxuat.Text = "";
                 btnDangxuat.Width = 70;
+                pnTongdoanhthu.Location = new Point(505, 31);
             }
             else
             {
+                pnTongdoanhthu.Location = new Point(510, 32);
                 btnDangxuat.Location = new Point(50, 791);
                 btnDangxuat.Text = "Đăng xuất";
                 btnDangxuat.Width = 177;
@@ -192,6 +194,72 @@ namespace QuanLyNhaTro
             pnDichvu.Visible = false;
             pnTinhtientro.Visible = false;
             pnThongke.Visible = false;
+        }
+
+        private void btnThemKhachTro_Click(object sender, EventArgs e)
+        {
+            ThongTinKhachTro frm = new ThongTinKhachTro();
+            frm.ShowDialog();
+        }
+
+        private void btnSuaKhachTro_Click(object sender, EventArgs e)
+        {
+            ThongTinKhachTro frm = new ThongTinKhachTro();
+            frm.d("SỬA THÔNG TIN KHÁCH TRỌ");
+            frm.ShowDialog();
+        }
+
+        private void btnXoaKhachTro_Click(object sender, EventArgs e)
+        {
+            DialogResult ret = MessageBox.Show(
+                "Bạn có chắc muốn xóa",
+                "THÔNG BÁO",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Error
+                );
+            if(ret == DialogResult.OK)
+            {
+                MessageBox.Show("Đã Xóa thành công");
+            }
+        }
+
+        private void btnSapxep_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboSortKhachTro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void btnThemPhongTro_Click(object sender, EventArgs e)
+        {  
+            ThemPhongTro frm = new ThemPhongTro();
+            frm.ShowDialog();
+            
+        }
+
+        private void btnSuaPhongTro_Click(object sender, EventArgs e)
+        {
+            ThemPhongTro frm = new ThemPhongTro();
+            frm.getdata("SỬA THÔNG TIN PHÒNG TRỌ");
+            frm.ShowDialog();
+        }
+        private void btnXoaPhongTro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSortphongtro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboSortphongtro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
