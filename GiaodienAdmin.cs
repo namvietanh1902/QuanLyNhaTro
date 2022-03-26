@@ -41,7 +41,7 @@ namespace QuanLyNhaTro
             pnThongke.Visible = false;
         }
 
-        private void btnUser_Click(object sender, EventArgs e)
+        private void click_user()
         {
             lblTitle.Text = "Manager User";
             lblHome.Visible = false;
@@ -60,7 +60,11 @@ namespace QuanLyNhaTro
             pnThongke.Visible = false;
         }
 
-        private void btnKhachtro_Click(object sender, EventArgs e)
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            click_user();
+        }
+        private void click_khanhtro()
         {
             lblTitle.Text = "Quản Lý Khách Trọ";
             lblHome.Visible = false;
@@ -77,6 +81,11 @@ namespace QuanLyNhaTro
             pnDichvu.Visible = false;
             pnTinhtientro.Visible = false;
             pnThongke.Visible = false;
+        }
+
+        private void btnKhachtro_Click(object sender, EventArgs e)
+        {
+           click_khanhtro();
         }
 
         private void btnPhongtro_Click(object sender, EventArgs e)
@@ -196,49 +205,10 @@ namespace QuanLyNhaTro
             pnThongke.Visible = false;
         }
 
-        private void btnThemKhachTro_Click(object sender, EventArgs e)
-        {
-            ThongTinKhachTro frm = new ThongTinKhachTro();
-            frm.ShowDialog();
-        }
-
-        private void btnSuaKhachTro_Click(object sender, EventArgs e)
-        {
-            ThongTinKhachTro frm = new ThongTinKhachTro();
-            frm.d("SỬA THÔNG TIN KHÁCH TRỌ");
-            frm.ShowDialog();
-        }
-
-        private void btnXoaKhachTro_Click(object sender, EventArgs e)
-        {
-            DialogResult ret = MessageBox.Show(
-                "Bạn có chắc muốn xóa",
-                "THÔNG BÁO",
-                MessageBoxButtons.OKCancel,
-                MessageBoxIcon.Error
-                );
-            if(ret == DialogResult.OK)
-            {
-                MessageBox.Show("Đã Xóa thành công");
-            }
-        }
-
-        private void btnSapxep_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboSortKhachTro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void btnThemPhongTro_Click(object sender, EventArgs e)
-        {  
+        {
             ThemPhongTro frm = new ThemPhongTro();
             frm.ShowDialog();
-            
         }
 
         private void btnSuaPhongTro_Click(object sender, EventArgs e)
@@ -247,19 +217,69 @@ namespace QuanLyNhaTro
             frm.getdata("SỬA THÔNG TIN PHÒNG TRỌ");
             frm.ShowDialog();
         }
-        private void btnXoaPhongTro_Click(object sender, EventArgs e)
+        bool iskhachtrodathuephong = false;
+        bool isSuathongtinkhachtro = false;
+        private void clearttkhachtro()
         {
-
+            txtTennguoithue.Text = "";
+            txtSDTkhachtro.Text = "";
+            dtpNgaysinhkhachtro.Value = DateTime.Now;
         }
 
-        private void btnSortphongtro_Click(object sender, EventArgs e)
+        private void btnLuukhachtro_Click(object sender, EventArgs e)
         {
-
+            if(isSuathongtinkhachtro == false)
+            {
+                MessageBox.Show(
+                    "Bạn cần tạo tài khoản để đăng nhập user",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
+                click_user();
+               
+               
+                txtName.Text = txtTennguoithue.Text;
+                txtSDTuser.Text = txtSDTkhachtro.Text;
+                dtpNgaysinhuser.Value = dtpNgaysinhkhachtro.Value;
+                clearttkhachtro();
+                iskhachtrodathuephong = true;
+            }
+            else
+            {
+                isSuathongtinkhachtro =false;
+            }
         }
 
-        private void cboSortphongtro_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnSuakhachtro_Click(object sender, EventArgs e)
         {
+            isSuathongtinkhachtro = true;
+        }
 
+        private void btnLuuUser_Click(object sender, EventArgs e)
+        {
+            if(iskhachtrodathuephong == false)
+            {
+
+               DialogResult ret = MessageBox.Show(
+                    "Bạn chưa thuê phòng nào,bấm 'OK' để đến giao diện thuê phòng",
+                    "Thông báo",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Information
+                    );
+                if(ret == DialogResult.OK)
+                {
+                    click_khanhtro();
+                }
+                iskhachtrodathuephong = true;
+            }
+        }
+
+        private void btnSuathongtinuser_Click(object sender, EventArgs e)
+        {
+            iskhachtrodathuephong = true;
         }
     }
 }
+
+

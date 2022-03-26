@@ -49,6 +49,12 @@
     <Compile Include="ButtonBoGoc.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangKy.Designer.cs">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,12 @@
     </Compile>
     <Compile Include="GiaodienAdmin.Designer.cs">
       <DependentUpon>GiaodienAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiaodienUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaodienUser.Designer.cs">
+      <DependentUpon>GiaodienUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,11 +93,17 @@
     <Compile Include="ThongTinPhongThue%28TRONG%29.Designer.cs">
       <DependentUpon>ThongTinPhongThue%28TRONG%29.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DangKy.resx">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiaodienAdmin.resx">
       <DependentUpon>GiaodienAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaodienUser.resx">
+      <DependentUpon>GiaodienUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

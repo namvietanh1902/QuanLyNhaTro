@@ -10,23 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaTro
 {
-    public partial class ThongTinKhachTro : Form
+    public partial class GiaodienUser : Form
     {
-        public delegate void Mydel(string title);
-        public Mydel d;
-        public ThongTinKhachTro()
+        public GiaodienUser()
         {
             InitializeComponent();
-            d = new Mydel(getdata);
-        }
-        public void getdata(string s)
-        {
-            lblTitle.Text = s;
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
