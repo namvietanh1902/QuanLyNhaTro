@@ -37,9 +37,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnDangky = new System.Windows.Forms.Panel();
@@ -75,7 +75,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::QuanLyNhaTro.Properties.Resources.icons8_shutdown_40;
             this.button1.Location = new System.Drawing.Point(696, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(57, 47);
             this.button1.TabIndex = 0;
@@ -92,13 +92,13 @@
             this.pnDangnhap.Controls.Add(this.pictureBox1);
             this.pnDangnhap.Controls.Add(this.label5);
             this.pnDangnhap.Controls.Add(this.checkBox1);
-            this.pnDangnhap.Controls.Add(this.textBox2);
+            this.pnDangnhap.Controls.Add(this.txtPassword);
             this.pnDangnhap.Controls.Add(this.label4);
-            this.pnDangnhap.Controls.Add(this.textBox1);
+            this.pnDangnhap.Controls.Add(this.txtUsername);
             this.pnDangnhap.Controls.Add(this.label3);
             this.pnDangnhap.Controls.Add(this.label2);
             this.pnDangnhap.Location = new System.Drawing.Point(104, 20);
-            this.pnDangnhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnDangnhap.Margin = new System.Windows.Forms.Padding(2);
             this.pnDangnhap.Name = "pnDangnhap";
             this.pnDangnhap.Size = new System.Drawing.Size(564, 519);
             this.pnDangnhap.TabIndex = 1;
@@ -154,7 +154,7 @@
             // 
             this.pictureBox1.Image = global::QuanLyNhaTro.Properties.Resources.logo_scs_key2294502;
             this.pictureBox1.Location = new System.Drawing.Point(172, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(218, 115);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -180,24 +180,24 @@
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.checkBox1.Location = new System.Drawing.Point(93, 357);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(127, 21);
             this.checkBox1.TabIndex = 12;
             this.checkBox1.Text = "  Remember Me";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txtPassword
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBox2.Location = new System.Drawing.Point(93, 310);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(368, 29);
-            this.textBox2.TabIndex = 11;
+            this.txtPassword.BackColor = System.Drawing.Color.White;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txtPassword.Location = new System.Drawing.Point(93, 310);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(368, 29);
+            this.txtPassword.TabIndex = 11;
             // 
             // label4
             // 
@@ -211,17 +211,17 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Password";
             // 
-            // textBox1
+            // txtUsername
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBox1.Location = new System.Drawing.Point(93, 234);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(367, 29);
-            this.textBox1.TabIndex = 10;
+            this.txtUsername.BackColor = System.Drawing.Color.White;
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txtUsername.Location = new System.Drawing.Point(93, 234);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(367, 29);
+            this.txtUsername.TabIndex = 10;
             // 
             // label3
             // 
@@ -261,7 +261,7 @@
             this.pnDangky.Controls.Add(this.label11);
             this.pnDangky.Controls.Add(this.label12);
             this.pnDangky.Location = new System.Drawing.Point(106, 20);
-            this.pnDangky.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnDangky.Margin = new System.Windows.Forms.Padding(2);
             this.pnDangky.Name = "pnDangky";
             this.pnDangky.Size = new System.Drawing.Size(562, 517);
             this.pnDangky.TabIndex = 2;
@@ -318,7 +318,7 @@
             // 
             this.pictureBox2.Image = global::QuanLyNhaTro.Properties.Resources.logo_scs_key2294502;
             this.pictureBox2.Location = new System.Drawing.Point(177, 41);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(218, 115);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -331,7 +331,7 @@
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.SystemColors.InfoText;
             this.textBox3.Location = new System.Drawing.Point(101, 333);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(368, 29);
@@ -356,7 +356,7 @@
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.ForeColor = System.Drawing.SystemColors.InfoText;
             this.textBox4.Location = new System.Drawing.Point(101, 257);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(367, 29);
             this.textBox4.TabIndex = 22;
@@ -395,7 +395,7 @@
             this.pnYourname.Controls.Add(this.label14);
             this.pnYourname.Controls.Add(this.label16);
             this.pnYourname.Location = new System.Drawing.Point(100, 23);
-            this.pnYourname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnYourname.Margin = new System.Windows.Forms.Padding(2);
             this.pnYourname.Name = "pnYourname";
             this.pnYourname.Size = new System.Drawing.Size(562, 517);
             this.pnYourname.TabIndex = 30;
@@ -426,7 +426,7 @@
             // 
             this.pictureBox3.Image = global::QuanLyNhaTro.Properties.Resources.logo_scs_key2294502;
             this.pictureBox3.Location = new System.Drawing.Point(177, 28);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(218, 115);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -439,7 +439,7 @@
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.ForeColor = System.Drawing.SystemColors.InfoText;
             this.textBox5.Location = new System.Drawing.Point(101, 301);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.PasswordChar = '*';
             this.textBox5.Size = new System.Drawing.Size(368, 29);
@@ -476,12 +476,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(753, 564);
+            this.Controls.Add(this.pnDangnhap);
             this.Controls.Add(this.pnDangky);
             this.Controls.Add(this.pnYourname);
-            this.Controls.Add(this.pnDangnhap);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DangNhap";
             this.Text = "DangNhap";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -505,9 +505,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblSignup;

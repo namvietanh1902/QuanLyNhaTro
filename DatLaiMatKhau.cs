@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaTro
 {
-    public partial class DangKy : Form
+    public partial class DatLaiMatKhau : Form
     {
-        public DangKy()
+        public DatLaiMatKhau()
         {
             InitializeComponent();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

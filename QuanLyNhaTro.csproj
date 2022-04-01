@@ -49,17 +49,17 @@
     <Compile Include="ButtonBoGoc.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DangKy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DangKy.Designer.cs">
-      <DependentUpon>DangKy.cs</DependentUpon>
-    </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatLaiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatLaiMatKhau.Designer.cs">
+      <DependentUpon>DatLaiMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="GiaodienAdmin.cs">
       <SubType>Form</SubType>
@@ -81,6 +81,12 @@
     <Compile Include="SuaPhongTro%28DaThue%29.Designer.cs">
       <DependentUpon>SuaPhongTro%28DaThue%29.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThaydoithongtinUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThaydoithongtinUser.Designer.cs">
+      <DependentUpon>ThaydoithongtinUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThongTinKhachTro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,11 +99,12 @@
     <Compile Include="ThongTinPhongThue%28TRONG%29.Designer.cs">
       <DependentUpon>ThongTinPhongThue%28TRONG%29.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DangKy.resx">
-      <DependentUpon>DangKy.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Xulyfile.cs" />
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatLaiMatKhau.resx">
+      <DependentUpon>DatLaiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GiaodienAdmin.resx">
       <DependentUpon>GiaodienAdmin.cs</DependentUpon>
@@ -117,6 +124,9 @@
     </Compile>
     <EmbeddedResource Include="SuaPhongTro%28DaThue%29.resx">
       <DependentUpon>SuaPhongTro%28DaThue%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThaydoithongtinUser.resx">
+      <DependentUpon>ThaydoithongtinUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongTinKhachTro.resx">
       <DependentUpon>ThongTinKhachTro.cs</DependentUpon>

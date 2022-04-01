@@ -12,14 +12,44 @@ namespace QuanLyNhaTro
 {
     public partial class GiaodienAdmin : Form
     {
+        bool isthoat = true;
+        string s = "";
         public GiaodienAdmin()
         {
             InitializeComponent();
+            docdulieutufile();
+        }
+
+        private void docdulieutufile()
+        {
+            string path = Application.StartupPath + "\\Thongbao.txt";
+            s = Xulyfile.DocFile(path);
+            txtThongbao.Text = s;
+        }   
+
+        private void btnLuuThongBao_Click(object sender, EventArgs e)
+        {
+            string path = Application.StartupPath + "\\Thongbao.txt";
+            bool kt = Xulyfile.LuuFile(s, path);
+            if (kt == true)
+            {
+                MessageBox.Show("Lưu thành công");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            if (isthoat)
+            {
+                Application.Exit();
+            }
+        }
+        private void btnDangxuat_Click(object sender, EventArgs e)
+        {
+            isthoat = false;
+            this.Close();
+            DangNhap frm = new DangNhap();
+            frm.Show();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -279,6 +309,9 @@ namespace QuanLyNhaTro
         {
             iskhachtrodathuephong = true;
         }
+        
+
+        
     }
 }
 

@@ -19,7 +19,7 @@ namespace QuanLyNhaTro
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void lblSignup_Click(object sender, EventArgs e)
@@ -36,7 +36,21 @@ namespace QuanLyNhaTro
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+            string nhap = "";
+            if(username == nhap  &  password ==nhap) 
+            {
+                this.Hide();               
+                GiaodienAdmin frm = new GiaodienAdmin();
+                frm.Show();
+            }
+            if (username == "1" & password == "1")
+            {
+                this.Hide();
+                GiaodienUser frm = new GiaodienUser();
+                frm.Show();
+            }
         }
 
         private void btnSignupforfree_Click(object sender, EventArgs e)

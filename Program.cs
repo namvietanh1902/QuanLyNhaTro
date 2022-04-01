@@ -16,7 +16,7 @@ namespace QuanLyNhaTro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GiaodienAdmin());
+            Application.Run(new DangNhap());
         }
     }
 }

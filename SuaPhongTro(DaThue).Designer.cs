@@ -269,9 +269,9 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(117, 465);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 20);
+            this.label10.Size = new System.Drawing.Size(105, 20);
             this.label10.TabIndex = 6;
-            this.label10.Text = "Ngày Thuê:";
+            this.label10.Text = " Ngày thuê:";
             // 
             // comboBox1
             // 
