@@ -99,7 +99,6 @@
     <Compile Include="ThongTinPhongThue%28TRONG%29.Designer.cs">
       <DependentUpon>ThongTinPhongThue%28TRONG%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="Xulyfile.cs" />
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
