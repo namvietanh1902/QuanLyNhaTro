@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,19 @@ namespace QuanLyNhaTro
         public GiaodienUser()
         {
             InitializeComponent();
+            hienthidulieulenthanhthongbao();
+        }
+
+        private void hienthidulieulenthanhthongbao()
+        {
+            string line = "";
+            using (StreamReader sr = new StreamReader("..\\..\\DataThongbao.txt"))
+            {
+                while ((line = sr.ReadLine()) != null)
+                {
+                    txtThongBao.Text += line + "\r\n";
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

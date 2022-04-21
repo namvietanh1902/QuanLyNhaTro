@@ -60,7 +60,6 @@
             this.label45 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.txtThongbao = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -257,7 +256,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.btnNav = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.btnLuuThongBao = new System.Windows.Forms.Button();
+            this.txtThongBao = new System.Windows.Forms.TextBox();
             this.vbButton4 = new QuanLyNhaTro.VBButton();
             this.vbButton3 = new QuanLyNhaTro.VBButton();
             this.vbButton2 = new QuanLyNhaTro.VBButton();
@@ -310,6 +311,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -685,8 +687,8 @@
             // 
             this.panel15.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel15.Controls.Add(this.btnLuuThongBao);
-            this.panel15.Controls.Add(this.txtThongbao);
+            this.panel15.Controls.Add(this.txtThongBao);
+            this.panel15.Controls.Add(this.panel11);
             this.panel15.Controls.Add(this.label49);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel15.Location = new System.Drawing.Point(762, 0);
@@ -694,17 +696,6 @@
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(764, 585);
             this.panel15.TabIndex = 2;
-            // 
-            // txtThongbao
-            // 
-            this.txtThongbao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtThongbao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThongbao.Location = new System.Drawing.Point(0, 98);
-            this.txtThongbao.Margin = new System.Windows.Forms.Padding(4);
-            this.txtThongbao.Multiline = true;
-            this.txtThongbao.Name = "txtThongbao";
-            this.txtThongbao.Size = new System.Drawing.Size(760, 395);
-            this.txtThongbao.TabIndex = 1;
             // 
             // label49
             // 
@@ -3170,7 +3161,7 @@
             this.btnUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
             this.btnUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUser.Location = new System.Drawing.Point(7, 334);
+            this.btnUser.Location = new System.Drawing.Point(8, 333);
             this.btnUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(373, 70);
@@ -3189,7 +3180,7 @@
             this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnHome.Location = new System.Drawing.Point(7, 236);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHome.Name = "btnHome";
@@ -3291,6 +3282,15 @@
             this.btnNav.UseVisualStyleBackColor = false;
             this.btnNav.Click += new System.EventHandler(this.btnNav_Click);
             // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.btnLuuThongBao);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel11.Location = new System.Drawing.Point(0, 521);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(760, 60);
+            this.panel11.TabIndex = 1;
+            // 
             // btnLuuThongBao
             // 
             this.btnLuuThongBao.BackColor = System.Drawing.Color.LimeGreen;
@@ -3299,14 +3299,24 @@
             this.btnLuuThongBao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuThongBao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuuThongBao.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLuuThongBao.Location = new System.Drawing.Point(618, 496);
+            this.btnLuuThongBao.Location = new System.Drawing.Point(623, 1);
             this.btnLuuThongBao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuuThongBao.Name = "btnLuuThongBao";
             this.btnLuuThongBao.Size = new System.Drawing.Size(139, 59);
-            this.btnLuuThongBao.TabIndex = 55;
+            this.btnLuuThongBao.TabIndex = 56;
             this.btnLuuThongBao.Text = "Lưu";
             this.btnLuuThongBao.UseVisualStyleBackColor = false;
             this.btnLuuThongBao.Click += new System.EventHandler(this.btnLuuThongBao_Click);
+            // 
+            // txtThongBao
+            // 
+            this.txtThongBao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtThongBao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThongBao.Location = new System.Drawing.Point(0, 98);
+            this.txtThongBao.Multiline = true;
+            this.txtThongBao.Name = "txtThongBao";
+            this.txtThongBao.Size = new System.Drawing.Size(760, 423);
+            this.txtThongBao.TabIndex = 2;
             // 
             // vbButton4
             // 
@@ -3488,6 +3498,7 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -3611,7 +3622,6 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TextBox txtThongbao;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label50;
@@ -3726,6 +3736,8 @@
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.DateTimePicker dtpNgaysinhuser;
         private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button btnLuuThongBao;
+        private System.Windows.Forms.TextBox txtThongBao;
     }
 }

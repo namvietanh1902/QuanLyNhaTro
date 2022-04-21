@@ -55,6 +55,8 @@
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\DAO_Account.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DatLaiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>

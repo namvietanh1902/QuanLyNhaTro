@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyNhaTro.DAO
 {
-    internal class DAO_Account
+    public class DAO_Account
     {
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.IO;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,17 +18,31 @@ namespace QuanLyNhaTro
         public GiaodienAdmin()
         {
             InitializeComponent();
-           
+            hienthidulieulenthanhthongbao();
         }
 
-         
+        private void hienthidulieulenthanhthongbao()
+        {
+            string line = "";
+            using (StreamReader sr = new StreamReader("..\\..\\DataThongbao.txt"))
+            {
+                while ((line = sr.ReadLine()) != null)
+                {
+                   txtThongBao.Text += line +"\r\n";
+                }
+            }
+        }
 
         private void btnLuuThongBao_Click(object sender, EventArgs e)
         {
-          
             
-            
+            using (StreamWriter sw = new StreamWriter("..\\..\\DataThongbao.txt"))
+            {
+                sw.WriteLine(txtThongBao.Text);
+                MessageBox.Show("Đã Lưu Thành Công!");
+            }
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -301,7 +316,6 @@ namespace QuanLyNhaTro
         {
             iskhachtrodathuephong = true;
         }
-        
 
         
     }
