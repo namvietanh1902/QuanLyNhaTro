@@ -74,6 +74,7 @@ namespace QuanLyNhaTro.Views
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(928, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
@@ -116,7 +117,7 @@ namespace QuanLyNhaTro.Views
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(125, 505);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(487, 64);
             this.btnLogin.TabIndex = 19;
@@ -275,7 +276,7 @@ namespace QuanLyNhaTro.Views
             this.btnSignupforfree.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignupforfree.ForeColor = System.Drawing.Color.White;
             this.btnSignupforfree.Location = new System.Drawing.Point(136, 471);
-            this.btnSignupforfree.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSignupforfree.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSignupforfree.Name = "btnSignupforfree";
             this.btnSignupforfree.Size = new System.Drawing.Size(487, 64);
             this.btnSignupforfree.TabIndex = 30;
@@ -405,7 +406,7 @@ namespace QuanLyNhaTro.Views
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
             this.btnConfirm.Location = new System.Drawing.Point(136, 495);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(487, 64);
             this.btnConfirm.TabIndex = 28;

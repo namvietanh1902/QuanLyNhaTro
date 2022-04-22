@@ -51,7 +51,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DAO\DBHelper.cs" />
-    <Compile Include="Models\Customer.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Views\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +136,7 @@
     <EmbeddedResource Include="Views\ThongTinPhongThue%28TRONG%29.resx">
       <DependentUpon>ThongTinPhongThue%28TRONG%29.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\QuanLyNhaTro.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -150,7 +151,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="Models\" />
     <Folder Include="Presenter\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\QuanLyNhaTro.exe" />
+    <Content Include="bin\Debug\QuanLyNhaTro.pdb" />
+    <Content Include="Views\QuanLyNhaTro.sln" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
