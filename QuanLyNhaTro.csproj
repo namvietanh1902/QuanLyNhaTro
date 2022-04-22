@@ -51,12 +51,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DAO\DBHelper.cs" />
-<<<<<<< HEAD
+
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\RoomModel.cs" />
-=======
+
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
->>>>>>> 4096227399b7ba0f583c5532aeee321577117ac3
+
     <Compile Include="Views\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
