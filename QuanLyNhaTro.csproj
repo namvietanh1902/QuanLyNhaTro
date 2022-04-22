@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,6 +50,8 @@
     <Compile Include="ButtonBoGoc.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DAO\DBHelper.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Views\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,7 +150,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Presenter\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

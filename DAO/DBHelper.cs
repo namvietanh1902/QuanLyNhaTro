@@ -8,5 +8,6 @@ namespace QuanLyNhaTro.DAO
 {
     public class DBHelper
     {
+        
     }
 }
