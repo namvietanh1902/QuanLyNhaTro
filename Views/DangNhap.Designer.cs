@@ -71,7 +71,6 @@ namespace QuanLyNhaTro.Views
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.Transparent;
-          
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -117,7 +116,7 @@ namespace QuanLyNhaTro.Views
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(125, 505);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(487, 64);
             this.btnLogin.TabIndex = 19;
@@ -151,7 +150,8 @@ namespace QuanLyNhaTro.Views
             this.label1.Text = "Need an account?";
             // 
             // pictureBox1
-            
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(229, 18);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
@@ -275,7 +275,7 @@ namespace QuanLyNhaTro.Views
             this.btnSignupforfree.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignupforfree.ForeColor = System.Drawing.Color.White;
             this.btnSignupforfree.Location = new System.Drawing.Point(136, 471);
-            this.btnSignupforfree.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSignupforfree.Margin = new System.Windows.Forms.Padding(4);
             this.btnSignupforfree.Name = "btnSignupforfree";
             this.btnSignupforfree.Size = new System.Drawing.Size(487, 64);
             this.btnSignupforfree.TabIndex = 30;
@@ -310,6 +310,7 @@ namespace QuanLyNhaTro.Views
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(236, 50);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
@@ -404,7 +405,7 @@ namespace QuanLyNhaTro.Views
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
             this.btnConfirm.Location = new System.Drawing.Point(136, 495);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(487, 64);
             this.btnConfirm.TabIndex = 28;
@@ -415,6 +416,7 @@ namespace QuanLyNhaTro.Views
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(236, 34);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
@@ -464,9 +466,9 @@ namespace QuanLyNhaTro.Views
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1004, 694);
-            this.Controls.Add(this.pnDangnhap);
-            this.Controls.Add(this.pnDangky);
             this.Controls.Add(this.pnYourname);
+            this.Controls.Add(this.pnDangky);
+            this.Controls.Add(this.pnDangnhap);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
