@@ -49,68 +49,66 @@
     <Compile Include="ButtonBoGoc.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DangNhap.cs">
+    <Compile Include="Views\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangNhap.Designer.cs">
+    <Compile Include="Views\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="DAO\DAO_Account.cs" />
-    <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="DatLaiMatKhau.cs">
+    <Compile Include="Views\DatLaiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DatLaiMatKhau.Designer.cs">
+    <Compile Include="Views\DatLaiMatKhau.Designer.cs">
       <DependentUpon>DatLaiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaodienAdmin.cs">
+    <Compile Include="Views\GiaodienAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaodienAdmin.Designer.cs">
+    <Compile Include="Views\GiaodienAdmin.Designer.cs">
       <DependentUpon>GiaodienAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaodienUser.cs">
+    <Compile Include="Views\GiaodienUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaodienUser.Designer.cs">
+    <Compile Include="Views\GiaodienUser.Designer.cs">
       <DependentUpon>GiaodienUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SuaPhongTro%28DaThue%29.cs">
+    <Compile Include="Views\SuaPhongTro%28DaThue%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SuaPhongTro%28DaThue%29.Designer.cs">
+    <Compile Include="Views\SuaPhongTro%28DaThue%29.Designer.cs">
       <DependentUpon>SuaPhongTro%28DaThue%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThaydoithongtinUser.cs">
+    <Compile Include="Views\ThaydoithongtinUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThaydoithongtinUser.Designer.cs">
+    <Compile Include="Views\ThaydoithongtinUser.Designer.cs">
       <DependentUpon>ThaydoithongtinUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThongTinKhachTro.cs">
+    <Compile Include="Views\ThongTinKhachTro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThongTinKhachTro.Designer.cs">
+    <Compile Include="Views\ThongTinKhachTro.Designer.cs">
       <DependentUpon>ThongTinKhachTro.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThongTinPhongThue%28TRONG%29.cs">
+    <Compile Include="Views\ThongTinPhongThue%28TRONG%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThongTinPhongThue%28TRONG%29.Designer.cs">
+    <Compile Include="Views\ThongTinPhongThue%28TRONG%29.Designer.cs">
       <DependentUpon>ThongTinPhongThue%28TRONG%29.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DangNhap.resx">
+    <EmbeddedResource Include="Views\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DatLaiMatKhau.resx">
+    <EmbeddedResource Include="Views\DatLaiMatKhau.resx">
       <DependentUpon>DatLaiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaodienAdmin.resx">
+    <EmbeddedResource Include="Views\GiaodienAdmin.resx">
       <DependentUpon>GiaodienAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaodienUser.resx">
+    <EmbeddedResource Include="Views\GiaodienUser.resx">
       <DependentUpon>GiaodienUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -123,16 +121,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SuaPhongTro%28DaThue%29.resx">
+    <EmbeddedResource Include="Views\SuaPhongTro%28DaThue%29.resx">
       <DependentUpon>SuaPhongTro%28DaThue%29.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThaydoithongtinUser.resx">
+    <EmbeddedResource Include="Views\ThaydoithongtinUser.resx">
       <DependentUpon>ThaydoithongtinUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongTinKhachTro.resx">
+    <EmbeddedResource Include="Views\ThongTinKhachTro.resx">
       <DependentUpon>ThongTinKhachTro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongTinPhongThue%28TRONG%29.resx">
+    <EmbeddedResource Include="Views\ThongTinPhongThue%28TRONG%29.resx">
       <DependentUpon>ThongTinPhongThue%28TRONG%29.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -149,13 +147,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-shutdown-40.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo-scs-key2294502.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Dodger-Blue-768x1366.png" />
+    <Folder Include="Models\" />
+    <Folder Include="Presenter\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

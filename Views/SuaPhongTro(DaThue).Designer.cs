@@ -1,4 +1,4 @@
-﻿namespace QuanLyNhaTro
+﻿namespace QuanLyNhaTro.Views
 {
     partial class SuaPhongTro
     {

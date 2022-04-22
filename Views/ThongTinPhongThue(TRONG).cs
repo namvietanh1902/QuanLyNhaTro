@@ -8,15 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyNhaTro
+namespace QuanLyNhaTro.Views
 {
-    public partial class DatLaiMatKhau : Form
+    public partial class ThemPhongTro : Form
     {
-        public DatLaiMatKhau()
+        public delegate void Mydel(string s);
+        public Mydel d;
+        public ThemPhongTro()
         {
             InitializeComponent();
+            d = new Mydel(getdata);
         }
-
+        public void getdata(string s)
+        {
+            lblTitle.Text = s;
+        }
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Close();

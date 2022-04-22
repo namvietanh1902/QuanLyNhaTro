@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyNhaTro
+namespace QuanLyNhaTro.Views
 {
-    public partial class ThemPhongTro : Form
+    public partial class ThongTinKhachTro : Form
     {
-        public delegate void Mydel(string s);
+        public delegate void Mydel(string title);
         public Mydel d;
-        public ThemPhongTro()
+        public ThongTinKhachTro()
         {
             InitializeComponent();
             d = new Mydel(getdata);
@@ -23,7 +23,13 @@ namespace QuanLyNhaTro
         {
             lblTitle.Text = s;
         }
+
         private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             Close();
         }

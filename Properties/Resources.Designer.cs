@@ -59,35 +59,5 @@ namespace QuanLyNhaTro.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Dodger_Blue_768x1366 {
-            get {
-                object obj = ResourceManager.GetObject("Dodger-Blue-768x1366", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_shutdown_40 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-shutdown-40", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap logo_scs_key2294502 {
-            get {
-                object obj = ResourceManager.GetObject("logo-scs-key2294502", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

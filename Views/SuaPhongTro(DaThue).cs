@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyNhaTro
+namespace QuanLyNhaTro.Views
 {
     public partial class SuaPhongTro : Form
     {
