@@ -23,7 +23,7 @@ namespace QuanLyNhaTro.Views
         private void hienthidulieulenthanhthongbao()
         {
             string line = "";
-            using (StreamReader sr = new StreamReader("E:\\PBL3\\Views\\DataThongbao.txt"))
+            using (StreamReader sr = new StreamReader("..\\..\\Views\\DataThongbao.txt"))
             {
                 while ((line = sr.ReadLine()) != null)
                 {

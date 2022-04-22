@@ -51,7 +51,8 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DAO\DBHelper.cs" />
-    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\RoomModel.cs" />
     <Compile Include="Views\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>

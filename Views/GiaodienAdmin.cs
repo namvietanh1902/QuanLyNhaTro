@@ -24,7 +24,7 @@ namespace QuanLyNhaTro.Views
         private void hienthidulieulenthanhthongbao()
         {
             string line = "";
-            using (StreamReader sr = new StreamReader("E:\\PBL3\\Views\\DataThongbao.txt"))
+            using (StreamReader sr = new StreamReader("..\\..\\Views\\DataThongbao.txt"))
             {
                 while ((line = sr.ReadLine()) != null)
                 {
@@ -36,7 +36,7 @@ namespace QuanLyNhaTro.Views
         private void btnLuuThongBao_Click(object sender, EventArgs e)
         {
             
-            using (StreamWriter sw = new StreamWriter("E:\\PBL3\\Views\\DataThongbao.txt"))
+            using (StreamWriter sw = new StreamWriter("..\\..\\Views\\DataThongbao.txt"))
             {
                 sw.WriteLine(txtThongBao.Text);
                 MessageBox.Show("Đã Lưu Thành Công!");
