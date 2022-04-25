@@ -51,6 +51,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DAO\DAL_Account.cs" />
+    <Compile Include="DAO\DAL_KhachTro.cs" />
     <Compile Include="DAO\DBHelper.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\CustomerModel.cs" />
