@@ -23,16 +23,6 @@ namespace QuanLyNhaTro.DAO
             }
             private set { }
         }
-        public List<AccountModel> GetAllAccount()
-        {
-            List<AccountModel> res = new List<AccountModel> ();
-            string query = "Select * from Account";
-            foreach (DataRow i in DBHelper.Instance.GetRecords(query, null).Rows)
-            {
-                res.Add(GetAccountFromDataRow(i));
-            }
-            return res;
-        }
      
         public List<AccountModel> GetAdminAccount()
         {
@@ -59,6 +49,16 @@ namespace QuanLyNhaTro.DAO
             return res;
         }
 
+        public List<AccountModel> GetAllAccount()
+        {
+            List<AccountModel> res = new List<AccountModel> ();
+            string query = "Select * from Account";
+            foreach (DataRow i in DBHelper.Instance.GetRecords(query, null).Rows)
+            {
+                res.Add(GetAccountFromDataRow(i));
+            }
+            return res;
+        }
 
         public AccountModel GetAccountFromDataRow(DataRow i)
         {

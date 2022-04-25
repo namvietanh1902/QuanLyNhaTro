@@ -26,6 +26,7 @@ namespace QuanLyNhaTro.Models
         public string SDT { get; set; }
         [Required]
         public string NgheNghiep { get; set; }
+        public  int MaKhach { get; set; }
 
     }
 }
