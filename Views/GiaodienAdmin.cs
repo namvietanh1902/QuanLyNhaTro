@@ -8,21 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyNhaTro.Models;
+using QuanLyNhaTro.Presenter;
 
 namespace QuanLyNhaTro.Views
 {
     public partial class GiaodienAdmin : Form
     {
         bool isthoat = true;
-        string s = "";
-        public GiaodienAdmin()
+        public int ID { get; set; }
+        public GiaodienAdmin(int id)
         {
+            ID = id;
             InitializeComponent();
             hienthidulieulenthanhthongbao();
+            lblTenNguoiDung.Text = BLL_Account.Instance.GetTenNguoiDungByID(ID);
+
         }
         private void GiaodienAdmin_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void hienthidulieulenthanhthongbao()
@@ -321,7 +326,6 @@ namespace QuanLyNhaTro.Views
             iskhachtrodathuephong = true;
         }
 
-        
     }
 }
 

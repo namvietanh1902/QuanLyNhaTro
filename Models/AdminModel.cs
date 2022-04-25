@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyNhaTro.Models
 {
-    public class AminModel
+    public class AdminModel
     {
         public int UserID { get; set; }
         public string Name { get; set; }

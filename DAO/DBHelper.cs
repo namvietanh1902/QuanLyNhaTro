@@ -28,7 +28,7 @@ namespace QuanLyNhaTro.DAO
         {
             return new SqlConnection(ConnectionString);
         }
-  
+
         public void ExecuteDB(string query, SqlParameter [] Param)
         {
             SqlConnection conn = this.ConnectToDB();

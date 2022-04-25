@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using QuanLyNhaTro.DAO;
+using QuanLyNhaTro.Presenter;
 using QuanLyNhaTro.Models;  
 
 namespace QuanLyNhaTro.Views
@@ -28,43 +28,44 @@ namespace QuanLyNhaTro.Views
             pnDangky.Visible = false;
             pnDangnhap.Visible = true;
         }
-        public AccountModel GetAccount()
-        {
-            AccountModel account = new AccountModel();
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
-            int id = DAL_Account.Instance.GetIDByUserAndPass(username, password);
-            account = DAL_Account.Instance.GetAccountByID(id);
-            return account;
-        }
+       
+       
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-            int id = DAL_Account.Instance.GetIDByUserAndPass(username, password);
-            AccountModel account = new AccountModel();
-            account = DAL_Account.Instance.GetAccountByID(id);
-            if(account.Role == true)
+            int id = BLL_Account.Instance.GetIDByUserAndPass(username, password);
+           
+
+            if(id == -1)
             {
-                this.Hide();
-                GiaodienAdmin frm = new GiaodienAdmin();
-                frm.Show();
-            }
-            else if(account.Role == false)
-            {
-                this.Hide();
-                GiaodienUser frm = new GiaodienUser();
-                frm.Show();
+                MessageBox.Show(
+                    "Your username or password is incorrect ",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
             }
             else
             {
-                MessageBox.Show("Lỗi");
+                AccountModel account = new AccountModel();
+                account = BLL_Account.Instance.GetAccountByID(id);
+                bool checkRole = account.Role;
+                if (checkRole)
+                {
+                    this.Hide();
+                    GiaodienAdmin frm = new GiaodienAdmin(id);
+                    frm.Show();
+                }
+                else
+                {
+                    this.Hide();
+                    GiaodienUser frm = new GiaodienUser(id);
+                    frm.Show();
+                }
             }
-
-
-
-
+            
 
         }
 

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GiaodienAdmin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblTenNguoiDung = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -318,7 +318,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.lblTenNguoiDung);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.panel5);
@@ -340,19 +340,16 @@
             this.label14.TabIndex = 7;
             this.label14.Text = "Admin";
             // 
-            // label13
+            // lblTenNguoiDung
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label13.Location = new System.Drawing.Point(155, 79);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(134, 24);
-            this.label13.TabIndex = 6;
-            this.label13.Text = "Nguyễn Văn A";
-            // 
-            // label12
-            // 
+            this.lblTenNguoiDung.AutoSize = true;
+            this.lblTenNguoiDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenNguoiDung.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTenNguoiDung.Location = new System.Drawing.Point(155, 79);
+            this.lblTenNguoiDung.Name = "lblTenNguoiDung";
+            this.lblTenNguoiDung.Size = new System.Drawing.Size(40, 24);
+            this.lblTenNguoiDung.TabIndex = 6;
+            this.lblTenNguoiDung.Text = "null";
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -3512,7 +3509,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblTenNguoiDung;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;

@@ -72,32 +72,7 @@ namespace QuanLyNhaTro.DAO
 
         
 
-        public int GetIDByUserAndPass(string user,string pass)
-        {
-            int userid = 0;
-            foreach (AccountModel i in GetAllAccount())
-            {
-                if(i.Username == user && i.Password == pass)
-                {
-                    userid = i.Id;
-                    break;
-                }
-            }
-            return userid;
-        }
-        public AccountModel GetAccountByID(int id)
-        {
-            AccountModel account = new AccountModel();
-            foreach(AccountModel i in GetAllAccount())
-            {
-                if(i.Id == id)
-                {
-                    account = i;
-                    break;
-                }
-            }
-            return account;
-        }
+       
 
     }
 }
