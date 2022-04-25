@@ -48,7 +48,7 @@
             this.btnNav = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblTenNguoiDung = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -440,7 +440,7 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.Highlight;
             this.panel4.Controls.Add(this.label14);
-            this.panel4.Controls.Add(this.label13);
+            this.panel4.Controls.Add(this.lblTenNguoiDung);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.panel5);
@@ -462,16 +462,16 @@
             this.label14.TabIndex = 7;
             this.label14.Text = "Khách trọ";
             // 
-            // label13
+            // lblTenNguoiDung
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label13.Location = new System.Drawing.Point(155, 79);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(133, 24);
-            this.label13.TabIndex = 6;
-            this.label13.Text = "Nguyễn Văn B";
+            this.lblTenNguoiDung.AutoSize = true;
+            this.lblTenNguoiDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenNguoiDung.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTenNguoiDung.Location = new System.Drawing.Point(155, 79);
+            this.lblTenNguoiDung.Name = "lblTenNguoiDung";
+            this.lblTenNguoiDung.Size = new System.Drawing.Size(133, 24);
+            this.lblTenNguoiDung.TabIndex = 6;
+            this.lblTenNguoiDung.Text = "Nguyễn Văn B";
             // 
             // label12
             // 
@@ -1922,6 +1922,7 @@
             this.Name = "GiaodienUser";
             this.Text = "GiaodienUser";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.GiaodienUser_Load);
             this.pnNavagation.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -1967,7 +1968,7 @@
         private System.Windows.Forms.Button btnNav;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblTenNguoiDung;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel5;

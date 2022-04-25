@@ -26,15 +26,15 @@ namespace QuanLyNhaTro.DAO
         public List<CustomerModel> GetAllCustomer()
         {
             List<CustomerModel> res = new List<CustomerModel>();
-            string query = "Select * from Account";
+            string query = "Select * from KhachTro";
             foreach (DataRow i in DBHelper.Instance.GetRecords(query, null).Rows)
             {
-                res.Add(GetAccountFromDataRow(i));
+                res.Add(GetKhanhTroFromDataRow(i));
             }
             return res;
         }
 
-        public CustomerModel GetAccountFromDataRow(DataRow i)
+        public CustomerModel GetKhanhTroFromDataRow(DataRow i)
         {
             return new CustomerModel
             {

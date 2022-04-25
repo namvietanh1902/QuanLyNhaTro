@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using QuanLyNhaTro.Presenter;
+using QuanLyNhaTro.Models;  
 
 namespace QuanLyNhaTro.Views
 {
@@ -26,24 +28,45 @@ namespace QuanLyNhaTro.Views
             pnDangky.Visible = false;
             pnDangnhap.Visible = true;
         }
+       
+       
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-            string nhap = "";
-            if (username == nhap & password == nhap)
+            int id = BLL_Account.Instance.GetIDByUserAndPass(username, password);
+           
+
+            if(id == -1)
             {
-                this.Hide();
-                GiaodienAdmin frm = new GiaodienAdmin();
-                frm.Show();
+                MessageBox.Show(
+                    "Your username or password is incorrect ",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
             }
-            if (username == "1" & password == "1")
+            else
             {
-                this.Hide();
-                GiaodienUser frm = new GiaodienUser();
-                frm.Show();
+                AccountModel account = new AccountModel();
+                account = BLL_Account.Instance.GetAccountByID(id);
+                bool checkRole = account.Role;
+                if (checkRole)
+                {
+                    this.Hide();
+                    GiaodienAdmin frm = new GiaodienAdmin(id);
+                    frm.Show();
+                }
+                else
+                {
+                    this.Hide();
+                    GiaodienUser frm = new GiaodienUser(id);
+                    frm.Show();
+                }
             }
+            
+
         }
 
         private void btnSignupforfree_Click(object sender, EventArgs e)

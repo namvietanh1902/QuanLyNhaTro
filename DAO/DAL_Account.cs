@@ -23,32 +23,6 @@ namespace QuanLyNhaTro.DAO
             }
             private set { }
         }
-     
-        public List<AccountModel> GetAdminAccount()
-        {
-            List<AccountModel> res = new List<AccountModel>();
-            foreach (AccountModel i in GetAllAccount())
-            {
-                if (i.Role == true)
-                {
-                    res.Add(i);
-                }
-            }
-            return res;
-        }
-        public List<AccountModel> GetGuestAccount()
-        {
-            List<AccountModel> res = new List<AccountModel>();
-            foreach (AccountModel i in GetAllAccount())
-            {
-                if (i.Role == !true)
-                {
-                    res.Add(i);
-                }
-            }
-            return res;
-        }
-
         public List<AccountModel> GetAllAccount()
         {
             List<AccountModel> res = new List<AccountModel> ();
@@ -59,7 +33,6 @@ namespace QuanLyNhaTro.DAO
             }
             return res;
         }
-
         public AccountModel GetAccountFromDataRow(DataRow i)
         {
             return new AccountModel
@@ -71,6 +44,36 @@ namespace QuanLyNhaTro.DAO
             };
         }
 
-        }
+        //public List<AccountModel> GetAdminAccount()
+        //{
+        //    List<AccountModel> res = new List<AccountModel>();
+        //    foreach (AccountModel i in GetAllAccount())
+        //    {
+        //        if (i.Role == true)
+        //        {
+        //            res.Add(i);
+        //        }
+        //    }
+        //    return res;
+        //}
+        //public List<AccountModel> GetGuestAccount()
+        //{
+        //    List<AccountModel> res = new List<AccountModel>();
+        //    foreach (AccountModel i in GetAllAccount())
+        //    {
+        //        if (i.Role == !true)
+        //        {
+        //            res.Add(i);
+        //        }
+        //    }
+        //    return res;
+        //}
+
+
+        
+
+       
+
     }
+}
 
