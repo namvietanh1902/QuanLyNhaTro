@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyNhaTro.Views
@@ -30,8 +23,8 @@ namespace QuanLyNhaTro.Views
 
         private void lblLogin_Click(object sender, EventArgs e)
         {
-            pnDangky.Visible=false;
-            pnDangnhap.Visible=true;
+            pnDangky.Visible = false;
+            pnDangnhap.Visible = true;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -39,9 +32,9 @@ namespace QuanLyNhaTro.Views
             string username = txtUsername.Text;
             string password = txtPassword.Text;
             string nhap = "";
-            if(username == nhap  &  password ==nhap) 
+            if (username == nhap & password == nhap)
             {
-                this.Hide();               
+                this.Hide();
                 GiaodienAdmin frm = new GiaodienAdmin();
                 frm.Show();
             }
@@ -55,13 +48,14 @@ namespace QuanLyNhaTro.Views
 
         private void btnSignupforfree_Click(object sender, EventArgs e)
         {
-            pnDangky.Visible=false;
+            pnDangky.Visible = false;
             pnYourname.Visible = true;
+
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            pnYourname.Visible=false;
+            pnYourname.Visible = false;
             pnDangnhap.Visible = true;
         }
     }

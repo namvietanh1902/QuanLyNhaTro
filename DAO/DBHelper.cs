@@ -1,13 +1,69 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
+using System.Data.SqlClient;
 
 namespace QuanLyNhaTro.DAO
 {
     public class DBHelper
-    {
-        
+    {   
+        //sửa connection string theo cái tự làm
+        //connect của nam anh
+        private string ConnectionString = "Data Source=DESKTOP-98I2571;Initial Catalog=QuanLyNhaTro;Integrated Security=True";
+        private static DBHelper _instance;
+
+        public static DBHelper Instance {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new DBHelper();
+                }
+                return _instance;
+            }
+            private set { }
+        }
+
+        public SqlConnection ConnectToDB()
+        {
+            return new SqlConnection(ConnectionString);
+        }
+        public void ExecuteDB(string query)
+        {
+            SqlConnection conn = this.ConnectToDB();
+            SqlCommand cmd = new SqlCommand(query, conn);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public void ExecuteDBWithParam(string query, SqlParameter [] Param)
+        {
+            SqlConnection conn = this.ConnectToDB();
+            SqlCommand cmd = new SqlCommand(query, conn);
+            if (Param != null)
+            {
+                cmd.Parameters.AddRange(Param);
+            }
+       
+            conn.Open();
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+        public DataTable GetRecords(string query,SqlParameter[] Params)
+        {
+            SqlConnection conn = this.ConnectToDB();
+            SqlDataAdapter adpt = new SqlDataAdapter(query,conn);
+            if (Params != null)
+            {
+                adpt.SelectCommand.Parameters.AddRange(Params);
+            }
+            DataTable dt = new DataTable();
+            conn.Open();
+            
+            adpt.Fill(dt);
+
+            conn.Close();
+            return dt;
+        }
     }
 }
