@@ -33,12 +33,13 @@ namespace QuanLyNhaTro.DAO
             }
             return res;
         }
+     
         public List<AccountModel> GetAdminAccount()
         {
             List<AccountModel> res = new List<AccountModel>();
             foreach (AccountModel i in GetAllAccount())
             {
-                if (i.Role = true)
+                if (i.Role == true)
                 {
                     res.Add(i);
                 }
@@ -50,7 +51,7 @@ namespace QuanLyNhaTro.DAO
             List<AccountModel> res = new List<AccountModel>();
             foreach (AccountModel i in GetAllAccount())
             {
-                if (i.Role = !true)
+                if (i.Role == !true)
                 {
                     res.Add(i);
                 }
