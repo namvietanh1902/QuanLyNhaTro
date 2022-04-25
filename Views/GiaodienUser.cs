@@ -8,16 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyNhaTro.Models;
 
 namespace QuanLyNhaTro.Views
 {
     public partial class GiaodienUser : Form
     {
+        public delegate void Mydel(AccountModel account);
+        public Mydel d { get; set; }
         bool isthoat = true;
         public GiaodienUser()
         {
             InitializeComponent();
             hienthidulieulenthanhthongbao();
+        }
+        private void GiaodienUser_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void hienthidulieulenthanhthongbao()
@@ -170,5 +177,7 @@ namespace QuanLyNhaTro.Views
                 }
             }
         }
+
+        
     }
 }

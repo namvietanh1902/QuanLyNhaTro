@@ -33,33 +33,6 @@ namespace QuanLyNhaTro.DAO
             }
             return res;
         }
-     
-        public List<AccountModel> GetAdminAccount()
-        {
-            List<AccountModel> res = new List<AccountModel>();
-            foreach (AccountModel i in GetAllAccount())
-            {
-                if (i.Role == true)
-                {
-                    res.Add(i);
-                }
-            }
-            return res;
-        }
-        public List<AccountModel> GetGuestAccount()
-        {
-            List<AccountModel> res = new List<AccountModel>();
-            foreach (AccountModel i in GetAllAccount())
-            {
-                if (i.Role == !true)
-                {
-                    res.Add(i);
-                }
-            }
-            return res;
-        }
-
-
         public AccountModel GetAccountFromDataRow(DataRow i)
         {
             return new AccountModel
@@ -71,6 +44,61 @@ namespace QuanLyNhaTro.DAO
             };
         }
 
+        //public List<AccountModel> GetAdminAccount()
+        //{
+        //    List<AccountModel> res = new List<AccountModel>();
+        //    foreach (AccountModel i in GetAllAccount())
+        //    {
+        //        if (i.Role == true)
+        //        {
+        //            res.Add(i);
+        //        }
+        //    }
+        //    return res;
+        //}
+        //public List<AccountModel> GetGuestAccount()
+        //{
+        //    List<AccountModel> res = new List<AccountModel>();
+        //    foreach (AccountModel i in GetAllAccount())
+        //    {
+        //        if (i.Role == !true)
+        //        {
+        //            res.Add(i);
+        //        }
+        //    }
+        //    return res;
+        //}
+
+
+        
+
+        public int GetIDByUserAndPass(string user,string pass)
+        {
+            int userid = 0;
+            foreach (AccountModel i in GetAllAccount())
+            {
+                if(i.Username == user && i.Password == pass)
+                {
+                    userid = i.Id;
+                    break;
+                }
+            }
+            return userid;
         }
+        public AccountModel GetAccountByID(int id)
+        {
+            AccountModel account = new AccountModel();
+            foreach(AccountModel i in GetAllAccount())
+            {
+                if(i.Id == id)
+                {
+                    account = i;
+                    break;
+                }
+            }
+            return account;
+        }
+
     }
+}
 

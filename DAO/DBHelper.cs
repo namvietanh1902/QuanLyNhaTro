@@ -4,10 +4,12 @@ using System.Data.SqlClient;
 namespace QuanLyNhaTro.DAO
 {
     public class DBHelper
-    {   
+    {
         //sửa connection string theo cái tự làm
         //connect của nam anh
-        private string ConnectionString = "Data Source=DESKTOP-98I2571;Initial Catalog=QuanLyNhaTro;Integrated Security=True";
+        //private string ConnectionString = "Data Source=DESKTOP-98I2571;Initial Catalog=QuanLyNhaTro;Integrated Security=True";
+        //connect cua thinh
+        private string ConnectionString = "Server=LAPTOP-0D5AFPUH\\SQLEXPRESS;database=pbl3;User Id=thinh2092002;pwd=123456";
         private static DBHelper _instance;
 
         public static DBHelper Instance {
@@ -26,15 +28,8 @@ namespace QuanLyNhaTro.DAO
         {
             return new SqlConnection(ConnectionString);
         }
-        public void ExecuteDB(string query)
-        {
-            SqlConnection conn = this.ConnectToDB();
-            SqlCommand cmd = new SqlCommand(query, conn);
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
-        }
-        public void ExecuteDBWithParam(string query, SqlParameter [] Param)
+  
+        public void ExecuteDB(string query, SqlParameter [] Param)
         {
             SqlConnection conn = this.ConnectToDB();
             SqlCommand cmd = new SqlCommand(query, conn);

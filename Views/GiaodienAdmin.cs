@@ -20,6 +20,10 @@ namespace QuanLyNhaTro.Views
             InitializeComponent();
             hienthidulieulenthanhthongbao();
         }
+        private void GiaodienAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void hienthidulieulenthanhthongbao()
         {

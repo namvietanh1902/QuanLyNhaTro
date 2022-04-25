@@ -109,7 +109,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnThanhtoan = new System.Windows.Forms.Panel();
-            this.btnXacnhanthanhtoan = new QuanLyNhaTro.VBButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label58 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -145,7 +144,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.pnPhongtro = new System.Windows.Forms.Panel();
-            this.btnTraphong = new QuanLyNhaTro.VBButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -164,6 +162,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.btnTraphong = new QuanLyNhaTro.VBButton();
+            this.btnXacnhanthanhtoan = new QuanLyNhaTro.VBButton();
             this.pnNavagation.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -1262,28 +1262,6 @@
             this.pnThanhtoan.TabIndex = 0;
             this.pnThanhtoan.Visible = false;
             // 
-            // btnXacnhanthanhtoan
-            // 
-            this.btnXacnhanthanhtoan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXacnhanthanhtoan.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnXacnhanthanhtoan.BackgroundColor = System.Drawing.Color.LimeGreen;
-            this.btnXacnhanthanhtoan.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnXacnhanthanhtoan.BorderRadius = 32;
-            this.btnXacnhanthanhtoan.BorderSize = 0;
-            this.btnXacnhanthanhtoan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXacnhanthanhtoan.FlatAppearance.BorderSize = 0;
-            this.btnXacnhanthanhtoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXacnhanthanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXacnhanthanhtoan.ForeColor = System.Drawing.Color.White;
-            this.btnXacnhanthanhtoan.Location = new System.Drawing.Point(1283, 497);
-            this.btnXacnhanthanhtoan.Name = "btnXacnhanthanhtoan";
-            this.btnXacnhanthanhtoan.Size = new System.Drawing.Size(189, 84);
-            this.btnXacnhanthanhtoan.TabIndex = 51;
-            this.btnXacnhanthanhtoan.Text = "Xác nhận";
-            this.btnXacnhanthanhtoan.TextColor = System.Drawing.Color.White;
-            this.btnXacnhanthanhtoan.UseVisualStyleBackColor = false;
-            this.btnXacnhanthanhtoan.Click += new System.EventHandler(this.btnXacnhanthanhtoan_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1687,28 +1665,6 @@
             this.pnPhongtro.TabIndex = 0;
             this.pnPhongtro.Visible = false;
             // 
-            // btnTraphong
-            // 
-            this.btnTraphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTraphong.BackColor = System.Drawing.Color.Red;
-            this.btnTraphong.BackgroundColor = System.Drawing.Color.Red;
-            this.btnTraphong.BorderColor = System.Drawing.Color.Purple;
-            this.btnTraphong.BorderRadius = 30;
-            this.btnTraphong.BorderSize = 0;
-            this.btnTraphong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTraphong.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnTraphong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTraphong.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTraphong.ForeColor = System.Drawing.Color.White;
-            this.btnTraphong.Location = new System.Drawing.Point(1284, 530);
-            this.btnTraphong.Name = "btnTraphong";
-            this.btnTraphong.Size = new System.Drawing.Size(166, 82);
-            this.btnTraphong.TabIndex = 50;
-            this.btnTraphong.Text = "Trả Phòng";
-            this.btnTraphong.TextColor = System.Drawing.Color.White;
-            this.btnTraphong.UseVisualStyleBackColor = false;
-            this.btnTraphong.Click += new System.EventHandler(this.btnTraphong_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1900,6 +1856,50 @@
             this.label21.TabIndex = 40;
             this.label21.Text = "Số Lượng Tối Đa:";
             // 
+            // btnTraphong
+            // 
+            this.btnTraphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTraphong.BackColor = System.Drawing.Color.Red;
+            this.btnTraphong.BackgroundColor = System.Drawing.Color.Red;
+            this.btnTraphong.BorderColor = System.Drawing.Color.Purple;
+            this.btnTraphong.BorderRadius = 30;
+            this.btnTraphong.BorderSize = 0;
+            this.btnTraphong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTraphong.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnTraphong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTraphong.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraphong.ForeColor = System.Drawing.Color.White;
+            this.btnTraphong.Location = new System.Drawing.Point(1284, 530);
+            this.btnTraphong.Name = "btnTraphong";
+            this.btnTraphong.Size = new System.Drawing.Size(166, 82);
+            this.btnTraphong.TabIndex = 50;
+            this.btnTraphong.Text = "Trả Phòng";
+            this.btnTraphong.TextColor = System.Drawing.Color.White;
+            this.btnTraphong.UseVisualStyleBackColor = false;
+            this.btnTraphong.Click += new System.EventHandler(this.btnTraphong_Click);
+            // 
+            // btnXacnhanthanhtoan
+            // 
+            this.btnXacnhanthanhtoan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXacnhanthanhtoan.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnXacnhanthanhtoan.BackgroundColor = System.Drawing.Color.LimeGreen;
+            this.btnXacnhanthanhtoan.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnXacnhanthanhtoan.BorderRadius = 32;
+            this.btnXacnhanthanhtoan.BorderSize = 0;
+            this.btnXacnhanthanhtoan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXacnhanthanhtoan.FlatAppearance.BorderSize = 0;
+            this.btnXacnhanthanhtoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXacnhanthanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacnhanthanhtoan.ForeColor = System.Drawing.Color.White;
+            this.btnXacnhanthanhtoan.Location = new System.Drawing.Point(1283, 497);
+            this.btnXacnhanthanhtoan.Name = "btnXacnhanthanhtoan";
+            this.btnXacnhanthanhtoan.Size = new System.Drawing.Size(189, 84);
+            this.btnXacnhanthanhtoan.TabIndex = 51;
+            this.btnXacnhanthanhtoan.Text = "Xác nhận";
+            this.btnXacnhanthanhtoan.TextColor = System.Drawing.Color.White;
+            this.btnXacnhanthanhtoan.UseVisualStyleBackColor = false;
+            this.btnXacnhanthanhtoan.Click += new System.EventHandler(this.btnXacnhanthanhtoan_Click);
+            // 
             // GiaodienUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1922,6 +1922,7 @@
             this.Name = "GiaodienUser";
             this.Text = "GiaodienUser";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.GiaodienUser_Load);
             this.pnNavagation.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

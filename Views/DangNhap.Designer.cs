@@ -117,7 +117,7 @@ namespace QuanLyNhaTro.Views
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(125, 505);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(487, 64);
             this.btnLogin.TabIndex = 19;
@@ -276,7 +276,7 @@ namespace QuanLyNhaTro.Views
             this.btnSignupforfree.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignupforfree.ForeColor = System.Drawing.Color.White;
             this.btnSignupforfree.Location = new System.Drawing.Point(136, 471);
-            this.btnSignupforfree.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSignupforfree.Margin = new System.Windows.Forms.Padding(4);
             this.btnSignupforfree.Name = "btnSignupforfree";
             this.btnSignupforfree.Size = new System.Drawing.Size(487, 64);
             this.btnSignupforfree.TabIndex = 30;
@@ -406,7 +406,7 @@ namespace QuanLyNhaTro.Views
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
             this.btnConfirm.Location = new System.Drawing.Point(136, 495);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(487, 64);
             this.btnConfirm.TabIndex = 28;
@@ -467,9 +467,9 @@ namespace QuanLyNhaTro.Views
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1004, 694);
+            this.Controls.Add(this.pnDangnhap);
             this.Controls.Add(this.pnYourname);
             this.Controls.Add(this.pnDangky);
-            this.Controls.Add(this.pnDangnhap);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
