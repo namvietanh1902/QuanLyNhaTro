@@ -39,7 +39,7 @@ namespace QuanLyNhaTro.Presenter
                     userid = i.Id;
                     break;
                 }
-                else userid = -1;
+                else userid = -1;   
             }
             return userid;
         }
