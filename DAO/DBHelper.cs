@@ -9,7 +9,9 @@ namespace QuanLyNhaTro.DAO
         //connect của nam anh
         //private string ConnectionString = "Data Source=DESKTOP-98I2571;Initial Catalog=QuanLyNhaTro;Integrated Security=True";
         //connect cua thinh
-        private string ConnectionString = "Server=LAPTOP-0D5AFPUH\\SQLEXPRESS;database=pbl3;User Id=thinh2092002;pwd=123456";
+        //private string ConnectionString = "Server=LAPTOP-0D5AFPUH\\SQLEXPRESS;database=pbl3;User Id=thinh2092002;pwd=123456";
+        //connect cua Pdz
+        private string ConnectionString = @"Data Source=DESKTOP-D7LUG0D\PHUCDZ;Initial Catalog=Nhatro;Integrated Security=True";
         private static DBHelper _instance;
 
         public static DBHelper Instance {

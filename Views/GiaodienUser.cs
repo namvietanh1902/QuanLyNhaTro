@@ -24,6 +24,8 @@ namespace QuanLyNhaTro.Views
             InitializeComponent();
             hienthidulieulenthanhthongbao();
             lblTenNguoiDung.Text = BLL_Account.Instance.GetTenNguoiDungByID(ID);
+            comboBox1.Items.Add("Nam");
+            comboBox1.Items.Add("Nữ");
         }
         private void GiaodienUser_Load(object sender, EventArgs e)
         {
@@ -81,6 +83,19 @@ namespace QuanLyNhaTro.Views
             pnUser.Visible = true;
             pnPhongtro.Visible = false;
             pnThanhtoan.Visible = false;
+
+            CustomerModel cm = BLL_Account.Instance.GetKhachTroByID(ID);
+
+            textBox1.Text = ID.ToString();
+            textBox3.Text = BLL_Account.Instance.GetAccountByID(ID).Username;
+            textBox2.Text = cm.Name;
+            if (cm.Gender) comboBox1.Text = "Nam";
+            else comboBox1.Text = "Nữ";
+            textBox4.Text = cm.SDT;
+            textBox5.Text = cm.CMND;
+            textBox6.Text = cm.NgheNghiep;
+
+
         }
         
         private void btnPhongtro_Click_1(object sender, EventArgs e)
@@ -135,13 +150,13 @@ namespace QuanLyNhaTro.Views
 
         private void btnThaydoithongUser_Click(object sender, EventArgs e)
         {
-            ThaydoithongtinUser frm = new ThaydoithongtinUser();
+            ThaydoithongtinUser frm = new ThaydoithongtinUser(ID);
             frm.ShowDialog();
         }
 
         private void btnDatlaimatkhau_Click(object sender, EventArgs e)
         {
-            DatLaiMatKhau frm = new DatLaiMatKhau();
+            DatLaiMatKhau frm = new DatLaiMatKhau(ID);
             frm.ShowDialog();
         }
         bool isThanhtoan = false;
@@ -180,7 +195,5 @@ namespace QuanLyNhaTro.Views
                 }
             }
         }
-
-        
     }
 }
