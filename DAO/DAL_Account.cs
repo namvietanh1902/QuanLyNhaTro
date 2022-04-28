@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using QuanLyNhaTro.Models;
+using System.Data.SqlClient;
+
 namespace QuanLyNhaTro.DAO
 {
     public class DAL_Account
@@ -69,8 +71,26 @@ namespace QuanLyNhaTro.DAO
         //    return res;
         //}
 
-
+        public void AddAccountFromSignin(string[] InfoAccount)
+        {
+            SqlParameter[] Param = new SqlParameter[InfoAccount.Length];
+            Param[0] = new SqlParameter("@Username", InfoAccount[0]);
+            Param[1] = new SqlParameter("@Pass", InfoAccount[1]);
+            string query = "Insert into Account (Username,Pass,PhanQuyen) values" +
+                "(@Username,@Pass,0)";
+            DBHelper.Instance.ExecuteDB(query, Param);
+        }
         
+        public void ThayDoiMatKhau(int ID,string newPass)
+        {
+            SqlParameter[] Param = new SqlParameter[2];
+            Param[0] = new SqlParameter("@newPass", newPass);
+            Param[1] = new SqlParameter("@ID", ID);
+            string query = "Update Account " +
+                "set Pass=@newPass " +
+                "where UserID=@ID";
+            DBHelper.Instance.ExecuteDB(query, Param);
+        }
 
        
 

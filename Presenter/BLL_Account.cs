@@ -82,5 +82,31 @@ namespace QuanLyNhaTro.Presenter
             }
             return name;
         }
+        public void AddAccountFromSignin(string[] InfoAccount,string[] InfoCustomer)
+        {
+            DAL_Account.Instance.AddAccountFromSignin(InfoAccount);
+            DAL_KhachTro.Instance.AddCustomerFromSignin(InfoCustomer);
+        }
+
+        public CustomerModel GetKhachTroByID(int UserID)
+        {
+            CustomerModel a = new CustomerModel();
+            foreach (CustomerModel cm in DAL_KhachTro.Instance.GetAllCustomer())
+            {
+                if (cm.Id == UserID)
+                    a=cm;
+            }
+            return a;
+        }
+
+        public void ThayDoiThongTinUser(string[] InfoUser,bool Gender)
+        {
+            DAL_KhachTro.Instance.ThayDoiThongTinUser(InfoUser, Gender);
+        }
+
+        public void ThayDoiMatKhau(int ID,string NewPass)
+        {
+            DAL_Account.Instance.ThayDoiMatKhau(ID, NewPass);
+        }
     }
 }

@@ -29,11 +29,9 @@ namespace QuanLyNhaTro.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.button1 = new System.Windows.Forms.Button();
             this.pnDangnhap = new System.Windows.Forms.Panel();
-            this.btnLogin = new QuanLyNhaTro.VBButton();
             this.lblSignup = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,8 +42,12 @@ namespace QuanLyNhaTro.Views
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pnYourname = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.pnDangky = new System.Windows.Forms.Panel();
-            this.btnSignupforfree = new QuanLyNhaTro.VBButton();
             this.lblLogin = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -54,20 +56,15 @@ namespace QuanLyNhaTro.Views
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.pnYourname = new System.Windows.Forms.Panel();
+            this.btnLogin = new QuanLyNhaTro.VBButton();
+            this.btnSignup = new QuanLyNhaTro.VBButton();
             this.btnConfirm = new QuanLyNhaTro.VBButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnDangnhap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnDangky.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnYourname.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.pnDangky.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -75,10 +72,11 @@ namespace QuanLyNhaTro.Views
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(928, 0);
+            this.button1.Location = new System.Drawing.Point(1866, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(76, 58);
@@ -88,7 +86,6 @@ namespace QuanLyNhaTro.Views
             // 
             // pnDangnhap
             // 
-            this.pnDangnhap.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnDangnhap.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pnDangnhap.Controls.Add(this.btnLogin);
             this.pnDangnhap.Controls.Add(this.lblSignup);
@@ -101,33 +98,11 @@ namespace QuanLyNhaTro.Views
             this.pnDangnhap.Controls.Add(this.txtUsername);
             this.pnDangnhap.Controls.Add(this.label3);
             this.pnDangnhap.Controls.Add(this.label2);
-            this.pnDangnhap.Location = new System.Drawing.Point(139, 25);
+            this.pnDangnhap.Location = new System.Drawing.Point(595, 191);
             this.pnDangnhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnDangnhap.Name = "pnDangnhap";
             this.pnDangnhap.Size = new System.Drawing.Size(752, 639);
-            this.pnDangnhap.TabIndex = 1;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnLogin.BackgroundColor = System.Drawing.SystemColors.Highlight;
-            this.btnLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnLogin.BorderRadius = 25;
-            this.btnLogin.BorderSize = 0;
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(125, 505);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(487, 64);
-            this.btnLogin.TabIndex = 19;
-            this.btnLogin.Text = "Log in";
-            this.btnLogin.TextColor = System.Drawing.Color.White;
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.pnDangnhap.TabIndex = 33;
             // 
             // lblSignup
             // 
@@ -140,7 +115,6 @@ namespace QuanLyNhaTro.Views
             this.lblSignup.Size = new System.Drawing.Size(79, 25);
             this.lblSignup.TabIndex = 18;
             this.lblSignup.Text = "Sign up";
-            this.lblSignup.Click += new System.EventHandler(this.lblSignup_Click);
             // 
             // label1
             // 
@@ -246,11 +220,72 @@ namespace QuanLyNhaTro.Views
             this.label2.TabIndex = 7;
             this.label2.Text = "Log in";
             // 
+            // pnYourname
+            // 
+            this.pnYourname.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnYourname.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnYourname.Controls.Add(this.btnConfirm);
+            this.pnYourname.Controls.Add(this.pictureBox3);
+            this.pnYourname.Controls.Add(this.textBox5);
+            this.pnYourname.Controls.Add(this.label14);
+            this.pnYourname.Controls.Add(this.label16);
+            this.pnYourname.Location = new System.Drawing.Point(593, 192);
+            this.pnYourname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnYourname.Name = "pnYourname";
+            this.pnYourname.Size = new System.Drawing.Size(749, 636);
+            this.pnYourname.TabIndex = 35;
+            this.pnYourname.Visible = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(236, 34);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(291, 142);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 27;
+            this.pictureBox3.TabStop = false;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.White;
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.textBox5.Location = new System.Drawing.Point(135, 370);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.PasswordChar = '*';
+            this.textBox5.Size = new System.Drawing.Size(489, 34);
+            this.textBox5.TabIndex = 23;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label14.Location = new System.Drawing.Point(133, 338);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(97, 25);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "Full name";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label16.Location = new System.Drawing.Point(123, 212);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(392, 46);
+            this.label16.TabIndex = 19;
+            this.label16.Text = "What is your name?";
+            // 
             // pnDangky
             // 
             this.pnDangky.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnDangky.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnDangky.Controls.Add(this.btnSignupforfree);
+            this.pnDangky.Controls.Add(this.btnSignup);
             this.pnDangky.Controls.Add(this.lblLogin);
             this.pnDangky.Controls.Add(this.label8);
             this.pnDangky.Controls.Add(this.pictureBox2);
@@ -259,34 +294,12 @@ namespace QuanLyNhaTro.Views
             this.pnDangky.Controls.Add(this.textBox4);
             this.pnDangky.Controls.Add(this.label11);
             this.pnDangky.Controls.Add(this.label12);
-            this.pnDangky.Location = new System.Drawing.Point(141, 25);
+            this.pnDangky.Location = new System.Drawing.Point(601, 189);
             this.pnDangky.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnDangky.Name = "pnDangky";
             this.pnDangky.Size = new System.Drawing.Size(749, 636);
-            this.pnDangky.TabIndex = 2;
+            this.pnDangky.TabIndex = 34;
             this.pnDangky.Visible = false;
-            // 
-            // btnSignupforfree
-            // 
-            this.btnSignupforfree.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSignupforfree.BackgroundColor = System.Drawing.SystemColors.Highlight;
-            this.btnSignupforfree.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSignupforfree.BorderRadius = 25;
-            this.btnSignupforfree.BorderSize = 0;
-            this.btnSignupforfree.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSignupforfree.FlatAppearance.BorderSize = 0;
-            this.btnSignupforfree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignupforfree.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignupforfree.ForeColor = System.Drawing.Color.White;
-            this.btnSignupforfree.Location = new System.Drawing.Point(136, 471);
-            this.btnSignupforfree.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSignupforfree.Name = "btnSignupforfree";
-            this.btnSignupforfree.Size = new System.Drawing.Size(487, 64);
-            this.btnSignupforfree.TabIndex = 30;
-            this.btnSignupforfree.Text = "Sign up for free";
-            this.btnSignupforfree.TextColor = System.Drawing.Color.White;
-            this.btnSignupforfree.UseVisualStyleBackColor = false;
-            this.btnSignupforfree.Click += new System.EventHandler(this.btnSignupforfree_Click);
             // 
             // lblLogin
             // 
@@ -299,7 +312,6 @@ namespace QuanLyNhaTro.Views
             this.lblLogin.Size = new System.Drawing.Size(65, 25);
             this.lblLogin.TabIndex = 29;
             this.lblLogin.Text = "Log in";
-            this.lblLogin.Click += new System.EventHandler(this.lblLogin_Click);
             // 
             // label8
             // 
@@ -380,119 +392,95 @@ namespace QuanLyNhaTro.Views
             this.label12.TabIndex = 19;
             this.label12.Text = "Sign up";
             // 
-            // pnYourname
+            // btnLogin
             // 
-            this.pnYourname.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnYourname.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnYourname.Controls.Add(this.btnConfirm);
-            this.pnYourname.Controls.Add(this.pictureBox3);
-            this.pnYourname.Controls.Add(this.textBox5);
-            this.pnYourname.Controls.Add(this.label14);
-            this.pnYourname.Controls.Add(this.label16);
-            this.pnYourname.Location = new System.Drawing.Point(133, 28);
-            this.pnYourname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnYourname.Name = "pnYourname";
-            this.pnYourname.Size = new System.Drawing.Size(749, 636);
-            this.pnYourname.TabIndex = 30;
-            this.pnYourname.Visible = false;
+            this.btnLogin.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnLogin.BackgroundColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnLogin.BorderRadius = 28;
+            this.btnLogin.BorderSize = 0;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(124, 518);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(491, 59);
+            this.btnLogin.TabIndex = 19;
+            this.btnLogin.Text = "Log in";
+            this.btnLogin.TextColor = System.Drawing.Color.White;
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
+            // 
+            // btnSignup
+            // 
+            this.btnSignup.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSignup.BackgroundColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSignup.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSignup.BorderRadius = 28;
+            this.btnSignup.BorderSize = 0;
+            this.btnSignup.FlatAppearance.BorderSize = 0;
+            this.btnSignup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignup.ForeColor = System.Drawing.Color.White;
+            this.btnSignup.Location = new System.Drawing.Point(135, 500);
+            this.btnSignup.Name = "btnSignup";
+            this.btnSignup.Size = new System.Drawing.Size(491, 59);
+            this.btnSignup.TabIndex = 30;
+            this.btnSignup.Text = "Sign up";
+            this.btnSignup.TextColor = System.Drawing.Color.White;
+            this.btnSignup.UseVisualStyleBackColor = false;
+            this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
             // 
             // btnConfirm
             // 
-            this.btnConfirm.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnConfirm.BackgroundColor = System.Drawing.SystemColors.Highlight;
+            this.btnConfirm.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnConfirm.BackgroundColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnConfirm.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnConfirm.BorderRadius = 25;
+            this.btnConfirm.BorderRadius = 28;
             this.btnConfirm.BorderSize = 0;
-            this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.FlatAppearance.BorderSize = 0;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(136, 495);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConfirm.Location = new System.Drawing.Point(135, 481);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(487, 64);
+            this.btnConfirm.Size = new System.Drawing.Size(491, 59);
             this.btnConfirm.TabIndex = 28;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.TextColor = System.Drawing.Color.White;
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(236, 34);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(291, 142);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 27;
-            this.pictureBox3.TabStop = false;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBox5.Location = new System.Drawing.Point(135, 370);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.PasswordChar = '*';
-            this.textBox5.Size = new System.Drawing.Size(489, 34);
-            this.textBox5.TabIndex = 23;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label14.Location = new System.Drawing.Point(133, 338);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(97, 25);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "Full name";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label16.Location = new System.Drawing.Point(123, 212);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(392, 46);
-            this.label16.TabIndex = 19;
-            this.label16.Text = "What is your name?";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1004, 694);
+            this.CancelButton = this.button1;
+            this.ClientSize = new System.Drawing.Size(1942, 1000);
             this.Controls.Add(this.pnDangnhap);
-            this.Controls.Add(this.pnYourname);
             this.Controls.Add(this.pnDangky);
+            this.Controls.Add(this.pnYourname);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DangNhap";
-            this.Text = "DangNhap";
+            this.Text = "ss";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.DangNhap_Load);
             this.pnDangnhap.ResumeLayout(false);
             this.pnDangnhap.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnDangky.ResumeLayout(false);
-            this.pnDangky.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnYourname.ResumeLayout(false);
             this.pnYourname.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.pnDangky.ResumeLayout(false);
+            this.pnDangky.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -501,6 +489,8 @@ namespace QuanLyNhaTro.Views
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnDangnhap;
+        private System.Windows.Forms.Label lblSignup;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox checkBox1;
@@ -509,8 +499,11 @@ namespace QuanLyNhaTro.Views
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblSignup;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnYourname;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel pnDangky;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Label label8;
@@ -520,14 +513,8 @@ namespace QuanLyNhaTro.Views
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel pnYourname;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label16;
         private VBButton btnLogin;
-        private VBButton btnSignupforfree;
         private VBButton btnConfirm;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private VBButton btnSignup;
     }
 }
