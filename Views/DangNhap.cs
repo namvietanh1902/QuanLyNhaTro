@@ -21,7 +21,6 @@ namespace QuanLyNhaTro.Views
         {
             pnDangnhap.Visible = false;
             pnDangky.Visible = true;
-
         }
 
         private void lblLogin_Click(object sender, EventArgs e)
@@ -85,6 +84,11 @@ private void btnLogin_Click_1(object sender, EventArgs e)
             string[] InfoAccount = new string[] { textBox4.Text, textBox3.Text };
 
             BLL_Account.Instance.AddAccountFromSignin(InfoAccount, InfoCustomner);
+            //MessageBox.Show("Quay về đăng nhập");
+
+            //pnYourname.Visible = false ;
+            //pnDangnhap.Visible = true;
+
         }
 
         private void btnSignup_Click(object sender, EventArgs e)
