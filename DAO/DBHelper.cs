@@ -39,9 +39,7 @@ namespace QuanLyNhaTro.DAO
             {
                 cmd.Parameters.AddRange(Param);
             }
-       
             conn.Open();
-
             cmd.ExecuteNonQuery();
             conn.Close();
 

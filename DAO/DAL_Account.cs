@@ -42,7 +42,12 @@ namespace QuanLyNhaTro.DAO
                 Id = Convert.ToInt32(i["UserID"].ToString()),
                 Username = i["Username"].ToString(),
                 Password = i["Pass"].ToString(),
-                Role = Convert.ToBoolean(i["PhanQuyen"].ToString())
+                Role = Convert.ToBoolean(i["PhanQuyen"].ToString()),
+                Name = i["Name"].ToString(),
+                Gender = Convert.ToBoolean(i["Gender"].ToString()),
+                NgaySinh = Convert.ToDateTime(i["NgaySinh"].ToString()),
+                SDT = i["SDT"].ToString()
+
             };
         }
 
@@ -92,7 +97,83 @@ namespace QuanLyNhaTro.DAO
             DBHelper.Instance.ExecuteDB(query, Param);
         }
 
-       
+        public void AddAccountFormAdmin(AccountModel account)
+        {
+            SqlParameter[] para = new SqlParameter[] 
+            {
+                new SqlParameter{ParameterName = "@Username",Value = account.Username},
+                new SqlParameter{ParameterName = "@Pass",Value = account.Password},
+                new SqlParameter{ParameterName = "@Role",Value = account.Role},
+                new SqlParameter{ParameterName = "@Name",Value = account.Name},
+                new SqlParameter{ParameterName = "@Gender",Value = account.Gender},
+                new SqlParameter{ParameterName = "@NgaySinh",Value =account.NgaySinh},
+                new SqlParameter{ParameterName = "@SDT",Value = account.SDT},
+            };
+            string query = "insert into Account values (@Username,@Pass ,@Role,@Name,@Gender,@NgaySinh,@SDT)";
+            DBHelper.Instance.ExecuteDB(query, para);
+        }
+
+        public void UpdateAccountFormAdmin(AccountModel account)
+        {
+            SqlParameter[] para = new SqlParameter[]
+           {
+                new SqlParameter{ParameterName = "@ID",Value = account.Id},
+                new SqlParameter{ParameterName = "@Username",Value = account.Username},
+                new SqlParameter{ParameterName = "@Pass",Value = account.Password},
+                new SqlParameter{ParameterName = "@Role",Value = account.Role},
+                new SqlParameter{ParameterName = "@Name",Value = account.Name},
+                new SqlParameter{ParameterName = "@Gender",Value = account.Gender},
+                new SqlParameter{ParameterName = "@NgaySinh",Value =account.NgaySinh},
+                new SqlParameter{ParameterName = "@SDT",Value = account.SDT},
+           };
+            string query = "update Account set Username=@Username,Pass=@Pass,PhanQuyen=@Role,Name=@Name,Gender=@Gender,NgaySinh=@NgaySinh,SDT=@SDT Where UserID=@ID";
+            DBHelper.Instance.ExecuteDB(query, para);
+        }
+
+        public void DeleteAccountAdmin(int id)
+        {
+            string query = "delete from Account where UserID ="+id;
+            DBHelper.Instance.ExecuteDB(query, null); 
+        }
+
+        public List<AccountModel> SearchAccountFormAdmin(string txt)
+        {
+            List<AccountModel> listSearch = new List<AccountModel>();
+            string query = "select * from Account where Name like N'%" + txt + "%'";
+            foreach (DataRow i in DBHelper.Instance.GetRecords(query, null).Rows)
+            {
+                listSearch.Add(GetAccountFromDataRow(i));
+            }
+            return listSearch;
+        }
+
+        public List<AccountModel> SortAccountFormAdmin(List<int> id,string SortType)
+        {
+            List<AccountModel> listSort = new List<AccountModel>();
+
+            List<AccountModel> listtam = new List<AccountModel>();
+            string query = "SELECT * FROM Account ORDER BY " + SortType;
+            foreach(DataRow i in DBHelper.Instance.GetRecords(query, null).Rows)
+            {
+                listtam.Add(GetAccountFromDataRow(i));
+            }
+           
+            foreach(AccountModel account in listtam)
+            {
+                foreach(int userid in id)
+                {
+                    if (userid == account.Id)
+                    {
+                        listSort.Add(account);
+                    }
+                }
+            }
+            return listSort;
+        }
+
+
+
+
 
     }
 }

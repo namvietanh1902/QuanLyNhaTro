@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -100,6 +101,7 @@ namespace QuanLyNhaTro.Presenter
         }
 
         public void ThayDoiThongTinUser(string[] InfoUser,bool Gender)
+
         {
             DAL_KhachTro.Instance.ThayDoiThongTinUser(InfoUser, Gender);
         }
@@ -107,6 +109,40 @@ namespace QuanLyNhaTro.Presenter
         public void ThayDoiMatKhau(int ID,string NewPass)
         {
             DAL_Account.Instance.ThayDoiMatKhau(ID, NewPass);
+        }
+
+        public void AddAccountFormAdmin(AccountModel account)
+        {
+            DAL_Account.Instance.AddAccountFormAdmin(account);
+        }
+
+        public void UpdateAccountFormAdmin(AccountModel account)
+        {
+            DAL_Account.Instance.UpdateAccountFormAdmin(account);
+        }
+
+        public void DeleteAccountFormAdmin(List<int> del)
+        {
+            foreach (int id in del)
+            {
+                foreach(AccountModel account in GetAllAccount())
+                {
+                    if(account.Id == id)
+                    {
+                        DAL_Account.Instance.DeleteAccountAdmin(id);
+                    }
+                }
+            }
+        }
+
+        public List<AccountModel> SearchAccountFormAdmin(string txt)
+        {
+            return DAL_Account.Instance.SearchAccountFormAdmin(txt);
+        }
+
+        public List<AccountModel> SortAccountFormAdmin(List<int> id, string SortType)
+        {
+           return DAL_Account.Instance.SortAccountFormAdmin(id,SortType);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QuanLyNhaTro.Models;
+using System.Data.SqlClient;
 
 namespace QuanLyNhaTro.DAO
 {
@@ -46,6 +47,39 @@ namespace QuanLyNhaTro.DAO
             };
         }
 
+        public void AddAccountAdmin(AdminModel account)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter{ParameterName = "@ID",Value = account.UserID},
+                new SqlParameter{ParameterName = "@Name",Value = account.Name},
+                new SqlParameter{ParameterName = "@Gender",Value = account.Gender},
+                new SqlParameter{ParameterName = "@NgaySinh",Value = account.NgaySinh},
+                new SqlParameter{ParameterName = "@SDT",Value = account.SDT},
+            };
+            string query = "insert into ADMINS values (@ID,@Name,@Gender,@NgaySinh,@SDT)";
+            DBHelper.Instance.ExecuteDB(query, para);
+        }
+        public void UpdateAccountAdmin(AdminModel account)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter{ParameterName = "@ID",Value = account.UserID},
+                new SqlParameter{ParameterName = "@Name",Value = account.Name},
+                new SqlParameter{ParameterName = "@Gender",Value = account.Gender},
+                new SqlParameter{ParameterName = "@NgaySinh",Value = account.NgaySinh},
+                new SqlParameter{ParameterName = "@SDT",Value = account.SDT},
+            };
+            string query = "update ADMINS set Name=@Name,Gender=@Gender,NgaySinh=@NgaySinh,SDT=@SDT Where UserID=@ID";
+            DBHelper.Instance.ExecuteDB(query, para);
+        }
         
+        public void DeleteAccountAdmin(int id)
+        {
+            string query = "delete from ADMINS where UserID = "+id;
+            DBHelper.Instance.ExecuteDB(query, null);
+        }
+
+
     }
 }

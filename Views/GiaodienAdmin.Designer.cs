@@ -78,32 +78,32 @@
             this.label44 = new System.Windows.Forms.Label();
             this.pnUser = new System.Windows.Forms.Panel();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvthongtin_user = new System.Windows.Forms.DataGridView();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.btnSuathongtinuser = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.txtSearch_user = new System.Windows.Forms.TextBox();
+            this.cboSortUser_user = new System.Windows.Forms.ComboBox();
+            this.btnsearch_user = new System.Windows.Forms.Button();
+            this.btnSort_user = new System.Windows.Forms.Button();
+            this.btnXoa_user = new System.Windows.Forms.Button();
+            this.btnSua_user = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.dtpNgaysinhuser = new System.Windows.Forms.DateTimePicker();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.radNu = new System.Windows.Forms.RadioButton();
+            this.radNam = new System.Windows.Forms.RadioButton();
+            this.btnLammoi_user = new System.Windows.Forms.Button();
+            this.btnLuu_user = new System.Windows.Forms.Button();
+            this.dtpNgaysinh_user = new System.Windows.Forms.DateTimePicker();
             this.label54 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label56 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtName_User = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
-            this.txtSDTuser = new System.Windows.Forms.TextBox();
+            this.txtSDT_user = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.btnLuuUser = new System.Windows.Forms.Button();
             this.cbRoleuser = new System.Windows.Forms.ComboBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.txtPass_user = new System.Windows.Forms.TextBox();
+            this.txtUsername_User = new System.Windows.Forms.TextBox();
             this.label53 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txtIduser_user = new System.Windows.Forms.TextBox();
             this.label58 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
@@ -154,9 +154,6 @@
             this.label67 = new System.Windows.Forms.Label();
             this.pnDichvu = new System.Windows.Forms.Panel();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.vbButton3 = new QuanLyNhaTro.VBButton();
-            this.vbButton2 = new QuanLyNhaTro.VBButton();
-            this.vbButton1 = new QuanLyNhaTro.VBButton();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.pnTinhtientro = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -197,7 +194,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.vbButton4 = new QuanLyNhaTro.VBButton();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -263,6 +259,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.btnNav = new System.Windows.Forms.Button();
+            this.vbButton4 = new QuanLyNhaTro.VBButton();
+            this.vbButton3 = new QuanLyNhaTro.VBButton();
+            this.vbButton2 = new QuanLyNhaTro.VBButton();
+            this.vbButton1 = new QuanLyNhaTro.VBButton();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -277,9 +277,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnUser.SuspendLayout();
             this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvthongtin_user)).BeginInit();
             this.panel18.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.panel22.SuspendLayout();
             this.pnKhanhtro.SuspendLayout();
             this.groupBox15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -350,6 +351,9 @@
             this.lblTenNguoiDung.Size = new System.Drawing.Size(40, 24);
             this.lblTenNguoiDung.TabIndex = 6;
             this.lblTenNguoiDung.Text = "null";
+            // 
+            // label12
+            // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -922,7 +926,7 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.dataGridView2);
+            this.groupBox8.Controls.Add(this.dgvthongtin_user);
             this.groupBox8.Controls.Add(this.panel18);
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -935,29 +939,30 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Hiện Thị Thông Tin";
             // 
-            // dataGridView2
+            // dgvthongtin_user
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(4, 25);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(1518, 423);
-            this.dataGridView2.TabIndex = 1;
+            this.dgvthongtin_user.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvthongtin_user.BackgroundColor = System.Drawing.Color.White;
+            this.dgvthongtin_user.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvthongtin_user.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvthongtin_user.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvthongtin_user.Location = new System.Drawing.Point(4, 25);
+            this.dgvthongtin_user.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvthongtin_user.Name = "dgvthongtin_user";
+            this.dgvthongtin_user.ReadOnly = true;
+            this.dgvthongtin_user.RowHeadersWidth = 51;
+            this.dgvthongtin_user.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvthongtin_user.Size = new System.Drawing.Size(1518, 423);
+            this.dgvthongtin_user.TabIndex = 1;
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.textBox24);
-            this.panel18.Controls.Add(this.comboBox7);
-            this.panel18.Controls.Add(this.comboBox6);
-            this.panel18.Controls.Add(this.button15);
-            this.panel18.Controls.Add(this.button14);
-            this.panel18.Controls.Add(this.button13);
-            this.panel18.Controls.Add(this.btnSuathongtinuser);
-            this.panel18.Controls.Add(this.button11);
+            this.panel18.Controls.Add(this.txtSearch_user);
+            this.panel18.Controls.Add(this.cboSortUser_user);
+            this.panel18.Controls.Add(this.btnsearch_user);
+            this.panel18.Controls.Add(this.btnSort_user);
+            this.panel18.Controls.Add(this.btnXoa_user);
+            this.panel18.Controls.Add(this.btnSua_user);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel18.Location = new System.Drawing.Point(4, 448);
             this.panel18.Margin = new System.Windows.Forms.Padding(4);
@@ -965,135 +970,118 @@
             this.panel18.Size = new System.Drawing.Size(1518, 91);
             this.panel18.TabIndex = 0;
             // 
-            // textBox24
+            // txtSearch_user
             // 
-            this.textBox24.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtSearch_user.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtSearch_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch_user.Location = new System.Drawing.Point(182, 29);
+            this.txtSearch_user.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch_user.Name = "txtSearch_user";
+            this.txtSearch_user.Size = new System.Drawing.Size(306, 32);
+            this.txtSearch_user.TabIndex = 2;
+            // 
+            // cboSortUser_user
+            // 
+            this.cboSortUser_user.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox24.Location = new System.Drawing.Point(1247, 30);
-            this.textBox24.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(244, 32);
-            this.textBox24.TabIndex = 2;
+            this.cboSortUser_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSortUser_user.FormattingEnabled = true;
+            this.cboSortUser_user.Location = new System.Drawing.Point(1257, 31);
+            this.cboSortUser_user.Margin = new System.Windows.Forms.Padding(4);
+            this.cboSortUser_user.Name = "cboSortUser_user";
+            this.cboSortUser_user.Size = new System.Drawing.Size(214, 33);
+            this.cboSortUser_user.TabIndex = 1;
             // 
-            // comboBox7
+            // btnsearch_user
             // 
-            this.comboBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(907, 30);
-            this.comboBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(193, 33);
-            this.comboBox7.TabIndex = 1;
+            this.btnsearch_user.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnsearch_user.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnsearch_user.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnsearch_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsearch_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsearch_user.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnsearch_user.Location = new System.Drawing.Point(34, 20);
+            this.btnsearch_user.Margin = new System.Windows.Forms.Padding(4);
+            this.btnsearch_user.Name = "btnsearch_user";
+            this.btnsearch_user.Size = new System.Drawing.Size(131, 49);
+            this.btnsearch_user.TabIndex = 0;
+            this.btnsearch_user.Text = "Tìm kiếm";
+            this.btnsearch_user.UseVisualStyleBackColor = false;
+            this.btnsearch_user.Click += new System.EventHandler(this.btnsearch_user_Click);
             // 
-            // comboBox6
+            // btnSort_user
             // 
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(199, 28);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(155, 33);
-            this.comboBox6.TabIndex = 1;
-            // 
-            // button15
-            // 
-            this.button15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnSort_user.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button15.BackColor = System.Drawing.Color.MediumBlue;
-            this.button15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.ForeColor = System.Drawing.SystemColors.Window;
-            this.button15.Location = new System.Drawing.Point(1099, 21);
-            this.button15.Margin = new System.Windows.Forms.Padding(4);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(131, 49);
-            this.button15.TabIndex = 0;
-            this.button15.Text = "Tìm kiếm";
-            this.button15.UseVisualStyleBackColor = false;
+            this.btnSort_user.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnSort_user.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSort_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSort_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSort_user.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSort_user.Location = new System.Drawing.Point(1095, 24);
+            this.btnSort_user.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSort_user.Name = "btnSort_user";
+            this.btnSort_user.Size = new System.Drawing.Size(131, 49);
+            this.btnSort_user.TabIndex = 0;
+            this.btnSort_user.Text = "Sắp xếp";
+            this.btnSort_user.UseVisualStyleBackColor = false;
+            this.btnSort_user.Click += new System.EventHandler(this.btnSort_user_Click);
             // 
-            // button14
+            // btnXoa_user
             // 
-            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.button14.BackColor = System.Drawing.Color.MediumBlue;
-            this.button14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.SystemColors.Window;
-            this.button14.Location = new System.Drawing.Point(758, 21);
-            this.button14.Margin = new System.Windows.Forms.Padding(4);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(131, 49);
-            this.button14.TabIndex = 0;
-            this.button14.Text = "Sắp xếp";
-            this.button14.UseVisualStyleBackColor = false;
+            this.btnXoa_user.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoa_user.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnXoa_user.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoa_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa_user.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnXoa_user.Location = new System.Drawing.Point(838, 21);
+            this.btnXoa_user.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXoa_user.Name = "btnXoa_user";
+            this.btnXoa_user.Size = new System.Drawing.Size(131, 49);
+            this.btnXoa_user.TabIndex = 0;
+            this.btnXoa_user.Text = "Xóa";
+            this.btnXoa_user.UseVisualStyleBackColor = false;
+            this.btnXoa_user.Click += new System.EventHandler(this.btnXoa_user_Click);
             // 
-            // button13
+            // btnSua_user
             // 
-            this.button13.BackColor = System.Drawing.Color.MediumBlue;
-            this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.SystemColors.Window;
-            this.button13.Location = new System.Drawing.Point(621, 21);
-            this.button13.Margin = new System.Windows.Forms.Padding(4);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(131, 49);
-            this.button13.TabIndex = 0;
-            this.button13.Text = "Xóa";
-            this.button13.UseVisualStyleBackColor = false;
-            // 
-            // btnSuathongtinuser
-            // 
-            this.btnSuathongtinuser.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnSuathongtinuser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSuathongtinuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuathongtinuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuathongtinuser.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSuathongtinuser.Location = new System.Drawing.Point(428, 21);
-            this.btnSuathongtinuser.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSuathongtinuser.Name = "btnSuathongtinuser";
-            this.btnSuathongtinuser.Size = new System.Drawing.Size(131, 49);
-            this.btnSuathongtinuser.TabIndex = 0;
-            this.btnSuathongtinuser.Text = "Sửa";
-            this.btnSuathongtinuser.UseVisualStyleBackColor = false;
-            this.btnSuathongtinuser.Click += new System.EventHandler(this.btnSuathongtinuser_Click);
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.MediumBlue;
-            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.SystemColors.Window;
-            this.button11.Location = new System.Drawing.Point(32, 21);
-            this.button11.Margin = new System.Windows.Forms.Padding(4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(131, 49);
-            this.button11.TabIndex = 0;
-            this.button11.Text = "Hiện Thị";
-            this.button11.UseVisualStyleBackColor = false;
+            this.btnSua_user.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSua_user.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnSua_user.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSua_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua_user.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSua_user.Location = new System.Drawing.Point(616, 23);
+            this.btnSua_user.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSua_user.Name = "btnSua_user";
+            this.btnSua_user.Size = new System.Drawing.Size(131, 49);
+            this.btnSua_user.TabIndex = 0;
+            this.btnSua_user.Text = "Sửa";
+            this.btnSua_user.UseVisualStyleBackColor = false;
+            this.btnSua_user.Click += new System.EventHandler(this.btnSuathongtinuser_Click);
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.dtpNgaysinhuser);
+            this.groupBox7.Controls.Add(this.panel22);
+            this.groupBox7.Controls.Add(this.btnLammoi_user);
+            this.groupBox7.Controls.Add(this.btnLuu_user);
+            this.groupBox7.Controls.Add(this.dtpNgaysinh_user);
             this.groupBox7.Controls.Add(this.label54);
-            this.groupBox7.Controls.Add(this.comboBox1);
             this.groupBox7.Controls.Add(this.label56);
-            this.groupBox7.Controls.Add(this.txtName);
+            this.groupBox7.Controls.Add(this.txtName_User);
             this.groupBox7.Controls.Add(this.label55);
-            this.groupBox7.Controls.Add(this.txtSDTuser);
+            this.groupBox7.Controls.Add(this.txtSDT_user);
             this.groupBox7.Controls.Add(this.label27);
-            this.groupBox7.Controls.Add(this.button10);
-            this.groupBox7.Controls.Add(this.btnLuuUser);
             this.groupBox7.Controls.Add(this.cbRoleuser);
-            this.groupBox7.Controls.Add(this.textBox18);
-            this.groupBox7.Controls.Add(this.textBox17);
+            this.groupBox7.Controls.Add(this.txtPass_user);
+            this.groupBox7.Controls.Add(this.txtUsername_User);
             this.groupBox7.Controls.Add(this.label53);
-            this.groupBox7.Controls.Add(this.textBox16);
+            this.groupBox7.Controls.Add(this.txtIduser_user);
             this.groupBox7.Controls.Add(this.label58);
             this.groupBox7.Controls.Add(this.label52);
             this.groupBox7.Controls.Add(this.label51);
@@ -1104,76 +1092,129 @@
             this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox7.Size = new System.Drawing.Size(1526, 262);
+            this.groupBox7.Size = new System.Drawing.Size(1526, 288);
             this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Nhập Thông Tin";
             // 
-            // dtpNgaysinhuser
+            // panel22
             // 
-            this.dtpNgaysinhuser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel22.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel22.Controls.Add(this.radNu);
+            this.panel22.Controls.Add(this.radNam);
+            this.panel22.Location = new System.Drawing.Point(665, 93);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(316, 65);
+            this.panel22.TabIndex = 30;
+            // 
+            // radNu
+            // 
+            this.radNu.AutoSize = true;
+            this.radNu.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.radNu.ForeColor = System.Drawing.Color.MediumBlue;
+            this.radNu.Location = new System.Drawing.Point(208, 17);
+            this.radNu.Name = "radNu";
+            this.radNu.Size = new System.Drawing.Size(56, 28);
+            this.radNu.TabIndex = 0;
+            this.radNu.TabStop = true;
+            this.radNu.Text = "Nữ";
+            this.radNu.UseVisualStyleBackColor = false;
+            // 
+            // radNam
+            // 
+            this.radNam.AutoSize = true;
+            this.radNam.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.radNam.ForeColor = System.Drawing.Color.MediumBlue;
+            this.radNam.Location = new System.Drawing.Point(28, 17);
+            this.radNam.Name = "radNam";
+            this.radNam.Size = new System.Drawing.Size(71, 28);
+            this.radNam.TabIndex = 0;
+            this.radNam.TabStop = true;
+            this.radNam.Text = "Nam";
+            this.radNam.UseVisualStyleBackColor = false;
+            // 
+            // btnLammoi_user
+            // 
+            this.btnLammoi_user.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnLammoi_user.BackColor = System.Drawing.Color.Red;
+            this.btnLammoi_user.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLammoi_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLammoi_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLammoi_user.ForeColor = System.Drawing.Color.Snow;
+            this.btnLammoi_user.Location = new System.Drawing.Point(574, 217);
+            this.btnLammoi_user.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLammoi_user.Name = "btnLammoi_user";
+            this.btnLammoi_user.Size = new System.Drawing.Size(137, 49);
+            this.btnLammoi_user.TabIndex = 28;
+            this.btnLammoi_user.Text = "Làm mới";
+            this.btnLammoi_user.UseVisualStyleBackColor = false;
+            this.btnLammoi_user.Click += new System.EventHandler(this.btnLammoi_user_Click);
+            // 
+            // btnLuu_user
+            // 
+            this.btnLuu_user.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnLuu_user.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnLuu_user.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLuu_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu_user.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLuu_user.Location = new System.Drawing.Point(844, 218);
+            this.btnLuu_user.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLuu_user.Name = "btnLuu_user";
+            this.btnLuu_user.Size = new System.Drawing.Size(137, 49);
+            this.btnLuu_user.TabIndex = 29;
+            this.btnLuu_user.Text = "Lưu ";
+            this.btnLuu_user.UseVisualStyleBackColor = false;
+            this.btnLuu_user.Click += new System.EventHandler(this.btnLuu_user_Click);
+            // 
+            // dtpNgaysinh_user
+            // 
+            this.dtpNgaysinh_user.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpNgaysinhuser.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgaysinhuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgaysinhuser.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaysinhuser.Location = new System.Drawing.Point(775, 138);
-            this.dtpNgaysinhuser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpNgaysinhuser.Name = "dtpNgaysinhuser";
-            this.dtpNgaysinhuser.Size = new System.Drawing.Size(317, 28);
-            this.dtpNgaysinhuser.TabIndex = 26;
+            this.dtpNgaysinh_user.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaysinh_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgaysinh_user.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgaysinh_user.Location = new System.Drawing.Point(1146, 92);
+            this.dtpNgaysinh_user.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpNgaysinh_user.Name = "dtpNgaysinh_user";
+            this.dtpNgaysinh_user.Size = new System.Drawing.Size(317, 28);
+            this.dtpNgaysinh_user.TabIndex = 26;
             // 
             // label54
             // 
             this.label54.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label54.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label54.Location = new System.Drawing.Point(647, 138);
+            this.label54.Location = new System.Drawing.Point(1035, 92);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(85, 20);
+            this.label54.Size = new System.Drawing.Size(97, 24);
             this.label54.TabIndex = 27;
             this.label54.Text = "Ngày Sinh";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
-            "11212",
-            "54154"});
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.ForeColor = System.Drawing.Color.Black;
-            this.comboBox1.Location = new System.Drawing.Point(775, 87);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(316, 30);
-            this.comboBox1.TabIndex = 12;
-            this.comboBox1.TabStop = false;
-            // 
             // label56
             // 
-            this.label56.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label56.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label56.AutoSize = true;
             this.label56.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label56.Location = new System.Drawing.Point(664, 92);
+            this.label56.Location = new System.Drawing.Point(569, 113);
             this.label56.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(78, 24);
             this.label56.TabIndex = 11;
             this.label56.Text = "Giới tính";
             // 
-            // txtName
+            // txtName_User
             // 
-            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtName_User.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtName.Location = new System.Drawing.Point(775, 42);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(317, 28);
-            this.txtName.TabIndex = 10;
+            this.txtName_User.Location = new System.Drawing.Point(1146, 43);
+            this.txtName_User.Margin = new System.Windows.Forms.Padding(4);
+            this.txtName_User.Name = "txtName_User";
+            this.txtName_User.Size = new System.Drawing.Size(317, 28);
+            this.txtName_User.TabIndex = 10;
             // 
             // label55
             // 
@@ -1181,22 +1222,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label55.AutoSize = true;
             this.label55.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label55.Location = new System.Drawing.Point(679, 48);
+            this.label55.Location = new System.Drawing.Point(1057, 49);
             this.label55.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(66, 24);
             this.label55.TabIndex = 9;
             this.label55.Text = " Name";
             // 
-            // txtSDTuser
+            // txtSDT_user
             // 
-            this.txtSDTuser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtSDT_user.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSDTuser.Location = new System.Drawing.Point(774, 185);
-            this.txtSDTuser.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSDTuser.Name = "txtSDTuser";
-            this.txtSDTuser.Size = new System.Drawing.Size(317, 28);
-            this.txtSDTuser.TabIndex = 8;
+            this.txtSDT_user.Location = new System.Drawing.Point(1146, 143);
+            this.txtSDT_user.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSDT_user.Name = "txtSDT_user";
+            this.txtSDT_user.Size = new System.Drawing.Size(316, 28);
+            this.txtSDT_user.TabIndex = 8;
             // 
             // label27
             // 
@@ -1204,101 +1245,70 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label27.AutoSize = true;
             this.label27.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label27.Location = new System.Drawing.Point(622, 188);
+            this.label27.Location = new System.Drawing.Point(1006, 144);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(121, 24);
             this.label27.TabIndex = 7;
             this.label27.Text = "Số điện thoại";
             // 
-            // button10
-            // 
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.BackColor = System.Drawing.Color.Red;
-            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.Snow;
-            this.button10.Location = new System.Drawing.Point(1272, 161);
-            this.button10.Margin = new System.Windows.Forms.Padding(4);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(137, 49);
-            this.button10.TabIndex = 6;
-            this.button10.Text = "Làm mới";
-            this.button10.UseVisualStyleBackColor = false;
-            // 
-            // btnLuuUser
-            // 
-            this.btnLuuUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLuuUser.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnLuuUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLuuUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuuUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLuuUser.Location = new System.Drawing.Point(1272, 55);
-            this.btnLuuUser.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLuuUser.Name = "btnLuuUser";
-            this.btnLuuUser.Size = new System.Drawing.Size(137, 49);
-            this.btnLuuUser.TabIndex = 6;
-            this.btnLuuUser.Text = "Lưu ";
-            this.btnLuuUser.UseVisualStyleBackColor = false;
-            this.btnLuuUser.Click += new System.EventHandler(this.btnLuuUser_Click);
-            // 
             // cbRoleuser
             // 
+            this.cbRoleuser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbRoleuser.AutoCompleteCustomSource.AddRange(new string[] {
             "11212",
             "54154"});
             this.cbRoleuser.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.cbRoleuser.ForeColor = System.Drawing.Color.Black;
-            this.cbRoleuser.Location = new System.Drawing.Point(193, 87);
+            this.cbRoleuser.Location = new System.Drawing.Point(665, 42);
             this.cbRoleuser.Margin = new System.Windows.Forms.Padding(4);
             this.cbRoleuser.Name = "cbRoleuser";
             this.cbRoleuser.Size = new System.Drawing.Size(316, 30);
             this.cbRoleuser.TabIndex = 2;
             this.cbRoleuser.TabStop = false;
             // 
-            // textBox18
+            // txtPass_user
             // 
-            this.textBox18.Location = new System.Drawing.Point(193, 182);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(317, 28);
-            this.textBox18.TabIndex = 1;
+            this.txtPass_user.Location = new System.Drawing.Point(193, 144);
+            this.txtPass_user.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPass_user.Name = "txtPass_user";
+            this.txtPass_user.Size = new System.Drawing.Size(317, 28);
+            this.txtPass_user.TabIndex = 1;
             // 
-            // textBox17
+            // txtUsername_User
             // 
-            this.textBox17.Location = new System.Drawing.Point(193, 134);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(317, 28);
-            this.textBox17.TabIndex = 1;
+            this.txtUsername_User.Location = new System.Drawing.Point(193, 91);
+            this.txtUsername_User.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsername_User.Name = "txtUsername_User";
+            this.txtUsername_User.Size = new System.Drawing.Size(317, 28);
+            this.txtUsername_User.TabIndex = 1;
             // 
             // label53
             // 
             this.label53.AutoSize = true;
             this.label53.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label53.Location = new System.Drawing.Point(75, 186);
+            this.label53.Location = new System.Drawing.Point(75, 148);
             this.label53.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(92, 24);
             this.label53.TabIndex = 0;
             this.label53.Text = "Password";
             // 
-            // textBox16
+            // txtIduser_user
             // 
-            this.textBox16.Location = new System.Drawing.Point(193, 42);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.ReadOnly = true;
-            this.textBox16.Size = new System.Drawing.Size(317, 28);
-            this.textBox16.TabIndex = 1;
+            this.txtIduser_user.Location = new System.Drawing.Point(193, 42);
+            this.txtIduser_user.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIduser_user.Name = "txtIduser_user";
+            this.txtIduser_user.ReadOnly = true;
+            this.txtIduser_user.Size = new System.Drawing.Size(317, 28);
+            this.txtIduser_user.TabIndex = 1;
             // 
             // label58
             // 
+            this.label58.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label58.AutoSize = true;
             this.label58.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label58.Location = new System.Drawing.Point(123, 92);
+            this.label58.Location = new System.Drawing.Point(598, 47);
             this.label58.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(49, 24);
@@ -1309,7 +1319,7 @@
             // 
             this.label52.AutoSize = true;
             this.label52.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label52.Location = new System.Drawing.Point(63, 137);
+            this.label52.Location = new System.Drawing.Point(63, 94);
             this.label52.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(105, 24);
@@ -1485,7 +1495,6 @@
             this.btnSuakhachtro.TabIndex = 14;
             this.btnSuakhachtro.Text = "Sửa";
             this.btnSuakhachtro.UseVisualStyleBackColor = false;
-            this.btnSuakhachtro.Click += new System.EventHandler(this.btnSuakhachtro_Click);
             // 
             // button8
             // 
@@ -1974,72 +1983,6 @@
             this.groupBox13.TabIndex = 0;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Danh sách dịch vụ";
-            // 
-            // vbButton3
-            // 
-            this.vbButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.vbButton3.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton3.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton3.BorderRadius = 28;
-            this.vbButton3.BorderSize = 0;
-            this.vbButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vbButton3.FlatAppearance.BorderSize = 0;
-            this.vbButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton3.ForeColor = System.Drawing.Color.White;
-            this.vbButton3.Location = new System.Drawing.Point(1231, 548);
-            this.vbButton3.Margin = new System.Windows.Forms.Padding(4);
-            this.vbButton3.Name = "vbButton3";
-            this.vbButton3.Size = new System.Drawing.Size(211, 71);
-            this.vbButton3.TabIndex = 2;
-            this.vbButton3.Text = "Xóa";
-            this.vbButton3.TextColor = System.Drawing.Color.White;
-            this.vbButton3.UseVisualStyleBackColor = false;
-            // 
-            // vbButton2
-            // 
-            this.vbButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.vbButton2.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton2.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton2.BorderRadius = 28;
-            this.vbButton2.BorderSize = 0;
-            this.vbButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vbButton2.FlatAppearance.BorderSize = 0;
-            this.vbButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton2.ForeColor = System.Drawing.Color.White;
-            this.vbButton2.Location = new System.Drawing.Point(1231, 370);
-            this.vbButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.vbButton2.Name = "vbButton2";
-            this.vbButton2.Size = new System.Drawing.Size(211, 71);
-            this.vbButton2.TabIndex = 3;
-            this.vbButton2.Text = "Sửa";
-            this.vbButton2.TextColor = System.Drawing.Color.White;
-            this.vbButton2.UseVisualStyleBackColor = false;
-            // 
-            // vbButton1
-            // 
-            this.vbButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.vbButton1.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton1.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton1.BorderRadius = 28;
-            this.vbButton1.BorderSize = 0;
-            this.vbButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vbButton1.FlatAppearance.BorderSize = 0;
-            this.vbButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton1.ForeColor = System.Drawing.Color.White;
-            this.vbButton1.Location = new System.Drawing.Point(1231, 191);
-            this.vbButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.vbButton1.Name = "vbButton1";
-            this.vbButton1.Size = new System.Drawing.Size(211, 71);
-            this.vbButton1.TabIndex = 4;
-            this.vbButton1.Text = "Thêm";
-            this.vbButton1.TextColor = System.Drawing.Color.White;
-            this.vbButton1.UseVisualStyleBackColor = false;
             // 
             // dataGridView5
             // 
@@ -2530,29 +2473,6 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "THÔNG TIN PHÒNG THUÊ";
-            // 
-            // vbButton4
-            // 
-            this.vbButton4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.vbButton4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.vbButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton4.BorderRadius = 30;
-            this.vbButton4.BorderSize = 0;
-            this.vbButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vbButton4.FlatAppearance.BorderSize = 0;
-            this.vbButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton4.ForeColor = System.Drawing.Color.Navy;
-            this.vbButton4.Image = ((System.Drawing.Image)(resources.GetObject("vbButton4.Image")));
-            this.vbButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.vbButton4.Location = new System.Drawing.Point(117, 444);
-            this.vbButton4.Margin = new System.Windows.Forms.Padding(4);
-            this.vbButton4.Name = "vbButton4";
-            this.vbButton4.Size = new System.Drawing.Size(221, 86);
-            this.vbButton4.TabIndex = 3;
-            this.vbButton4.Text = "      Tính tiền";
-            this.vbButton4.TextColor = System.Drawing.Color.Navy;
-            this.vbButton4.UseVisualStyleBackColor = false;
             // 
             // dateTimePicker2
             // 
@@ -3405,15 +3325,104 @@
             this.btnNav.UseVisualStyleBackColor = false;
             this.btnNav.Click += new System.EventHandler(this.btnNav_Click);
             // 
+            // vbButton4
+            // 
+            this.vbButton4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.vbButton4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.vbButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton4.BorderRadius = 30;
+            this.vbButton4.BorderSize = 0;
+            this.vbButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbButton4.FlatAppearance.BorderSize = 0;
+            this.vbButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton4.ForeColor = System.Drawing.Color.Navy;
+            this.vbButton4.Image = ((System.Drawing.Image)(resources.GetObject("vbButton4.Image")));
+            this.vbButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.vbButton4.Location = new System.Drawing.Point(117, 444);
+            this.vbButton4.Margin = new System.Windows.Forms.Padding(4);
+            this.vbButton4.Name = "vbButton4";
+            this.vbButton4.Size = new System.Drawing.Size(221, 86);
+            this.vbButton4.TabIndex = 3;
+            this.vbButton4.Text = "      Tính tiền";
+            this.vbButton4.TextColor = System.Drawing.Color.Navy;
+            this.vbButton4.UseVisualStyleBackColor = false;
+            // 
+            // vbButton3
+            // 
+            this.vbButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.vbButton3.BackColor = System.Drawing.Color.MediumBlue;
+            this.vbButton3.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.vbButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton3.BorderRadius = 28;
+            this.vbButton3.BorderSize = 0;
+            this.vbButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbButton3.FlatAppearance.BorderSize = 0;
+            this.vbButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton3.ForeColor = System.Drawing.Color.White;
+            this.vbButton3.Location = new System.Drawing.Point(1231, 548);
+            this.vbButton3.Margin = new System.Windows.Forms.Padding(4);
+            this.vbButton3.Name = "vbButton3";
+            this.vbButton3.Size = new System.Drawing.Size(211, 71);
+            this.vbButton3.TabIndex = 2;
+            this.vbButton3.Text = "Xóa";
+            this.vbButton3.TextColor = System.Drawing.Color.White;
+            this.vbButton3.UseVisualStyleBackColor = false;
+            // 
+            // vbButton2
+            // 
+            this.vbButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.vbButton2.BackColor = System.Drawing.Color.MediumBlue;
+            this.vbButton2.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.vbButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton2.BorderRadius = 28;
+            this.vbButton2.BorderSize = 0;
+            this.vbButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbButton2.FlatAppearance.BorderSize = 0;
+            this.vbButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton2.ForeColor = System.Drawing.Color.White;
+            this.vbButton2.Location = new System.Drawing.Point(1231, 370);
+            this.vbButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.vbButton2.Name = "vbButton2";
+            this.vbButton2.Size = new System.Drawing.Size(211, 71);
+            this.vbButton2.TabIndex = 3;
+            this.vbButton2.Text = "Sửa";
+            this.vbButton2.TextColor = System.Drawing.Color.White;
+            this.vbButton2.UseVisualStyleBackColor = false;
+            // 
+            // vbButton1
+            // 
+            this.vbButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.vbButton1.BackColor = System.Drawing.Color.MediumBlue;
+            this.vbButton1.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.vbButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton1.BorderRadius = 28;
+            this.vbButton1.BorderSize = 0;
+            this.vbButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbButton1.FlatAppearance.BorderSize = 0;
+            this.vbButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton1.ForeColor = System.Drawing.Color.White;
+            this.vbButton1.Location = new System.Drawing.Point(1231, 191);
+            this.vbButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.vbButton1.Name = "vbButton1";
+            this.vbButton1.Size = new System.Drawing.Size(211, 71);
+            this.vbButton1.TabIndex = 4;
+            this.vbButton1.Text = "Thêm";
+            this.vbButton1.TextColor = System.Drawing.Color.White;
+            this.vbButton1.UseVisualStyleBackColor = false;
+            // 
             // GiaodienAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1942, 1088);
+            this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnHome);
             this.Controls.Add(this.pnTinhtientro);
-            this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnPhongtro);
             this.Controls.Add(this.pnKhanhtro);
             this.Controls.Add(this.pnDichvu);
@@ -3449,11 +3458,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnUser.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvthongtin_user)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
             this.pnKhanhtro.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
@@ -3625,27 +3636,23 @@
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Button btnDangxuat;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox txtPass_user;
+        private System.Windows.Forms.TextBox txtUsername_User;
         private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox txtIduser_user;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.ComboBox cbRoleuser;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button btnLuuUser;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvthongtin_user;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button btnSuathongtinuser;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.ComboBox cboSortUser_user;
+        private System.Windows.Forms.Button btnSort_user;
+        private System.Windows.Forms.Button btnXoa_user;
+        private System.Windows.Forms.Button btnSua_user;
+        private System.Windows.Forms.TextBox txtSearch_user;
+        private System.Windows.Forms.Button btnsearch_user;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.ComboBox comboBox9;
@@ -3686,11 +3693,10 @@
         private VBButton vbButton1;
         private VBButton vbButton4;
         private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox txtSDTuser;
+        private System.Windows.Forms.TextBox txtSDT_user;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtName_User;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Button btnThemPhongTro;
@@ -3732,11 +3738,16 @@
         private System.Windows.Forms.Button btnSuakhachtro;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DateTimePicker dtpNgaysinhuser;
+        private System.Windows.Forms.DateTimePicker dtpNgaysinh_user;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button btnLuuThongBao;
         private System.Windows.Forms.TextBox txtThongBao;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnLammoi_user;
+        private System.Windows.Forms.Button btnLuu_user;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.RadioButton radNu;
+        private System.Windows.Forms.RadioButton radNam;
     }
 }

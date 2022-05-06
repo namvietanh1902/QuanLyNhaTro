@@ -104,12 +104,202 @@ namespace QuanLyNhaTro.Views
             pnDichvu.Visible = false;
             pnTinhtientro.Visible = false;
             pnThongke.Visible = false;
+
         }
 
         private void btnUser_Click(object sender, EventArgs e)
         {
+            cbRoleuser.Items.Add("Admin");
+            cbRoleuser.Items.Add("Khanh Tro");
+            cboSortUser_user.Items.Add("UserID");
+            cboSortUser_user.Items.Add("Name");
+            cboSortUser_user.Items.Add("NgaySinh");
             click_user();
+            dgvthongtin_user.DataSource = BLL_Account.Instance.GetAllAccount();
+            dgvthongtin_user.ClearSelection();
         }
+        private void cleardata()
+        {
+            dgvthongtin_user.ClearSelection();
+            cbRoleuser.Enabled = true;
+            txtIduser_user.Text = "";
+            txtUsername_User.Text = "";
+            txtPass_user.Text = "";
+            cbRoleuser.Text = "";
+            txtName_User.Text = "";
+            radNam.Checked = false;
+            radNu.Checked = false;
+            dtpNgaysinh_user.Value = DateTime.Now;
+            txtSDT_user.Text = "";
+        }
+
+        private void btnLammoi_user_Click(object sender, EventArgs e)
+        {
+           cleardata();
+        }
+
+        private void btnLuu_user_Click(object sender, EventArgs e)
+        {
+            //if (iskhachtrodathuephong == false)
+            //{
+
+            //    DialogResult ret = MessageBox.Show(
+            //         "Bạn chưa thuê phòng nào,bấm 'OK' để đến giao diện thuê phòng",
+            //         "Thông báo",
+            //         MessageBoxButtons.OKCancel,
+            //         MessageBoxIcon.Information
+            //         );
+            //    if (ret == DialogResult.OK)
+            //    {
+            //        click_khanhtro();
+            //    }
+            //    iskhachtrodathuephong = true;
+            //}      
+            //int d = dgvthongtin_user.SelectedRows.Count;
+            //MessageBox.Show("gia trị là" + d);
+            
+            if (dgvthongtin_user.SelectedRows.Count < 1) //add
+            {
+                AccountModel account = new AccountModel();
+                account.Username = txtUsername_User.Text;
+                account.Password = txtPass_user.Text;
+                if (cbRoleuser.SelectedItem.ToString() == "Admin")
+                {
+                    account.Role = true;
+                }
+                else account.Role = false;
+                account.Name = txtName_User.Text;
+                if (radNam.Checked == true)
+                {
+                    account.Gender = true;
+                }
+                else account.Gender = false;
+                account.NgaySinh = dtpNgaysinh_user.Value;
+                account.SDT = txtSDT_user.Text;
+                BLL_Account.Instance.AddAccountFormAdmin(account);
+                // nếu thêm admin thì thêm vào bảng admins
+                foreach(AccountModel accountModel in BLL_Account.Instance.GetAllAccount())
+                {
+                    if(accountModel.SDT == txtSDT_user.Text)
+                    {
+                        AdminModel admin = new AdminModel();
+                        admin.UserID = accountModel.Id ;
+                        admin.Name = txtName_User.Text;
+                        if (radNam.Checked == true)
+                        {
+                            admin.Gender = true;
+                        }
+                        else admin.Gender = false;
+                        admin.NgaySinh = dtpNgaysinh_user.Value;
+                        admin.SDT = txtSDT_user.Text;
+                        BLL_Admin.Instance.AddAccountAdmin(admin);
+                        break;
+                    }
+                }    
+                dgvthongtin_user.DataSource = BLL_Account.Instance.GetAllAccount();
+                cleardata();
+            }
+            if(dgvthongtin_user.SelectedRows.Count == 1)//update
+            {
+                AccountModel account1 = new AccountModel();
+                 foreach(AccountModel accountModel in BLL_Account.Instance.GetAllAccount())
+                 {
+                    if (accountModel.Id == Convert.ToInt32(txtIduser_user.Text))
+                    {
+                        account1.Id = accountModel.Id;
+                        break;
+                    }
+                 }
+                 account1.Username = txtUsername_User.Text;
+                 account1.Password = txtPass_user.Text;
+                 if (cbRoleuser.SelectedItem.ToString() == "Admin")
+                 {
+                    account1.Role = true;
+                 }
+                 else account1.Role = false;
+                 account1.Name = txtName_User.Text;
+                 if (radNam.Checked == true)
+                 {
+                    account1.Gender = true;
+                 }
+                 else account1.Gender = false;
+                 account1.NgaySinh = dtpNgaysinh_user.Value;
+                 account1.SDT = txtSDT_user.Text;
+                 BLL_Account.Instance.UpdateAccountFormAdmin(account1); 
+                 cbRoleuser.Enabled = true;
+                 dgvthongtin_user.DataSource = BLL_Account.Instance.GetAllAccount();
+                 cleardata();
+
+                 AdminModel admin = new AdminModel();
+                 admin.UserID = account1.Id;
+                 admin.Name = account1.Name;
+                 admin.Gender = account1.Gender;
+                 admin.NgaySinh = account1.NgaySinh;
+                 admin.SDT = account1.SDT;
+                 BLL_Admin.Instance.UpdateAccountAdmin(admin);
+
+            }
+        }
+        private void btnSuathongtinuser_Click(object sender, EventArgs e)
+        {
+            //iskhachtrodathuephong = true;
+            cbRoleuser.Enabled = false;
+            txtIduser_user.Text = dgvthongtin_user.SelectedRows[0].Cells["Id"].Value.ToString();
+            txtUsername_User.Text = dgvthongtin_user.SelectedRows[0].Cells["Username"].Value.ToString();
+            txtPass_user.Text = dgvthongtin_user.SelectedRows[0].Cells["Password"].Value.ToString();
+
+            if (Convert.ToBoolean(dgvthongtin_user.SelectedRows[0].Cells["Role"].Value.ToString()) == true)
+            {
+                cbRoleuser.SelectedItem = "Admin";
+            }
+            else
+            {
+                cbRoleuser.SelectedItem = "Khanh Tro";
+            }
+            txtName_User.Text = dgvthongtin_user.SelectedRows[0].Cells["Name"].Value.ToString();
+            if (Convert.ToBoolean(dgvthongtin_user.SelectedRows[0].Cells["Gender"].Value.ToString()) == true)
+            {
+                radNam.Checked = true;
+            }
+            else
+            {
+                radNu.Checked = true;
+            }
+            dtpNgaysinh_user.Value = Convert.ToDateTime(dgvthongtin_user.SelectedRows[0].Cells["NgaySinh"].Value.ToString());
+            txtSDT_user.Text = dgvthongtin_user.SelectedRows[0].Cells["SDT"].Value.ToString();
+        }
+
+        private void btnXoa_user_Click(object sender, EventArgs e)
+        {
+            List<int> listIDdell = new List<int>();
+            if (dgvthongtin_user.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvthongtin_user.SelectedRows)
+                {
+                    listIDdell.Add(Convert.ToInt32(row.Cells["Id"].Value.ToString()));
+                }
+            }
+            BLL_Account.Instance.DeleteAccountFormAdmin(listIDdell);
+            BLL_Admin.Instance.DeleteAccountAdmin(listIDdell);
+            dgvthongtin_user.DataSource = BLL_Account.Instance.GetAllAccount();
+        }
+
+        private void btnsearch_user_Click(object sender, EventArgs e)
+        {
+            dgvthongtin_user.DataSource = BLL_Account.Instance.SearchAccountFormAdmin(txtSearch_user.Text);
+        }
+
+        private void btnSort_user_Click(object sender, EventArgs e)
+        {
+            List<int> listnow = new List<int>();
+            foreach (DataGridViewRow row in dgvthongtin_user.Rows)
+            {
+                listnow.Add(Convert.ToInt32(row.Cells["Id"].Value.ToString()));
+            }
+            dgvthongtin_user.DataSource = BLL_Account.Instance.SortAccountFormAdmin(listnow,cboSortUser_user.SelectedItem.ToString());
+        }
+
+
         private void click_khanhtro()
         {
             lblTitle.Text = "Quản Lý Khách Trọ";
@@ -285,9 +475,9 @@ namespace QuanLyNhaTro.Views
                 click_user();
                
                
-                txtName.Text = txtTennguoithue.Text;
-                txtSDTuser.Text = txtSDTkhachtro.Text;
-                dtpNgaysinhuser.Value = dtpNgaysinhkhachtro.Value;
+                txtName_User.Text = txtTennguoithue.Text;
+                txtSDT_user.Text = txtSDTkhachtro.Text;
+                dtpNgaysinh_user.Value = dtpNgaysinhkhachtro.Value;
                 clearttkhachtro();
                 iskhachtrodathuephong = true;
             }
@@ -297,34 +487,6 @@ namespace QuanLyNhaTro.Views
             }
         }
 
-        private void btnSuakhachtro_Click(object sender, EventArgs e)
-        {
-            isSuathongtinkhachtro = true;
-        }
-
-        private void btnLuuUser_Click(object sender, EventArgs e)
-        {
-            if(iskhachtrodathuephong == false)
-            {
-
-               DialogResult ret = MessageBox.Show(
-                    "Bạn chưa thuê phòng nào,bấm 'OK' để đến giao diện thuê phòng",
-                    "Thông báo",
-                    MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Information
-                    );
-                if(ret == DialogResult.OK)
-                {
-                    click_khanhtro();
-                }
-                iskhachtrodathuephong = true;
-            }
-        }
-
-        private void btnSuathongtinuser_Click(object sender, EventArgs e)
-        {
-            iskhachtrodathuephong = true;
-        }
 
     }
 }

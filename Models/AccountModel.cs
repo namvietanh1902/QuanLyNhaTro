@@ -12,5 +12,9 @@ namespace QuanLyNhaTro.Models
         public string Username { get; set; }
         public string Password { get; set; }
         public bool Role { get; set; }
+        public string Name { get; set; }
+        public bool Gender { get; set; }
+        public DateTime NgaySinh { get; set; }
+        public string SDT { get; set; }
     }
 }
