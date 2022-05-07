@@ -53,14 +53,19 @@
     <Compile Include="DAO\DAL_Account.cs" />
     <Compile Include="DAO\DAL_Admin.cs" />
     <Compile Include="DAO\DAL_KhachTro.cs" />
+    <Compile Include="DAO\DAL_Room.cs" />
     <Compile Include="DAO\DBHelper.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\AdminModel.cs" />
+    <Compile Include="Models\CBBItem.cs" />
     <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\ReceiptModel.cs" />
     <Compile Include="Models\RoomModel.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Presenter\BLL_Account.cs" />
     <Compile Include="Presenter\BLL_Admin.cs" />
+    <Compile Include="Presenter\BLL_Customer.cs" />
+    <Compile Include="Presenter\BLL_Room.cs" />
     <Compile Include="Views\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>

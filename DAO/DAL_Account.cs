@@ -46,7 +46,7 @@ namespace QuanLyNhaTro.DAO
                 Name = i["Name"].ToString(),
                 Gender = Convert.ToBoolean(i["Gender"].ToString()),
                 NgaySinh = Convert.ToDateTime(i["NgaySinh"].ToString()),
-                SDT = i["SDT"].ToString()
+                SDT = i["SDT"].ToString(),
 
             };
         }
@@ -171,6 +171,19 @@ namespace QuanLyNhaTro.DAO
             return listSort;
         }
 
+        public void UpdateAccountOnPanelKhachTro(AccountModel account)
+        {
+            SqlParameter[] para = new SqlParameter[]
+           {
+                new SqlParameter{ParameterName = "@ID",Value = account.Id},
+                new SqlParameter{ParameterName = "@Name",Value = account.Name},
+                new SqlParameter{ParameterName = "@Gender",Value = account.Gender},
+                new SqlParameter{ParameterName = "@NgaySinh",Value =account.NgaySinh},
+                new SqlParameter{ParameterName = "@SDT",Value = account.SDT},
+           };
+            string query = "update Account set Name=@Name,Gender=@Gender,NgaySinh=@NgaySinh,SDT=@SDT Where UserID=@ID";
+            DBHelper.Instance.ExecuteDB(query, para);
+        }
 
 
 

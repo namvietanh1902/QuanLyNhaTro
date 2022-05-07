@@ -75,9 +75,9 @@ namespace QuanLyNhaTro.Presenter
             {
                 foreach (CustomerModel cus in DAL_KhachTro.Instance.GetAllCustomer())
                 {
-                    if (cus.Id == id)
+                    if (cus.UserID == id)
                     {
-                        name = cus.Name;
+                        name = cus.TenKhach;
                     }
                 }
             }
@@ -86,7 +86,7 @@ namespace QuanLyNhaTro.Presenter
         public void AddAccountFromSignin(string[] InfoAccount,string[] InfoCustomer)
         {
             DAL_Account.Instance.AddAccountFromSignin(InfoAccount);
-            DAL_KhachTro.Instance.AddCustomerFromSignin(InfoCustomer);
+            //DAL_KhachTro.Instance.AddCustomerFromSignin(InfoCustomer);
         }
 
         public CustomerModel GetKhachTroByID(int UserID)
@@ -94,7 +94,7 @@ namespace QuanLyNhaTro.Presenter
             CustomerModel a = new CustomerModel();
             foreach (CustomerModel cm in DAL_KhachTro.Instance.GetAllCustomer())
             {
-                if (cm.Id == UserID)
+                if (cm.UserID == UserID)
                     a=cm;
             }
             return a;
@@ -143,6 +143,11 @@ namespace QuanLyNhaTro.Presenter
         public List<AccountModel> SortAccountFormAdmin(List<int> id, string SortType)
         {
            return DAL_Account.Instance.SortAccountFormAdmin(id,SortType);
+        }
+
+        public void UpdateAccountOnPanelKhachTro(AccountModel account)
+        {
+            DAL_Account.Instance.UpdateAccountOnPanelKhachTro(account);
         }
     }
 }

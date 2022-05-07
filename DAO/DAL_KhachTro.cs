@@ -38,32 +38,29 @@ namespace QuanLyNhaTro.DAO
 
         public CustomerModel GetKhanhTroFromDataRow(DataRow i)
         {
-            string a = "2002-06-15";
-            //string b = i["NgaySinh"].ToString();
             return new CustomerModel
-            {                
-                Id = Convert.ToInt32(i["UserId"].ToString()),
-                Name = i["TenKhach"].ToString(),
-                Gender = (i["GioiTinh"].ToString() == "True") ? true : false, // Gender bị lỗi nên phải cồng kềnh z :))
+            {
+                UserID = Convert.ToInt32(i["UserID"].ToString()),
+                MaKhach = Convert.ToInt32(i["MaKhach"].ToString()),
+                TenKhach = i["TenKhach"].ToString(),
+                BirthDate = Convert.ToDateTime(i["NgaySinh"].ToString()),
+                Gender = Convert.ToBoolean(i["GioiTinh"].ToString()),
                 CMND = i["CMND"].ToString(),
                 SDT = i["SDT"].ToString(),
-                MaKhach = Convert.ToInt32(i["MaKhach"].ToString()),
                 NgheNghiep = i["NgheNghiep"].ToString(),
-                //BirthDate bị lỗi không thể chuyển từ string sang DateTime?
-                //BirthDate = DateTime.ParseExact(a, "yyyy-MM-dd", null)              
             };
         }
 
-        public void AddCustomerFromSignin(string[] InfoCustomner) // them customer sau khi sign in
-        {
-            SqlParameter[] Param = new SqlParameter[3]; // Makhach & Name & UserID
-            Param[0] = new SqlParameter("@MaKhach", GetAllCustomer().Count+1);  //ID = so luong + 1
-            Param[1] = new SqlParameter("@Name", InfoCustomner[0]);
-            Param[2] = new SqlParameter("@UserID", Convert.ToInt32(InfoCustomner[1]));
-            string query = "Insert into KhachTro (MaKhach,TenKhach,UserID) values" +
-                "(@MaKhach,@Name,@UserID)";
-            DBHelper.Instance.ExecuteDB(query, Param);
-        }
+        //public void AddCustomerFromSignin(string[] InfoCustomner) // them customer sau khi sign in
+        //{
+        //    SqlParameter[] Param = new SqlParameter[3]; // Makhach & Name & UserID
+        //    Param[0] = new SqlParameter("@MaKhach", GetAllCustomer().Count+1);  //ID = so luong + 1
+        //    Param[1] = new SqlParameter("@Name", InfoCustomner[0]);
+        //    Param[2] = new SqlParameter("@UserID", Convert.ToInt32(InfoCustomner[1]));
+        //    string query = "Insert into KhachTro (MaKhach,TenKhach,UserID) values" +
+        //        "(@MaKhach,@Name,@UserID)";
+        //    DBHelper.Instance.ExecuteDB(query, Param);
+        //}
 
         public void ThayDoiThongTinUser(string[] InfoUser,bool Gender)
         {
@@ -84,5 +81,85 @@ namespace QuanLyNhaTro.DAO
             DBHelper.Instance.ExecuteDB(query, Param);
         }
 
+
+        public DataTable ShowAllInfoKhanhTro()
+        {
+            string query = "Select MaKhach,TenKhach,PhongTro.TenPhong,NgaySinh,GioiTinh,CMND,SDT,NgheNghiep from KhachTro " +
+                "inner join PhongTro on KhachTro.MaPhong = PhongTro.MaPhong";
+            return DBHelper.Instance.GetRecords(query, null);
+        }
+
+        public void AddKhachTro(CustomerModel cus)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter{ParameterName = "@Ten",Value =cus.TenKhach },
+                new SqlParameter{ParameterName = "@MaPhong",Value = cus.MaPhong },
+                new SqlParameter{ParameterName = "@NgaySinh",Value = cus.BirthDate},
+                new SqlParameter{ParameterName = "@GioiTinh",Value = cus.Gender },
+                new SqlParameter{ParameterName = "@CMND",Value = cus.CMND},
+                new SqlParameter{ParameterName = "@SDT",Value = cus.SDT},
+                new SqlParameter{ParameterName = "@NgheNghiep",Value = cus.NgheNghiep},
+            };
+            string query = "insert into KhachTro(TenKhach,MaPhong,NgaySinh,GioiTinh,CMND,SDT,NgheNghiep) values (@Ten,@MaPhong,@NgaySinh,@GioiTinh,@CMND,@SDT,@NgheNghiep)";
+            DBHelper.Instance.ExecuteDB(query, para);
+        }
+
+        public void UpdateIDOfKhachTro(CustomerModel cus)
+        {
+            string query = "update KhachTro set UserID = " + cus.UserID + " where SDT = " + cus.SDT;
+            DBHelper.Instance.ExecuteDB(query,null);
+        }
+
+        public void UpdateKhachTro(CustomerModel cus)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter{ParameterName = "@MaKhach",Value =cus.MaKhach },
+                new SqlParameter{ParameterName = "@Ten",Value =cus.TenKhach },
+                new SqlParameter{ParameterName = "@MaPhong",Value = cus.MaPhong },
+                new SqlParameter{ParameterName = "@NgaySinh",Value = cus.BirthDate},
+                new SqlParameter{ParameterName = "@GioiTinh",Value = cus.Gender },
+                new SqlParameter{ParameterName = "@CMND",Value = cus.CMND},
+                new SqlParameter{ParameterName = "@SDT",Value = cus.SDT},
+                new SqlParameter{ParameterName = "@NgheNghiep",Value = cus.NgheNghiep},
+            };
+            string query = "update KhachTro set TenKhach=@Ten,MaPhong=@MaPhong,NgaySinh=@NgaySinh,GioiTinh=@GioiTinh,CMND=@CMND,SDT=@SDT,NgheNghiep=@NgheNghiep where MaKhach = @MaKhach ";
+            DBHelper.Instance.ExecuteDB(query, para);
+        }
+
+
+        public void DeleteKhachTro(int MaKhach)
+        {
+            string query = "delete from KhachTro where MaKhach =" + MaKhach;
+            DBHelper.Instance.ExecuteDB(query, null);
+        }
+
+        public DataTable SearchKhachTro(string txt)
+        {
+            string query = "select MaKhach, TenKhach, PhongTro.TenPhong,NgaySinh,GioiTinh,CMND,SDT,NgheNghiep " +
+                "from KhachTro inner join PhongTro on KhachTro.MaPhong = PhongTro.MaPhong  where TenKhach like N'%" + txt + "%'";
+            return DBHelper.Instance.GetRecords(query,null);
+        }
+
+        public DataTable SortKhachTro(List<int> makhach, string SortType)
+        {
+            DataTable datasortAll = new DataTable();
+            string query = "select MaKhach, TenKhach, PhongTro.TenPhong,NgaySinh,GioiTinh,CMND,SDT,NgheNghiep " +
+                 "from KhachTro inner join PhongTro on KhachTro.MaPhong = PhongTro.MaPhong ORDER BY " + SortType;
+            datasortAll = DBHelper.Instance.GetRecords(query, null);
+            DataTable datasortNow = new DataTable();
+            foreach(DataRow row in datasortAll.Rows)
+            {
+                foreach(int ma in makhach)
+                {
+                    if(Convert.ToInt32(row["MaKhach"].ToString()) == ma)
+                    {
+                        datasortNow.Rows.Add(row);
+                    }
+                }
+            }
+            return datasortAll;
+        }
     }
 }

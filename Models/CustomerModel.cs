@@ -11,10 +11,13 @@ namespace QuanLyNhaTro.Models
     {
         [Required]
         [Range(1,5000)]
-        public int Id { get; set; }
+        public int UserID { get; set; }
+        public  int MaKhach { get; set; }
         [Required]
         [StringLength(30)]
-        public string Name { get; set; }
+        public string TenKhach { get; set; }
+
+        public int MaPhong { get; set; }
         [Required]
         [DataType(DataType.DateTime)]
         public DateTime BirthDate { get; set; }
@@ -26,7 +29,6 @@ namespace QuanLyNhaTro.Models
         public string SDT { get; set; }
         [Required]
         public string NgheNghiep { get; set; }
-        public  int MaKhach { get; set; }
 
     }
 }

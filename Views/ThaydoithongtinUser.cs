@@ -23,16 +23,16 @@ namespace QuanLyNhaTro.Views
             comboBox1.Items.Add("Nam");
             comboBox1.Items.Add("Nữ");
 
-            CustomerModel cm = BLL_Account.Instance.GetKhachTroByID(ID);
+            //CustomerModel cm = BLL_Account.Instance.GetKhachTroByID(ID);
 
-            textBox1.Text = ID.ToString();
-            textBox3.Text = BLL_Account.Instance.GetAccountByID(ID).Username;
-            textBox2.Text = cm.Name;
-            if (cm.Gender) comboBox1.Text = "Nam";
-            else comboBox1.Text = "Nữ";
-            textBox4.Text = cm.SDT;
-            textBox5.Text = cm.CMND;
-            textBox6.Text = cm.NgheNghiep;
+            //textBox1.Text = ID.ToString();
+            //textBox3.Text = BLL_Account.Instance.GetAccountByID(ID).Username;
+            //textBox2.Text = cm.Name;
+            //if (cm.Gender) comboBox1.Text = "Nam";
+            //else comboBox1.Text = "Nữ";
+            //textBox4.Text = cm.SDT;
+            //textBox5.Text = cm.CMND;
+            //textBox6.Text = cm.NgheNghiep;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
