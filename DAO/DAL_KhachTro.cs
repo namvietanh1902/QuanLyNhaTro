@@ -48,6 +48,7 @@ namespace QuanLyNhaTro.DAO
                 CMND = i["CMND"].ToString(),
                 SDT = i["SDT"].ToString(),
                 NgheNghiep = i["NgheNghiep"].ToString(),
+                MaPhong = Convert.ToInt32(i["MaPhong"].ToString()),
             };
         }
 
@@ -148,17 +149,19 @@ namespace QuanLyNhaTro.DAO
             string query = "select MaKhach, TenKhach, PhongTro.TenPhong,NgaySinh,GioiTinh,CMND,SDT,NgheNghiep " +
                  "from KhachTro inner join PhongTro on KhachTro.MaPhong = PhongTro.MaPhong ORDER BY " + SortType;
             datasortAll = DBHelper.Instance.GetRecords(query, null);
-            DataTable datasortNow = new DataTable();
-            foreach(DataRow row in datasortAll.Rows)
-            {
-                foreach(int ma in makhach)
-                {
-                    if(Convert.ToInt32(row["MaKhach"].ToString()) == ma)
-                    {
-                        datasortNow.Rows.Add(row);
-                    }
-                }
-            }
+
+            
+            //    foreach (int ma in makhach.ToList())
+            //    {
+            //        foreach (DataRow row in datasortAll.Rows)
+            //        {
+            //              if (Convert.ToInt32(row[0].ToString()) != ma)
+            //            {
+            //                    datasortAll.Rows.Remove(row);
+            //            }
+            //    }
+            //}
+
             return datasortAll;
         }
     }

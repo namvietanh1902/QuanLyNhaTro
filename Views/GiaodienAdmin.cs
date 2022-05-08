@@ -124,6 +124,11 @@ namespace QuanLyNhaTro.Views
             }
             click_user();
             dgvthongtin_user.DataSource = BLL_Account.Instance.GetAllAccount();
+            foreach (DataGridViewColumn col in dgvthongtin_user.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                col.HeaderCell.Style.Font = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+            }
             dgvthongtin_user.ClearSelection();
         }
         private void cleardata()
@@ -210,6 +215,11 @@ namespace QuanLyNhaTro.Views
                     }
                 }
                 dgvthongtin_user.DataSource = BLL_Account.Instance.GetAllAccount();
+                foreach (DataGridViewColumn col in dgvthongtin_user.Columns)
+                {
+                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    col.HeaderCell.Style.Font = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+                }
                 cleardata();
             }
             if(dgvthongtin_user.SelectedRows.Count == 1)//update
@@ -218,7 +228,13 @@ namespace QuanLyNhaTro.Views
                  BLL_Account.Instance.UpdateAccountFormAdmin(account); 
                  cbRoleuser.Enabled = true;
                  dgvthongtin_user.DataSource = BLL_Account.Instance.GetAllAccount();
-                 cleardata();
+
+                foreach (DataGridViewColumn col in dgvthongtin_user.Columns)
+                {
+                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    col.HeaderCell.Style.Font = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+                }
+                cleardata();
 
                  AdminModel admin = new AdminModel();
                  admin.UserID = account.Id;
@@ -325,6 +341,11 @@ namespace QuanLyNhaTro.Views
             dgvthongtin_khachtro.DataSource = BLL_Customer.Instance.ShowAllInfoKhanhTro();
             this.dgvthongtin_khachtro.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvthongtin_khachtro.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            foreach (DataGridViewColumn col in dgvthongtin_khachtro.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                col.HeaderCell.Style.Font = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+            }
             dgvthongtin_khachtro.ClearSelection();
         }
 
@@ -512,14 +533,38 @@ namespace QuanLyNhaTro.Views
 
         private void btnSort_khachtro_Click(object sender, EventArgs e)
         {
-            List<int> list = new List<int>();
-            foreach (DataGridViewRow row in dgvthongtin_khachtro.Rows)
+             List<int> list = new List<int>();
+            foreach(DataGridViewRow i in dgvthongtin_khachtro.Rows)
             {
-                list.Add(Convert.ToInt16(row.Cells["MaKhach"].Value.ToString()));
+                list.Add(Convert.ToInt32(i.Cells[0].Value?.ToString()));   
             }
+            foreach(int i in list.ToList())
+            {
+                if (i == 0)
+                    list.Remove(i);
+            } 
+            dgvthongtin_khachtro.DataSource = BLL_Customer.Instance.SortKhachTro(list, cbbSort_khachtro.SelectedItem.ToString());
+            dgvthongtin_khachtro.ClearSelection();
+        }
 
-            MessageBox.Show("ccc " + list[0] + "...." + list[1]);
-            //dgvthongtin_khachtro.DataSource = BLL_Customer.Instance.SortKhachTro(list, cbbSort_khachtro.SelectedItem.ToString());
+        private void lblreload_phongtro_Click(object sender, EventArgs e)
+        {
+            reaload_phongtro();
+        }
+
+        private void reaload_phongtro()
+        {
+            dgvThongtin_phongtro.DataSource = BLL_Room.Instance.GetAllRoom();
+            foreach(DataGridViewColumn col in dgvThongtin_phongtro.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                col.HeaderCell.Style.Font = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+            }
+            this.dgvThongtin_phongtro.DefaultCellStyle.ForeColor = Color.Black;
+            this.dgvThongtin_phongtro.DefaultCellStyle.Font = new Font("Tahoma", 10);
+
+
+            dgvThongtin_phongtro.ClearSelection();
         }
 
         private void btnPhongtro_Click(object sender, EventArgs e)
@@ -539,7 +584,42 @@ namespace QuanLyNhaTro.Views
             pnDichvu.Visible = false;
             pnTinhtientro.Visible = false;
             pnThongke.Visible = false;
+
+            reaload_phongtro();
         }
+
+        private void btnPhongtrong_phongtro_Click(object sender, EventArgs e)
+        {
+            dgvThongtin_phongtro.DataSource = BLL_Room.Instance.GetAllRoomEmty();
+            this.dgvThongtin_phongtro.DefaultCellStyle.ForeColor = Color.Black;
+            this.dgvThongtin_phongtro.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            dgvThongtin_phongtro.ClearSelection();
+        }
+
+        private void btnPhongchuaday_phongtro_Click(object sender, EventArgs e)
+        {
+            dgvThongtin_phongtro.DataSource = BLL_Room.Instance.GetAllRoomRented();
+            this.dgvThongtin_phongtro.DefaultCellStyle.ForeColor = Color.Black;
+            this.dgvThongtin_phongtro.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            dgvThongtin_phongtro.ClearSelection();
+        }
+
+        private void btnChitietphongthue_phongtro_Click(object sender, EventArgs e)
+        {
+            bool checkHienTrang = Convert.ToBoolean(dgvThongtin_phongtro.SelectedRows[0].Cells["HienTrang"].Value.ToString());
+            if (checkHienTrang ==  true)
+            {
+                int ma = Convert.ToInt32(dgvThongtin_phongtro.SelectedRows[0].Cells["MaPhong"].Value.ToString());
+                ChiTietPhongThue frm = new ChiTietPhongThue(ma);
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Phòng này trống");
+            }
+        }
+
+
 
         private void btnDichvu_Click(object sender, EventArgs e)
         {
@@ -652,7 +732,7 @@ namespace QuanLyNhaTro.Views
             frm.ShowDialog();
         }
 
-        
+      
     }
 }
 

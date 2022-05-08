@@ -137,19 +137,21 @@
             this.btnLammoi_khachtro = new System.Windows.Forms.Button();
             this.btnLuu_khachtro = new System.Windows.Forms.Button();
             this.pnPhongtro = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvThongtin_phongtro = new System.Windows.Forms.DataGridView();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.btnThemPhongTro = new System.Windows.Forms.Button();
-            this.cboSortphongtro = new System.Windows.Forms.ComboBox();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
-            this.btnSortphongtro = new System.Windows.Forms.Button();
-            this.btnSuaPhogTro = new System.Windows.Forms.Button();
-            this.btnSuaPhongTro = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
+            this.btnChitietphongthue_phongtro = new System.Windows.Forms.Button();
+            this.btnThem_phongtro = new System.Windows.Forms.Button();
+            this.cboSort_phongtro = new System.Windows.Forms.ComboBox();
+            this.btnSort_phongtro = new System.Windows.Forms.Button();
+            this.btnXoa_phongtro = new System.Windows.Forms.Button();
+            this.btnSua_phongtro = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.button22 = new System.Windows.Forms.Button();
-            this.label67 = new System.Windows.Forms.Label();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.btnPhongchuaday_phongtro = new System.Windows.Forms.Button();
+            this.btnPhongtrong_phongtro = new System.Windows.Forms.Button();
+            this.txtSearch_phongtro = new System.Windows.Forms.TextBox();
+            this.btnSearch_phongtro = new System.Windows.Forms.Button();
+            this.lblreload_phongtro = new System.Windows.Forms.Label();
             this.pnDichvu = new System.Windows.Forms.Panel();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
@@ -285,9 +287,10 @@
             this.panel10.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.pnPhongtro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongtin_phongtro)).BeginInit();
             this.panel21.SuspendLayout();
             this.panel20.SuspendLayout();
+            this.panel23.SuspendLayout();
             this.pnDichvu.SuspendLayout();
             this.groupBox13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
@@ -1735,7 +1738,7 @@
             // pnPhongtro
             // 
             this.pnPhongtro.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pnPhongtro.Controls.Add(this.dataGridView1);
+            this.pnPhongtro.Controls.Add(this.dgvThongtin_phongtro);
             this.pnPhongtro.Controls.Add(this.panel21);
             this.pnPhongtro.Controls.Add(this.panel20);
             this.pnPhongtro.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1747,28 +1750,30 @@
             this.pnPhongtro.TabIndex = 0;
             this.pnPhongtro.Visible = false;
             // 
-            // dataGridView1
+            // dgvThongtin_phongtro
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.AliceBlue;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 86);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1508, 622);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvThongtin_phongtro.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvThongtin_phongtro.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dgvThongtin_phongtro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvThongtin_phongtro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThongtin_phongtro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvThongtin_phongtro.Location = new System.Drawing.Point(0, 116);
+            this.dgvThongtin_phongtro.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvThongtin_phongtro.Name = "dgvThongtin_phongtro";
+            this.dgvThongtin_phongtro.ReadOnly = true;
+            this.dgvThongtin_phongtro.RowHeadersWidth = 51;
+            this.dgvThongtin_phongtro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvThongtin_phongtro.Size = new System.Drawing.Size(1508, 592);
+            this.dgvThongtin_phongtro.TabIndex = 3;
             // 
             // panel21
             // 
-            this.panel21.Controls.Add(this.btnThemPhongTro);
-            this.panel21.Controls.Add(this.cboSortphongtro);
-            this.panel21.Controls.Add(this.comboBox12);
-            this.panel21.Controls.Add(this.btnSortphongtro);
-            this.panel21.Controls.Add(this.btnSuaPhogTro);
-            this.panel21.Controls.Add(this.btnSuaPhongTro);
-            this.panel21.Controls.Add(this.button26);
+            this.panel21.Controls.Add(this.btnChitietphongthue_phongtro);
+            this.panel21.Controls.Add(this.btnThem_phongtro);
+            this.panel21.Controls.Add(this.cboSort_phongtro);
+            this.panel21.Controls.Add(this.btnSort_phongtro);
+            this.panel21.Controls.Add(this.btnXoa_phongtro);
+            this.panel21.Controls.Add(this.btnSua_phongtro);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel21.Location = new System.Drawing.Point(0, 708);
             this.panel21.Margin = new System.Windows.Forms.Padding(4);
@@ -1776,166 +1781,204 @@
             this.panel21.Size = new System.Drawing.Size(1508, 98);
             this.panel21.TabIndex = 2;
             // 
-            // btnThemPhongTro
+            // btnChitietphongthue_phongtro
             // 
-            this.btnThemPhongTro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
-            this.btnThemPhongTro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThemPhongTro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnThemPhongTro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemPhongTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemPhongTro.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnThemPhongTro.Location = new System.Drawing.Point(467, 23);
-            this.btnThemPhongTro.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThemPhongTro.Name = "btnThemPhongTro";
-            this.btnThemPhongTro.Size = new System.Drawing.Size(151, 49);
-            this.btnThemPhongTro.TabIndex = 18;
-            this.btnThemPhongTro.Text = "Thêm";
-            this.btnThemPhongTro.UseVisualStyleBackColor = false;
-            this.btnThemPhongTro.Click += new System.EventHandler(this.btnThemPhongTro_Click);
+            this.btnChitietphongthue_phongtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnChitietphongthue_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
+            this.btnChitietphongthue_phongtro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChitietphongthue_phongtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnChitietphongthue_phongtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChitietphongthue_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChitietphongthue_phongtro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnChitietphongthue_phongtro.Location = new System.Drawing.Point(50, 25);
+            this.btnChitietphongthue_phongtro.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChitietphongthue_phongtro.Name = "btnChitietphongthue_phongtro";
+            this.btnChitietphongthue_phongtro.Size = new System.Drawing.Size(224, 49);
+            this.btnChitietphongthue_phongtro.TabIndex = 18;
+            this.btnChitietphongthue_phongtro.Text = "Chi tiết phòng thuê";
+            this.btnChitietphongthue_phongtro.UseVisualStyleBackColor = false;
+            this.btnChitietphongthue_phongtro.Click += new System.EventHandler(this.btnChitietphongthue_phongtro_Click);
             // 
-            // cboSortphongtro
+            // btnThem_phongtro
             // 
-            this.cboSortphongtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnThem_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
+            this.btnThem_phongtro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThem_phongtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnThem_phongtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem_phongtro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnThem_phongtro.Location = new System.Drawing.Point(388, 24);
+            this.btnThem_phongtro.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThem_phongtro.Name = "btnThem_phongtro";
+            this.btnThem_phongtro.Size = new System.Drawing.Size(151, 49);
+            this.btnThem_phongtro.TabIndex = 18;
+            this.btnThem_phongtro.Text = "Thêm";
+            this.btnThem_phongtro.UseVisualStyleBackColor = false;
+            this.btnThem_phongtro.Click += new System.EventHandler(this.btnThemPhongTro_Click);
+            // 
+            // cboSort_phongtro
+            // 
+            this.cboSort_phongtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboSortphongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSortphongtro.FormattingEnabled = true;
-            this.cboSortphongtro.Location = new System.Drawing.Point(1276, 32);
-            this.cboSortphongtro.Margin = new System.Windows.Forms.Padding(4);
-            this.cboSortphongtro.Name = "cboSortphongtro";
-            this.cboSortphongtro.Size = new System.Drawing.Size(193, 33);
-            this.cboSortphongtro.TabIndex = 16;
+            this.cboSort_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSort_phongtro.FormattingEnabled = true;
+            this.cboSort_phongtro.Location = new System.Drawing.Point(1276, 32);
+            this.cboSort_phongtro.Margin = new System.Windows.Forms.Padding(4);
+            this.cboSort_phongtro.Name = "cboSort_phongtro";
+            this.cboSort_phongtro.Size = new System.Drawing.Size(193, 33);
+            this.cboSort_phongtro.TabIndex = 16;
             // 
-            // comboBox12
+            // btnSort_phongtro
             // 
-            this.comboBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(200, 32);
-            this.comboBox12.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(155, 33);
-            this.comboBox12.TabIndex = 17;
-            // 
-            // btnSortphongtro
-            // 
-            this.btnSortphongtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnSort_phongtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSortphongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
-            this.btnSortphongtro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSortphongtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnSortphongtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSortphongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSortphongtro.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSortphongtro.Location = new System.Drawing.Point(1084, 23);
-            this.btnSortphongtro.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSortphongtro.Name = "btnSortphongtro";
-            this.btnSortphongtro.Size = new System.Drawing.Size(151, 49);
-            this.btnSortphongtro.TabIndex = 12;
-            this.btnSortphongtro.Text = "Sắp xếp";
-            this.btnSortphongtro.UseVisualStyleBackColor = false;
+            this.btnSort_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
+            this.btnSort_phongtro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSort_phongtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSort_phongtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSort_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSort_phongtro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSort_phongtro.Location = new System.Drawing.Point(1084, 23);
+            this.btnSort_phongtro.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSort_phongtro.Name = "btnSort_phongtro";
+            this.btnSort_phongtro.Size = new System.Drawing.Size(151, 49);
+            this.btnSort_phongtro.TabIndex = 12;
+            this.btnSort_phongtro.Text = "Sắp xếp";
+            this.btnSort_phongtro.UseVisualStyleBackColor = false;
             // 
-            // btnSuaPhogTro
+            // btnXoa_phongtro
             // 
-            this.btnSuaPhogTro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
-            this.btnSuaPhogTro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSuaPhogTro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnSuaPhogTro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaPhogTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaPhogTro.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSuaPhogTro.Location = new System.Drawing.Point(941, 23);
-            this.btnSuaPhogTro.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSuaPhogTro.Name = "btnSuaPhogTro";
-            this.btnSuaPhogTro.Size = new System.Drawing.Size(151, 49);
-            this.btnSuaPhogTro.TabIndex = 13;
-            this.btnSuaPhogTro.Text = "Xóa";
-            this.btnSuaPhogTro.UseVisualStyleBackColor = false;
+            this.btnXoa_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
+            this.btnXoa_phongtro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoa_phongtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnXoa_phongtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa_phongtro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnXoa_phongtro.Location = new System.Drawing.Point(928, 23);
+            this.btnXoa_phongtro.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXoa_phongtro.Name = "btnXoa_phongtro";
+            this.btnXoa_phongtro.Size = new System.Drawing.Size(151, 49);
+            this.btnXoa_phongtro.TabIndex = 13;
+            this.btnXoa_phongtro.Text = "Xóa";
+            this.btnXoa_phongtro.UseVisualStyleBackColor = false;
             // 
-            // btnSuaPhongTro
+            // btnSua_phongtro
             // 
-            this.btnSuaPhongTro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
-            this.btnSuaPhongTro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSuaPhongTro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnSuaPhongTro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaPhongTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaPhongTro.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSuaPhongTro.Location = new System.Drawing.Point(703, 23);
-            this.btnSuaPhongTro.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSuaPhongTro.Name = "btnSuaPhongTro";
-            this.btnSuaPhongTro.Size = new System.Drawing.Size(151, 49);
-            this.btnSuaPhongTro.TabIndex = 14;
-            this.btnSuaPhongTro.Text = "Sửa";
-            this.btnSuaPhongTro.UseVisualStyleBackColor = false;
-            this.btnSuaPhongTro.Click += new System.EventHandler(this.btnSuaPhongTro_Click);
-            // 
-            // button26
-            // 
-            this.button26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
-            this.button26.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button26.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button26.ForeColor = System.Drawing.SystemColors.Window;
-            this.button26.Location = new System.Drawing.Point(33, 25);
-            this.button26.Margin = new System.Windows.Forms.Padding(4);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(151, 49);
-            this.button26.TabIndex = 15;
-            this.button26.Text = "Hiện Thị";
-            this.button26.UseVisualStyleBackColor = false;
+            this.btnSua_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
+            this.btnSua_phongtro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSua_phongtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSua_phongtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua_phongtro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSua_phongtro.Location = new System.Drawing.Point(664, 23);
+            this.btnSua_phongtro.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSua_phongtro.Name = "btnSua_phongtro";
+            this.btnSua_phongtro.Size = new System.Drawing.Size(151, 49);
+            this.btnSua_phongtro.TabIndex = 14;
+            this.btnSua_phongtro.Text = "Sửa";
+            this.btnSua_phongtro.UseVisualStyleBackColor = false;
+            this.btnSua_phongtro.Click += new System.EventHandler(this.btnSuaPhongTro_Click);
             // 
             // panel20
             // 
-            this.panel20.Controls.Add(this.textBox28);
-            this.panel20.Controls.Add(this.button22);
-            this.panel20.Controls.Add(this.label67);
+            this.panel20.Controls.Add(this.panel23);
+            this.panel20.Controls.Add(this.txtSearch_phongtro);
+            this.panel20.Controls.Add(this.btnSearch_phongtro);
+            this.panel20.Controls.Add(this.lblreload_phongtro);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel20.Location = new System.Drawing.Point(0, 0);
             this.panel20.Margin = new System.Windows.Forms.Padding(4);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(1508, 86);
+            this.panel20.Size = new System.Drawing.Size(1508, 116);
             this.panel20.TabIndex = 1;
             // 
-            // textBox28
+            // panel23
             // 
-            this.textBox28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel23.Controls.Add(this.btnPhongchuaday_phongtro);
+            this.panel23.Controls.Add(this.btnPhongtrong_phongtro);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel23.Location = new System.Drawing.Point(452, 0);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(212, 116);
+            this.panel23.TabIndex = 6;
+            // 
+            // btnPhongchuaday_phongtro
+            // 
+            this.btnPhongchuaday_phongtro.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnPhongchuaday_phongtro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPhongchuaday_phongtro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPhongchuaday_phongtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPhongchuaday_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhongchuaday_phongtro.ForeColor = System.Drawing.Color.GhostWhite;
+            this.btnPhongchuaday_phongtro.Location = new System.Drawing.Point(0, 57);
+            this.btnPhongchuaday_phongtro.Name = "btnPhongchuaday_phongtro";
+            this.btnPhongchuaday_phongtro.Size = new System.Drawing.Size(212, 59);
+            this.btnPhongchuaday_phongtro.TabIndex = 1;
+            this.btnPhongchuaday_phongtro.Text = "Phòng chưa đầy";
+            this.btnPhongchuaday_phongtro.UseVisualStyleBackColor = false;
+            this.btnPhongchuaday_phongtro.Click += new System.EventHandler(this.btnPhongchuaday_phongtro_Click);
+            // 
+            // btnPhongtrong_phongtro
+            // 
+            this.btnPhongtrong_phongtro.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnPhongtrong_phongtro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPhongtrong_phongtro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPhongtrong_phongtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPhongtrong_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhongtrong_phongtro.ForeColor = System.Drawing.Color.GhostWhite;
+            this.btnPhongtrong_phongtro.Location = new System.Drawing.Point(0, 0);
+            this.btnPhongtrong_phongtro.Name = "btnPhongtrong_phongtro";
+            this.btnPhongtrong_phongtro.Size = new System.Drawing.Size(212, 57);
+            this.btnPhongtrong_phongtro.TabIndex = 0;
+            this.btnPhongtrong_phongtro.Text = "Phòng trống";
+            this.btnPhongtrong_phongtro.UseVisualStyleBackColor = false;
+            this.btnPhongtrong_phongtro.Click += new System.EventHandler(this.btnPhongtrong_phongtro_Click);
+            // 
+            // txtSearch_phongtro
+            // 
+            this.txtSearch_phongtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox28.Location = new System.Drawing.Point(1058, 25);
-            this.textBox28.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(403, 34);
-            this.textBox28.TabIndex = 5;
+            this.txtSearch_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch_phongtro.Location = new System.Drawing.Point(1172, 40);
+            this.txtSearch_phongtro.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch_phongtro.Name = "txtSearch_phongtro";
+            this.txtSearch_phongtro.Size = new System.Drawing.Size(304, 34);
+            this.txtSearch_phongtro.TabIndex = 5;
             // 
-            // button22
+            // btnSearch_phongtro
             // 
-            this.button22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnSearch_phongtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
-            this.button22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button22.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button22.Image = ((System.Drawing.Image)(resources.GetObject("button22.Image")));
-            this.button22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button22.Location = new System.Drawing.Point(805, 15);
-            this.button22.Margin = new System.Windows.Forms.Padding(4);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(201, 53);
-            this.button22.TabIndex = 4;
-            this.button22.Text = "Tìm kiếm";
-            this.button22.UseVisualStyleBackColor = false;
+            this.btnSearch_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
+            this.btnSearch_phongtro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch_phongtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSearch_phongtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch_phongtro.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch_phongtro.Image")));
+            this.btnSearch_phongtro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSearch_phongtro.Location = new System.Drawing.Point(967, 34);
+            this.btnSearch_phongtro.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearch_phongtro.Name = "btnSearch_phongtro";
+            this.btnSearch_phongtro.Size = new System.Drawing.Size(177, 46);
+            this.btnSearch_phongtro.TabIndex = 4;
+            this.btnSearch_phongtro.Text = "Tìm kiếm";
+            this.btnSearch_phongtro.UseVisualStyleBackColor = false;
             // 
-            // label67
+            // lblreload_phongtro
             // 
-            this.label67.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label67.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.Location = new System.Drawing.Point(0, 0);
-            this.label67.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(452, 86);
-            this.label67.TabIndex = 3;
-            this.label67.Text = "Danh sách phòng thuê";
-            this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblreload_phongtro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblreload_phongtro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblreload_phongtro.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblreload_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblreload_phongtro.Location = new System.Drawing.Point(0, 0);
+            this.lblreload_phongtro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblreload_phongtro.Name = "lblreload_phongtro";
+            this.lblreload_phongtro.Size = new System.Drawing.Size(452, 116);
+            this.lblreload_phongtro.TabIndex = 3;
+            this.lblreload_phongtro.Text = "Danh sách phòng thuê";
+            this.lblreload_phongtro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblreload_phongtro.Click += new System.EventHandler(this.lblreload_phongtro_Click);
             // 
             // pnDichvu
             // 
@@ -3403,11 +3446,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.pnPhongtro);
             this.Controls.Add(this.pnKhanhtro);
             this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnHome);
             this.Controls.Add(this.pnTinhtientro);
-            this.Controls.Add(this.pnPhongtro);
             this.Controls.Add(this.pnDichvu);
             this.Controls.Add(this.pnThongke);
             this.Controls.Add(this.panel9);
@@ -3456,10 +3499,11 @@
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             this.pnPhongtro.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThongtin_phongtro)).EndInit();
             this.panel21.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
+            this.panel23.ResumeLayout(false);
             this.pnDichvu.ResumeLayout(false);
             this.groupBox13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
@@ -3667,8 +3711,8 @@
         private System.Windows.Forms.TextBox textBox27;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.TextBox txtSearch_phongtro;
+        private System.Windows.Forms.Label lblreload_phongtro;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.DataGridView dataGridView5;
         private VBButton vbButton3;
@@ -3682,15 +3726,13 @@
         private System.Windows.Forms.TextBox txtName_User;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Button btnThemPhongTro;
-        private System.Windows.Forms.ComboBox cboSortphongtro;
-        private System.Windows.Forms.ComboBox comboBox12;
-        private System.Windows.Forms.Button btnSortphongtro;
-        private System.Windows.Forms.Button btnSuaPhogTro;
-        private System.Windows.Forms.Button btnSuaPhongTro;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnThem_phongtro;
+        private System.Windows.Forms.ComboBox cboSort_phongtro;
+        private System.Windows.Forms.Button btnSort_phongtro;
+        private System.Windows.Forms.Button btnXoa_phongtro;
+        private System.Windows.Forms.Button btnSua_phongtro;
+        private System.Windows.Forms.Button btnSearch_phongtro;
+        private System.Windows.Forms.DataGridView dgvThongtin_phongtro;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.Button btnLammoi_khachtro;
         private System.Windows.Forms.Button btnLuu_khachtro;
@@ -3730,5 +3772,9 @@
         private System.Windows.Forms.RadioButton radNu;
         private System.Windows.Forms.RadioButton radNam;
         private System.Windows.Forms.DataGridView dgvthongtin_khachtro;
+        private System.Windows.Forms.Button btnChitietphongthue_phongtro;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Button btnPhongchuaday_phongtro;
+        private System.Windows.Forms.Button btnPhongtrong_phongtro;
     }
 }

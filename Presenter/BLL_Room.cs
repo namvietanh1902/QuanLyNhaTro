@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,5 +41,54 @@ namespace QuanLyNhaTro.Presenter
             }
             return data;
         }
+
+        public List<RoomModel> GetAllRoom()
+        {
+            return DAL_Room.Instance.GetAllRoom();
+        }
+
+        public List<RoomModel> GetAllRoomEmty()
+        {
+            List<RoomModel> roomModels = new List<RoomModel>();
+            foreach(RoomModel i in DAL_Room.Instance.GetAllRoom())
+            {
+                if(i.HienTrang == false)
+                {
+                    roomModels.Add(i);
+                }
+            }
+            return roomModels;  
+        }
+
+        public List<RoomModel> GetAllRoomRented()
+        {
+            List<RoomModel> roomModels = new List<RoomModel>();
+            foreach(RoomModel i in DAL_Room.Instance.GetAllRoom())
+            {
+                int dem = 0;
+                foreach(CustomerModel customer in DAL_KhachTro.Instance.GetAllCustomer())
+                {
+                    if(i.MaPhong == customer.MaPhong)
+                    {
+                        dem++;  
+                    }
+                }
+                if(dem != i.SoLuong && dem != 0)
+                {
+                    roomModels.Add(i);
+                }
+            }
+            return roomModels;
+        }
+
+        public DataTable GetChiTietPhongThueByMaPhong(int maphong)
+        {
+            return DAL_Room.Instance.GetChiTietPhongThueByMaPhong(maphong);
+        }
+
+
+
+
+
     }
 }

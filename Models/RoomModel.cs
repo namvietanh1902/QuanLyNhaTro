@@ -18,5 +18,7 @@ namespace QuanLyNhaTro.Models
         public int SoLuong { get; set; }
         [Required]
         public int Gia { get; set; }
+
+        public bool HienTrang { get; set; }
     }
 }

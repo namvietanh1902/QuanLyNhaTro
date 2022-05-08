@@ -66,6 +66,12 @@
     <Compile Include="Presenter\BLL_Admin.cs" />
     <Compile Include="Presenter\BLL_Customer.cs" />
     <Compile Include="Presenter\BLL_Room.cs" />
+    <Compile Include="Views\ChiTietPhongThue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ChiTietPhongThue.Designer.cs">
+      <DependentUpon>ChiTietPhongThue.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,23 +98,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\SuaPhongTro%28DaThue%29.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\SuaPhongTro%28DaThue%29.Designer.cs">
-      <DependentUpon>SuaPhongTro%28DaThue%29.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\ThaydoithongtinUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\ThaydoithongtinUser.Designer.cs">
       <DependentUpon>ThaydoithongtinUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ThongTinKhachTro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\ThongTinKhachTro.Designer.cs">
-      <DependentUpon>ThongTinKhachTro.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ThongTinPhongThue%28TRONG%29.cs">
       <SubType>Form</SubType>
@@ -116,6 +110,9 @@
     <Compile Include="Views\ThongTinPhongThue%28TRONG%29.Designer.cs">
       <DependentUpon>ThongTinPhongThue%28TRONG%29.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\ChiTietPhongThue.resx">
+      <DependentUpon>ChiTietPhongThue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,14 +135,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\SuaPhongTro%28DaThue%29.resx">
-      <DependentUpon>SuaPhongTro%28DaThue%29.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\ThaydoithongtinUser.resx">
       <DependentUpon>ThaydoithongtinUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ThongTinKhachTro.resx">
-      <DependentUpon>ThongTinKhachTro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ThongTinPhongThue%28TRONG%29.resx">
       <DependentUpon>ThongTinPhongThue%28TRONG%29.cs</DependentUpon>

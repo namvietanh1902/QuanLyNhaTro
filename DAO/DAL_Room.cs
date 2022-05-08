@@ -35,7 +35,7 @@ namespace QuanLyNhaTro.DAO
             }
             return listdata;
         }
-
+         
         private RoomModel GetPhongTroFromDataRow(DataRow i)
         {
             return new RoomModel
@@ -44,7 +44,20 @@ namespace QuanLyNhaTro.DAO
                 TenPhong = i["TenPhong"].ToString(),
                 SoLuong = Convert.ToInt32(i["SoLuong"].ToString()),
                 Gia = Convert.ToInt32(i["Gia"].ToString()),
+                HienTrang = Convert.ToBoolean(i["HienTrang"].ToString())
             };
         }
+
+
+
+        public DataTable GetChiTietPhongThueByMaPhong(int maphong)
+        {
+            string query = "Select PhongTro.MaPhong,TenPhong,HopDongThuePhong.TenKhach,SoLuong,Gia,HienTrang,HopDongThuePhong.NgayThue from PhongTro " +
+                "inner join HopDongThuePhong on PhongTro.MaPhong = HopDongThuePhong.MaPhong where PhongTro.MaPhong="+maphong;
+            return DBHelper.Instance.GetRecords(query, null);
+        }
+
+
+
     }
 }
