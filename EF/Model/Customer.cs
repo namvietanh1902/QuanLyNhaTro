@@ -25,10 +25,14 @@ namespace QuanLyNhaTro.EF.Model
         public string SDT { get; set; }
         [Required(ErrorMessage = "Nghề nghiệp không được để trống")]
         public string Job { get; set; }
+        public int UserId { get; set; }
         
     
         public bool isDelete { get; set; } = false;
-        public virtual Contract Contract;
+        [ForeignKey("UserId")]
+        public Account Account { get; set; }
+        public Contract Contract;
+    
 
 
     }

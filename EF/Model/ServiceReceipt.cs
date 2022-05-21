@@ -8,24 +8,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuanLyNhaTro.EF.Model
 {
-    public class MonthlyReceipt
+    public class ServiceReceipt
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public int ContractID { get; set; }
-        [Required(ErrorMessage = "Tháng không được để trống")]
-        public DateTime Month { get; set; }
-        public int ElecBefore { get; set; }
-        public int WaterBefore { get; set; }
-        public int ElecAfter { get; set; }
-        public int WaterAfter { get; set; }
-        public int ElecBill { get; set; }
-        public int WaterBill { get; set; }
-        public int RoomBill { get; set; }   
-        public int TotalBill { get; set; }
+        [Required(ErrorMessage ="Ngày thu không được để trống")]
+        public DateTime? PaidDate { get; set; }
+        public int Total { get; set; }
         [ForeignKey("ContractID")]
         public virtual Contract Contract { get; set; }
+        public virtual ServiceReceiptDetail Detail { get; set; }
+
 
     }
 }
