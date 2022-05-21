@@ -58,7 +58,6 @@ namespace QuanLyNhaTro.Views
             this.label10 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.pnDangnhap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnYourname.SuspendLayout();
@@ -335,7 +334,6 @@ namespace QuanLyNhaTro.Views
             this.pnDangky.Controls.Add(this.label10);
             this.pnDangky.Controls.Add(this.textBox4);
             this.pnDangky.Controls.Add(this.label11);
-            this.pnDangky.Controls.Add(this.label12);
             this.pnDangky.Location = new System.Drawing.Point(659, 197);
             this.pnDangky.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnDangky.Name = "pnDangky";
@@ -444,28 +442,18 @@ namespace QuanLyNhaTro.Views
             this.label11.TabIndex = 20;
             this.label11.Text = "Username";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label12.Location = new System.Drawing.Point(123, 203);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(162, 46);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "Sign up";
-            // 
             // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(1942, 1000);
-            this.Controls.Add(this.pnYourname);
             this.Controls.Add(this.pnDangky);
             this.Controls.Add(this.pnDangnhap);
+            this.Controls.Add(this.pnYourname);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -513,7 +501,6 @@ namespace QuanLyNhaTro.Views
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private VBButton btnLogin;
         private VBButton btnConfirm;
         private VBButton btnSignup;

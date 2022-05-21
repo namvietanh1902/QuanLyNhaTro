@@ -116,8 +116,8 @@ namespace QuanLyNhaTro.DAO
         public void UpdateAccountFormAdmin(AccountModel account)
         {
             SqlParameter[] para = new SqlParameter[]
-           {
-                new SqlParameter{ParameterName = "@ID",Value = account.Id},
+            {
+                new SqlParameter{ParameterName = "@Id",Value = account.Id},
                 new SqlParameter{ParameterName = "@Username",Value = account.Username},
                 new SqlParameter{ParameterName = "@Pass",Value = account.Password},
                 new SqlParameter{ParameterName = "@Role",Value = account.Role},
@@ -125,10 +125,11 @@ namespace QuanLyNhaTro.DAO
                 new SqlParameter{ParameterName = "@Gender",Value = account.Gender},
                 new SqlParameter{ParameterName = "@NgaySinh",Value =account.NgaySinh},
                 new SqlParameter{ParameterName = "@SDT",Value = account.SDT},
-           };
-            string query = "update Account set Username=@Username,Pass=@Pass,PhanQuyen=@Role,Name=@Name,Gender=@Gender,NgaySinh=@NgaySinh,SDT=@SDT Where UserID=@ID";
+            };
+            string query = "update Account set Username = @Username,Pass=@Pass,PhanQuyen=@Role,Name=@Name,Gender=@Gender,NgaySinh=@NgaySinh,SDT=@SDT where UserID=@Id";
             DBHelper.Instance.ExecuteDB(query, para);
         }
+
 
         public void DeleteAccountAdmin(int id)
         {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,7 +58,41 @@ namespace QuanLyNhaTro.DAO
             return DBHelper.Instance.GetRecords(query, null);
         }
 
+        public void AddPhongTro(RoomModel room)
+        {
+            SqlParameter[] para = new SqlParameter[]
+           {
+                new SqlParameter{ParameterName = "@TenPhong",Value = room.TenPhong },
+                new SqlParameter{ParameterName = "@SoLuong",Value = room.SoLuong },
+                new SqlParameter{ParameterName = "@Gia",Value = room.Gia },
+                new SqlParameter{ParameterName = "@HienTrang",Value = room.HienTrang },
 
+           };
+            string query = "insert into PhongTro values (@TenPhong,@SoLuong,@Gia,@HienTrang)";
+            DBHelper.Instance.ExecuteDB(query, para);
+        }
+
+        public void UpdatePhongTro(RoomModel room)
+        {
+            SqlParameter[] para = new SqlParameter[]
+           {
+                new SqlParameter{ParameterName = "@MaPhong",Value = room.MaPhong },
+                new SqlParameter{ParameterName = "@TenPhong",Value = room.TenPhong },
+                new SqlParameter{ParameterName = "@SoLuong",Value = room.SoLuong },
+                new SqlParameter{ParameterName = "@Gia",Value = room.Gia },
+                new SqlParameter{ParameterName = "@HienTrang",Value = room.HienTrang },
+           };
+            string query = "update PhongTro set TenPhong = @TenPhong ,SoLuong = @Soluong, Gia=@Gia,HienTrang = @HienTrang where MaPhong = @MaPhong";
+            DBHelper.Instance.ExecuteDB(query, para);
+        }
+
+        public void DeletePhongTro(int ma)
+        {
+            string query = "delete from PhongTro where MaPhong = " + ma;
+            DBHelper.Instance.ExecuteDB(query, null);
+        }
+
+        
 
     }
 }

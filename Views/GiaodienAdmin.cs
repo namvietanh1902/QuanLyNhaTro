@@ -619,6 +619,23 @@ namespace QuanLyNhaTro.Views
             }
         }
 
+        private void btnThemPhongTro_Click(object sender, EventArgs e)
+        {
+            ThemPhongTro frm = new ThemPhongTro(0);
+            frm.d += new ThemPhongTro.Mydel(reaload_phongtro);
+            frm.ShowDialog();
+        }
+        private void btnSuaPhongTro_Click(object sender, EventArgs e)
+        {
+            if(dgvThongtin_phongtro.SelectedRows.Count == 1)
+            {
+                int ma = Convert.ToInt32(dgvThongtin_phongtro.SelectedRows[0].Cells["MaPhong"].Value.ToString());
+                ThemPhongTro frm = new ThemPhongTro(ma);
+                frm.d += new ThemPhongTro.Mydel(reaload_phongtro);
+                frm.ShowDialog();
+            }
+
+        }
 
 
         private void btnDichvu_Click(object sender, EventArgs e)
@@ -719,20 +736,18 @@ namespace QuanLyNhaTro.Views
             pnThongke.Visible = false;
         }
 
-        private void btnThemPhongTro_Click(object sender, EventArgs e)
+        private void btnXoa_phongtro_Click(object sender, EventArgs e)
         {
-            ThemPhongTro frm = new ThemPhongTro();
-            frm.ShowDialog();
-        }
+            List<int> listdel = new List<int>();
+            foreach(DataGridViewRow row in dgvThongtin_phongtro.Rows)
+            {
+                listdel.Add(Convert.ToInt32(row.Cells["MaPhong"].Value.ToString()));
+            }
 
-        private void btnSuaPhongTro_Click(object sender, EventArgs e)
-        {
-            ThemPhongTro frm = new ThemPhongTro();
-            frm.getdata("SỬA THÔNG TIN PHÒNG TRỌ");
-            frm.ShowDialog();
-        }
 
-      
+            BLL_Room.Instance.DeletePhongTro(listdel);
+            reaload_phongtro();
+        }
     }
 }
 

@@ -154,6 +154,9 @@
             this.lblreload_phongtro = new System.Windows.Forms.Label();
             this.pnDichvu = new System.Windows.Forms.Panel();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.vbButton3 = new QuanLyNhaTro.VBButton();
+            this.vbButton2 = new QuanLyNhaTro.VBButton();
+            this.vbButton1 = new QuanLyNhaTro.VBButton();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.pnTinhtientro = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -194,6 +197,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.vbButton4 = new QuanLyNhaTro.VBButton();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -259,10 +263,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.btnNav = new System.Windows.Forms.Button();
-            this.vbButton4 = new QuanLyNhaTro.VBButton();
-            this.vbButton3 = new QuanLyNhaTro.VBButton();
-            this.vbButton2 = new QuanLyNhaTro.VBButton();
-            this.vbButton1 = new QuanLyNhaTro.VBButton();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -1862,6 +1862,7 @@
             this.btnXoa_phongtro.TabIndex = 13;
             this.btnXoa_phongtro.Text = "Xóa";
             this.btnXoa_phongtro.UseVisualStyleBackColor = false;
+            this.btnXoa_phongtro.Click += new System.EventHandler(this.btnXoa_phongtro_Click);
             // 
             // btnSua_phongtro
             // 
@@ -2009,6 +2010,72 @@
             this.groupBox13.TabIndex = 0;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Danh sách dịch vụ";
+            // 
+            // vbButton3
+            // 
+            this.vbButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.vbButton3.BackColor = System.Drawing.Color.MediumBlue;
+            this.vbButton3.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.vbButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton3.BorderRadius = 28;
+            this.vbButton3.BorderSize = 0;
+            this.vbButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbButton3.FlatAppearance.BorderSize = 0;
+            this.vbButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton3.ForeColor = System.Drawing.Color.White;
+            this.vbButton3.Location = new System.Drawing.Point(1213, 548);
+            this.vbButton3.Margin = new System.Windows.Forms.Padding(4);
+            this.vbButton3.Name = "vbButton3";
+            this.vbButton3.Size = new System.Drawing.Size(211, 71);
+            this.vbButton3.TabIndex = 2;
+            this.vbButton3.Text = "Xóa";
+            this.vbButton3.TextColor = System.Drawing.Color.White;
+            this.vbButton3.UseVisualStyleBackColor = false;
+            // 
+            // vbButton2
+            // 
+            this.vbButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.vbButton2.BackColor = System.Drawing.Color.MediumBlue;
+            this.vbButton2.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.vbButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton2.BorderRadius = 28;
+            this.vbButton2.BorderSize = 0;
+            this.vbButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbButton2.FlatAppearance.BorderSize = 0;
+            this.vbButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton2.ForeColor = System.Drawing.Color.White;
+            this.vbButton2.Location = new System.Drawing.Point(1213, 370);
+            this.vbButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.vbButton2.Name = "vbButton2";
+            this.vbButton2.Size = new System.Drawing.Size(211, 71);
+            this.vbButton2.TabIndex = 3;
+            this.vbButton2.Text = "Sửa";
+            this.vbButton2.TextColor = System.Drawing.Color.White;
+            this.vbButton2.UseVisualStyleBackColor = false;
+            // 
+            // vbButton1
+            // 
+            this.vbButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.vbButton1.BackColor = System.Drawing.Color.MediumBlue;
+            this.vbButton1.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.vbButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton1.BorderRadius = 28;
+            this.vbButton1.BorderSize = 0;
+            this.vbButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbButton1.FlatAppearance.BorderSize = 0;
+            this.vbButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton1.ForeColor = System.Drawing.Color.White;
+            this.vbButton1.Location = new System.Drawing.Point(1213, 191);
+            this.vbButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.vbButton1.Name = "vbButton1";
+            this.vbButton1.Size = new System.Drawing.Size(211, 71);
+            this.vbButton1.TabIndex = 4;
+            this.vbButton1.Text = "Thêm";
+            this.vbButton1.TextColor = System.Drawing.Color.White;
+            this.vbButton1.UseVisualStyleBackColor = false;
             // 
             // dataGridView5
             // 
@@ -2499,6 +2566,29 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "THÔNG TIN PHÒNG THUÊ";
+            // 
+            // vbButton4
+            // 
+            this.vbButton4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.vbButton4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.vbButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton4.BorderRadius = 30;
+            this.vbButton4.BorderSize = 0;
+            this.vbButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbButton4.FlatAppearance.BorderSize = 0;
+            this.vbButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton4.ForeColor = System.Drawing.Color.Navy;
+            this.vbButton4.Image = ((System.Drawing.Image)(resources.GetObject("vbButton4.Image")));
+            this.vbButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.vbButton4.Location = new System.Drawing.Point(117, 444);
+            this.vbButton4.Margin = new System.Windows.Forms.Padding(4);
+            this.vbButton4.Name = "vbButton4";
+            this.vbButton4.Size = new System.Drawing.Size(221, 86);
+            this.vbButton4.TabIndex = 3;
+            this.vbButton4.Text = "      Tính tiền";
+            this.vbButton4.TextColor = System.Drawing.Color.Navy;
+            this.vbButton4.UseVisualStyleBackColor = false;
             // 
             // dateTimePicker2
             // 
@@ -3350,95 +3440,6 @@
             this.btnNav.Text = "☰";
             this.btnNav.UseVisualStyleBackColor = false;
             this.btnNav.Click += new System.EventHandler(this.btnNav_Click);
-            // 
-            // vbButton4
-            // 
-            this.vbButton4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.vbButton4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.vbButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton4.BorderRadius = 30;
-            this.vbButton4.BorderSize = 0;
-            this.vbButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vbButton4.FlatAppearance.BorderSize = 0;
-            this.vbButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton4.ForeColor = System.Drawing.Color.Navy;
-            this.vbButton4.Image = ((System.Drawing.Image)(resources.GetObject("vbButton4.Image")));
-            this.vbButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.vbButton4.Location = new System.Drawing.Point(117, 444);
-            this.vbButton4.Margin = new System.Windows.Forms.Padding(4);
-            this.vbButton4.Name = "vbButton4";
-            this.vbButton4.Size = new System.Drawing.Size(221, 86);
-            this.vbButton4.TabIndex = 3;
-            this.vbButton4.Text = "      Tính tiền";
-            this.vbButton4.TextColor = System.Drawing.Color.Navy;
-            this.vbButton4.UseVisualStyleBackColor = false;
-            // 
-            // vbButton3
-            // 
-            this.vbButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.vbButton3.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton3.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton3.BorderRadius = 28;
-            this.vbButton3.BorderSize = 0;
-            this.vbButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vbButton3.FlatAppearance.BorderSize = 0;
-            this.vbButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton3.ForeColor = System.Drawing.Color.White;
-            this.vbButton3.Location = new System.Drawing.Point(1213, 548);
-            this.vbButton3.Margin = new System.Windows.Forms.Padding(4);
-            this.vbButton3.Name = "vbButton3";
-            this.vbButton3.Size = new System.Drawing.Size(211, 71);
-            this.vbButton3.TabIndex = 2;
-            this.vbButton3.Text = "Xóa";
-            this.vbButton3.TextColor = System.Drawing.Color.White;
-            this.vbButton3.UseVisualStyleBackColor = false;
-            // 
-            // vbButton2
-            // 
-            this.vbButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.vbButton2.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton2.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton2.BorderRadius = 28;
-            this.vbButton2.BorderSize = 0;
-            this.vbButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vbButton2.FlatAppearance.BorderSize = 0;
-            this.vbButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton2.ForeColor = System.Drawing.Color.White;
-            this.vbButton2.Location = new System.Drawing.Point(1213, 370);
-            this.vbButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.vbButton2.Name = "vbButton2";
-            this.vbButton2.Size = new System.Drawing.Size(211, 71);
-            this.vbButton2.TabIndex = 3;
-            this.vbButton2.Text = "Sửa";
-            this.vbButton2.TextColor = System.Drawing.Color.White;
-            this.vbButton2.UseVisualStyleBackColor = false;
-            // 
-            // vbButton1
-            // 
-            this.vbButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.vbButton1.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton1.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton1.BorderRadius = 28;
-            this.vbButton1.BorderSize = 0;
-            this.vbButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vbButton1.FlatAppearance.BorderSize = 0;
-            this.vbButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton1.ForeColor = System.Drawing.Color.White;
-            this.vbButton1.Location = new System.Drawing.Point(1213, 191);
-            this.vbButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.vbButton1.Name = "vbButton1";
-            this.vbButton1.Size = new System.Drawing.Size(211, 71);
-            this.vbButton1.TabIndex = 4;
-            this.vbButton1.Text = "Thêm";
-            this.vbButton1.TextColor = System.Drawing.Color.White;
-            this.vbButton1.UseVisualStyleBackColor = false;
             // 
             // GiaodienAdmin
             // 

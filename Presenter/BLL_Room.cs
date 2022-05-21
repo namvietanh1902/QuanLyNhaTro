@@ -86,6 +86,45 @@ namespace QuanLyNhaTro.Presenter
             return DAL_Room.Instance.GetChiTietPhongThueByMaPhong(maphong);
         }
 
+        public RoomModel GetRoomModelByMaPhong(int ma)
+        {
+            RoomModel room = new RoomModel();
+            foreach(RoomModel roomModel in DAL_Room.Instance.GetAllRoom())
+            {
+                if (roomModel.MaPhong == ma)
+                {
+                    room = roomModel;
+                    break;
+                }
+                    
+            }
+            return room;
+        }
+
+        public void AddPhongTro(RoomModel room)
+        {
+            DAL_Room.Instance.AddPhongTro(room);
+        }
+
+        public void UpdatePhongTro(RoomModel room)
+        {
+            DAL_Room.Instance.UpdatePhongTro(room);
+        }
+
+        public void DeletePhongTro(List<int> listdel)
+        {
+           foreach(int i in listdel)
+                {
+            foreach(RoomModel room in GetAllRoom())
+            {
+                    if(i == room.MaPhong)
+                    {
+                        DAL_Room.Instance.DeletePhongTro(i);
+                    }
+                }
+            }
+        }
+
 
 
 
