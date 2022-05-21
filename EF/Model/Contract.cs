@@ -11,7 +11,7 @@ namespace QuanLyNhaTro.EF.Model
     public class Contract
     {
         [Key]
-        public int Id { get; set; }
+        public int ContractId { get; set; }
         
         public int RoomID { get; set; }
         public int CustomerID { get; set; }

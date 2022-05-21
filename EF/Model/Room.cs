@@ -11,7 +11,7 @@ namespace QuanLyNhaTro.EF.Model
     public class Room
     {   [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int RoomId { get; set; }
         [Required(ErrorMessage ="Tên phòng không được để trống")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Số lượng không được để trống")]

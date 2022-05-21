@@ -12,7 +12,7 @@ namespace QuanLyNhaTro.EF.Model
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int MonthlyReceiptId { get; set; }
         public int ContractID { get; set; }
         [Required(ErrorMessage = "Tháng không được để trống")]
         public DateTime Month { get; set; }

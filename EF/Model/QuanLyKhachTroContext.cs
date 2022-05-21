@@ -22,7 +22,11 @@ namespace QuanLyNhaTro.EF.Model
         public virtual DbSet<ServiceReceiptDetail> ServiceReceiptDetails { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            //throw new UnintentionalCodeFirstException();
+            modelBuilder.Entity<ServiceReceiptDetail>().
+                HasKey(c => new { c.ServiceId,c.ServiceReceiptId})
+                ;
+            
         }
     }
 }

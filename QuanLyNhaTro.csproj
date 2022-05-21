@@ -76,6 +76,11 @@
     <Compile Include="EF\Model\Service.cs" />
     <Compile Include="EF\Model\ServiceReceipt.cs" />
     <Compile Include="EF\Model\ServiceReceiptDetail.cs" />
+    <Compile Include="Migrations\202205211159487_InitialCreate.cs" />
+    <Compile Include="Migrations\202205211159487_InitialCreate.designer.cs">
+      <DependentUpon>202205211159487_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\CBBItem.cs" />
@@ -131,6 +136,9 @@
     <Compile Include="Views\ThemPhongTro.Designer.cs">
       <DependentUpon>ThemPhongTro.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Migrations\202205211159487_InitialCreate.resx">
+      <DependentUpon>202205211159487_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ChiTietPhongThue.resx">
       <DependentUpon>ChiTietPhongThue.cs</DependentUpon>
     </EmbeddedResource>

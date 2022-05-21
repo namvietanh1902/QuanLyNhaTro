@@ -2,11 +2,15 @@
 using System.Windows.Forms;
 using QuanLyNhaTro.Presenter;
 using QuanLyNhaTro.Models;
+using QuanLyNhaTro.EF.Model;
+using System.Linq;
 
 namespace QuanLyNhaTro.Views
-{
+{   
+    
     public partial class DangNhap : Form
-    {
+    {   
+        QuanLyKhachTroContext db = new QuanLyKhachTroContext();
         public DangNhap()
         {
             InitializeComponent();
@@ -93,34 +97,50 @@ private void btnLogin_Click_1(object sender, EventArgs e)
 
         private void btnSignup_Click(object sender, EventArgs e)
         {
-
-            int id = BLL_Account.Instance.GetIDByUserAndPass(textBox4.Text, textBox3.Text);
-            if (id == -1) // chưa có ai đăng ký
-            {
-                MessageBox.Show
-                    (
-                    "Sign In Success",
-                    "Thông báo",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                    );
-                pnDangky.Visible = false;
-                pnYourname.Visible = true;
-            }
-            else // nếu đã được dăng ký
-            {
-                MessageBox.Show
-                    (
-                   "Your Account is exsisted ",
-                   "Thông báo",
-                   MessageBoxButtons.OK,
-                   MessageBoxIcon.Error
-                   );
-            }
+            //db.Accounts.Add(new Account
+            //{
+            //    Username = "Anh",
+            //    Password = "123456",
+            //    Name = "Hung",
+            //    Birthday =DateTime.Now,
+            //    Gender = false,
+            //    SDT = "098213",
+            //});
+            //db.SaveChanges();
+            //var data = db.Accounts.Select(c => c).FirstOrDefault().Name;
+            //MessageBox.Show(data);
+            //int id = BLL_Account.Instance.GetIDByUserAndPass(textBox4.Text, textBox3.Text);
+            //if (id == -1) // chưa có ai đăng ký
+            //{
+            //    MessageBox.Show
+            //        (
+            //        "Sign In Success",
+            //        "Thông báo",
+            //        MessageBoxButtons.OK,
+            //        MessageBoxIcon.Information
+            //        );
+            //    pnDangky.Visible = false;
+            //    pnYourname.Visible = true;
+            //}
+            //else // nếu đã được dăng ký
+            //{
+            //    MessageBox.Show
+            //        (
+            //       "Your Account is exsisted ",
+            //       "Thông báo",
+            //       MessageBoxButtons.OK,
+            //       MessageBoxIcon.Error
+            //       );
+            //}
         }
         
 
         private void DangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }

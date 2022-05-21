@@ -12,14 +12,14 @@ namespace QuanLyNhaTro.EF.Model
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int ServiceReceiptId { get; set; }
         public int ContractID { get; set; }
         [Required(ErrorMessage ="Ngày thu không được để trống")]
         public DateTime? PaidDate { get; set; }
         public int Total { get; set; }
         [ForeignKey("ContractID")]
         public virtual Contract Contract { get; set; }
-        public virtual ServiceReceiptDetail Detail { get; set; }
+        public virtual ICollection<ServiceReceiptDetail> Detail { get; set; }
 
 
     }

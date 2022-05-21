@@ -12,7 +12,7 @@ namespace QuanLyNhaTro.EF.Model
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int CustomerId { get; set; }
         [Required(ErrorMessage ="Tên khách trọ không được để trống")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Ngày sinh không được để trống")]
@@ -25,13 +25,13 @@ namespace QuanLyNhaTro.EF.Model
         public string SDT { get; set; }
         [Required(ErrorMessage = "Nghề nghiệp không được để trống")]
         public string Job { get; set; }
-        public int UserId { get; set; }
-        
+       
+        public int AccountId { get; set; }
     
         public bool isDelete { get; set; } = false;
-        [ForeignKey("UserId")]
-        public Account Account { get; set; }
-        public Contract Contract;
+        [ForeignKey("AccountId")]
+        public Account Account;
+        public Contract Contract ;
     
 
 
