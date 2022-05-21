@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +9,9 @@ using System.Data.Entity.Infrastructure;
 
 namespace QuanLyNhaTro.EF.Model
 {
-    public class QuanLyKhachTroContext:DbContext
-    {   
-        public QuanLyKhachTroContext():base("name = PBL3"){}
+    public class QuanLyKhachTroContext : DbContext
+    {
+        public QuanLyKhachTroContext() : base("name = PBL3") { }
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Contract> Contracts { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
