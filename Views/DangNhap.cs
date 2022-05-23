@@ -8,41 +8,18 @@ using System.Linq;
 namespace QuanLyNhaTro.Views
 {   
     
-    public partial class DangNhap : Form,ILoginView
+    public partial class DangNhap : Form
     {   
         QuanLyKhachTroContext db = new QuanLyKhachTroContext();
 
-        public event EventHandler LoginEvent;
-
-        public string Username
-        {
-            get
-            {
-                return txtUsername.Text;
-            }
-            set
-            {
-                txtUsername.Text = value;
-            }
-        }
-       public string Password
-        {
-            get { return txtPassword.Text; }
-            set { txtPassword.Text = value; }
-        }
-
+       
         public DangNhap()
         {
             InitializeComponent();
-            AssociateAndRaiseEvent();
+            
         }
 
-        private void AssociateAndRaiseEvent()
-        {
-            //Dang nhap
-            //btnLogin.Click += delegate { MessageBox.Show("alo"); };
-            btnLogin.Click += delegate { LoginEvent?.Invoke(this, EventArgs.Empty); };
-           }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {

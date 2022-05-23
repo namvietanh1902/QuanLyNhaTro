@@ -13,47 +13,13 @@ using QuanLyNhaTro.Presenter;
 
 namespace QuanLyNhaTro.Views
 {
-    public partial class GiaodienAdmin : Form, IUserView
+    public partial class GiaodienAdmin : Form
     {
         bool isthoat = true;
         public int ID { get; set; }
-        public int AccountID
-        {
-            get
-            {
-                return Convert.ToInt32(txtIduser_user.Text);
-            }
-            set
-            {
-                txtIduser_user.Text = value.ToString();
-            }
-        }
-        public string UserName
-        {
-            get
-            {
-                return txtUsername_User.Text;
-            }
-            set
-            {
-                txtUsername_User.Text = value;
-            }
-        }
-        public string Password {
-            get
-            {
-                return txtPass_user.Text;
-            }
-            set
-            {
-                txtPass_user.Text = value;
-            }
-        }
-        public bool Gender { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime BirthDay { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string SDT { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string SearchValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string SortType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        
+        
+        
 
         public GiaodienAdmin(int id)
         {

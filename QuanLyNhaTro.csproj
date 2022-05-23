@@ -83,11 +83,11 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="DAO\CBBItem.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
-    <Compile Include="Presenter\BLL_Account.cs" />
-    <Compile Include="Presenter\BLL_Admin.cs" />
-    <Compile Include="Presenter\BLL_Customer.cs" />
-    <Compile Include="Presenter\BLL_Room.cs" />
-    <Compile Include="Presenter\LoginPresenter.cs" />
+    <Compile Include="BLL\BLL_Account.cs" />
+    <Compile Include="BLL\BLL_Admin.cs" />
+    <Compile Include="BLL\BLL_Customer.cs" />
+    <Compile Include="BLL\BLL_Room.cs" />
+    <Compile Include="BLL\Common\ModelDataValidation.cs" />
     <Compile Include="Views\ChiTietPhongThue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,8 +120,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\ILoginView.cs" />
-    <Compile Include="Views\IUserView.cs" />
     <Compile Include="Views\ThaydoithongtinUser.cs">
       <SubType>Form</SubType>
     </Compile>
