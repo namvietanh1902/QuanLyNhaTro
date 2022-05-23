@@ -15,7 +15,7 @@ namespace QuanLyNhaTro.Views
 {
     public partial class GiaodienUser : Form
     {
-        public delegate void Mydel(AccountModel account);
+        public delegate void Mydel(Account account);
         public int ID { get; set; }
         bool isthoat = true;
         public GiaodienUser(int id)
@@ -23,7 +23,7 @@ namespace QuanLyNhaTro.Views
             ID = id;
             InitializeComponent();
             hienthidulieulenthanhthongbao();
-            lblTenNguoiDung.Text = BLL_Account.Instance.GetTenNguoiDungByID(ID);
+        //    lblTenNguoiDung.Text = BLL_Account.Instance.GetTenNguoiDungByID(ID);
             comboBox1.Items.Add("Nam");
             comboBox1.Items.Add("Nữ");
         }
@@ -68,8 +68,8 @@ namespace QuanLyNhaTro.Views
             lblThanhtoan.Visible = false;
             pnHome.Visible = true;
             pnUser.Visible = false;
-            pnPhongtro.Visible = false ;
-            pnThanhtoan.Visible = false ;
+            pnPhongtro.Visible = false;
+            pnThanhtoan.Visible = false;
         }
 
         private void btnUser_Click(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace QuanLyNhaTro.Views
             lblTitle.Text = "Manager User";
             lblHome.Visible = false;
             lblUser.Visible = true;
-            lblPhongtro.Visible = false;;
+            lblPhongtro.Visible = false; ;
             lblThanhtoan.Visible = false;
             pnHome.Visible = false;
             pnUser.Visible = true;
@@ -97,7 +97,7 @@ namespace QuanLyNhaTro.Views
 
 
         }
-        
+
         private void btnPhongtro_Click_1(object sender, EventArgs e)
         {
             lblTitle.Text = "Thông tin phòng thuê";
@@ -136,7 +136,7 @@ namespace QuanLyNhaTro.Views
                 btnDangxuat.Location = new Point(8, 791);
                 btnDangxuat.Text = "";
                 btnDangxuat.Width = 70;
-                
+
             }
             else
             {
@@ -168,14 +168,14 @@ namespace QuanLyNhaTro.Views
 
         private void btnTraphong_Click(object sender, EventArgs e)
         {
-            if(isThanhtoan == false)
+            if (isThanhtoan == false)
             {
-               DialogResult ret = MessageBox.Show(
-                    "Bạn chưa thanh toàn tiền phòng + \n Bấm 'OK' để đến với giao diện thanh toán tiền phòng",
-                    "Thông báo",
-                    MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Information);
-                   if(ret == DialogResult.OK)
+                DialogResult ret = MessageBox.Show(
+                     "Bạn chưa thanh toàn tiền phòng + \n Bấm 'OK' để đến với giao diện thanh toán tiền phòng",
+                     "Thông báo",
+                     MessageBoxButtons.OKCancel,
+                     MessageBoxIcon.Information);
+                if (ret == DialogResult.OK)
                 {
                     thanhtoan_click();
                 }

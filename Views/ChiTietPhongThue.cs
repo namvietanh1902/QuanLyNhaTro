@@ -19,7 +19,7 @@ namespace QuanLyNhaTro.Views
             MaPhongThue = ma; 
             InitializeComponent();
             dataGridView1.ClearSelection();
-            dataGridView1.DataSource = BLL_Room.Instance.GetChiTietPhongThueByMaPhong(ma);
+           // dataGridView1.DataSource = BLL_Room.Instance.GetChiTietPhongThueByMaPhong(ma);
             dataGridView1.ClearSelection();
         }
 

@@ -25,54 +25,54 @@ namespace QuanLyNhaTro.Presenter
             }
             private set { }
         }
-        public List<CustomerModel> GetAllCustomer()
-        {
-            return  DAL_KhachTro.Instance.GetAllCustomer();
-        }
+        //public List<CustomerModel> GetAllCustomer()
+        //{
+        //    return DAL_KhachTro.Instance.GetAllCustomer();
+        //}
 
 
-        public DataTable ShowAllInfoKhanhTro() // dùng để in ra cái bảng trong panel KhachTro
-        {
-            return DAL_KhachTro.Instance.ShowAllInfoKhanhTro();
-        }
+        //public DataTable ShowAllInfoKhanhTro() // dùng để in ra cái bảng trong panel KhachTro
+        //{
+        //    return DAL_KhachTro.Instance.ShowAllInfoKhanhTro();
+        //}
 
-        public void AddKhachTro(CustomerModel cus)
-        {
-            DAL_KhachTro.Instance.AddKhachTro(cus);
-        }
+        //public void AddKhachTro(CustomerModel cus)
+        //{
+        //    DAL_KhachTro.Instance.AddKhachTro(cus);
+        //}
 
-        public void UpdateIDOfKhachTro(CustomerModel cus)
-        {
-            DAL_KhachTro.Instance.UpdateIDOfKhachTro(cus);
-        }
+        //public void UpdateIDOfKhachTro(CustomerModel cus)
+        //{
+        //    DAL_KhachTro.Instance.UpdateIDOfKhachTro(cus);
+        //}
 
-        public void UpdateKhachTro(CustomerModel cus)
-        {
-            DAL_KhachTro.Instance.UpdateKhachTro(cus);
-        }
+        //public void UpdateKhachTro(CustomerModel cus)
+        //{
+        //    DAL_KhachTro.Instance.UpdateKhachTro(cus);
+        //}
 
-        public void DeleteKhachTro(List<int> listdel)
-        {
-            foreach(int makhach in listdel)
-            {
-                foreach(CustomerModel cus in DAL_KhachTro.Instance.GetAllCustomer())
-                {
-                    if(makhach == cus.MaKhach)
-                    {
-                        DAL_KhachTro.Instance.DeleteKhachTro(makhach);
-                    }
-                }
-            }
-        }
+        //public void DeleteKhachTro(List<int> listdel)
+        //{
+        //    foreach (int makhach in listdel)
+        //    {
+        //        foreach (CustomerModel cus in DAL_KhachTro.Instance.GetAllCustomer())
+        //        {
+        //            if (makhach == cus.MaKhach)
+        //            {
+        //                DAL_KhachTro.Instance.DeleteKhachTro(makhach);
+        //            }
+        //        }
+        //    }
+        //}
 
-        public DataTable SearchKhachTro(string txt)
-        {
-            return DAL_KhachTro.Instance.SearchKhachTro(txt);
-        }
+        //public DataTable SearchKhachTro(string txt)
+        //{
+        //    return DAL_KhachTro.Instance.SearchKhachTro(txt);
+        //}
 
-        public DataTable SortKhachTro(List<int> makhach, string SortType)
-        {
-            return DAL_KhachTro.Instance.SortKhachTro(makhach, SortType);
-        }
+        //public DataTable SortKhachTro(List<int> makhach, string SortType)
+        //{
+        //    return DAL_KhachTro.Instance.SortKhachTro(makhach, SortType);
+        //}
     }
 }

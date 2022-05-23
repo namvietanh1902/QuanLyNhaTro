@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 
-namespace QuanLyNhaTro.EF.Model
+namespace QuanLyNhaTro.Models
 {
     public class QuanLyKhachTroContext : DbContext
-    {
+    {   
+        
         public QuanLyKhachTroContext() : base("name = PBL3") { }
+
+       
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Contract> Contracts { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }

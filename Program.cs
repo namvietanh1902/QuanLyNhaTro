@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyNhaTro.Views;
+using QuanLyNhaTro.Models;
+using QuanLyNhaTro.Presenter;
 
 namespace QuanLyNhaTro
 {
@@ -17,7 +19,10 @@ namespace QuanLyNhaTro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DangNhap());
+            DangNhap dangNhap = new DangNhap();
+            QuanLyKhachTroContext context  = new QuanLyKhachTroContext();
+            LoginPresenter login = new LoginPresenter(context, dangNhap);
+            Application.Run(dangNhap );
         }
     }
 }

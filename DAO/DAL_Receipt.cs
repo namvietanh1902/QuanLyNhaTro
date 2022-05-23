@@ -26,56 +26,56 @@ namespace QuanLyNhaTro.DAO
             private set { }
         }
 
-        public List<ReceiptModel> GetAllReceipt()
-        {
-            List<ReceiptModel> res = new List<ReceiptModel>();
-            string query = "Select * from HopDongThuePhong";
-            foreach (DataRow i in DBHelper.Instance.GetRecords(query, null).Rows)
-            {
-                res.Add(GetReceiptFromDataRow(i));
-            }
-            return res;
-        }
+        //public List<ReceiptModel> GetAllReceipt()
+        //{
+        //    List<ReceiptModel> res = new List<ReceiptModel>();
+        //    string query = "Select * from HopDongThuePhong";
+        //    foreach (DataRow i in DBHelper.Instance.GetRecords(query, null).Rows)
+        //    {
+        //        res.Add(GetReceiptFromDataRow(i));
+        //    }
+        //    return res;
+        //}
 
-        private ReceiptModel GetReceiptFromDataRow(DataRow i)
-        {
-            return new ReceiptModel
-            {
-                MaThue = Convert.ToInt32(i["MaHopDong"].ToString()),
-                MaPhong = Convert.ToInt32(i["MaPhong"].ToString()),
-                MaKhach  = Convert.ToInt32(i["MaKhach"].ToString()),
-                NgayThue = Convert.ToDateTime(i["NgayThue".ToString()]),
-                TenKhach = i["TenKhach"].ToString(),
-                
-            };
-        }
+        //private ReceiptModel GetReceiptFromDataRow(DataRow i)
+        //{
+        //    return new ReceiptModel
+        //    {
+        //        MaThue = Convert.ToInt32(i["MaHopDong"].ToString()),
+        //        MaPhong = Convert.ToInt32(i["MaPhong"].ToString()),
+        //        MaKhach = Convert.ToInt32(i["MaKhach"].ToString()),
+        //        NgayThue = Convert.ToDateTime(i["NgayThue".ToString()]),
+        //        TenKhach = i["TenKhach"].ToString(),
 
-        public void AddReceipt(ReceiptModel receipt)
-        {
-            SqlParameter[] para = new SqlParameter[]
-            {
-                new SqlParameter{ParameterName = "@MaPhong",Value = receipt.MaPhong},
-                new SqlParameter{ParameterName = "@MaKhach",Value = receipt.MaKhach},
-                new SqlParameter{ParameterName = "@NgayThue",Value = receipt.NgayThue },
-                new SqlParameter{ParameterName = "@TenKhach",Value = receipt.TenKhach},
+        //    };
+        //}
 
-            };
-            string query = "insert into HopDongThuePhong values (@MaPhong,@MaKhach,@NgayThue,@TenKhach)";
-            DBHelper.Instance.ExecuteDB(query, para);
-        }
+        //public void AddReceipt(ReceiptModel receipt)
+        //{
+        //    SqlParameter[] para = new SqlParameter[]
+        //    {
+        //        new SqlParameter{ParameterName = "@MaPhong",Value = receipt.MaPhong},
+        //        new SqlParameter{ParameterName = "@MaKhach",Value = receipt.MaKhach},
+        //        new SqlParameter{ParameterName = "@NgayThue",Value = receipt.NgayThue },
+        //        new SqlParameter{ParameterName = "@TenKhach",Value = receipt.TenKhach},
 
-        public void UpdateReceipt(ReceiptModel receipt)
-        {
-            SqlParameter[] para = new SqlParameter[]
-           {
-                new SqlParameter{ParameterName = "@MaThue",Value = receipt.MaThue},
-                new SqlParameter{ParameterName = "@MaPhong",Value = receipt.MaPhong},
-                new SqlParameter{ParameterName = "@MaKhach",Value = receipt.MaKhach},
-                new SqlParameter{ParameterName = "@NgayThue",Value = receipt.NgayThue },
-                new SqlParameter{ParameterName = "@TenKhach",Value = receipt.TenKhach},
-           };
-            string query = "update HopDongThuePhong set MaPhong =@MaPhong,MaKhach=@MaKhach,NgayThue=NgayThue,TenKhach=@TenKhach Where MaHopDong=@MaThue";
-            DBHelper.Instance.ExecuteDB(query, para);
-        }
+        //    };
+        //    string query = "insert into HopDongThuePhong values (@MaPhong,@MaKhach,@NgayThue,@TenKhach)";
+        //    DBHelper.Instance.ExecuteDB(query, para);
+        //}
+
+        //public void UpdateReceipt(ReceiptModel receipt)
+        //{
+        //    SqlParameter[] para = new SqlParameter[]
+        //   {
+        //        new SqlParameter{ParameterName = "@MaThue",Value = receipt.MaThue},
+        //        new SqlParameter{ParameterName = "@MaPhong",Value = receipt.MaPhong},
+        //        new SqlParameter{ParameterName = "@MaKhach",Value = receipt.MaKhach},
+        //        new SqlParameter{ParameterName = "@NgayThue",Value = receipt.NgayThue },
+        //        new SqlParameter{ParameterName = "@TenKhach",Value = receipt.TenKhach},
+        //   };
+        //    string query = "update HopDongThuePhong set MaPhong =@MaPhong,MaKhach=@MaKhach,NgayThue=NgayThue,TenKhach=@TenKhach Where MaHopDong=@MaThue";
+        //    DBHelper.Instance.ExecuteDB(query, para);
+        //}
     }
 }

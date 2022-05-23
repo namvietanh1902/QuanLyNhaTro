@@ -2,19 +2,47 @@
 using System.Windows.Forms;
 using QuanLyNhaTro.Presenter;
 using QuanLyNhaTro.Models;
-using QuanLyNhaTro.EF.Model;
+
 using System.Linq;
 
 namespace QuanLyNhaTro.Views
 {   
     
-    public partial class DangNhap : Form
+    public partial class DangNhap : Form,ILoginView
     {   
         QuanLyKhachTroContext db = new QuanLyKhachTroContext();
+
+        public event EventHandler LoginEvent;
+
+        public string Username
+        {
+            get
+            {
+                return txtUsername.Text;
+            }
+            set
+            {
+                txtUsername.Text = value;
+            }
+        }
+       public string Password
+        {
+            get { return txtPassword.Text; }
+            set { txtPassword.Text = value; }
+        }
+
         public DangNhap()
         {
             InitializeComponent();
+            AssociateAndRaiseEvent();
         }
+
+        private void AssociateAndRaiseEvent()
+        {
+            //Dang nhap
+            //btnLogin.Click += delegate { MessageBox.Show("alo"); };
+            btnLogin.Click += delegate { LoginEvent?.Invoke(this, EventArgs.Empty); };
+           }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -44,51 +72,51 @@ namespace QuanLyNhaTro.Views
 
 
 
-private void btnLogin_Click_1(object sender, EventArgs e)
-        {
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
-            int id = BLL_Account.Instance.GetIDByUserAndPass(username, password);
+//private void btnLogin_Click_1(object sender, EventArgs e)
+        //{
+        //    string username = txtUsername.Text;
+        //    string password = txtPassword.Text;
+        //    int id = BLL_Account.Instance.GetIDByUserAndPass(username, password);
 
-            if (id == -1)
-            {
-                MessageBox.Show(
-                    "Your username or password is incorrect ",
-                    "Thông báo",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                    );
-            }
-            else
-            {
-                AccountModel account = new AccountModel();
-                account = BLL_Account.Instance.GetAccountByID(id);
-                bool checkRole = account.Role;
-                if (checkRole)
-                {
-                    this.Hide();
-                    GiaodienAdmin frm = new GiaodienAdmin(id);
-                    frm.Show();
-                }
-                else
-                {
-                    this.Hide();
-                    GiaodienUser frm = new GiaodienUser(id);
-                    frm.Show();
-                }
-            }
-        }
+        //    if (id == -1)
+        //    {
+        //        MessageBox.Show(
+        //            "Your username or password is incorrect ",
+        //            "Thông báo",
+        //            MessageBoxButtons.OK,
+        //            MessageBoxIcon.Error
+        //            );
+        //    }
+        //    else
+        //    {
+        //        Account account = new Account();
+        //        account = BLL_Account.Instance.GetAccountByID(id);
+        //        bool checkRole = account.Role;
+        //        if (checkRole)
+        //        {
+        //            this.Hide();
+        //            GiaodienAdmin frm = new GiaodienAdmin(id);
+        //            frm.Show();
+                //}
+                //else
+                //{
+                //    this.Hide();
+                //    GiaodienUser frm = new GiaodienUser(id);
+                //    frm.Show();
+                //}
+           // }
+       // }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            int AccountCount = BLL_Account.Instance.GetAllAccount().Count;
-            string UserID = (BLL_Account.Instance.GetAllAccount()[AccountCount - 1].Id + 1).ToString();
-            string[] InfoCustomner = new string[] { textBox5.Text, UserID };
+            //int AccountCount = BLL_Account.Instance.GetAllAccount().Count;
+            //string UserID = (BLL_Account.Instance.GetAllAccount()[AccountCount - 1].Id + 1).ToString();
+            //string[] InfoCustomner = new string[] { textBox5.Text, UserID };
 
-            string[] InfoAccount = new string[] { textBox4.Text, textBox3.Text };
+            //string[] InfoAccount = new string[] { textBox4.Text, textBox3.Text };
 
-            BLL_Account.Instance.AddAccountFromSignin(InfoAccount, InfoCustomner);
-            //MessageBox.Show("Quay về đăng nhập");
+            //BLL_Account.Instance.AddAccountFromSignin(InfoAccount, InfoCustomner);
+            ////MessageBox.Show("Quay về đăng nhập");
 
             //pnYourname.Visible = false ;
             //pnDangnhap.Visible = true;
@@ -141,6 +169,16 @@ private void btnLogin_Click_1(object sender, EventArgs e)
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
         {
 
         }

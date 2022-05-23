@@ -5,7 +5,7 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<QuanLyNhaTro.EF.Model.QuanLyKhachTroContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<QuanLyNhaTro.Models.QuanLyKhachTroContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@
             ContextKey = "QuanLyNhaTro.EF.Model.QuanLyKhachTroContext";
         }
 
-        protected override void Seed(QuanLyNhaTro.EF.Model.QuanLyKhachTroContext context)
+        protected override void Seed(QuanLyNhaTro.Models.QuanLyKhachTroContext context)
         {
             //  This method will be called after migrating to the latest version.
 

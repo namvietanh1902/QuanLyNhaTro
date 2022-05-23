@@ -14,7 +14,8 @@ namespace QuanLyNhaTro.DAO
         //private string ConnectionString = @"Data Source=DESKTOP-D7LUG0D\PHUCDZ;Initial Catalog=Nhatro;Integrated Security=True";
         private static DBHelper _instance;
 
-        public static DBHelper Instance {
+        public static DBHelper Instance
+        {
             get
             {
                 if (_instance == null)
@@ -31,7 +32,7 @@ namespace QuanLyNhaTro.DAO
             return new SqlConnection(ConnectionString);
         }
 
-        public void ExecuteDB(string query, SqlParameter [] Param)
+        public void ExecuteDB(string query, SqlParameter[] Param)
         {
             SqlConnection conn = this.ConnectToDB();
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -44,17 +45,17 @@ namespace QuanLyNhaTro.DAO
             conn.Close();
 
         }
-        public DataTable GetRecords(string query,SqlParameter[] Params)
+        public DataTable GetRecords(string query, SqlParameter[] Params)
         {
             SqlConnection conn = this.ConnectToDB();
-            SqlDataAdapter adpt = new SqlDataAdapter(query,conn);
+            SqlDataAdapter adpt = new SqlDataAdapter(query, conn);
             if (Params != null)
             {
                 adpt.SelectCommand.Parameters.AddRange(Params);
             }
             DataTable dt = new DataTable();
             conn.Open();
-            
+
             adpt.Fill(dt);
 
             conn.Close();

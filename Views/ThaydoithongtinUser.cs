@@ -47,7 +47,7 @@ namespace QuanLyNhaTro.Views
             else Gender = false;
 
             string[] InfoUser = new string[] { textBox2.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox1.Text };
-            BLL_Account.Instance.ThayDoiThongTinUser(InfoUser, Gender);
+        //    BLL_Account.Instance.ThayDoiThongTinUser(InfoUser, Gender);
 
             Close();
         }

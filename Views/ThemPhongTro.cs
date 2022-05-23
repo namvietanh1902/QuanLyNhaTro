@@ -28,26 +28,26 @@ namespace QuanLyNhaTro.Views
 
         private void GUI()
         {
-            if(maphong == 0)
-            {
-                txtHientrangthue.Text = "Trống";
-            }
-            else
-            {
-                RoomModel room = BLL_Room.Instance.GetRoomModelByMaPhong(maphong);
-                txtMaphongthue.Text = room.MaPhong.ToString();
-                txtTenphongthue.Text = room.TenPhong;
-                txtGiaphongthue.Text = room.Gia.ToString();
-                if(room.HienTrang == true)
-                {
-                    txtHientrangthue.Text = "Đã Thuê";
-                }
-                else
-                {
-                    txtHientrangthue.Text = "Trống";
-                }
-                txtSoluong.Text = room.SoLuong.ToString();
-            }
+            //if(maphong == 0)
+            //{
+            //    txtHientrangthue.Text = "Trống";
+            //}
+            //else
+            //{
+            //    RoomModel room = BLL_Room.Instance.GetRoomModelByMaPhong(maphong);
+            //    txtMaphongthue.Text = room.MaPhong.ToString();
+            //    txtTenphongthue.Text = room.TenPhong;
+            //    txtGiaphongthue.Text = room.Gia.ToString();
+            //    if(room.HienTrang == true)
+            //    {
+            //        txtHientrangthue.Text = "Đã Thuê";
+            //    }
+            //    else
+            //    {
+            //        txtHientrangthue.Text = "Trống";
+            //    }
+            //    txtSoluong.Text = room.SoLuong.ToString();
+            //}
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -58,32 +58,32 @@ namespace QuanLyNhaTro.Views
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            RoomModel room = new RoomModel();
-            room.TenPhong = txtTenphongthue.Text;
-            room.Gia = Convert.ToInt32(txtGiaphongthue.Text);
-            if(txtHientrangthue.Text == "Trống")
-            {
-                room.HienTrang = false;
-            }
-            if(txtHientrangthue.Text == "Đã Thuê")
-            {
-                room.HienTrang = true;
-            }
-            room.SoLuong = Convert.ToInt32(txtSoluong.Text);
+            //RoomModel room = new RoomModel();
+            //room.TenPhong = txtTenphongthue.Text;
+            //room.Gia = Convert.ToInt32(txtGiaphongthue.Text);
+            //if(txtHientrangthue.Text == "Trống")
+            //{
+            //    room.HienTrang = false;
+            //}
+            //if(txtHientrangthue.Text == "Đã Thuê")
+            //{
+            //    room.HienTrang = true;
+            //}
+            //room.SoLuong = Convert.ToInt32(txtSoluong.Text);
 
 
 
-            if (maphong == 0)
-            {
-                BLL_Room.Instance.AddPhongTro(room);
-            }
-            else
-            {
-                room.MaPhong = Convert.ToInt32(txtMaphongthue.Text);
-                BLL_Room.Instance.UpdatePhongTro(room);
-            }
-            d();
-            Close();
+            //if (maphong == 0)
+            //{
+            //    BLL_Room.Instance.AddPhongTro(room);
+            //}
+            //else
+            //{
+            //    room.MaPhong = Convert.ToInt32(txtMaphongthue.Text);
+            //    BLL_Room.Instance.UpdatePhongTro(room);
+            //}
+            //d();
+            //Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

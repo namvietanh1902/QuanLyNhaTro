@@ -24,27 +24,27 @@ namespace QuanLyNhaTro.Presenter
             }
             private set { }
         }
-        public void AddAccountAdmin(AdminModel account)
-        {
-            DAL_Admin.Instance.AddAccountAdmin(account);
-        }
-        public void UpdateAccountAdmin(AdminModel account)
-        {
-            DAL_Admin.Instance.UpdateAccountAdmin(account);
-        }
+        //public void AddAccountAdmin(AdminModel account)
+        //{
+        //    DAL_Admin.Instance.AddAccountAdmin(account);
+        //}
+        //public void UpdateAccountAdmin(AdminModel account)
+        //{
+        //    DAL_Admin.Instance.UpdateAccountAdmin(account);
+        //}
 
         public void DeleteAccountAdmin(List<int> del)
         {
-            foreach(int id in del)
-            {
-                foreach (AccountModel account in DAL_Account.Instance.GetAllAccount())
-                {
-                    if (account.Id == id)
-                    {
-                        DAL_Account.Instance.DeleteAccountAdmin(id);
-                    }
-                }
-            }
+            //foreach (int id in del)
+            //{
+            //    foreach (AccountModel account in DAL_Account.Instance.GetAllAccount())
+            //    {
+            //        if (account.Id == id)
+            //        {
+            //            DAL_Account.Instance.DeleteAccountAdmin(id);
+            //        }
+            //    }
+           // }
         }
     }
 }

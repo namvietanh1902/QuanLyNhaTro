@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace QuanLyNhaTro.EF.Model
+namespace QuanLyNhaTro.Models
 {
     public class Service
     {
