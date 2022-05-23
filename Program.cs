@@ -20,8 +20,12 @@ namespace QuanLyNhaTro
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             DangNhap dangNhap = new DangNhap();
-            QuanLyKhachTroContext context  = new QuanLyKhachTroContext();
+
+           
           
+
+            QuanLy context  = new QuanLy();
+            
             Application.Run(dangNhap );
         }
     }

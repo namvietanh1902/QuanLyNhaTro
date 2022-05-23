@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using QuanLyNhaTro.DAO;
 using QuanLyNhaTro.Models;
 
-namespace QuanLyNhaTro.Presenter
+namespace QuanLyNhaTro.BLL
 {
     public class BLL_Admin
     {

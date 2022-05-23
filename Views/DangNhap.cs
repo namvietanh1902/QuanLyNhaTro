@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using QuanLyNhaTro.Presenter;
+using QuanLyNhaTro.BLL;
 using QuanLyNhaTro.Models;
 
 using System.Linq;
@@ -10,7 +10,7 @@ namespace QuanLyNhaTro.Views
     
     public partial class DangNhap : Form
     {   
-        QuanLyKhachTroContext db = new QuanLyKhachTroContext();
+        QuanLy db = new QuanLy();
 
        
         public DangNhap()
@@ -154,10 +154,40 @@ namespace QuanLyNhaTro.Views
         {
 
         }
+        private void Login(Account account)
+        {
+            if (account == null)
+            {
+                MessageBox.Show(
+                    "Your username or password is incorrect ",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+            }
+            else
+            {
+                if (account.isAdmin)
+                {
+                    this.Hide();
+                    GiaodienAdmin frm = new GiaodienAdmin(account.AccountId);
+                    frm.Show();
+                }
+                else
+                {
+                    this.Hide();
+                    GiaodienUser frm = new GiaodienUser(account.AccountId);
+                    frm.Show();
+                }
+            }
+
+
+        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            Account account = BLL_Account.Instance.GetAccountByUserAndPass(txtUsername.Text, txtPassword.Text);
+            Login(account);
         }
     }
 }

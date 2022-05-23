@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using QuanLyNhaTro.DAO;
 using QuanLyNhaTro.Models;
 
-namespace QuanLyNhaTro.Presenter
+namespace QuanLyNhaTro.BLL
 {
     public class BLL_Account
     {
@@ -26,79 +26,35 @@ namespace QuanLyNhaTro.Presenter
             private set { }
         }
 
-        //    public List<AccountModel> GetAllAccount()
-        //    {
-        //        return DAL_Account.Instance.GetAllAccount();
-        //    }
-        //    public int GetIDByUserAndPass(string user, string pass)
-        //    {
-        //        int userid = 0;
-        //        foreach (AccountModel i in GetAllAccount())
-        //        {
-        //            if (i.Username == user && i.Password == pass)
-        //            {
-        //                userid = i.Id;
-        //                break;
-        //            }
-        //            else userid = -1;
-        //        }
-        //        return userid;
-        //    }
-        //    public AccountModel GetAccountByID(int id)
-        //    {
-        //        AccountModel account = new AccountModel();
-        //        foreach (AccountModel i in GetAllAccount())
-        //        {
-        //            if (i.Id == id)
-        //            {
-        //                account = i;
-        //                break;
-        //            }
-
-        //        }
-        //        return account;
-        //    }
-        //    public string GetTenNguoiDungByID(int id)
-        //    {
-        //        string name = "";
-        //        if (GetAccountByID(id).Role == true)
-        //        {
-        //            foreach (AdminModel admin in DAL_Admin.Instance.GetAllAmin())
-        //            {
-        //                if (admin.UserID == id)
-        //                {
-        //                    name = admin.Name;
-        //                }
-        //            }
-        //        }
-        //        if (GetAccountByID(id).Role == false)
-        //        {
-        //            foreach (CustomerModel cus in DAL_KhachTro.Instance.GetAllCustomer())
-        //            {
-        //                if (cus.UserID == id)
-        //                {
-        //                    name = cus.TenKhach;
-        //                }
-        //            }
-        //        }
-        //        return name;
-        //    }
+        public List<Account> GetAllAccount()
+        {
+            return QuanLy.Instance.Accounts.Select(p=>p).ToList() ;
+        }
+        public Account GetAccountByUserAndPass(string user, string pass)
+        {
+            
+            return QuanLy.Instance.Accounts.Where(p => p.Username== user&&p.Password == pass).FirstOrDefault() ;    
+           
+        }
+        public Account GetAccountByID(int id)
+        {
+            return QuanLy.Instance.Accounts.Find(id);
+           
+        }
+        public string GetTenNguoiDungByID(int id)
+        {    
+            return GetAccountByID(id).Name;
+        }
         //    public void AddAccountFromSignin(string[] InfoAccount, string[] InfoCustomer)
         //    {
         //        DAL_Account.Instance.AddAccountFromSignin(InfoAccount);
         //        //DAL_KhachTro.Instance.AddCustomerFromSignin(InfoCustomer);
         //    }
 
-        //    public CustomerModel GetKhachTroByID(int UserID)
-        //    {
-        //        CustomerModel a = new CustomerModel();
-        //        foreach (CustomerModel cm in DAL_KhachTro.Instance.GetAllCustomer())
-        //        {
-        //            if (cm.UserID == UserID)
-        //                a = cm;
-        //        }
-        //        return a;
-        //    }
+        public Customer GetKhachTroByID(int AccountID)
+        {
+            return QuanLy.Instance.Customers.Where(c => c.AccountId == AccountID).Select(p => p).FirstOrDefault();
+        }
 
         //    public void ThayDoiThongTinUser(string[] InfoUser, bool Gender)
 
@@ -106,10 +62,12 @@ namespace QuanLyNhaTro.Presenter
         //        DAL_KhachTro.Instance.ThayDoiThongTinUser(InfoUser, Gender);
         //    }
 
-        //    public void ThayDoiMatKhau(int ID, string NewPass)
-        //    {
-        //        DAL_Account.Instance.ThayDoiMatKhau(ID, NewPass);
-        //    }
+        public void ChangePass(int ID, string NewPass)
+        {
+            Account account  = GetAccountByID(ID);
+            account.Password = NewPass;
+            QuanLy.Instance.SaveChanges();
+        }
 
         //    public void AddAccountFormAdmin(AccountModel account)
         //    {
