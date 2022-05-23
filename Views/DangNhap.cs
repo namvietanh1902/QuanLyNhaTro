@@ -10,7 +10,7 @@ namespace QuanLyNhaTro.Views
     
     public partial class DangNhap : Form
     {   
-        QuanLyKhachTroContext db = new QuanLyKhachTroContext();
+        QuanLy db = new QuanLy();
 
        
         public DangNhap()

@@ -9,12 +9,23 @@ using System.Data.Entity.Infrastructure;
 
 namespace QuanLyNhaTro.Models
 {
-    public class QuanLyKhachTroContext : DbContext
+    public class QuanLy : DbContext
     {   
         
-        public QuanLyKhachTroContext() : base("name = PBL3") { }
-
-       
+        public QuanLy() : base("name = PBL3") { }
+        private static QuanLy _instance;
+        public static QuanLy Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new QuanLy();
+                }
+                return _instance;
+            }
+            private set { }
+        }
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Contract> Contracts { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
@@ -23,6 +34,8 @@ namespace QuanLyNhaTro.Models
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<ServiceReceipt> ServiceReceipts { get; set; }
         public virtual DbSet<ServiceReceiptDetail> ServiceReceiptDetails { get; set; }
+     
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //throw new UnintentionalCodeFirstException();
