@@ -12,7 +12,9 @@ namespace QuanLyNhaTro.Models
     public class QuanLyKhachTroContext : DbContext
     {   
         
-        public QuanLyKhachTroContext() : base("name = PBL3") { }
+        public QuanLyKhachTroContext() : base("name = PBL3") {
+            Database.SetInitializer<QuanLyKhachTroContext> (new CreateDatabaseIfNotExists<QuanLyKhachTroContext>());
+        }
 
        
         public virtual DbSet<Account> Accounts { get; set; }

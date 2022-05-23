@@ -102,18 +102,18 @@ namespace QuanLyNhaTro.Views
 
         private void btnSignup_Click(object sender, EventArgs e)
         {
-            //db.Accounts.Add(new Account
-            //{
-            //    Username = "Anh",
-            //    Password = "123456",
-            //    Name = "Hung",
-            //    Birthday =DateTime.Now,
-            //    Gender = false,
-            //    SDT = "098213",
-            //});
-            //db.SaveChanges();
-            //var data = db.Accounts.Select(c => c).FirstOrDefault().Name;
-            //MessageBox.Show(data);
+            db.Accounts.Add(new Account
+            {
+                Username = "Anh",
+                Password = "123456",
+                Name = "Hung",
+                Birthday = DateTime.Now,
+                Gender = false,
+                SDT = "098213",
+            });
+            db.SaveChanges();
+            var data = db.Accounts.Select(c => c).FirstOrDefault().Name;
+            MessageBox.Show(data);
             //int id = BLL_Account.Instance.GetIDByUserAndPass(textBox4.Text, textBox3.Text);
             //if (id == -1) // chưa có ai đăng ký
             //{
