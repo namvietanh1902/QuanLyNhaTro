@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using QuanLyNhaTro.DAO;
 using QuanLyNhaTro.Models;
 
-namespace QuanLyNhaTro.Presenter
+namespace QuanLyNhaTro.BLL
 {
     public class BLL_Account
     {
@@ -30,11 +30,11 @@ namespace QuanLyNhaTro.Presenter
         {
             return QuanLy.Instance.Accounts.Select(p=>p).ToList() ;
         }
-        public int GetIDByUserAndPass(string user, string pass)
+        public Account GetAccountByUserAndPass(string user, string pass)
         {
-            int userid = -1;
-            userid = QuanLy.Instance.Accounts.Where(p => p.Username== user&&p.Password == pass).FirstOrDefault().AccountId ;    
-            return userid;
+            
+            return QuanLy.Instance.Accounts.Where(p => p.Username== user&&p.Password == pass).FirstOrDefault() ;    
+           
         }
         public Account GetAccountByID(int id)
         {

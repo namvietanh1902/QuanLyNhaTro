@@ -21,7 +21,7 @@ namespace QuanLyNhaTro
             Application.SetCompatibleTextRenderingDefault(false);
             DangNhap dangNhap = new DangNhap();
             QuanLy context  = new QuanLy();
-            LoginPresenter login = new LoginPresenter(context, dangNhap);
+            
             Application.Run(dangNhap );
         }
     }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using QuanLyNhaTro.Models;
 using QuanLyNhaTro.DAO;
 
-namespace QuanLyNhaTro.Presenter
+namespace QuanLyNhaTro.BLL
 {
     public class BLL_Customer
     {

@@ -71,7 +71,7 @@
     <Compile Include="Models\Contract.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MonthlyReceipt.cs" />
-    <Compile Include="Models\QuanLyKhachTroContext.cs" />
+    <Compile Include="Models\QuanLy.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\ServiceReceipt.cs" />
