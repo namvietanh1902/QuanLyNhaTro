@@ -16,7 +16,7 @@ namespace QuanLyNhaTro.Models
         [Required(ErrorMessage ="Tên khách trọ không được để trống")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Ngày sinh không được để trống")]
-        DateTime Birthday { get; set; }
+        public DateTime Birthday { get; set; }
         [Required(ErrorMessage ="Giới tính không được để trống")]
         public bool Gender { get; set; }
         [Required(ErrorMessage="CMND không được để trống")]
@@ -25,8 +25,9 @@ namespace QuanLyNhaTro.Models
         public string SDT { get; set; }
         [Required(ErrorMessage = "Nghề nghiệp không được để trống")]
         public string Job { get; set; }
-       
-        public int AccountId { get; set; }
+
+    
+        public  int AccountId { get; set; }
     
         public bool isDelete { get; set; } = false;
         [ForeignKey("AccountId")]

@@ -58,18 +58,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL_Contract.cs" />
+    <Compile Include="BLL\BLL_Room.cs" />
     <Compile Include="ButtonBoGoc.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DAO\DAL_Account.cs" />
-    <Compile Include="DAO\DAL_Admin.cs" />
-    <Compile Include="DAO\DAL_KhachTro.cs" />
-    <Compile Include="DAO\DAL_Receipt.cs" />
-    <Compile Include="DAO\DAL_Room.cs" />
-    <Compile Include="DAO\DBHelper.cs" />
+    <Compile Include="DTO\Account_View.cs" />
+    <Compile Include="DTO\CBBItems.cs" />
+    <Compile Include="DTO\ChiTietPhongThue.cs" />
+    <Compile Include="DTO\Customer_View.cs" />
+    <Compile Include="DTO\Room_View.cs" />
     <Compile Include="Migrations\202205230912376_chothinh.cs" />
     <Compile Include="Migrations\202205230912376_chothinh.designer.cs">
       <DependentUpon>202205230912376_chothinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205240307332_AddRoomName.cs" />
+    <Compile Include="Migrations\202205240307332_AddRoomName.designer.cs">
+      <DependentUpon>202205240307332_AddRoomName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205240332501_AddBirthday.cs" />
+    <Compile Include="Migrations\202205240332501_AddBirthday.designer.cs">
+      <DependentUpon>202205240332501_AddBirthday.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Contract.cs" />
@@ -85,12 +94,9 @@
       <DependentUpon>202205211159487_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="DAO\CBBItem.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="BLL\BLL_Account.cs" />
-    <Compile Include="BLL\BLL_Admin.cs" />
     <Compile Include="BLL\BLL_Customer.cs" />
-    <Compile Include="BLL\BLL_Room.cs" />
     <Compile Include="BLL\Common\ModelDataValidation.cs" />
     <Compile Include="Views\ChiTietPhongThue.cs">
       <SubType>Form</SubType>
@@ -141,6 +147,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205230912376_chothinh.resx">
       <DependentUpon>202205230912376_chothinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205240307332_AddRoomName.resx">
+      <DependentUpon>202205240307332_AddRoomName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205240332501_AddBirthday.resx">
+      <DependentUpon>202205240332501_AddBirthday.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ChiTietPhongThue.resx">
       <DependentUpon>ChiTietPhongThue.cs</DependentUpon>

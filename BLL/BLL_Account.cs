@@ -4,8 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using QuanLyNhaTro.DAO;
 using QuanLyNhaTro.Models;
+using QuanLyNhaTro.DTO;
 
 namespace QuanLyNhaTro.BLL
 {
@@ -45,22 +45,12 @@ namespace QuanLyNhaTro.BLL
         {    
             return GetAccountByID(id).Name;
         }
-        //    public void AddAccountFromSignin(string[] InfoAccount, string[] InfoCustomer)
-        //    {
-        //        DAL_Account.Instance.AddAccountFromSignin(InfoAccount);
-        //        //DAL_KhachTro.Instance.AddCustomerFromSignin(InfoCustomer);
-        //    }
+        
 
         public Customer GetKhachTroByID(int AccountID)
         {
             return QuanLy.Instance.Customers.Where(c => c.AccountId == AccountID).Select(p => p).FirstOrDefault();
         }
-
-        //    public void ThayDoiThongTinUser(string[] InfoUser, bool Gender)
-
-        //    {
-        //        DAL_KhachTro.Instance.ThayDoiThongTinUser(InfoUser, Gender);
-        //    }
 
         public void ChangePass(int ID, string NewPass)
         {
@@ -69,43 +59,117 @@ namespace QuanLyNhaTro.BLL
             QuanLy.Instance.SaveChanges();
         }
 
-        //    public void AddAccountFormAdmin(AccountModel account)
-        //    {
-        //        DAL_Account.Instance.AddAccountFormAdmin(account);
-        //    }
+        public List<Account_View> GetAccount_Views()
+        {
+            List<Account_View> data = new List<Account_View>();
+            foreach (Account account in GetAllAccount())
+            {
+                data.Add(new Account_View
+                {
+                    AccountId = account.AccountId,
+                    Username = account.Username,
+                    Password = account.Password,
+                    isAdmin = account.isAdmin,
+                    Name = account.Name,
+                    Gender = account.Gender,
+                    Birthday = account.Birthday,
+                    SDT = account.SDT,
+                });
 
-        //    public void UpdateAccountFormAdmin(AccountModel account)
-        //    {
-        //        DAL_Account.Instance.UpdateAccountFormAdmin(account);
-        //    }
+            }
 
-        //    public void DeleteAccountFormAdmin(List<int> del)
-        //    {
-        //        foreach (int id in del)
-        //        {
-        //            foreach (AccountModel account in GetAllAccount())
-        //            {
-        //                if (account.Id == id)
-        //                {
-        //                    DAL_Account.Instance.DeleteAccountAdmin(id);
-        //                }
-        //            }
-        //        }
-        //    }
+            return data;
 
-        //    public List<AccountModel> SearchAccountFormAdmin(string txt)
-        //    {
-        //        return DAL_Account.Instance.SearchAccountFormAdmin(txt);
-        //    }
+        }
 
-        //    public List<AccountModel> SortAccountFormAdmin(List<int> id, string SortType)
-        //    {
-        //        return DAL_Account.Instance.SortAccountFormAdmin(id, SortType);
-        //    }
+        public void AddAccount(Account account)
+        {
+            QuanLy.Instance.Accounts.Add(account);
+            QuanLy.Instance.SaveChanges();
+        }
 
-        //    public void UpdateAccountOnPanelKhachTro(AccountModel account)
-        //    {
-        //        DAL_Account.Instance.UpdateAccountOnPanelKhachTro(account);
-        //    }
+        public void UpdateAccount(Account account)
+        {
+            Account tam = GetAccountByID(account.AccountId);
+            if (tam == null) return;
+            else
+            {
+                tam.AccountId = account.AccountId;
+                tam.Username = account.Username;
+                tam.Password = account.Password;
+                tam.isAdmin = account.isAdmin;
+                tam.Name = account.Name;
+                tam.Gender = account.Gender;
+                tam.Birthday = account.Birthday;
+                tam.SDT = account.SDT;
+                QuanLy.Instance.SaveChanges();
+            }
+        }
+
+        public void DeleteAccount(List<int> del)
+        {
+            foreach (int id in del)
+            {
+               QuanLy.Instance.Accounts.Remove(GetAccountByID(id));
+               QuanLy.Instance.SaveChanges();
+            }
+        }
+
+        public List<Account_View> SearchAccount(string txt)
+        {
+            List<Account_View> data = new List<Account_View>();
+            foreach(Account account in GetAllAccount())
+            {
+                if (account.Name.Contains(txt))
+                {
+                    data.Add(new Account_View
+                    {
+                        AccountId = account.AccountId,
+                        Username = account.Username,
+                        Password = account.Password,
+                        isAdmin = account.isAdmin,
+                        Name = account.Name,
+                        Gender = account.Gender,
+                        Birthday = account.Birthday,
+                        SDT = account.SDT,
+                    });
+                }
+            }
+            return data;
+        }
+
+        public List<Account_View> SortAccount(List<int> accountID, string SortType)
+        {
+            List<Account_View> data = new List<Account_View>();
+            foreach (int id in accountID)
+            {
+                foreach(Account_View account_View in GetAccount_Views())
+                {
+                    if(account_View.AccountId == id)
+                    {
+                        data.Add(account_View);
+                    }
+                }
+            }
+
+            switch (SortType)
+            {
+                case "AccountId":
+                    {
+                        return data.OrderBy(s => s.AccountId).ToList();
+                    }
+                case "Name":
+                    {
+                        return data.OrderBy(s => s.Name).ToList();
+                    }
+                case "Birthday":
+                    {
+                        return data.OrderBy(s => s.Birthday).ToList();
+                    }
+                default:
+                    return data;
+            }
+
+        }
     }
 }

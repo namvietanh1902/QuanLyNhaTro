@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyNhaTro.BLL;
 using QuanLyNhaTro.Models;
-using QuanLyNhaTro.Presenter;
 
 namespace QuanLyNhaTro.Views
 {
@@ -28,26 +28,22 @@ namespace QuanLyNhaTro.Views
 
         private void GUI()
         {
-            //if(maphong == 0)
-            //{
-            //    txtHientrangthue.Text = "Trống";
-            //}
-            //else
-            //{
-            //    RoomModel room = BLL_Room.Instance.GetRoomModelByMaPhong(maphong);
-            //    txtMaphongthue.Text = room.MaPhong.ToString();
-            //    txtTenphongthue.Text = room.TenPhong;
-            //    txtGiaphongthue.Text = room.Gia.ToString();
-            //    if(room.HienTrang == true)
-            //    {
-            //        txtHientrangthue.Text = "Đã Thuê";
-            //    }
-            //    else
-            //    {
-            //        txtHientrangthue.Text = "Trống";
-            //    }
-            //    txtSoluong.Text = room.SoLuong.ToString();
-            //}
+            Room room = BLL_Room.Instance.GetRoomModelByMaPhong(maphong);
+            if (room == null)
+            {
+                txtHientrangthue.Text = "Trống";
+            }
+            else
+            {
+                lblTitle.Text = "Sửa Thông Tin Phòng Trọ";
+                txtMaphongthue.Text = room.RoomId.ToString();
+                txtTenphongthue.Text = room.Name;
+                txtGiaphongthue.Text = room.Price.ToString();
+                if(room.isRent == true)
+                txtHientrangthue.Text = "Đã Thuê";
+                else txtHientrangthue.Text = "Trống";
+                txtSoluong.Text = room.Capacity.ToString();
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -58,32 +54,36 @@ namespace QuanLyNhaTro.Views
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            //RoomModel room = new RoomModel();
-            //room.TenPhong = txtTenphongthue.Text;
-            //room.Gia = Convert.ToInt32(txtGiaphongthue.Text);
-            //if(txtHientrangthue.Text == "Trống")
-            //{
-            //    room.HienTrang = false;
-            //}
-            //if(txtHientrangthue.Text == "Đã Thuê")
-            //{
-            //    room.HienTrang = true;
-            //}
-            //room.SoLuong = Convert.ToInt32(txtSoluong.Text);
+            try
+            {
+                Room room = new Room();
+                room.RoomId = maphong;
+                room.Name = txtTenphongthue.Text;
+                room.Price = Convert.ToInt32(txtGiaphongthue.Text);
+                if (txtHientrangthue.Text == "Trống")
+                {
+                    room.isRent = false;
+                }
+                if (txtHientrangthue.Text == "Đã Thuê")
+                {
+                    room.isRent = true;
+                }
+                room.Capacity = Convert.ToInt32(txtSoluong.Text);
+                new BLL.Common.ModelDataValidation().Validate(room);
+                BLL_Room.Instance.AddAndUpdate(room);
 
 
-
-            //if (maphong == 0)
-            //{
-            //    BLL_Room.Instance.AddPhongTro(room);
-            //}
-            //else
-            //{
-            //    room.MaPhong = Convert.ToInt32(txtMaphongthue.Text);
-            //    BLL_Room.Instance.UpdatePhongTro(room);
-            //}
-            //d();
-            //Close();
+                 
+                d();
+                Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

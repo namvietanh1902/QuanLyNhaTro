@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuanLyNhaTro.Presenter;
+using QuanLyNhaTro.BLL;
 
 namespace QuanLyNhaTro.Views
 {
@@ -19,8 +19,16 @@ namespace QuanLyNhaTro.Views
             MaPhongThue = ma; 
             InitializeComponent();
             dataGridView1.ClearSelection();
-           // dataGridView1.DataSource = BLL_Room.Instance.GetChiTietPhongThueByMaPhong(ma);
+            dataGridView1.DataSource = BLL_Room.Instance.GetChiTietPhongThueByMaPhong(ma);
+            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                col.HeaderCell.Style.Font = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+            }
+            this.dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+            this.dataGridView1.DefaultCellStyle.Font = new Font("Tahoma", 10);
             dataGridView1.ClearSelection();
+
         }
 
         private void button1_Click(object sender, EventArgs e)

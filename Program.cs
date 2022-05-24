@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyNhaTro.Views;
 using QuanLyNhaTro.Models;
-using QuanLyNhaTro.Presenter;
 
 namespace QuanLyNhaTro
 {
@@ -19,14 +18,10 @@ namespace QuanLyNhaTro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            DangNhap dangNhap = new DangNhap();
+            Application.Run(new DangNhap());
 
-           
-          
 
-            QuanLy context  = new QuanLy();
-            
-            Application.Run(dangNhap );
+
         }
     }
 }

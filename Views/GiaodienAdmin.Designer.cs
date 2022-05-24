@@ -1958,10 +1958,10 @@
             this.btnSearch_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch_phongtro.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch_phongtro.Image")));
             this.btnSearch_phongtro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch_phongtro.Location = new System.Drawing.Point(967, 34);
+            this.btnSearch_phongtro.Location = new System.Drawing.Point(985, 37);
             this.btnSearch_phongtro.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch_phongtro.Name = "btnSearch_phongtro";
-            this.btnSearch_phongtro.Size = new System.Drawing.Size(177, 46);
+            this.btnSearch_phongtro.Size = new System.Drawing.Size(164, 40);
             this.btnSearch_phongtro.TabIndex = 4;
             this.btnSearch_phongtro.Text = "Tìm kiếm";
             this.btnSearch_phongtro.UseVisualStyleBackColor = false;
@@ -3447,8 +3447,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
-            this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnPhongtro);
+            this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnKhanhtro);
             this.Controls.Add(this.pnHome);
             this.Controls.Add(this.pnTinhtientro);

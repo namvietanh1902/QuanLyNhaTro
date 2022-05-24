@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuanLyNhaTro.Presenter.Common
+namespace QuanLyNhaTro.BLL.Common
 {
     public class ModelDataValidation
     {

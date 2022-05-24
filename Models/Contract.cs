@@ -17,6 +17,7 @@ namespace QuanLyNhaTro.Models
         public int CustomerID { get; set; }
         [Required(ErrorMessage ="Ngày thuê không được để trống")]
         public DateTime? CreatedAt { get; set; } = DateTime.Now;
+        public string CustomerName { get; set; }
         [ForeignKey("RoomID")]
         public virtual Room Room { get; set; }
         [ForeignKey("CustomerID")]

@@ -106,6 +106,7 @@ namespace QuanLyNhaTro.Views
             {
                 Username = "Anh",
                 Password = "123456",
+                isAdmin = true,
                 Name = "Hung",
                 Birthday = DateTime.Now,
                 Gender = false,
@@ -146,11 +147,6 @@ namespace QuanLyNhaTro.Views
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLogin_Click_1(object sender, EventArgs e)
         {
 
         }

@@ -44,7 +44,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1068, 12);
+            this.panel1.Size = new System.Drawing.Size(1200, 12);
             this.panel1.TabIndex = 1;
             // 
             // panel2
@@ -53,25 +53,25 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(12, 587);
+            this.panel2.Size = new System.Drawing.Size(12, 588);
             this.panel2.TabIndex = 2;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkBlue;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1056, 12);
+            this.panel3.Location = new System.Drawing.Point(1190, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(12, 587);
+            this.panel3.Size = new System.Drawing.Size(10, 588);
             this.panel3.TabIndex = 3;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkBlue;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(12, 587);
+            this.panel4.Location = new System.Drawing.Point(12, 588);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1044, 12);
+            this.panel4.Size = new System.Drawing.Size(1178, 12);
             this.panel4.TabIndex = 4;
             // 
             // label1
@@ -93,7 +93,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(968, 12);
+            this.button1.Location = new System.Drawing.Point(1101, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 65);
             this.button1.TabIndex = 6;
@@ -108,13 +108,13 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 109);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 110);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1044, 478);
+            this.dataGridView1.Size = new System.Drawing.Size(1178, 478);
             this.dataGridView1.TabIndex = 7;
             // 
             // ChiTietPhongThue
@@ -122,7 +122,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1068, 599);
+            this.ClientSize = new System.Drawing.Size(1200, 600);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
