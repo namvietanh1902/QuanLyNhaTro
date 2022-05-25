@@ -41,6 +41,10 @@ namespace QuanLyNhaTro.BLL
             return QuanLy.Instance.Accounts.Find(id);
            
         }
+        public string GetNameByAccount(int id)
+        {
+            return QuanLy.Instance.Accounts.Find(id).Name;
+        }
         public string GetTenNguoiDungByID(int id)
         {    
             return GetAccountByID(id).Name;

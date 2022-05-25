@@ -141,7 +141,7 @@
             this.panel21 = new System.Windows.Forms.Panel();
             this.btnChitietphongthue_phongtro = new System.Windows.Forms.Button();
             this.btnThem_phongtro = new System.Windows.Forms.Button();
-            this.cboSort_phongtro = new System.Windows.Forms.ComboBox();
+            this.cbbSort_phongtro = new System.Windows.Forms.ComboBox();
             this.btnSort_phongtro = new System.Windows.Forms.Button();
             this.btnXoa_phongtro = new System.Windows.Forms.Button();
             this.btnSua_phongtro = new System.Windows.Forms.Button();
@@ -149,7 +149,6 @@
             this.panel23 = new System.Windows.Forms.Panel();
             this.btnPhongchuaday_phongtro = new System.Windows.Forms.Button();
             this.btnPhongtrong_phongtro = new System.Windows.Forms.Button();
-            this.txtSearch_phongtro = new System.Windows.Forms.TextBox();
             this.btnSearch_phongtro = new System.Windows.Forms.Button();
             this.lblreload_phongtro = new System.Windows.Forms.Label();
             this.pnDichvu = new System.Windows.Forms.Panel();
@@ -263,6 +262,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.btnNav = new System.Windows.Forms.Button();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.cbbPrice = new System.Windows.Forms.ComboBox();
+            this.cbbCap = new System.Windows.Forms.ComboBox();
+            this.cbbStatus = new System.Windows.Forms.ComboBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -319,6 +325,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.Controls.Add(this.lblUsername);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.lblTenNguoiDung);
             this.panel1.Controls.Add(this.label12);
@@ -330,6 +337,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1540, 153);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label14
             // 
@@ -349,9 +357,8 @@
             this.lblTenNguoiDung.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblTenNguoiDung.Location = new System.Drawing.Point(155, 79);
             this.lblTenNguoiDung.Name = "lblTenNguoiDung";
-            this.lblTenNguoiDung.Size = new System.Drawing.Size(40, 24);
+            this.lblTenNguoiDung.Size = new System.Drawing.Size(0, 24);
             this.lblTenNguoiDung.TabIndex = 6;
-            this.lblTenNguoiDung.Text = "null";
             // 
             // label12
             // 
@@ -372,9 +379,9 @@
             this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label11.Location = new System.Drawing.Point(28, 78);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(99, 25);
+            this.label11.Size = new System.Drawing.Size(95, 25);
             this.label11.TabIndex = 5;
-            this.label11.Text = "Wellcome";
+            this.label11.Text = "Welcome";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
@@ -1770,7 +1777,7 @@
             // 
             this.panel21.Controls.Add(this.btnChitietphongthue_phongtro);
             this.panel21.Controls.Add(this.btnThem_phongtro);
-            this.panel21.Controls.Add(this.cboSort_phongtro);
+            this.panel21.Controls.Add(this.cbbSort_phongtro);
             this.panel21.Controls.Add(this.btnSort_phongtro);
             this.panel21.Controls.Add(this.btnXoa_phongtro);
             this.panel21.Controls.Add(this.btnSua_phongtro);
@@ -1817,17 +1824,17 @@
             this.btnThem_phongtro.UseVisualStyleBackColor = false;
             this.btnThem_phongtro.Click += new System.EventHandler(this.btnThemPhongTro_Click);
             // 
-            // cboSort_phongtro
+            // cbbSort_phongtro
             // 
-            this.cboSort_phongtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbbSort_phongtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboSort_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSort_phongtro.FormattingEnabled = true;
-            this.cboSort_phongtro.Location = new System.Drawing.Point(1276, 32);
-            this.cboSort_phongtro.Margin = new System.Windows.Forms.Padding(4);
-            this.cboSort_phongtro.Name = "cboSort_phongtro";
-            this.cboSort_phongtro.Size = new System.Drawing.Size(193, 33);
-            this.cboSort_phongtro.TabIndex = 16;
+            this.cbbSort_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbSort_phongtro.FormattingEnabled = true;
+            this.cbbSort_phongtro.Location = new System.Drawing.Point(1276, 32);
+            this.cbbSort_phongtro.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbSort_phongtro.Name = "cbbSort_phongtro";
+            this.cbbSort_phongtro.Size = new System.Drawing.Size(193, 33);
+            this.cbbSort_phongtro.TabIndex = 16;
             // 
             // btnSort_phongtro
             // 
@@ -1846,6 +1853,7 @@
             this.btnSort_phongtro.TabIndex = 12;
             this.btnSort_phongtro.Text = "Sắp xếp";
             this.btnSort_phongtro.UseVisualStyleBackColor = false;
+            this.btnSort_phongtro.Click += new System.EventHandler(this.btnSort_phongtro_Click);
             // 
             // btnXoa_phongtro
             // 
@@ -1855,7 +1863,7 @@
             this.btnXoa_phongtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa_phongtro.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnXoa_phongtro.Location = new System.Drawing.Point(928, 23);
+            this.btnXoa_phongtro.Location = new System.Drawing.Point(875, 24);
             this.btnXoa_phongtro.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa_phongtro.Name = "btnXoa_phongtro";
             this.btnXoa_phongtro.Size = new System.Drawing.Size(151, 49);
@@ -1883,8 +1891,13 @@
             // 
             // panel20
             // 
+            this.panel20.Controls.Add(this.label67);
+            this.panel20.Controls.Add(this.label13);
+            this.panel20.Controls.Add(this.lblStatus);
+            this.panel20.Controls.Add(this.cbbStatus);
+            this.panel20.Controls.Add(this.cbbCap);
+            this.panel20.Controls.Add(this.cbbPrice);
             this.panel20.Controls.Add(this.panel23);
-            this.panel20.Controls.Add(this.txtSearch_phongtro);
             this.panel20.Controls.Add(this.btnSearch_phongtro);
             this.panel20.Controls.Add(this.lblreload_phongtro);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1936,17 +1949,6 @@
             this.btnPhongtrong_phongtro.UseVisualStyleBackColor = false;
             this.btnPhongtrong_phongtro.Click += new System.EventHandler(this.btnPhongtrong_phongtro_Click);
             // 
-            // txtSearch_phongtro
-            // 
-            this.txtSearch_phongtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch_phongtro.Location = new System.Drawing.Point(1172, 40);
-            this.txtSearch_phongtro.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSearch_phongtro.Name = "txtSearch_phongtro";
-            this.txtSearch_phongtro.Size = new System.Drawing.Size(304, 34);
-            this.txtSearch_phongtro.TabIndex = 5;
-            // 
             // btnSearch_phongtro
             // 
             this.btnSearch_phongtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1958,13 +1960,14 @@
             this.btnSearch_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch_phongtro.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch_phongtro.Image")));
             this.btnSearch_phongtro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch_phongtro.Location = new System.Drawing.Point(985, 37);
+            this.btnSearch_phongtro.Location = new System.Drawing.Point(1315, 42);
             this.btnSearch_phongtro.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch_phongtro.Name = "btnSearch_phongtro";
             this.btnSearch_phongtro.Size = new System.Drawing.Size(164, 40);
             this.btnSearch_phongtro.TabIndex = 4;
             this.btnSearch_phongtro.Text = "Tìm kiếm";
             this.btnSearch_phongtro.UseVisualStyleBackColor = false;
+            this.btnSearch_phongtro.Click += new System.EventHandler(this.btnSearch_phongtro_Click);
             // 
             // lblreload_phongtro
             // 
@@ -3441,6 +3444,81 @@
             this.btnNav.UseVisualStyleBackColor = false;
             this.btnNav.Click += new System.EventHandler(this.btnNav_Click);
             // 
+            // lblUsername
+            // 
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblUsername.Location = new System.Drawing.Point(154, 79);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(221, 31);
+            this.lblUsername.TabIndex = 8;
+            // 
+            // cbbPrice
+            // 
+            this.cbbPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbPrice.FormattingEnabled = true;
+            this.cbbPrice.Location = new System.Drawing.Point(1141, 51);
+            this.cbbPrice.Name = "cbbPrice";
+            this.cbbPrice.Size = new System.Drawing.Size(121, 24);
+            this.cbbPrice.TabIndex = 7;
+            // 
+            // cbbCap
+            // 
+            this.cbbCap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbCap.FormattingEnabled = true;
+            this.cbbCap.Location = new System.Drawing.Point(982, 51);
+            this.cbbCap.Name = "cbbCap";
+            this.cbbCap.Size = new System.Drawing.Size(121, 24);
+            this.cbbCap.TabIndex = 8;
+            // 
+            // cbbStatus
+            // 
+            this.cbbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbStatus.Location = new System.Drawing.Point(824, 51);
+            this.cbbStatus.Name = "cbbStatus";
+            this.cbbStatus.Size = new System.Drawing.Size(121, 24);
+            this.cbbStatus.TabIndex = 9;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(821, 18);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(134, 20);
+            this.lblStatus.TabIndex = 10;
+            this.lblStatus.Text = "Tình trạng phòng";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(978, 20);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(74, 20);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Số lượng";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // label67
+            // 
+            this.label67.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.Location = new System.Drawing.Point(1146, 25);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(73, 20);
+            this.label67.TabIndex = 10;
+            this.label67.Text = "Mức  giá";
+            // 
             // GiaodienAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -3712,7 +3790,6 @@
         private System.Windows.Forms.TextBox textBox27;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.TextBox txtSearch_phongtro;
         private System.Windows.Forms.Label lblreload_phongtro;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.DataGridView dataGridView5;
@@ -3728,7 +3805,7 @@
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Button btnThem_phongtro;
-        private System.Windows.Forms.ComboBox cboSort_phongtro;
+        private System.Windows.Forms.ComboBox cbbSort_phongtro;
         private System.Windows.Forms.Button btnSort_phongtro;
         private System.Windows.Forms.Button btnXoa_phongtro;
         private System.Windows.Forms.Button btnSua_phongtro;
@@ -3777,5 +3854,12 @@
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Button btnPhongchuaday_phongtro;
         private System.Windows.Forms.Button btnPhongtrong_phongtro;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.ComboBox cbbCap;
+        private System.Windows.Forms.ComboBox cbbPrice;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.ComboBox cbbStatus;
     }
 }

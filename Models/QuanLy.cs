@@ -14,7 +14,7 @@ namespace QuanLyNhaTro.Models
         
 
         public QuanLy() : base("name = PBL3") {
-            Database.SetInitializer<QuanLy> (new CreateDatabaseIfNotExists<QuanLy>());
+            Database.SetInitializer<QuanLy> (new DropCreateDatabaseIfModelChanges<QuanLy>());
         }
 
        

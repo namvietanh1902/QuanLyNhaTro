@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyNhaTro.Models;
+using QuanLyNhaTro.BLL;
 
 namespace QuanLyNhaTro.Views
 {
@@ -17,8 +18,10 @@ namespace QuanLyNhaTro.Views
         public delegate void Mydel(Account account);
         public int ID { get; set; }
         bool isthoat = true;
+
         public GiaodienUser(int id)
         {
+            lblTenNguoiDung.Text = BLL_Account.Instance.GetNameByAccount(id);
             ID = id;
             InitializeComponent();
             hienthidulieulenthanhthongbao();

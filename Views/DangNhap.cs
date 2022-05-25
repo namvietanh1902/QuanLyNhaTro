@@ -16,6 +16,13 @@ namespace QuanLyNhaTro.Views
         public DangNhap()
         {
             InitializeComponent();
+            txtPassword.KeyDown += (p, e) =>
+                {
+                    if (e.KeyCode == Keys.Enter)
+                    {
+                        Login();
+                    }
+                };
             
         }
 
@@ -150,8 +157,9 @@ namespace QuanLyNhaTro.Views
         {
 
         }
-        private void Login(Account account)
+        private void Login()
         {
+            Account account = BLL_Account.Instance.GetAccountByUserAndPass(txtUsername.Text, txtPassword.Text);
             if (account == null)
             {
                 MessageBox.Show(
@@ -167,12 +175,14 @@ namespace QuanLyNhaTro.Views
                 {
                     this.Hide();
                     GiaodienAdmin frm = new GiaodienAdmin(account.AccountId);
+                    frm.Name = account.Name;
                     frm.Show();
                 }
                 else
                 {
                     this.Hide();
                     GiaodienUser frm = new GiaodienUser(account.AccountId);
+                    frm.Name =account.Name;
                     frm.Show();
                 }
             }
@@ -182,8 +192,7 @@ namespace QuanLyNhaTro.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Account account = BLL_Account.Instance.GetAccountByUserAndPass(txtUsername.Text, txtPassword.Text);
-            Login(account);
+            Login();
         }
     }
 }

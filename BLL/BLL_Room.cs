@@ -43,6 +43,7 @@ namespace QuanLyNhaTro.BLL
             }
             return data;
         }
+       
 
         public List<CBBItems> GetRoomEmtyAndNoFullUpCombobox()
         {
@@ -80,10 +81,10 @@ namespace QuanLyNhaTro.BLL
             }
         }
 
-        public List<Room_View> GetRoom_Views()
+        public List<Room_View> GetRoom_Views(List<Room> rooms)
         {
             List<Room_View> data = new List<Room_View>();   
-            foreach(Room room in GetAllRoom())
+            foreach(Room room in rooms)
             {
                 if(room.isDelete == false)
                 {
@@ -100,10 +101,10 @@ namespace QuanLyNhaTro.BLL
         }
 
 
-        public List<Room_View> GetAllRoomEmty()
+        public List<Room> GetAllRoomEmty()
         {
-            List<Room_View> data = new List<Room_View>();
-            foreach (Room_View i in GetRoom_Views())
+            List<Room> data = new List<Room>();
+            foreach (Room i in GetAllRoom())
             {
                 if (i.isRent == false)
                 {
@@ -113,9 +114,9 @@ namespace QuanLyNhaTro.BLL
             return data;
         }
 
-        public List<Room_View> GetAllRoomRented()
+        public List<Room> GetAllRoomRentedAndNotFull()
         {
-            List<Room_View> data = new List<Room_View>();
+            List<Room> data = new List<Room>();
             foreach (Room i in GetAllRoom())
             {
                 int dem = 0;
@@ -128,14 +129,27 @@ namespace QuanLyNhaTro.BLL
                 }
                 if (dem != i.Capacity && dem != 0)
                 {
-                    data.Add(new Room_View
+                    data.Add(i);
+                }
+            }
+            return data;
+        }
+        public List<Room> GetAllRoomRented()
+        {
+            List<Room> data = new List<Room>();
+            foreach (Room i in GetAllRoom())
+            {
+                int dem = 0;
+                foreach (Contract contract in BLL_Contract.Instance.GetAllContract())
+                {
+                    if (i.RoomId == contract.RoomID && i.isDelete == false && QuanLy.Instance.Customers.Find(contract.CustomerID).isDelete == false)
                     {
-                        RoomId = i.RoomId,
-                        Name = i.Name,
-                        Capacity = i.Capacity,
-                        Price = i.Price,
-                        isRent = i.isRent,
-                    }); 
+                        dem++;
+                    }
+                }
+                if (dem == i.Capacity && dem != 0)
+                {
+                    data.Add(i);
                 }
             }
             return data;
@@ -217,10 +231,115 @@ namespace QuanLyNhaTro.BLL
                 }
             }
         }
+        public List<int> GetAllPriceTags()
+        {
+            return QuanLy.Instance.Rooms.Select(p => p.Price).Distinct().ToList();
+        }
+        public List<int> GetAllRoomCapacity()
+        {
+            return QuanLy.Instance.Rooms.Select(p => p.Capacity).Distinct().ToList();
+        }
+
+        public List<Room_View> RoomSort(List<string> listnow, string SortType)
+        {
+            List<Room> data = GetCurrentRooms(listnow);
+            
+            switch (SortType)
+            {
+                case "Giá phòng":
+                    {
+                        data = data.OrderBy(c => c.Price).ToList();
+                        break;
+                    }
+                case "Số người ở":
+                    {
+                        {
+                            data = data.OrderBy(c => c.Capacity).ToList();
+                            break;
+                        }
+
+                    }
+            }
+            return GetRoom_Views(data);
+        }
+        public List<Room> GetCurrentRooms(List<string> list)
+        {
+            List<Room> data = new List<Room>();
+            foreach (string i in list)
+            {
+                data.Add(GetRoomByIDRoom(Convert.ToInt32(i)));
+            }
+            return data;
+        } 
+
+        public List<Room_View> SearchRoom(int status, int price, int cap)
+        {
+            List<Room> data = new List<Room>();
+            List<Room> roomList = new List<Room>();
+            switch (status)
+            {
+                case 1:
+                    {
+                        roomList = GetAllRoomEmty();
+                        break;
+                    }
+                case 2:
+                    {
+                        roomList = GetAllRoomRentedAndNotFull();
+                        break;
+                    }
+                case 3:
+                    {
+                        roomList = GetAllRoomRented();
+                        break;
+                    }
+                default:
+                    {
+                        roomList = GetAllRoom();
+                        break;
+                    }
+
+            }
+            if (cap == 0 && price == 0)
+            {
+                data = roomList;
+            }
+            else if(cap ==0 && price != 0)
+            {
+                foreach(Room room in roomList)
+                {
+                    if (room.Price == price)
+                    {
+                        data.Add(room);
+                    }
+                }
+            }
+            else if (cap != 0 && price == 0)
+            {
+                foreach (Room room in roomList)
+                {
+                    if (room.Capacity == cap)
+                    {
+                        data.Add(room);
+                    }
+                }
+            }
+            else
+            {
+                foreach (Room room in roomList)
+                {
+                    if (room.Capacity == cap && room.Price == price)
+                    {
+                        data.Add(room);
+                    }
+                }
+
+            }
 
 
+            return GetRoom_Views(data);
 
-
-
+        }
+        
     }
 }
