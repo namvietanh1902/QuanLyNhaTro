@@ -854,11 +854,6 @@ namespace QuanLyNhaTro.Views
 
         }
 
-<<<<<<< HEAD
-       
-=======
->>>>>>> 1e31b789fd061f27575ef895556cab9c79aee9ce
-
         private void label13_Click(object sender, EventArgs e)
         {
 

@@ -128,7 +128,7 @@ namespace QuanLyNhaTro.Views
             this.lblhienpass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblhienpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhienpass.Image = ((System.Drawing.Image)(resources.GetObject("lblhienpass.Image")));
-            this.lblhienpass.Location = new System.Drawing.Point(619, 386);
+            this.lblhienpass.Location = new System.Drawing.Point(618, 387);
             this.lblhienpass.Name = "lblhienpass";
             this.lblhienpass.Size = new System.Drawing.Size(26, 23);
             this.lblhienpass.TabIndex = 20;
@@ -416,6 +416,7 @@ namespace QuanLyNhaTro.Views
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // btnLogin
             // 
