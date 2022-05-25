@@ -21,7 +21,6 @@ namespace QuanLyNhaTro.Views
 
         public GiaodienUser(int id)
         {
-            lblTenNguoiDung.Text = BLL_Account.Instance.GetNameByAccount(id);
             ID = id;
             InitializeComponent();
             hienthidulieulenthanhthongbao();
@@ -31,6 +30,7 @@ namespace QuanLyNhaTro.Views
         }
         private void GiaodienUser_Load(object sender, EventArgs e)
         {
+            lblTenNguoiDung.Text = BLL_Account.Instance.GetNameByAccount(ID);
 
         }
 

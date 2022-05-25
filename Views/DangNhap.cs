@@ -20,7 +20,7 @@ namespace QuanLyNhaTro.Views
                 {
                     if (e.KeyCode == Keys.Enter)
                     {
-                        Login();
+                        btnLogin_Click(this,EventArgs.Empty);
                     }
                 };
             
@@ -157,9 +157,9 @@ namespace QuanLyNhaTro.Views
         {
 
         }
-        private void Login()
+        private void Login(Account account)
         {
-            Account account = BLL_Account.Instance.GetAccountByUserAndPass(txtUsername.Text, txtPassword.Text);
+            
             if (account == null)
             {
                 MessageBox.Show(
@@ -192,7 +192,8 @@ namespace QuanLyNhaTro.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Login();
+            Account account = BLL_Account.Instance.GetAccountByUserAndPass(txtUsername.Text, txtPassword.Text);
+            Login(account);
         }
     }
 }

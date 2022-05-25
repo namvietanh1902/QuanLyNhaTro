@@ -76,7 +76,7 @@ namespace QuanLyNhaTro.BLL
                     isAdmin = account.isAdmin,
                     Name = account.Name,
                     Gender = account.Gender,
-                    Birthday = account.Birthday,
+                    Birthday = account.Birthday.ToString("dd-MM-yyyy"),
                     SDT = account.SDT,
                 });
 
@@ -134,7 +134,7 @@ namespace QuanLyNhaTro.BLL
                         isAdmin = account.isAdmin,
                         Name = account.Name,
                         Gender = account.Gender,
-                        Birthday = account.Birthday,
+                        Birthday = account.Birthday.ToString("dd-MM-yyyy"),
                         SDT = account.SDT,
                     });
                 }

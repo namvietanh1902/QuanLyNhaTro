@@ -14,7 +14,7 @@ namespace QuanLyNhaTro.DTO
         public bool isAdmin { get; set; } = false;
         public string Name { get; set; }
         public bool Gender { get; set; }
-        public DateTime Birthday { get; set; }
+        public string Birthday { get; set; }
         public string SDT { get; set; }
     }
 }
