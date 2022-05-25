@@ -56,10 +56,15 @@ namespace QuanLyNhaTro.Views
         {
             try
             {
+                int cap, price;
                 Room room = new Room();
                 room.RoomId = maphong;
                 room.Name = txtTenphongthue.Text;
-                room.Price = Convert.ToInt32(txtGiaphongthue.Text);
+                if (Int32.TryParse(txtGiaphongthue.Text, out price))
+                {
+                    room.Price = price;
+                }
+                else throw new FormatException ("Giá tiền phải là số");
                 if (txtHientrangthue.Text == "Trống")
                 {
                     room.isRent = false;
@@ -68,7 +73,11 @@ namespace QuanLyNhaTro.Views
                 {
                     room.isRent = true;
                 }
-                room.Capacity = Convert.ToInt32(txtSoluong.Text);
+                if (Int32.TryParse(txtSoluong.Text, out cap))
+                {
+                    room.Capacity = cap;
+                }
+                else throw new FormatException("Số lượng phải là số");
                 new BLL.Common.ModelDataValidation().Validate(room);
                 BLL_Room.Instance.AddAndUpdate(room);
 
@@ -77,9 +86,13 @@ namespace QuanLyNhaTro.Views
                 d();
                 Close();
             }
+            catch(FormatException ex)
+            {
+                MessageBox.Show(ex.Message,"Thông báo lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         

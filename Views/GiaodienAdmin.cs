@@ -30,20 +30,24 @@ namespace QuanLyNhaTro.Views
 
             InitializeComponent();
             hienthidulieulenthanhthongbao();
-            GUI();
+           
 
         }
         private void GiaodienAdmin_Load(object sender, EventArgs e)
         {
-        }
-        private void GUI()
-        {
             lblUsername.Text = BLL_Account.Instance.GetNameByAccount(ID);
+        }
+        private void GUIPhongTro()
+        {   
             CBBItems All = new CBBItems
             {
                 Text = "All",
                 Value = 0
             };
+            cbbSort_phongtro.Items.Clear();
+            cbbStatus.Items.Clear();
+            cbbCap.Items.Clear();
+            cbbPrice.Items.Clear();
             cbbSort_phongtro.Items.AddRange(new object[]
             {
                 "Giá phòng",
@@ -633,6 +637,7 @@ namespace QuanLyNhaTro.Views
 
         private void reaload_phongtro()
         {
+            GUIPhongTro();
             dgvThongtin_phongtro.DataSource = BLL_Room.Instance.GetRoom_Views(BLL_Room.Instance.GetAllRoom());
             foreach (DataGridViewColumn col in dgvThongtin_phongtro.Columns)
             {
@@ -849,7 +854,10 @@ namespace QuanLyNhaTro.Views
 
         }
 
+<<<<<<< HEAD
        
+=======
+>>>>>>> 1e31b789fd061f27575ef895556cab9c79aee9ce
 
         private void label13_Click(object sender, EventArgs e)
         {

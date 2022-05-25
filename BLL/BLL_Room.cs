@@ -194,6 +194,7 @@ namespace QuanLyNhaTro.BLL
 
         public void AddAndUpdate(Room room)
         {
+
             if(GetRoomByIDRoom(room.RoomId) != null)
             {
                 Room roomUpdate = GetRoomByIDRoom(room.RoomId);
