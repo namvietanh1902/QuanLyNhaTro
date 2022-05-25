@@ -16,18 +16,17 @@ namespace QuanLyNhaTro.Views
         public DangNhap()
         {
             InitializeComponent();
+
+            
+            
             txtPassword.KeyDown += (p, e) =>
                 {
                     if (e.KeyCode == Keys.Enter)
                     {
                         btnLogin_Click(this,EventArgs.Empty);
                     }
-                };
-            
+                };           
         }
-
-       
-
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -146,17 +145,6 @@ namespace QuanLyNhaTro.Views
             //       );
             //}
         }
-        
-
-        private void DangNhap_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
         private void Login(Account account)
         {
             
@@ -195,5 +183,33 @@ namespace QuanLyNhaTro.Views
             Account account = BLL_Account.Instance.GetAccountByUserAndPass(txtUsername.Text, txtPassword.Text);
             Login(account);
         }
+
+        private void lblhienpass_Click(object sender, EventArgs e)
+        {
+            lblhienpass.Visible = false;
+            txtPassword.PasswordChar = '\0';
+            lblanpass.Visible = true;
+        }
+
+        private void lblanpass_Click(object sender, EventArgs e)
+        {
+            lblhienpass.Visible = true;
+            txtPassword.PasswordChar = '*';
+            lblanpass.Visible = false;
+        }
+
+        private void txtUsername_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (txtUsername.Text.Trim() == "")
+            {
+                errorProvider1.SetError(txtUsername, "Please Enter Username");
+            }
+            else
+            {
+                errorProvider1.SetError(txtUsername, "");
+            }
+        }
+
+
     }
 }

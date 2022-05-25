@@ -721,6 +721,31 @@ namespace QuanLyNhaTro.Views
             reaload_phongtro();
         }
 
+        private void btnSort_phongtro_Click(object sender, EventArgs e)
+        {
+
+            dgvThongtin_phongtro.DataSource = BLL_Room.Instance.RoomSort(GetCurrentList(), cbbSort_phongtro.SelectedItem.ToString());
+        }
+        List<string> GetCurrentList()
+        {
+            List<string> listnow = new List<string>();
+            foreach (DataGridViewRow i in dgvThongtin_phongtro.Rows)
+            {
+                listnow.Add(i.Cells["RoomID"].Value.ToString());
+            }
+            return listnow;
+
+        }
+
+        private void btnSearch_phongtro_Click(object sender, EventArgs e)
+        {
+            int Price = ((CBBItems)cbbPrice.SelectedItem).Value;
+            int Cap = ((CBBItems)cbbCap.SelectedItem).Value;
+            int Status = ((CBBItems)cbbStatus.SelectedItem).Value;
+            dgvThongtin_phongtro.DataSource = BLL_Room.Instance.SearchRoom(Status, Price, Cap);
+            dgvThongtin_phongtro.ClearSelection();
+        }
+
         private void btnDichvu_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "Quản Lý Dịch Vụ";
@@ -824,33 +849,7 @@ namespace QuanLyNhaTro.Views
 
         }
 
-        private void btnSort_phongtro_Click(object sender, EventArgs e)
-        {
-            
-            dgvThongtin_phongtro.DataSource = BLL_Room.Instance.RoomSort(GetCurrentList(), cbbSort_phongtro.SelectedItem.ToString());
-        }
-        List<string> GetCurrentList()
-        {
-            List<string> listnow = new List<string>();
-            foreach (DataGridViewRow i in dgvThongtin_phongtro.Rows)
-            {
-                listnow.Add(i.Cells["RoomID"].Value.ToString());
-            }
-            return listnow;
-
-        }
-
-        private void btnSearch_phongtro_Click(object sender, EventArgs e)
-        {
-            int Price = ((CBBItems)cbbPrice.SelectedItem).Value;
-            int Cap = ((CBBItems)cbbCap.SelectedItem).Value;
-            int Status = ((CBBItems)cbbStatus.SelectedItem).Value;
-
-
-
-
-            dgvThongtin_phongtro.DataSource = BLL_Room.Instance.SearchRoom(Status, Price, Cap);
-        }
+       
 
         private void label13_Click(object sender, EventArgs e)
         {

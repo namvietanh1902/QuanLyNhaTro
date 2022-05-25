@@ -202,7 +202,7 @@ namespace QuanLyNhaTro.BLL
                 roomUpdate.Capacity = room.Capacity;
                 roomUpdate.Price = room.Price;
                 roomUpdate.isRent = room.isRent;
-                QuanLy.Instance.SaveChanges();
+                 QuanLy.Instance.SaveChanges();
             }
             else
             {

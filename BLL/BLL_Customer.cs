@@ -122,25 +122,29 @@ namespace QuanLyNhaTro.BLL
             List<Customer_View> data = new List<Customer_View>();
             foreach (Customer cus in GetAllCustomer())
             {
-                if (cus.Name.Contains(txt))
+                if(cus.isDelete == false)
                 {
-                    Customer_View customer = new Customer_View(); 
-                    customer.CustomerId = cus.CustomerId;
-                    customer.Name = cus.Name;
-                    foreach (Contract contract in BLL_Contract.Instance.GetAllContract())
+                    if (cus.Name.Contains(txt))
                     {
-                        if (cus.CustomerId == contract.CustomerID)
+                        Customer_View customer = new Customer_View(); 
+                        customer.CustomerId = cus.CustomerId;
+                        customer.Name = cus.Name;
+                        foreach (Contract contract in BLL_Contract.Instance.GetAllContract())
                         {
-                            customer.RoomName = contract.Room.Name;
-                            break;
+                            if (cus.CustomerId == contract.CustomerID)
+                            {
+                                customer.RoomName = contract.Room.Name;
+                                break;
+                            }
                         }
+                        customer.Birthday = cus.Birthday.ToString("dd-MM-yyyy");
+                        customer.Gender = cus.Gender;
+                        customer.CMND = cus.CMND;
+                        customer.SDT = cus.SDT;
+                        customer.Job = cus.Job;
+                        data.Add(customer);
                     }
-                    customer.Birthday = cus.Birthday.ToString("dd-MM-yyyy");
-                    customer.Gender = cus.Gender;
-                    customer.CMND = cus.CMND;
-                    customer.SDT = cus.SDT;
-                    customer.Job = cus.Job;
-                    data.Add(customer);
+
                 }
             }
             return data;
