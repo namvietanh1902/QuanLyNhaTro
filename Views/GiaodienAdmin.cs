@@ -30,20 +30,24 @@ namespace QuanLyNhaTro.Views
 
             InitializeComponent();
             hienthidulieulenthanhthongbao();
-            GUI();
+           
 
         }
         private void GiaodienAdmin_Load(object sender, EventArgs e)
         {
-        }
-        private void GUI()
-        {
             lblUsername.Text = BLL_Account.Instance.GetNameByAccount(ID);
+        }
+        private void GUIPhongTro()
+        {   
             CBBItems All = new CBBItems
             {
                 Text = "All",
                 Value = 0
             };
+            cbbSort_phongtro.Items.Clear();
+            cbbStatus.Items.Clear();
+            cbbCap.Items.Clear();
+            cbbPrice.Items.Clear();
             cbbSort_phongtro.Items.AddRange(new object[]
             {
                 "Giá phòng",
@@ -633,6 +637,7 @@ namespace QuanLyNhaTro.Views
 
         private void reaload_phongtro()
         {
+            GUIPhongTro();
             dgvThongtin_phongtro.DataSource = BLL_Room.Instance.GetRoom_Views(BLL_Room.Instance.GetAllRoom());
             foreach (DataGridViewColumn col in dgvThongtin_phongtro.Columns)
             {
@@ -719,6 +724,31 @@ namespace QuanLyNhaTro.Views
             }
             BLL_Room.Instance.DeletePhongTro(listdel);
             reaload_phongtro();
+        }
+
+        private void btnSort_phongtro_Click(object sender, EventArgs e)
+        {
+
+            dgvThongtin_phongtro.DataSource = BLL_Room.Instance.RoomSort(GetCurrentList(), cbbSort_phongtro.SelectedItem.ToString());
+        }
+        List<string> GetCurrentList()
+        {
+            List<string> listnow = new List<string>();
+            foreach (DataGridViewRow i in dgvThongtin_phongtro.Rows)
+            {
+                listnow.Add(i.Cells["RoomID"].Value.ToString());
+            }
+            return listnow;
+
+        }
+
+        private void btnSearch_phongtro_Click(object sender, EventArgs e)
+        {
+            int Price = ((CBBItems)cbbPrice.SelectedItem).Value;
+            int Cap = ((CBBItems)cbbCap.SelectedItem).Value;
+            int Status = ((CBBItems)cbbStatus.SelectedItem).Value;
+            dgvThongtin_phongtro.DataSource = BLL_Room.Instance.SearchRoom(Status, Price, Cap);
+            dgvThongtin_phongtro.ClearSelection();
         }
 
         private void btnDichvu_Click(object sender, EventArgs e)
@@ -824,33 +854,6 @@ namespace QuanLyNhaTro.Views
 
         }
 
-        private void btnSort_phongtro_Click(object sender, EventArgs e)
-        {
-            
-            dgvThongtin_phongtro.DataSource = BLL_Room.Instance.RoomSort(GetCurrentList(), cbbSort_phongtro.SelectedItem.ToString());
-        }
-        List<string> GetCurrentList()
-        {
-            List<string> listnow = new List<string>();
-            foreach (DataGridViewRow i in dgvThongtin_phongtro.Rows)
-            {
-                listnow.Add(i.Cells["RoomID"].Value.ToString());
-            }
-            return listnow;
-
-        }
-
-        private void btnSearch_phongtro_Click(object sender, EventArgs e)
-        {
-            int Price = ((CBBItems)cbbPrice.SelectedItem).Value;
-            int Cap = ((CBBItems)cbbCap.SelectedItem).Value;
-            int Status = ((CBBItems)cbbStatus.SelectedItem).Value;
-
-
-
-
-            dgvThongtin_phongtro.DataSource = BLL_Room.Instance.SearchRoom(Status, Price, Cap);
-        }
 
         private void label13_Click(object sender, EventArgs e)
         {
