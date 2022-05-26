@@ -49,12 +49,7 @@ namespace QuanLyNhaTro.BLL
         {    
             return GetAccountByID(id).Name;
         }
-        
 
-        public Customer GetKhachTroByID(int AccountID)
-        {
-            return QuanLy.Instance.Customers.Where(c => c.AccountId == AccountID).Select(p => p).FirstOrDefault();
-        }
 
         public void ChangePass(int ID, string NewPass)
         {

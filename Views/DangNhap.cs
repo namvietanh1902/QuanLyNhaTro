@@ -16,9 +16,6 @@ namespace QuanLyNhaTro.Views
         public DangNhap()
         {
             InitializeComponent();
-
-            
-            
             txtPassword.KeyDown += (p, e) =>
                 {
                     if (e.KeyCode == Keys.Enter)
@@ -186,6 +183,7 @@ namespace QuanLyNhaTro.Views
 
         private void lblhienpass_Click(object sender, EventArgs e)
         {
+            
             lblhienpass.Visible = false;
             txtPassword.PasswordChar = '\0';
             lblanpass.Visible = true;
