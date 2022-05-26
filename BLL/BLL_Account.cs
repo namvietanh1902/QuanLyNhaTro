@@ -33,7 +33,9 @@ namespace QuanLyNhaTro.BLL
         public Account GetAccountByUserAndPass(string user, string pass)
         {
             
-            return QuanLy.Instance.Accounts.Where(p => p.Username== user&&p.Password == pass).FirstOrDefault() ;    
+            var account =QuanLy.Instance.Accounts.Where(p => p.Username == user &&p.Password == pass).FirstOrDefault() ;   
+            if (account.Username ==user && account.Password ==pass) return account ;
+            return null;
            
         }
         public Account GetAccountByID(int id)
