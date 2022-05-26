@@ -300,9 +300,9 @@
             this.label9.Location = new System.Drawing.Point(178, 149);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(124, 32);
+            this.label9.Size = new System.Drawing.Size(171, 32);
             this.label9.TabIndex = 15;
-            this.label9.Text = "ID User:";
+            this.label9.Text = "Account ID:";
             // 
             // button2
             // 

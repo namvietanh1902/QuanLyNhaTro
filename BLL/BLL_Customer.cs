@@ -30,6 +30,10 @@ namespace QuanLyNhaTro.BLL
         {
             return QuanLy.Instance.Customers.Select(p=>p).ToList();
         }
+        public Customer GetCustomerByID(int id)
+        {
+            return QuanLy.Instance.Customers.Where(p => p.AccountId == id).Select(p => p).FirstOrDefault();
+        }
 
         public List<Customer_View> GetCustomer_Views()
         {
@@ -81,11 +85,10 @@ namespace QuanLyNhaTro.BLL
 
         public void UpdateKhachTro(Customer cus)
         {
-            Customer tam = QuanLy.Instance.Customers.Find(cus.CustomerId);
+            Customer tam = QuanLy.Instance.Customers.Where(c => c.AccountId == cus.AccountId).Select(p => p).FirstOrDefault();
             if (tam == null) return;
             else
             {
-                tam.CustomerId = cus.CustomerId;
                 tam.Name = cus.Name;
                 tam.SDT = cus.SDT;
                 tam.Birthday = cus.Birthday;
@@ -180,6 +183,14 @@ namespace QuanLyNhaTro.BLL
                 default:
                     return data;
             } 
+        }
+        public List<Customer_View> GetAllRoommateByNameRoom(string NameRoom) // CustomerView không có IDRoom nên xài tạm nameroom z :v
+        {
+            List<Customer_View> Phucdz = new List<Customer_View>();
+            foreach (Customer_View cv in GetCustomer_Views())
+                if (cv.RoomName == NameRoom)
+                    Phucdz.Add(cv);
+            return Phucdz;
         }
     }
 }

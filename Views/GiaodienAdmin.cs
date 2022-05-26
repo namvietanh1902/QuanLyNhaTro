@@ -564,25 +564,28 @@ namespace QuanLyNhaTro.Views
 
         private void btnSua_khachtro_Click(object sender, EventArgs e)
         {
-
-            txtMakhachtro_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["CustomerId"].Value.ToString();
-            txtTennguoithue_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["Name"].Value.ToString();
-            txtCmnd_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["CMND"].Value.ToString();
-            txtSDT_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["SDT"].Value.ToString();
-            txtNghenghiep_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["Job"].Value.ToString();
-            dtpNgaysinh_khachtro.Value = Convert.ToDateTime(dgvthongtin_khachtro.SelectedRows[0].Cells["Birthday"].Value.ToString());
-            foreach (CBBItems r in cbbTenphongtro_khanhtro.Items)
+            if(dgvthongtin_khachtro.SelectedRows != null)
             {
-                if (r.Text == dgvthongtin_khachtro.SelectedRows[0].Cells["RoomName"].Value.ToString())
+                txtMakhachtro_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["CustomerId"].Value.ToString();
+                txtTennguoithue_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["Name"].Value.ToString();
+                txtCmnd_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["CMND"].Value.ToString();
+                txtSDT_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["SDT"].Value.ToString();
+                txtNghenghiep_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["Job"].Value.ToString();
+                dtpNgaysinh_khachtro.Value = Convert.ToDateTime(dgvthongtin_khachtro.SelectedRows[0].Cells["Birthday"].Value.ToString());
+                foreach (CBBItems r in cbbTenphongtro_khanhtro.Items)
                 {
-                    cbbTenphongtro_khanhtro.SelectedItem = r;
+                    if (r.Text == dgvthongtin_khachtro.SelectedRows[0].Cells["RoomName"].Value.ToString())
+                    {
+                        cbbTenphongtro_khanhtro.SelectedItem = r;
+                    }
                 }
+                if (Convert.ToBoolean(dgvthongtin_khachtro.SelectedRows[0].Cells["Gender"].Value.ToString()) == true)
+                {
+                    cbbGioitinh_khachtro.SelectedItem = "Nam";
+                }
+                else cbbGioitinh_khachtro.SelectedItem = "Nữ";
             }
-            if (Convert.ToBoolean(dgvthongtin_khachtro.SelectedRows[0].Cells["Gender"].Value.ToString()) == true)
-            {
-                cbbGioitinh_khachtro.SelectedItem = "Nam";
-            }
-            else cbbGioitinh_khachtro.SelectedItem = "Nữ";
+            
         }
 
         private void btnXoa_khachtro_Click(object sender, EventArgs e)

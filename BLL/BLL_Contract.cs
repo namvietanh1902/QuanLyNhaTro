@@ -50,5 +50,14 @@ namespace QuanLyNhaTro.BLL
                 QuanLy.Instance.SaveChanges();
             }
         }
+        public Contract GetContractByCustomerID(int id) //Lấy ra hợp đồng của khách
+        {
+            return QuanLy.Instance.Contracts.Where(p => p.CustomerID == id).Select(p => p).FirstOrDefault();
+        }
+
+        public Contract GetContractByRoomID(int idroom) //Lấy ra Hợp đồng của phòng
+        {
+            return QuanLy.Instance.Contracts.Where(p => p.RoomID == idroom).Select(p => p).FirstOrDefault();
+        }
     }
 }
