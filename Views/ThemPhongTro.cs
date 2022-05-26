@@ -86,10 +86,7 @@ namespace QuanLyNhaTro.Views
                 d();
                 Close();
             }
-            catch(FormatException ex)
-            {
-                MessageBox.Show(ex.Message,"Thông báo lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
+           
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);

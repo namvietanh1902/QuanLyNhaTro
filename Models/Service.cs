@@ -22,6 +22,7 @@ namespace QuanLyNhaTro.Models
         [Range(0,int.MaxValue,ErrorMessage ="Giá tiền không được là giá trị âm")]
         public int Price { get; set; }
         public virtual ICollection<ServiceReceiptDetail> Detail { get; set; }
+        public bool isDelete { get; set; } = false;
 
     }
 }

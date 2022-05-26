@@ -768,6 +768,19 @@ namespace QuanLyNhaTro.Views
             pnDichvu.Visible = true;
             pnTinhtientro.Visible = false;
             pnThongke.Visible = false;
+            reload_Service();
+        }
+        private void reload_Service()
+        {
+            dgvService.DataSource = BLL_Service.Instance.GetViews();
+            foreach (DataGridViewColumn col in dgvService.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                col.HeaderCell.Style.Font = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+            }
+            this.dgvService.DefaultCellStyle.ForeColor = Color.Black;
+            this.dgvService.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            dgvService.ClearSelection();
         }
 
         private void btnTinhtientro_Click(object sender, EventArgs e)
@@ -854,10 +867,7 @@ namespace QuanLyNhaTro.Views
 
         }
 
-<<<<<<< HEAD
-       
-=======
->>>>>>> 1e31b789fd061f27575ef895556cab9c79aee9ce
+
 
         private void label13_Click(object sender, EventArgs e)
         {

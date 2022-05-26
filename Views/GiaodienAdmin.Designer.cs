@@ -157,7 +157,10 @@
             this.lblreload_phongtro = new System.Windows.Forms.Label();
             this.pnDichvu = new System.Windows.Forms.Panel();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.vbButton3 = new QuanLyNhaTro.VBButton();
+            this.vbButton2 = new QuanLyNhaTro.VBButton();
+            this.vbButton1 = new QuanLyNhaTro.VBButton();
+            this.dgvService = new System.Windows.Forms.DataGridView();
             this.pnTinhtientro = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -197,6 +200,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.vbButton4 = new QuanLyNhaTro.VBButton();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -262,10 +266,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.btnNav = new System.Windows.Forms.Button();
-            this.vbButton3 = new QuanLyNhaTro.VBButton();
-            this.vbButton2 = new QuanLyNhaTro.VBButton();
-            this.vbButton1 = new QuanLyNhaTro.VBButton();
-            this.vbButton4 = new QuanLyNhaTro.VBButton();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -295,7 +295,7 @@
             this.panel20.SuspendLayout();
             this.pnDichvu.SuspendLayout();
             this.groupBox13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
             this.pnTinhtientro.SuspendLayout();
             this.panel13.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -2033,7 +2033,7 @@
             this.groupBox13.Controls.Add(this.vbButton3);
             this.groupBox13.Controls.Add(this.vbButton2);
             this.groupBox13.Controls.Add(this.vbButton1);
-            this.groupBox13.Controls.Add(this.dataGridView5);
+            this.groupBox13.Controls.Add(this.dgvService);
             this.groupBox13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox13.Location = new System.Drawing.Point(0, 0);
@@ -2045,18 +2045,84 @@
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Danh sách dịch vụ";
             // 
-            // dataGridView5
+            // vbButton3
             // 
-            this.dataGridView5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.vbButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.vbButton3.BackColor = System.Drawing.Color.MediumBlue;
+            this.vbButton3.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.vbButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton3.BorderRadius = 28;
+            this.vbButton3.BorderSize = 0;
+            this.vbButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbButton3.FlatAppearance.BorderSize = 0;
+            this.vbButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton3.ForeColor = System.Drawing.Color.White;
+            this.vbButton3.Location = new System.Drawing.Point(1213, 548);
+            this.vbButton3.Margin = new System.Windows.Forms.Padding(4);
+            this.vbButton3.Name = "vbButton3";
+            this.vbButton3.Size = new System.Drawing.Size(211, 71);
+            this.vbButton3.TabIndex = 2;
+            this.vbButton3.Text = "Xóa";
+            this.vbButton3.TextColor = System.Drawing.Color.White;
+            this.vbButton3.UseVisualStyleBackColor = false;
+            // 
+            // vbButton2
+            // 
+            this.vbButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.vbButton2.BackColor = System.Drawing.Color.MediumBlue;
+            this.vbButton2.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.vbButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton2.BorderRadius = 28;
+            this.vbButton2.BorderSize = 0;
+            this.vbButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbButton2.FlatAppearance.BorderSize = 0;
+            this.vbButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton2.ForeColor = System.Drawing.Color.White;
+            this.vbButton2.Location = new System.Drawing.Point(1213, 370);
+            this.vbButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.vbButton2.Name = "vbButton2";
+            this.vbButton2.Size = new System.Drawing.Size(211, 71);
+            this.vbButton2.TabIndex = 3;
+            this.vbButton2.Text = "Sửa";
+            this.vbButton2.TextColor = System.Drawing.Color.White;
+            this.vbButton2.UseVisualStyleBackColor = false;
+            // 
+            // vbButton1
+            // 
+            this.vbButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.vbButton1.BackColor = System.Drawing.Color.MediumBlue;
+            this.vbButton1.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.vbButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton1.BorderRadius = 28;
+            this.vbButton1.BorderSize = 0;
+            this.vbButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbButton1.FlatAppearance.BorderSize = 0;
+            this.vbButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton1.ForeColor = System.Drawing.Color.White;
+            this.vbButton1.Location = new System.Drawing.Point(1213, 191);
+            this.vbButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.vbButton1.Name = "vbButton1";
+            this.vbButton1.Size = new System.Drawing.Size(211, 71);
+            this.vbButton1.TabIndex = 4;
+            this.vbButton1.Text = "Thêm";
+            this.vbButton1.TextColor = System.Drawing.Color.White;
+            this.vbButton1.UseVisualStyleBackColor = false;
+            // 
+            // dgvService
+            // 
+            this.dgvService.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView5.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(4, 27);
-            this.dataGridView5.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.RowHeadersWidth = 51;
-            this.dataGridView5.Size = new System.Drawing.Size(1145, 770);
-            this.dataGridView5.TabIndex = 0;
+            this.dgvService.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvService.Location = new System.Drawing.Point(4, 27);
+            this.dgvService.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvService.Name = "dgvService";
+            this.dgvService.RowHeadersWidth = 51;
+            this.dgvService.Size = new System.Drawing.Size(1145, 770);
+            this.dgvService.TabIndex = 0;
             // 
             // pnTinhtientro
             // 
@@ -2535,6 +2601,29 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "THÔNG TIN PHÒNG THUÊ";
+            // 
+            // vbButton4
+            // 
+            this.vbButton4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.vbButton4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.vbButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton4.BorderRadius = 30;
+            this.vbButton4.BorderSize = 0;
+            this.vbButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbButton4.FlatAppearance.BorderSize = 0;
+            this.vbButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton4.ForeColor = System.Drawing.Color.Navy;
+            this.vbButton4.Image = ((System.Drawing.Image)(resources.GetObject("vbButton4.Image")));
+            this.vbButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.vbButton4.Location = new System.Drawing.Point(117, 444);
+            this.vbButton4.Margin = new System.Windows.Forms.Padding(4);
+            this.vbButton4.Name = "vbButton4";
+            this.vbButton4.Size = new System.Drawing.Size(221, 86);
+            this.vbButton4.TabIndex = 3;
+            this.vbButton4.Text = "      Tính tiền";
+            this.vbButton4.TextColor = System.Drawing.Color.Navy;
+            this.vbButton4.UseVisualStyleBackColor = false;
             // 
             // dateTimePicker2
             // 
@@ -3387,103 +3476,14 @@
             this.btnNav.UseVisualStyleBackColor = false;
             this.btnNav.Click += new System.EventHandler(this.btnNav_Click);
             // 
-            // vbButton3
-            // 
-            this.vbButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.vbButton3.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton3.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton3.BorderRadius = 28;
-            this.vbButton3.BorderSize = 0;
-            this.vbButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vbButton3.FlatAppearance.BorderSize = 0;
-            this.vbButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton3.ForeColor = System.Drawing.Color.White;
-            this.vbButton3.Location = new System.Drawing.Point(1213, 548);
-            this.vbButton3.Margin = new System.Windows.Forms.Padding(4);
-            this.vbButton3.Name = "vbButton3";
-            this.vbButton3.Size = new System.Drawing.Size(211, 71);
-            this.vbButton3.TabIndex = 2;
-            this.vbButton3.Text = "Xóa";
-            this.vbButton3.TextColor = System.Drawing.Color.White;
-            this.vbButton3.UseVisualStyleBackColor = false;
-            // 
-            // vbButton2
-            // 
-            this.vbButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.vbButton2.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton2.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton2.BorderRadius = 28;
-            this.vbButton2.BorderSize = 0;
-            this.vbButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vbButton2.FlatAppearance.BorderSize = 0;
-            this.vbButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton2.ForeColor = System.Drawing.Color.White;
-            this.vbButton2.Location = new System.Drawing.Point(1213, 370);
-            this.vbButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.vbButton2.Name = "vbButton2";
-            this.vbButton2.Size = new System.Drawing.Size(211, 71);
-            this.vbButton2.TabIndex = 3;
-            this.vbButton2.Text = "Sửa";
-            this.vbButton2.TextColor = System.Drawing.Color.White;
-            this.vbButton2.UseVisualStyleBackColor = false;
-            // 
-            // vbButton1
-            // 
-            this.vbButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.vbButton1.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton1.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton1.BorderRadius = 28;
-            this.vbButton1.BorderSize = 0;
-            this.vbButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vbButton1.FlatAppearance.BorderSize = 0;
-            this.vbButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton1.ForeColor = System.Drawing.Color.White;
-            this.vbButton1.Location = new System.Drawing.Point(1213, 191);
-            this.vbButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.vbButton1.Name = "vbButton1";
-            this.vbButton1.Size = new System.Drawing.Size(211, 71);
-            this.vbButton1.TabIndex = 4;
-            this.vbButton1.Text = "Thêm";
-            this.vbButton1.TextColor = System.Drawing.Color.White;
-            this.vbButton1.UseVisualStyleBackColor = false;
-            // 
-            // vbButton4
-            // 
-            this.vbButton4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.vbButton4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.vbButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton4.BorderRadius = 30;
-            this.vbButton4.BorderSize = 0;
-            this.vbButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vbButton4.FlatAppearance.BorderSize = 0;
-            this.vbButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton4.ForeColor = System.Drawing.Color.Navy;
-            this.vbButton4.Image = ((System.Drawing.Image)(resources.GetObject("vbButton4.Image")));
-            this.vbButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.vbButton4.Location = new System.Drawing.Point(117, 444);
-            this.vbButton4.Margin = new System.Windows.Forms.Padding(4);
-            this.vbButton4.Name = "vbButton4";
-            this.vbButton4.Size = new System.Drawing.Size(221, 86);
-            this.vbButton4.TabIndex = 3;
-            this.vbButton4.Text = "      Tính tiền";
-            this.vbButton4.TextColor = System.Drawing.Color.Navy;
-            this.vbButton4.UseVisualStyleBackColor = false;
-            // 
             // GiaodienAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
-            this.Controls.Add(this.pnPhongtro);
             this.Controls.Add(this.pnDichvu);
+            this.Controls.Add(this.pnPhongtro);
             this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnKhanhtro);
             this.Controls.Add(this.pnHome);
@@ -3541,7 +3541,7 @@
             this.panel20.PerformLayout();
             this.pnDichvu.ResumeLayout(false);
             this.groupBox13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
             this.pnTinhtientro.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -3748,7 +3748,7 @@
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Label lblreload_phongtro;
         private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridView dgvService;
         private VBButton vbButton3;
         private VBButton vbButton2;
         private VBButton vbButton1;

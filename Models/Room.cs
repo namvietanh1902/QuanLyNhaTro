@@ -13,6 +13,7 @@ namespace QuanLyNhaTro.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int RoomId { get; set; }
         [Required(ErrorMessage ="Tên phòng không được để trống")]
+        
         public string Name { get; set; }
         [Required(ErrorMessage = "Số lượng không được để trống")]
         [Range(1,int.MaxValue,ErrorMessage ="Số lượng người ở phải từ 1 người trở lên ")]
