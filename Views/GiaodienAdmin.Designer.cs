@@ -159,22 +159,11 @@
             this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.cbbSort_Service = new System.Windows.Forms.ComboBox();
             this.txtSearch_Service = new System.Windows.Forms.TextBox();
-            this.btnSort_Service = new QuanLyNhaTro.VBButton();
-            this.btnSearch_Service = new QuanLyNhaTro.VBButton();
-            this.btnDelete_Service = new QuanLyNhaTro.VBButton();
-            this.btnEdit_Service = new QuanLyNhaTro.VBButton();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.txtServicePrice = new System.Windows.Forms.TextBox();
             this.txtServiceUnit = new System.Windows.Forms.TextBox();
             this.txtServiceName = new System.Windows.Forms.TextBox();
             this.txtServiceID = new System.Windows.Forms.TextBox();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.btnReset_Service = new QuanLyNhaTro.VBButton();
-            this.btnSave_Service = new QuanLyNhaTro.VBButton();
-           
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
-       
             this.label79 = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
             this.label77 = new System.Windows.Forms.Label();
@@ -220,7 +209,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.vbButton4 = new QuanLyNhaTro.VBButton();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -286,6 +274,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.btnNav = new System.Windows.Forms.Button();
+            this.vbButton4 = new QuanLyNhaTro.VBButton();
+            this.btnSort_Service = new QuanLyNhaTro.VBButton();
+            this.btnSearch_Service = new QuanLyNhaTro.VBButton();
+            this.btnDelete_Service = new QuanLyNhaTro.VBButton();
+            this.btnEdit_Service = new QuanLyNhaTro.VBButton();
+            this.btnReset_Service = new QuanLyNhaTro.VBButton();
+            this.btnSave_Service = new QuanLyNhaTro.VBButton();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -2086,96 +2081,16 @@
             this.txtSearch_Service.TabIndex = 2;
             this.txtSearch_Service.TextChanged += new System.EventHandler(this.txtSearch_Service_TextChanged);
             // 
-            // btnSort_Service
-            // 
-            this.btnSort_Service.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnSort_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.btnSort_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSort_Service.BorderRadius = 20;
-            this.btnSort_Service.BorderSize = 0;
-            this.btnSort_Service.FlatAppearance.BorderSize = 0;
-            this.btnSort_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSort_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSort_Service.ForeColor = System.Drawing.Color.White;
-            this.btnSort_Service.Location = new System.Drawing.Point(63, 318);
-            this.btnSort_Service.Name = "btnSort_Service";
-            this.btnSort_Service.Size = new System.Drawing.Size(130, 56);
-            this.btnSort_Service.TabIndex = 1;
-            this.btnSort_Service.Text = "Sắp xếp";
-            this.btnSort_Service.TextColor = System.Drawing.Color.White;
-            this.btnSort_Service.UseVisualStyleBackColor = false;
-            this.btnSort_Service.Click += new System.EventHandler(this.btnSort_Service_Click);
-            // 
-            // btnSearch_Service
-            // 
-            this.btnSearch_Service.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnSearch_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.btnSearch_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSearch_Service.BorderRadius = 20;
-            this.btnSearch_Service.BorderSize = 0;
-            this.btnSearch_Service.FlatAppearance.BorderSize = 0;
-            this.btnSearch_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch_Service.ForeColor = System.Drawing.Color.White;
-            this.btnSearch_Service.Location = new System.Drawing.Point(63, 200);
-            this.btnSearch_Service.Name = "btnSearch_Service";
-            this.btnSearch_Service.Size = new System.Drawing.Size(130, 56);
-            this.btnSearch_Service.TabIndex = 1;
-            this.btnSearch_Service.Text = "Tìm kiếm";
-            this.btnSearch_Service.TextColor = System.Drawing.Color.White;
-            this.btnSearch_Service.UseVisualStyleBackColor = false;
-            this.btnSearch_Service.Click += new System.EventHandler(this.btnSearch_Service_Click);
-            // 
-            // btnDelete_Service
-            // 
-            this.btnDelete_Service.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnDelete_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.btnDelete_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnDelete_Service.BorderRadius = 20;
-            this.btnDelete_Service.BorderSize = 0;
-            this.btnDelete_Service.FlatAppearance.BorderSize = 0;
-            this.btnDelete_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete_Service.ForeColor = System.Drawing.Color.White;
-            this.btnDelete_Service.Location = new System.Drawing.Point(347, 79);
-            this.btnDelete_Service.Name = "btnDelete_Service";
-            this.btnDelete_Service.Size = new System.Drawing.Size(132, 54);
-            this.btnDelete_Service.TabIndex = 0;
-            this.btnDelete_Service.Text = "Xóa";
-            this.btnDelete_Service.TextColor = System.Drawing.Color.White;
-            this.btnDelete_Service.UseVisualStyleBackColor = false;
-            this.btnDelete_Service.Click += new System.EventHandler(this.btnDelete_Service_Click);
-            // 
-            // btnEdit_Service
-            // 
-            this.btnEdit_Service.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnEdit_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.btnEdit_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnEdit_Service.BorderRadius = 20;
-            this.btnEdit_Service.BorderSize = 0;
-            this.btnEdit_Service.FlatAppearance.BorderSize = 0;
-            this.btnEdit_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit_Service.ForeColor = System.Drawing.Color.White;
-            this.btnEdit_Service.Location = new System.Drawing.Point(127, 79);
-            this.btnEdit_Service.Name = "btnEdit_Service";
-            this.btnEdit_Service.Size = new System.Drawing.Size(132, 54);
-            this.btnEdit_Service.TabIndex = 0;
-            this.btnEdit_Service.Text = "Sửa ";
-            this.btnEdit_Service.TextColor = System.Drawing.Color.White;
-            this.btnEdit_Service.UseVisualStyleBackColor = false;
-            this.btnEdit_Service.Click += new System.EventHandler(this.btnEdit_Service_Click);
-            // 
             // groupBox16
             // 
             this.groupBox16.Controls.Add(this.txtServicePrice);
             this.groupBox16.Controls.Add(this.txtServiceUnit);
             this.groupBox16.Controls.Add(this.txtServiceName);
             this.groupBox16.Controls.Add(this.txtServiceID);
-            this.groupBox16.Controls.Add(this.label79);
-            this.groupBox16.Controls.Add(this.label78);
             this.groupBox16.Controls.Add(this.btnReset_Service);
             this.groupBox16.Controls.Add(this.btnSave_Service);
+            this.groupBox16.Controls.Add(this.label79);
+            this.groupBox16.Controls.Add(this.label78);
             this.groupBox16.Controls.Add(this.label77);
             this.groupBox16.Controls.Add(this.label76);
             this.groupBox16.Dock = System.Windows.Forms.DockStyle.Top;
@@ -2221,178 +2136,6 @@
             this.txtServiceID.TabIndex = 1;
             // 
             // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Location = new System.Drawing.Point(15, 228);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(68, 27);
-            this.label79.TabIndex = 0;
-            this.label79.Text = "Price:";
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(15, 174);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(59, 27);
-            this.label78.TabIndex = 0;
-            this.label78.Text = "Unit:";
-            // 
-            // btnReset_Service
-            // 
-            this.btnReset_Service.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnReset_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.btnReset_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnReset_Service.BorderRadius = 20;
-            this.btnReset_Service.BorderSize = 0;
-            this.btnReset_Service.FlatAppearance.BorderSize = 0;
-            this.btnReset_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset_Service.ForeColor = System.Drawing.Color.White;
-            this.btnReset_Service.Location = new System.Drawing.Point(328, 288);
-            this.btnReset_Service.Name = "btnReset_Service";
-            this.btnReset_Service.Size = new System.Drawing.Size(132, 54);
-            this.btnReset_Service.TabIndex = 0;
-            this.btnReset_Service.Text = "Làm mới";
-            this.btnReset_Service.TextColor = System.Drawing.Color.White;
-            this.btnReset_Service.UseVisualStyleBackColor = false;
-            this.btnReset_Service.Click += new System.EventHandler(this.btnReset_Service_Click);
-            // 
-            // btnSave_Service
-            // 
-            this.btnSave_Service.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnSave_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.btnSave_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSave_Service.BorderRadius = 20;
-            this.btnSave_Service.BorderSize = 0;
-            this.btnSave_Service.FlatAppearance.BorderSize = 0;
-            this.btnSave_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave_Service.ForeColor = System.Drawing.Color.White;
-            this.btnSave_Service.Location = new System.Drawing.Point(104, 288);
-            this.btnSave_Service.Name = "btnSave_Service";
-            this.btnSave_Service.Size = new System.Drawing.Size(132, 54);
-            this.btnSave_Service.TabIndex = 0;
-            this.btnSave_Service.Text = "Lưu";
-            this.btnSave_Service.TextColor = System.Drawing.Color.White;
-            this.btnSave_Service.UseVisualStyleBackColor = false;
-            this.btnSave_Service.Click += new System.EventHandler(this.btnSave_Service_Click);
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(15, 118);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(75, 27);
-            this.label77.TabIndex = 0;
-            this.label77.Text = "Name:";
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(15, 59);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(109, 27);
-            this.label76.TabIndex = 0;
-            this.label76.Text = "ServiceId:";
-            // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.dgvService);
-            this.groupBox13.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox13.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox13.ForeColor = System.Drawing.Color.MediumBlue;
-            this.groupBox13.Location = new System.Drawing.Point(0, 0);
-            this.groupBox13.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox13.Size = new System.Drawing.Size(966, 806);
-            this.groupBox13.TabIndex = 0;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Danh sách dịch vụ";
-            // 
-            // dgvService
-            // 
-            this.dgvService.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvService.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvService.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvService.Location = new System.Drawing.Point(4, 31);
-            this.dgvService.Name = "dgvService";
-            this.dgvService.RowHeadersWidth = 51;
-            this.dgvService.RowTemplate.Height = 24;
-            this.dgvService.Size = new System.Drawing.Size(958, 771);
-            this.dgvService.TabIndex = 0;
-            // 
-            // pnTinhtientro
-            // 
-            this.pnTinhtientro.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pnTinhtientro.Controls.Add(this.panel13);
-            this.pnTinhtientro.Controls.Add(this.panel12);
-            this.pnTinhtientro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnTinhtientro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnTinhtientro.Location = new System.Drawing.Point(400, 233);
-            this.pnTinhtientro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnTinhtientro.Name = "pnTinhtientro";
-            this.pnTinhtientro.Size = new System.Drawing.Size(1526, 806);
-            this.pnTinhtientro.TabIndex = 0;
-            this.pnTinhtientro.Visible = false;
-       
-            this.groupBox17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox17.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox17.ForeColor = System.Drawing.Color.MediumBlue;
-            this.groupBox17.Location = new System.Drawing.Point(966, 362);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(560, 444);
-            this.groupBox17.TabIndex = 2;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Các chức năng";
-            // 
-            // comboBox1
-            // 
-        
-            // 
-            // textBox19
-          
-            // vbButton6
-            // 
-          
-            // vbButton5
-            // 
-          
-            // vbButton3
-            // 
-          
-            // 
-            // groupBox16
-            // 
-       
-            this.groupBox16.Controls.Add(this.label79);
-            this.groupBox16.Controls.Add(this.label78);
-            this.groupBox16.Controls.Add(this.label77);
-            this.groupBox16.Controls.Add(this.label76);
-            this.groupBox16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox16.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox16.ForeColor = System.Drawing.Color.MediumBlue;
-            this.groupBox16.Location = new System.Drawing.Point(966, 0);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(560, 362);
-            this.groupBox16.TabIndex = 1;
-            this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Thông tin dịch vụ";
-            // 
-            // textBox18
-            // 
-        
-            // textBox17
-            // 
-          
-            // 
-      
-            // 
-            // textBox15
-            // 
-        
             // 
             this.label79.AutoSize = true;
             this.label79.Location = new System.Drawing.Point(15, 228);
@@ -2934,29 +2677,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "THÔNG TIN PHÒNG THUÊ";
             // 
-            // vbButton4
-            // 
-            this.vbButton4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.vbButton4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.vbButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton4.BorderRadius = 30;
-            this.vbButton4.BorderSize = 0;
-            this.vbButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vbButton4.FlatAppearance.BorderSize = 0;
-            this.vbButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton4.ForeColor = System.Drawing.Color.Navy;
-            this.vbButton4.Image = ((System.Drawing.Image)(resources.GetObject("vbButton4.Image")));
-            this.vbButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.vbButton4.Location = new System.Drawing.Point(117, 444);
-            this.vbButton4.Margin = new System.Windows.Forms.Padding(4);
-            this.vbButton4.Name = "vbButton4";
-            this.vbButton4.Size = new System.Drawing.Size(221, 86);
-            this.vbButton4.TabIndex = 3;
-            this.vbButton4.Text = "      Tính tiền";
-            this.vbButton4.TextColor = System.Drawing.Color.Navy;
-            this.vbButton4.UseVisualStyleBackColor = false;
-            // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -3072,9 +2792,9 @@
             this.label2.Location = new System.Drawing.Point(61, 32);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 25);
+            this.label2.Size = new System.Drawing.Size(129, 25);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Chọn phòng:";
+            this.label2.Text = "Chọn ngưởi ở";
             // 
             // pnThongke
             // 
@@ -3808,6 +3528,149 @@
             this.btnNav.UseVisualStyleBackColor = false;
             this.btnNav.Click += new System.EventHandler(this.btnNav_Click);
             // 
+            // vbButton4
+            // 
+            this.vbButton4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.vbButton4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.vbButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton4.BorderRadius = 30;
+            this.vbButton4.BorderSize = 0;
+            this.vbButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbButton4.FlatAppearance.BorderSize = 0;
+            this.vbButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton4.ForeColor = System.Drawing.Color.Navy;
+            this.vbButton4.Image = ((System.Drawing.Image)(resources.GetObject("vbButton4.Image")));
+            this.vbButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.vbButton4.Location = new System.Drawing.Point(117, 444);
+            this.vbButton4.Margin = new System.Windows.Forms.Padding(4);
+            this.vbButton4.Name = "vbButton4";
+            this.vbButton4.Size = new System.Drawing.Size(221, 86);
+            this.vbButton4.TabIndex = 3;
+            this.vbButton4.Text = "      Tính tiền";
+            this.vbButton4.TextColor = System.Drawing.Color.Navy;
+            this.vbButton4.UseVisualStyleBackColor = false;
+            // 
+            // btnSort_Service
+            // 
+            this.btnSort_Service.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnSort_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.btnSort_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSort_Service.BorderRadius = 20;
+            this.btnSort_Service.BorderSize = 0;
+            this.btnSort_Service.FlatAppearance.BorderSize = 0;
+            this.btnSort_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSort_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSort_Service.ForeColor = System.Drawing.Color.White;
+            this.btnSort_Service.Location = new System.Drawing.Point(63, 318);
+            this.btnSort_Service.Name = "btnSort_Service";
+            this.btnSort_Service.Size = new System.Drawing.Size(130, 56);
+            this.btnSort_Service.TabIndex = 1;
+            this.btnSort_Service.Text = "Sắp xếp";
+            this.btnSort_Service.TextColor = System.Drawing.Color.White;
+            this.btnSort_Service.UseVisualStyleBackColor = false;
+            this.btnSort_Service.Click += new System.EventHandler(this.btnSort_Service_Click);
+            // 
+            // btnSearch_Service
+            // 
+            this.btnSearch_Service.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnSearch_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.btnSearch_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSearch_Service.BorderRadius = 20;
+            this.btnSearch_Service.BorderSize = 0;
+            this.btnSearch_Service.FlatAppearance.BorderSize = 0;
+            this.btnSearch_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch_Service.ForeColor = System.Drawing.Color.White;
+            this.btnSearch_Service.Location = new System.Drawing.Point(63, 200);
+            this.btnSearch_Service.Name = "btnSearch_Service";
+            this.btnSearch_Service.Size = new System.Drawing.Size(130, 56);
+            this.btnSearch_Service.TabIndex = 1;
+            this.btnSearch_Service.Text = "Tìm kiếm";
+            this.btnSearch_Service.TextColor = System.Drawing.Color.White;
+            this.btnSearch_Service.UseVisualStyleBackColor = false;
+            this.btnSearch_Service.Click += new System.EventHandler(this.btnSearch_Service_Click);
+            // 
+            // btnDelete_Service
+            // 
+            this.btnDelete_Service.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnDelete_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.btnDelete_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDelete_Service.BorderRadius = 20;
+            this.btnDelete_Service.BorderSize = 0;
+            this.btnDelete_Service.FlatAppearance.BorderSize = 0;
+            this.btnDelete_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete_Service.ForeColor = System.Drawing.Color.White;
+            this.btnDelete_Service.Location = new System.Drawing.Point(347, 79);
+            this.btnDelete_Service.Name = "btnDelete_Service";
+            this.btnDelete_Service.Size = new System.Drawing.Size(132, 54);
+            this.btnDelete_Service.TabIndex = 0;
+            this.btnDelete_Service.Text = "Xóa";
+            this.btnDelete_Service.TextColor = System.Drawing.Color.White;
+            this.btnDelete_Service.UseVisualStyleBackColor = false;
+            this.btnDelete_Service.Click += new System.EventHandler(this.btnDelete_Service_Click);
+            // 
+            // btnEdit_Service
+            // 
+            this.btnEdit_Service.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnEdit_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.btnEdit_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnEdit_Service.BorderRadius = 20;
+            this.btnEdit_Service.BorderSize = 0;
+            this.btnEdit_Service.FlatAppearance.BorderSize = 0;
+            this.btnEdit_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit_Service.ForeColor = System.Drawing.Color.White;
+            this.btnEdit_Service.Location = new System.Drawing.Point(127, 79);
+            this.btnEdit_Service.Name = "btnEdit_Service";
+            this.btnEdit_Service.Size = new System.Drawing.Size(132, 54);
+            this.btnEdit_Service.TabIndex = 0;
+            this.btnEdit_Service.Text = "Sửa ";
+            this.btnEdit_Service.TextColor = System.Drawing.Color.White;
+            this.btnEdit_Service.UseVisualStyleBackColor = false;
+            this.btnEdit_Service.Click += new System.EventHandler(this.btnEdit_Service_Click);
+            // 
+            // btnReset_Service
+            // 
+            this.btnReset_Service.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnReset_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.btnReset_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnReset_Service.BorderRadius = 20;
+            this.btnReset_Service.BorderSize = 0;
+            this.btnReset_Service.FlatAppearance.BorderSize = 0;
+            this.btnReset_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset_Service.ForeColor = System.Drawing.Color.White;
+            this.btnReset_Service.Location = new System.Drawing.Point(328, 288);
+            this.btnReset_Service.Name = "btnReset_Service";
+            this.btnReset_Service.Size = new System.Drawing.Size(132, 54);
+            this.btnReset_Service.TabIndex = 0;
+            this.btnReset_Service.Text = "Làm mới";
+            this.btnReset_Service.TextColor = System.Drawing.Color.White;
+            this.btnReset_Service.UseVisualStyleBackColor = false;
+            this.btnReset_Service.Click += new System.EventHandler(this.btnReset_Service_Click);
+            // 
+            // btnSave_Service
+            // 
+            this.btnSave_Service.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnSave_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.btnSave_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSave_Service.BorderRadius = 20;
+            this.btnSave_Service.BorderSize = 0;
+            this.btnSave_Service.FlatAppearance.BorderSize = 0;
+            this.btnSave_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave_Service.ForeColor = System.Drawing.Color.White;
+            this.btnSave_Service.Location = new System.Drawing.Point(104, 288);
+            this.btnSave_Service.Name = "btnSave_Service";
+            this.btnSave_Service.Size = new System.Drawing.Size(132, 54);
+            this.btnSave_Service.TabIndex = 0;
+            this.btnSave_Service.Text = "Lưu";
+            this.btnSave_Service.TextColor = System.Drawing.Color.White;
+            this.btnSave_Service.UseVisualStyleBackColor = false;
+            this.btnSave_Service.Click += new System.EventHandler(this.btnSave_Service_Click);
+            // 
             // GiaodienAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -3815,11 +3678,11 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1942, 1055);
             this.Controls.Add(this.pnUser);
+            this.Controls.Add(this.pnKhanhtro);
+            this.Controls.Add(this.pnTinhtientro);
             this.Controls.Add(this.pnDichvu);
             this.Controls.Add(this.pnPhongtro);
-            this.Controls.Add(this.pnKhanhtro);
             this.Controls.Add(this.pnHome);
-            this.Controls.Add(this.pnTinhtientro);
             this.Controls.Add(this.pnThongke);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);

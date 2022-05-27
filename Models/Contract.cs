@@ -13,14 +13,14 @@ namespace QuanLyNhaTro.Models
         [Key]
         public int ContractId { get; set; }
         
-        public int RoomID { get; set; }
-        public int CustomerID { get; set; }
+        public int RoomId { get; set; }
+        public int CustomerId { get; set; }
         [Required(ErrorMessage ="Ngày thuê không được để trống")]
         public DateTime? CreatedAt { get; set; } = DateTime.Now;
         public string CustomerName { get; set; }
-        [ForeignKey("RoomID")]
+        [ForeignKey("RoomId")]
         public virtual Room Room { get; set; }
-        [ForeignKey("CustomerID")]
+        [ForeignKey("CustomerId")]
         public virtual Customer Customer { get; set; }
         public virtual ICollection<ServiceReceipt> ServiceReceipt { get; set; }
 

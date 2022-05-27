@@ -9,7 +9,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace QuanLyNhaTro.Models
 {
     public class Room
-    {   [Key]
+    {   
+        public Room()
+        {
+            this.Contracts = new HashSet<Contract>();
+        }
+        [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int RoomId { get; set; }
         [Required(ErrorMessage ="Tên phòng không được để trống")]

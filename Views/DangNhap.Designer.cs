@@ -201,6 +201,7 @@ namespace QuanLyNhaTro.Views
             this.label5.Size = new System.Drawing.Size(170, 25);
             this.label5.TabIndex = 13;
             this.label5.Text = "Forgot Password?";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // checkBox1
             // 

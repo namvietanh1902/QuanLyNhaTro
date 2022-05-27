@@ -285,13 +285,13 @@ namespace QuanLyNhaTro.Views
                 {
                     foreach (Customer cus in BLL_Customer.Instance.GetAllCustomer())
                     {
-                        if (cus.CustomerId == hd.CustomerID)
+                        if (cus.CustomerId == hd.CustomerId)
                         {
                             contract.ContractId = hd.ContractId;
-                            contract.CustomerID = hd.CustomerID;
-                            contract.RoomID = hd.RoomID;
+                            contract.CustomerId = hd.CustomerId;
+                            contract.RoomId = hd.RoomId;
                             contract.CreatedAt = hd.CreatedAt;
-                            contract.CustomerName = account.Name;
+                            contract.CustomerName = cus.Name;
                             break;
                         }
                     }
@@ -405,13 +405,15 @@ namespace QuanLyNhaTro.Views
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 col.HeaderCell.Style.Font = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
             }
+            txtMakhachtro_khachtro.Text = BLL_Customer.Instance.GetNextID().ToString();
+            txtMakhachtro_khachtro.ReadOnly = true;
             dgvthongtin_khachtro.ClearSelection();
         }
 
         private void cleardata_khachtro()
         {
             dgvthongtin_khachtro.ClearSelection();
-            txtMakhachtro_khachtro.Text = "";
+            txtMakhachtro_khachtro.Text = BLL_Customer.Instance.GetNextID().ToString();
             txtTennguoithue_khachtro.Text = "";
             txtCmnd_khachtro.Text = "";
             txtSDT_khachtro.Text = "";
@@ -459,12 +461,12 @@ namespace QuanLyNhaTro.Views
                     if (cus.SDT == txtSDT_khachtro.Text)
                     {
                         Contract contract = new Contract();
-                        contract.CustomerID = cus.CustomerId;
+                        contract.CustomerId = cus.CustomerId;
                         foreach (CBBItems items in cbbTenphongtro_khanhtro.Items)
                         {
                             if (items.Text == cbbTenphongtro_khanhtro.SelectedItem.ToString())
                             {
-                                contract.RoomID = items.Value;
+                                contract.RoomId = items.Value;
                                 break;
                             }
                         }
@@ -472,7 +474,7 @@ namespace QuanLyNhaTro.Views
                         BLL_Contract.Instance.AddContract(contract);
                         foreach (Room room in BLL_Room.Instance.GetAllRoom())
                         {
-                            if (room.isRent == false && contract.RoomID == room.RoomId)
+                            if (room.isRent == false && contract.RoomId == room.RoomId)
                             {
                                 room.isRent = true;
                                 BLL_Room.Instance.UpdateIsRentRoomWhenAddCustomer(room);
@@ -541,11 +543,11 @@ namespace QuanLyNhaTro.Views
                 Contract contract = new Contract();
                 foreach (Contract hd in BLL_Contract.Instance.GetAllContract())
                 {
-                    if (hd.CustomerID == cusAdd.CustomerId)
+                    if (hd.CustomerId == cusAdd.CustomerId)
                     {
                         contract.ContractId = hd.ContractId;
-                        contract.CustomerID = hd.CustomerID;
-                        contract.RoomID = hd.RoomID;
+                        contract.CustomerId = hd.CustomerId;
+                        contract.RoomId = hd.RoomId;
                         contract.CreatedAt = hd.CreatedAt;
                         contract.CustomerName = cusAdd.Name;
                         break;
@@ -736,7 +738,7 @@ namespace QuanLyNhaTro.Views
             List<string> listnow = new List<string>();
             foreach (DataGridViewRow i in dgvThongtin_phongtro.Rows)
             {
-                listnow.Add(i.Cells["RoomID"].Value.ToString());
+                listnow.Add(i.Cells["RoomId"].Value.ToString());
             }
             return listnow;
 

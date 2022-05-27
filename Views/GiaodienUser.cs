@@ -119,7 +119,7 @@ namespace QuanLyNhaTro.Views
             pnDichdu.Visible = false;
 
             int CustomerID = BLL_Customer.Instance.GetCustomerByID(ID).CustomerId;
-            int RoomID = BLL_Contract.Instance.GetContractByCustomerID(CustomerID).RoomID;
+            int RoomID = BLL_Contract.Instance.GetContractByCustomerID(CustomerID).RoomId;
             textBox12.Text = RoomID.ToString();
             textBox11.Text = BLL_Room.Instance.GetRoomByIDRoom(RoomID).Name;
             textBox8.Text = BLL_Room.Instance.GetRoomByIDRoom(RoomID).Capacity.ToString();

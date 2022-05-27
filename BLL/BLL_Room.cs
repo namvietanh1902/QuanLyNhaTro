@@ -53,7 +53,7 @@ namespace QuanLyNhaTro.BLL
                 int dem = 0;
                 foreach(Contract contract in BLL_Contract.Instance.GetAllContract())
                 {
-                    if(i.isDelete == false && contract.RoomID == i.RoomId && QuanLy.Instance.Customers.Find(contract.CustomerID).isDelete == false)
+                    if(i.isDelete == false && contract.RoomId == i.RoomId && QuanLy.Instance.Customers.Find(contract.CustomerId).isDelete == false)
                     {
                         dem++;
                     }
@@ -122,7 +122,7 @@ namespace QuanLyNhaTro.BLL
                 int dem = 0;
                 foreach (Contract contract in BLL_Contract.Instance.GetAllContract())
                 {
-                    if (i.RoomId == contract.RoomID && i.isDelete == false && QuanLy.Instance.Customers.Find(contract.CustomerID).isDelete == false)
+                    if (i.RoomId == contract.RoomId && i.isDelete == false && QuanLy.Instance.Customers.Find(contract.CustomerId).isDelete == false)
                     {
                         dem++;
                     }
@@ -142,7 +142,7 @@ namespace QuanLyNhaTro.BLL
                 int dem = 0;
                 foreach (Contract contract in BLL_Contract.Instance.GetAllContract())
                 {
-                    if (i.RoomId == contract.RoomID && i.isDelete == false && QuanLy.Instance.Customers.Find(contract.CustomerID).isDelete == false)
+                    if (i.RoomId == contract.RoomId && i.isDelete == false && QuanLy.Instance.Customers.Find(contract.CustomerId).isDelete == false)
                     {
                         dem++;
                     }
@@ -161,14 +161,14 @@ namespace QuanLyNhaTro.BLL
             foreach(Contract contract in BLL_Contract.Instance.GetAllContract())
             {
                 ChiTietPhongThue ctpt = new ChiTietPhongThue();
-                if(contract.RoomID == maphong && QuanLy.Instance.Customers.Find(contract.CustomerID).isDelete == false)
+                if(contract.RoomId == maphong && QuanLy.Instance.Customers.Find(contract.CustomerId).isDelete == false)
                 {
                     ctpt.ContractId = contract.ContractId;
-                    ctpt.RoomId = contract.RoomID;
-                    ctpt.RoomName = QuanLy.Instance.Rooms.Find(contract.RoomID).Name;
+                    ctpt.RoomId = contract.RoomId;
+                    ctpt.RoomName = QuanLy.Instance.Rooms.Find(contract.RoomId).Name;
                     ctpt.CustomerName = contract.CustomerName;
-                    ctpt.Capacity = QuanLy.Instance.Rooms.Find(contract.RoomID).Capacity;
-                    ctpt.Price = QuanLy.Instance.Rooms.Find(contract.RoomID).Price;
+                    ctpt.Capacity = QuanLy.Instance.Rooms.Find(contract.RoomId).Capacity;
+                    ctpt.Price = QuanLy.Instance.Rooms.Find(contract.RoomId).Price;
                     ctpt.CreatedAt = (DateTime)contract.CreatedAt;
                     data.Add(ctpt);
                 }

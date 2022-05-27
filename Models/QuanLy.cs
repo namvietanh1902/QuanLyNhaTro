@@ -49,7 +49,10 @@ namespace QuanLyNhaTro.Models
             modelBuilder.Entity<ServiceReceiptDetail>().
                 HasKey(c => new { c.ServiceId,c.ServiceReceiptId})
                 ;
-            
+            modelBuilder.Entity<Customer>()
+                .HasRequired(c => c.Account).WithRequiredPrincipal(c => c.Customer);
+            modelBuilder.Entity<Contract>()
+                .HasRequired(c => c.Customer).WithRequiredPrincipal(c => c.Contract);
         }
     }
 }

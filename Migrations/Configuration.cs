@@ -10,7 +10,6 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "QuanLyNhaTro.EF.Model.QuanLyKhachTroContext";
         }
 
         protected override void Seed(QuanLyNhaTro.Models.QuanLy context)

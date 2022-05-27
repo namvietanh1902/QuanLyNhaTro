@@ -43,8 +43,8 @@ namespace QuanLyNhaTro.BLL
             else
             {
                 tam.ContractId = contract.ContractId;
-                tam.CustomerID = contract.CustomerID;
-                tam.RoomID = contract.RoomID;
+                tam.CustomerId = contract.CustomerId;
+                tam.RoomId = contract.RoomId;
                 tam.CustomerName = contract.CustomerName;
                 tam.CreatedAt = contract.CreatedAt;
                 QuanLy.Instance.SaveChanges();
@@ -52,12 +52,12 @@ namespace QuanLyNhaTro.BLL
         }
         public Contract GetContractByCustomerID(int id) //Lấy ra hợp đồng của khách
         {
-            return QuanLy.Instance.Contracts.Where(p => p.CustomerID == id).Select(p => p).FirstOrDefault();
+            return QuanLy.Instance.Contracts.Where(p => p.CustomerId == id).Select(p => p).FirstOrDefault();
         }
 
         public Contract GetContractByRoomID(int idroom) //Lấy ra Hợp đồng của phòng
         {
-            return QuanLy.Instance.Contracts.Where(p => p.RoomID == idroom).Select(p => p).FirstOrDefault();
+            return QuanLy.Instance.Contracts.Where(p => p.RoomId == idroom).Select(p => p).FirstOrDefault();
         }
     }
 }

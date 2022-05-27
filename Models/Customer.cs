@@ -9,7 +9,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace QuanLyNhaTro.Models
 {
     public class Customer
-    {
+    {   
+        public Customer()
+        {
+          
+        }
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int CustomerId { get; set; }
@@ -26,13 +30,14 @@ namespace QuanLyNhaTro.Models
         [Required(ErrorMessage = "Nghề nghiệp không được để trống")]
         public string Job { get; set; }
 
-    
+        
         public  int AccountId { get; set; }
     
         public bool isDelete { get; set; } = false;
+       
         [ForeignKey("AccountId")]
-        public Account Account;
-        public Contract Contract ;
+        public virtual Account Account { get; set; }
+        public virtual  Contract Contract { get; set; } 
     
 
 
