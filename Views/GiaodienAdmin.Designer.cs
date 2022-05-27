@@ -157,18 +157,24 @@
             this.lblreload_phongtro = new System.Windows.Forms.Label();
             this.pnDichvu = new System.Windows.Forms.Panel();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.vbButton6 = new QuanLyNhaTro.VBButton();
-            this.vbButton5 = new QuanLyNhaTro.VBButton();
-            this.vbButton3 = new QuanLyNhaTro.VBButton();
-            this.vbButton2 = new QuanLyNhaTro.VBButton();
-            this.vbButton1 = new QuanLyNhaTro.VBButton();
+            this.cbbSort_Service = new System.Windows.Forms.ComboBox();
+            this.txtSearch_Service = new System.Windows.Forms.TextBox();
+            this.btnSort_Service = new QuanLyNhaTro.VBButton();
+            this.btnSearch_Service = new QuanLyNhaTro.VBButton();
+            this.btnDelete_Service = new QuanLyNhaTro.VBButton();
+            this.btnEdit_Service = new QuanLyNhaTro.VBButton();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtServicePrice = new System.Windows.Forms.TextBox();
+            this.txtServiceUnit = new System.Windows.Forms.TextBox();
+            this.txtServiceName = new System.Windows.Forms.TextBox();
+            this.txtServiceID = new System.Windows.Forms.TextBox();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.btnReset_Service = new QuanLyNhaTro.VBButton();
+            this.btnSave_Service = new QuanLyNhaTro.VBButton();
+           
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+       
             this.label79 = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
             this.label77 = new System.Windows.Forms.Label();
@@ -2048,13 +2054,290 @@
             // 
             // groupBox17
             // 
-            this.groupBox17.Controls.Add(this.comboBox1);
-            this.groupBox17.Controls.Add(this.textBox19);
-            this.groupBox17.Controls.Add(this.vbButton6);
-            this.groupBox17.Controls.Add(this.vbButton5);
-            this.groupBox17.Controls.Add(this.vbButton3);
-            this.groupBox17.Controls.Add(this.vbButton2);
-            this.groupBox17.Controls.Add(this.vbButton1);
+            this.groupBox17.Controls.Add(this.cbbSort_Service);
+            this.groupBox17.Controls.Add(this.txtSearch_Service);
+            this.groupBox17.Controls.Add(this.btnSort_Service);
+            this.groupBox17.Controls.Add(this.btnSearch_Service);
+            this.groupBox17.Controls.Add(this.btnDelete_Service);
+            this.groupBox17.Controls.Add(this.btnEdit_Service);
+            this.groupBox17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox17.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox17.ForeColor = System.Drawing.Color.MediumBlue;
+            this.groupBox17.Location = new System.Drawing.Point(966, 362);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(560, 444);
+            this.groupBox17.TabIndex = 2;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Các chức năng";
+            // 
+            // cbbSort_Service
+            // 
+            this.cbbSort_Service.FormattingEnabled = true;
+            this.cbbSort_Service.Location = new System.Drawing.Point(251, 333);
+            this.cbbSort_Service.Name = "cbbSort_Service";
+            this.cbbSort_Service.Size = new System.Drawing.Size(334, 33);
+            this.cbbSort_Service.TabIndex = 3;
+            // 
+            // txtSearch_Service
+            // 
+            this.txtSearch_Service.Location = new System.Drawing.Point(252, 215);
+            this.txtSearch_Service.Name = "txtSearch_Service";
+            this.txtSearch_Service.Size = new System.Drawing.Size(333, 33);
+            this.txtSearch_Service.TabIndex = 2;
+            this.txtSearch_Service.TextChanged += new System.EventHandler(this.txtSearch_Service_TextChanged);
+            // 
+            // btnSort_Service
+            // 
+            this.btnSort_Service.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnSort_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.btnSort_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSort_Service.BorderRadius = 20;
+            this.btnSort_Service.BorderSize = 0;
+            this.btnSort_Service.FlatAppearance.BorderSize = 0;
+            this.btnSort_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSort_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSort_Service.ForeColor = System.Drawing.Color.White;
+            this.btnSort_Service.Location = new System.Drawing.Point(63, 318);
+            this.btnSort_Service.Name = "btnSort_Service";
+            this.btnSort_Service.Size = new System.Drawing.Size(130, 56);
+            this.btnSort_Service.TabIndex = 1;
+            this.btnSort_Service.Text = "Sắp xếp";
+            this.btnSort_Service.TextColor = System.Drawing.Color.White;
+            this.btnSort_Service.UseVisualStyleBackColor = false;
+            this.btnSort_Service.Click += new System.EventHandler(this.btnSort_Service_Click);
+            // 
+            // btnSearch_Service
+            // 
+            this.btnSearch_Service.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnSearch_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.btnSearch_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSearch_Service.BorderRadius = 20;
+            this.btnSearch_Service.BorderSize = 0;
+            this.btnSearch_Service.FlatAppearance.BorderSize = 0;
+            this.btnSearch_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch_Service.ForeColor = System.Drawing.Color.White;
+            this.btnSearch_Service.Location = new System.Drawing.Point(63, 200);
+            this.btnSearch_Service.Name = "btnSearch_Service";
+            this.btnSearch_Service.Size = new System.Drawing.Size(130, 56);
+            this.btnSearch_Service.TabIndex = 1;
+            this.btnSearch_Service.Text = "Tìm kiếm";
+            this.btnSearch_Service.TextColor = System.Drawing.Color.White;
+            this.btnSearch_Service.UseVisualStyleBackColor = false;
+            this.btnSearch_Service.Click += new System.EventHandler(this.btnSearch_Service_Click);
+            // 
+            // btnDelete_Service
+            // 
+            this.btnDelete_Service.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnDelete_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.btnDelete_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDelete_Service.BorderRadius = 20;
+            this.btnDelete_Service.BorderSize = 0;
+            this.btnDelete_Service.FlatAppearance.BorderSize = 0;
+            this.btnDelete_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete_Service.ForeColor = System.Drawing.Color.White;
+            this.btnDelete_Service.Location = new System.Drawing.Point(347, 79);
+            this.btnDelete_Service.Name = "btnDelete_Service";
+            this.btnDelete_Service.Size = new System.Drawing.Size(132, 54);
+            this.btnDelete_Service.TabIndex = 0;
+            this.btnDelete_Service.Text = "Xóa";
+            this.btnDelete_Service.TextColor = System.Drawing.Color.White;
+            this.btnDelete_Service.UseVisualStyleBackColor = false;
+            this.btnDelete_Service.Click += new System.EventHandler(this.btnDelete_Service_Click);
+            // 
+            // btnEdit_Service
+            // 
+            this.btnEdit_Service.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnEdit_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.btnEdit_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnEdit_Service.BorderRadius = 20;
+            this.btnEdit_Service.BorderSize = 0;
+            this.btnEdit_Service.FlatAppearance.BorderSize = 0;
+            this.btnEdit_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit_Service.ForeColor = System.Drawing.Color.White;
+            this.btnEdit_Service.Location = new System.Drawing.Point(127, 79);
+            this.btnEdit_Service.Name = "btnEdit_Service";
+            this.btnEdit_Service.Size = new System.Drawing.Size(132, 54);
+            this.btnEdit_Service.TabIndex = 0;
+            this.btnEdit_Service.Text = "Sửa ";
+            this.btnEdit_Service.TextColor = System.Drawing.Color.White;
+            this.btnEdit_Service.UseVisualStyleBackColor = false;
+            this.btnEdit_Service.Click += new System.EventHandler(this.btnEdit_Service_Click);
+            // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.txtServicePrice);
+            this.groupBox16.Controls.Add(this.txtServiceUnit);
+            this.groupBox16.Controls.Add(this.txtServiceName);
+            this.groupBox16.Controls.Add(this.txtServiceID);
+            this.groupBox16.Controls.Add(this.label79);
+            this.groupBox16.Controls.Add(this.label78);
+            this.groupBox16.Controls.Add(this.btnReset_Service);
+            this.groupBox16.Controls.Add(this.btnSave_Service);
+            this.groupBox16.Controls.Add(this.label77);
+            this.groupBox16.Controls.Add(this.label76);
+            this.groupBox16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox16.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox16.ForeColor = System.Drawing.Color.MediumBlue;
+            this.groupBox16.Location = new System.Drawing.Point(966, 0);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(560, 362);
+            this.groupBox16.TabIndex = 1;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "Thông tin dịch vụ";
+            // 
+            // txtServicePrice
+            // 
+            this.txtServicePrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtServicePrice.Location = new System.Drawing.Point(158, 227);
+            this.txtServicePrice.Name = "txtServicePrice";
+            this.txtServicePrice.Size = new System.Drawing.Size(243, 30);
+            this.txtServicePrice.TabIndex = 1;
+            // 
+            // txtServiceUnit
+            // 
+            this.txtServiceUnit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtServiceUnit.Location = new System.Drawing.Point(158, 171);
+            this.txtServiceUnit.Name = "txtServiceUnit";
+            this.txtServiceUnit.Size = new System.Drawing.Size(243, 30);
+            this.txtServiceUnit.TabIndex = 1;
+            // 
+            // txtServiceName
+            // 
+            this.txtServiceName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtServiceName.Location = new System.Drawing.Point(158, 115);
+            this.txtServiceName.Name = "txtServiceName";
+            this.txtServiceName.Size = new System.Drawing.Size(243, 30);
+            this.txtServiceName.TabIndex = 1;
+            // 
+            // txtServiceID
+            // 
+            this.txtServiceID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtServiceID.Location = new System.Drawing.Point(158, 56);
+            this.txtServiceID.Name = "txtServiceID";
+            this.txtServiceID.Size = new System.Drawing.Size(243, 30);
+            this.txtServiceID.TabIndex = 1;
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(15, 228);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(68, 27);
+            this.label79.TabIndex = 0;
+            this.label79.Text = "Price:";
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(15, 174);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(59, 27);
+            this.label78.TabIndex = 0;
+            this.label78.Text = "Unit:";
+            // 
+            // btnReset_Service
+            // 
+            this.btnReset_Service.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnReset_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.btnReset_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnReset_Service.BorderRadius = 20;
+            this.btnReset_Service.BorderSize = 0;
+            this.btnReset_Service.FlatAppearance.BorderSize = 0;
+            this.btnReset_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset_Service.ForeColor = System.Drawing.Color.White;
+            this.btnReset_Service.Location = new System.Drawing.Point(328, 288);
+            this.btnReset_Service.Name = "btnReset_Service";
+            this.btnReset_Service.Size = new System.Drawing.Size(132, 54);
+            this.btnReset_Service.TabIndex = 0;
+            this.btnReset_Service.Text = "Làm mới";
+            this.btnReset_Service.TextColor = System.Drawing.Color.White;
+            this.btnReset_Service.UseVisualStyleBackColor = false;
+            this.btnReset_Service.Click += new System.EventHandler(this.btnReset_Service_Click);
+            // 
+            // btnSave_Service
+            // 
+            this.btnSave_Service.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnSave_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.btnSave_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSave_Service.BorderRadius = 20;
+            this.btnSave_Service.BorderSize = 0;
+            this.btnSave_Service.FlatAppearance.BorderSize = 0;
+            this.btnSave_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave_Service.ForeColor = System.Drawing.Color.White;
+            this.btnSave_Service.Location = new System.Drawing.Point(104, 288);
+            this.btnSave_Service.Name = "btnSave_Service";
+            this.btnSave_Service.Size = new System.Drawing.Size(132, 54);
+            this.btnSave_Service.TabIndex = 0;
+            this.btnSave_Service.Text = "Lưu";
+            this.btnSave_Service.TextColor = System.Drawing.Color.White;
+            this.btnSave_Service.UseVisualStyleBackColor = false;
+            this.btnSave_Service.Click += new System.EventHandler(this.btnSave_Service_Click);
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(15, 118);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(75, 27);
+            this.label77.TabIndex = 0;
+            this.label77.Text = "Name:";
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(15, 59);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(109, 27);
+            this.label76.TabIndex = 0;
+            this.label76.Text = "ServiceId:";
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.dgvService);
+            this.groupBox13.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox13.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox13.ForeColor = System.Drawing.Color.MediumBlue;
+            this.groupBox13.Location = new System.Drawing.Point(0, 0);
+            this.groupBox13.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox13.Size = new System.Drawing.Size(966, 806);
+            this.groupBox13.TabIndex = 0;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Danh sách dịch vụ";
+            // 
+            // dgvService
+            // 
+            this.dgvService.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvService.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvService.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvService.Location = new System.Drawing.Point(4, 31);
+            this.dgvService.Name = "dgvService";
+            this.dgvService.RowHeadersWidth = 51;
+            this.dgvService.RowTemplate.Height = 24;
+            this.dgvService.Size = new System.Drawing.Size(958, 771);
+            this.dgvService.TabIndex = 0;
+            // 
+            // pnTinhtientro
+            // 
+            this.pnTinhtientro.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnTinhtientro.Controls.Add(this.panel13);
+            this.pnTinhtientro.Controls.Add(this.panel12);
+            this.pnTinhtientro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnTinhtientro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnTinhtientro.Location = new System.Drawing.Point(400, 233);
+            this.pnTinhtientro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnTinhtientro.Name = "pnTinhtientro";
+            this.pnTinhtientro.Size = new System.Drawing.Size(1526, 806);
+            this.pnTinhtientro.TabIndex = 0;
+            this.pnTinhtientro.Visible = false;
+       
             this.groupBox17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox17.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox17.ForeColor = System.Drawing.Color.MediumBlue;
@@ -2067,120 +2350,23 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(251, 333);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(334, 33);
-            this.comboBox1.TabIndex = 3;
+        
             // 
             // textBox19
-            // 
-            this.textBox19.Location = new System.Drawing.Point(252, 215);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(333, 33);
-            this.textBox19.TabIndex = 2;
-            // 
+          
             // vbButton6
             // 
-            this.vbButton6.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton6.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton6.BorderRadius = 20;
-            this.vbButton6.BorderSize = 0;
-            this.vbButton6.FlatAppearance.BorderSize = 0;
-            this.vbButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton6.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton6.ForeColor = System.Drawing.Color.White;
-            this.vbButton6.Location = new System.Drawing.Point(63, 318);
-            this.vbButton6.Name = "vbButton6";
-            this.vbButton6.Size = new System.Drawing.Size(130, 56);
-            this.vbButton6.TabIndex = 1;
-            this.vbButton6.Text = "Sắp xếp";
-            this.vbButton6.TextColor = System.Drawing.Color.White;
-            this.vbButton6.UseVisualStyleBackColor = false;
-            // 
+          
             // vbButton5
             // 
-            this.vbButton5.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton5.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton5.BorderRadius = 20;
-            this.vbButton5.BorderSize = 0;
-            this.vbButton5.FlatAppearance.BorderSize = 0;
-            this.vbButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton5.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton5.ForeColor = System.Drawing.Color.White;
-            this.vbButton5.Location = new System.Drawing.Point(63, 200);
-            this.vbButton5.Name = "vbButton5";
-            this.vbButton5.Size = new System.Drawing.Size(130, 56);
-            this.vbButton5.TabIndex = 1;
-            this.vbButton5.Text = "Tìm kiếm";
-            this.vbButton5.TextColor = System.Drawing.Color.White;
-            this.vbButton5.UseVisualStyleBackColor = false;
-            // 
+          
             // vbButton3
             // 
-            this.vbButton3.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton3.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton3.BorderRadius = 20;
-            this.vbButton3.BorderSize = 0;
-            this.vbButton3.FlatAppearance.BorderSize = 0;
-            this.vbButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton3.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton3.ForeColor = System.Drawing.Color.White;
-            this.vbButton3.Location = new System.Drawing.Point(453, 71);
-            this.vbButton3.Name = "vbButton3";
-            this.vbButton3.Size = new System.Drawing.Size(132, 54);
-            this.vbButton3.TabIndex = 0;
-            this.vbButton3.Text = "Xóa";
-            this.vbButton3.TextColor = System.Drawing.Color.White;
-            this.vbButton3.UseVisualStyleBackColor = false;
-            // 
-            // vbButton2
-            // 
-            this.vbButton2.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton2.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton2.BorderRadius = 20;
-            this.vbButton2.BorderSize = 0;
-            this.vbButton2.FlatAppearance.BorderSize = 0;
-            this.vbButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton2.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton2.ForeColor = System.Drawing.Color.White;
-            this.vbButton2.Location = new System.Drawing.Point(252, 71);
-            this.vbButton2.Name = "vbButton2";
-            this.vbButton2.Size = new System.Drawing.Size(132, 54);
-            this.vbButton2.TabIndex = 0;
-            this.vbButton2.Text = "Sửa ";
-            this.vbButton2.TextColor = System.Drawing.Color.White;
-            this.vbButton2.UseVisualStyleBackColor = false;
-            // 
-            // vbButton1
-            // 
-            this.vbButton1.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton1.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton1.BorderRadius = 20;
-            this.vbButton1.BorderSize = 0;
-            this.vbButton1.FlatAppearance.BorderSize = 0;
-            this.vbButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton1.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton1.ForeColor = System.Drawing.Color.White;
-            this.vbButton1.Location = new System.Drawing.Point(61, 71);
-            this.vbButton1.Name = "vbButton1";
-            this.vbButton1.Size = new System.Drawing.Size(132, 54);
-            this.vbButton1.TabIndex = 0;
-            this.vbButton1.Text = "Thêm";
-            this.vbButton1.TextColor = System.Drawing.Color.White;
-            this.vbButton1.UseVisualStyleBackColor = false;
+          
             // 
             // groupBox16
             // 
-            this.groupBox16.Controls.Add(this.textBox18);
-            this.groupBox16.Controls.Add(this.textBox17);
-            this.groupBox16.Controls.Add(this.textBox16);
-            this.groupBox16.Controls.Add(this.textBox15);
+       
             this.groupBox16.Controls.Add(this.label79);
             this.groupBox16.Controls.Add(this.label78);
             this.groupBox16.Controls.Add(this.label77);
@@ -2197,37 +2383,16 @@
             // 
             // textBox18
             // 
-            this.textBox18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(158, 227);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(243, 30);
-            this.textBox18.TabIndex = 1;
-            // 
+        
             // textBox17
             // 
-            this.textBox17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(158, 171);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(243, 30);
-            this.textBox17.TabIndex = 1;
+          
             // 
-            // textBox16
-            // 
-            this.textBox16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(158, 115);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(243, 30);
-            this.textBox16.TabIndex = 1;
+      
             // 
             // textBox15
             // 
-            this.textBox15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(158, 56);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(243, 30);
-            this.textBox15.TabIndex = 1;
-            // 
-            // label79
+        
             // 
             this.label79.AutoSize = true;
             this.label79.Location = new System.Drawing.Point(15, 228);
@@ -3988,16 +4153,17 @@
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.Label label77;
         private System.Windows.Forms.GroupBox groupBox17;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox19;
-        private VBButton vbButton6;
-        private VBButton vbButton5;
-        private VBButton vbButton3;
-        private VBButton vbButton2;
-        private VBButton vbButton1;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.ComboBox cbbSort_Service;
+        private System.Windows.Forms.TextBox txtSearch_Service;
+        private VBButton btnSort_Service;
+        private VBButton btnSearch_Service;
+        private VBButton btnDelete_Service;
+        private VBButton btnEdit_Service;
+        private System.Windows.Forms.TextBox txtServicePrice;
+        private System.Windows.Forms.TextBox txtServiceUnit;
+        private System.Windows.Forms.TextBox txtServiceName;
+        private System.Windows.Forms.TextBox txtServiceID;
+        private VBButton btnSave_Service;
+        private VBButton btnReset_Service;
     }
 }

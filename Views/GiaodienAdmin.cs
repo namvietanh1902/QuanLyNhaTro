@@ -772,7 +772,13 @@ namespace QuanLyNhaTro.Views
         }
         private void reload_Service()
         {
-            dgvService.DataSource = BLL_Service.Instance.GetViews();
+            dgvService.DataSource = BLL_Service.Instance.SearchService(txtSearch_Service.Text);
+            cbbSort_Service.Items.Clear();
+            cbbSort_Service.Items.AddRange(new object[] {
+                "Tên",
+                "Giá dịch vụ"
+            });
+            cbbSort_Service.SelectedIndex = 0;
             foreach (DataGridViewColumn col in dgvService.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -780,8 +786,78 @@ namespace QuanLyNhaTro.Views
             }
             this.dgvService.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvService.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            Reset_Service();
+            txtServiceID.ReadOnly = true;
+            isEdit_Service = false;
             dgvService.ClearSelection();
         }
+        public void Reset_Service()
+        {
+            txtServiceID.Text = BLL_Service.Instance.GetNextID().ToString();
+            txtServiceName.Text = "";
+            txtServiceUnit.Text = "";
+            txtServicePrice.Text = "";
+        }
+        bool isEdit_Service { get; set; } = false;
+        private void btnReset_Service_Click(object sender, EventArgs e)
+        {
+            Reset_Service();
+        }
+        private void btnEdit_Service_Click(object sender, EventArgs e)
+        {
+            if (dgvService.SelectedRows.Count == 1)
+            {
+                isEdit_Service = true;
+                txtServiceID.Text = dgvService.SelectedRows[0].Cells["ServiceID"].Value.ToString();
+                txtServiceName.Text = dgvService.SelectedRows[0].Cells["Name"].Value.ToString();
+                txtServiceUnit.Text = dgvService.SelectedRows[0].Cells["Unit"].Value.ToString();
+                txtServicePrice.Text = dgvService.SelectedRows[0].Cells["Price"].Value.ToString();
+            }
+        }
+
+        private void btnSave_Service_Click(object sender, EventArgs e)
+        {
+            Service service = new Service
+            {
+                ServiceId = Convert.ToInt32(txtServiceID.Text),
+                Name = txtServiceName.Text,
+                Unit = txtServiceUnit.Text,
+                Price = Convert.ToInt32(txtServicePrice.Text)
+            };
+            BLL_Service.Instance.AddOrUpdate(isEdit_Service, service);
+            reload_Service();
+
+        }
+        private void btnDelete_Service_Click(object sender, EventArgs e)
+        {
+            if (dgvService.SelectedRows.Count > 0)
+            {
+                foreach(DataGridViewRow i in dgvService.SelectedRows)
+                {
+                    BLL_Service.Instance.DeleteService(Convert.ToInt32(i.Cells["ServiceID"].Value.ToString()));
+                }
+                reload_Service();
+            }
+
+        }
+
+        private void btnSearch_Service_Click(object sender, EventArgs e)
+        {
+            dgvService.DataSource = BLL_Service.Instance.SearchService(txtSearch_Service.Text);
+
+        }
+
+        private void btnSort_Service_Click(object sender, EventArgs e)
+        {
+            List<int> list = new List<int>();
+            foreach(DataGridViewRow i in dgvService.Rows)
+            {
+                list.Add(Convert.ToInt32(i.Cells["ServiceId"].Value.ToString()));
+            }
+            dgvService.DataSource = BLL_Service.Instance.Sort(list,cbbSort_Service.SelectedItem.ToString());
+            dgvService.ClearSelection();
+        }
+
 
         private void btnTinhtientro_Click(object sender, EventArgs e)
         {
@@ -872,6 +948,11 @@ namespace QuanLyNhaTro.Views
         private void label13_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSearch_Service_TextChanged(object sender, EventArgs e)
+        {
+            dgvService.DataSource = BLL_Service.Instance.SearchService(txtSearch_Service.Text);
         }
     }
 }
