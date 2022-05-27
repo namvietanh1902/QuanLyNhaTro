@@ -67,10 +67,12 @@ namespace QuanLyNhaTro.Views
             lblUser.Visible = false;
             lblPhongtro.Visible = false;
             lblThanhtoan.Visible = false;
+            lblDichvu.Visible = false;
             pnHome.Visible = true;
             pnUser.Visible = false;
             pnPhongtro.Visible = false;
             pnThanhtoan.Visible = false;
+            pnDichdu.Visible = false ;
         }
 
         private void btnUser_Click(object sender, EventArgs e)
@@ -80,17 +82,18 @@ namespace QuanLyNhaTro.Views
             lblUser.Visible = true;
             lblPhongtro.Visible = false; ;
             lblThanhtoan.Visible = false;
+            lblDichvu.Visible = false;
             pnHome.Visible = false;
             pnUser.Visible = true;
             pnPhongtro.Visible = false;
             pnThanhtoan.Visible = false;
+            pnDichdu.Visible=false ;
 
             GUI();
         }
         public void GUI()
         {
             Customer cm = BLL_Customer.Instance.GetCustomerByID(ID);
-
             textBox1.Text = ID.ToString();
             textBox3.Text = BLL_Account.Instance.GetAccountByID(ID).Username;
             textBox2.Text = cm.Name;
@@ -108,10 +111,12 @@ namespace QuanLyNhaTro.Views
             lblUser.Visible = false;
             lblPhongtro.Visible = true;
             lblThanhtoan.Visible = false;
+            lblDichvu.Visible = false;
             pnHome.Visible = false;
             pnUser.Visible = false;
             pnPhongtro.Visible = true;
             pnThanhtoan.Visible = false;
+            pnDichdu.Visible = false;
 
             int CustomerID = BLL_Customer.Instance.GetCustomerByID(ID).CustomerId;
             int RoomID = BLL_Contract.Instance.GetContractByCustomerID(CustomerID).RoomID;
@@ -136,10 +141,12 @@ namespace QuanLyNhaTro.Views
             lblUser.Visible = false;
             lblPhongtro.Visible = false;
             lblThanhtoan.Visible = true;
+            lblDichvu.Visible = false;
             pnHome.Visible = false;
             pnUser.Visible = false;
             pnPhongtro.Visible = false;
             pnThanhtoan.Visible = true;
+            pnDichdu.Visible = false;
         }
         private void btnThanhtoan_Click(object sender, EventArgs e)
         {
@@ -214,6 +221,36 @@ namespace QuanLyNhaTro.Views
                     frm.Show();
                 }
             }
+        }
+
+        private void reload_dichvu()
+        {
+            dgvService.DataSource = BLL_Service.Instance.GetViews();
+            foreach (DataGridViewColumn col in dgvService.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                col.HeaderCell.Style.Font = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+            }
+            this.dgvService.DefaultCellStyle.ForeColor = Color.Black;
+            this.dgvService.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            dgvService.ClearSelection();
+        }
+
+        private void btnDichvu_Click(object sender, EventArgs e)
+        {
+            lblTitle.Text = "Dịch vụ";
+            lblHome.Visible = false;
+            lblUser.Visible = false;
+            lblPhongtro.Visible = false;
+            lblThanhtoan.Visible = false;
+            lblDichvu.Visible = true;
+            pnHome.Visible = false;
+            pnUser.Visible = false;
+            pnPhongtro.Visible = false;
+            pnThanhtoan.Visible = false;
+            pnDichdu.Visible = true;
+
+            reload_dichvu();
         }
     }
 }

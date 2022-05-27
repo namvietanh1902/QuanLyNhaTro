@@ -31,9 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GiaodienUser));
             this.pnNavagation = new System.Windows.Forms.Panel();
             this.btnDangxuat = new System.Windows.Forms.Button();
+            this.lblDichvu = new System.Windows.Forms.Label();
             this.lblThanhtoan = new System.Windows.Forms.Label();
             this.lblPhongtro = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
+            this.btnDichvu = new System.Windows.Forms.Button();
             this.btnThanhtoan = new System.Windows.Forms.Button();
             this.btnPhongtro = new System.Windows.Forms.Button();
             this.btnUser = new System.Windows.Forms.Button();
@@ -162,6 +164,15 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.pnDichdu = new System.Windows.Forms.Panel();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvService = new System.Windows.Forms.DataGridView();
+            this.label61 = new System.Windows.Forms.Label();
+            this.vbButton2 = new QuanLyNhaTro.VBButton();
+            this.vbButton1 = new QuanLyNhaTro.VBButton();
             this.btnTraphong = new QuanLyNhaTro.VBButton();
             this.btnXacnhanthanhtoan = new QuanLyNhaTro.VBButton();
             this.pnNavagation.SuspendLayout();
@@ -185,15 +196,22 @@
             this.pnPhongtro.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.pnDichdu.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
             this.SuspendLayout();
             // 
             // pnNavagation
             // 
             this.pnNavagation.BackColor = System.Drawing.SystemColors.Highlight;
             this.pnNavagation.Controls.Add(this.btnDangxuat);
+            this.pnNavagation.Controls.Add(this.lblDichvu);
             this.pnNavagation.Controls.Add(this.lblThanhtoan);
             this.pnNavagation.Controls.Add(this.lblPhongtro);
             this.pnNavagation.Controls.Add(this.lblUser);
+            this.pnNavagation.Controls.Add(this.btnDichvu);
             this.pnNavagation.Controls.Add(this.btnThanhtoan);
             this.pnNavagation.Controls.Add(this.btnPhongtro);
             this.pnNavagation.Controls.Add(this.btnUser);
@@ -203,7 +221,7 @@
             this.pnNavagation.Controls.Add(this.panel2);
             this.pnNavagation.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnNavagation.Location = new System.Drawing.Point(0, 0);
-            this.pnNavagation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnNavagation.Margin = new System.Windows.Forms.Padding(4);
             this.pnNavagation.Name = "pnNavagation";
             this.pnNavagation.Size = new System.Drawing.Size(384, 1102);
             this.pnNavagation.TabIndex = 0;
@@ -219,7 +237,7 @@
             this.btnDangxuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangxuat.Image")));
             this.btnDangxuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDangxuat.Location = new System.Drawing.Point(69, 967);
-            this.btnDangxuat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDangxuat.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangxuat.Name = "btnDangxuat";
             this.btnDangxuat.Size = new System.Drawing.Size(236, 70);
             this.btnDangxuat.TabIndex = 8;
@@ -227,6 +245,15 @@
             this.btnDangxuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDangxuat.UseVisualStyleBackColor = false;
             this.btnDangxuat.Click += new System.EventHandler(this.btnDangxuat_Click);
+            // 
+            // lblDichvu
+            // 
+            this.lblDichvu.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblDichvu.Location = new System.Drawing.Point(-2, 769);
+            this.lblDichvu.Name = "lblDichvu";
+            this.lblDichvu.Size = new System.Drawing.Size(12, 70);
+            this.lblDichvu.TabIndex = 7;
+            this.lblDichvu.Visible = false;
             // 
             // lblThanhtoan
             // 
@@ -244,6 +271,7 @@
             this.lblPhongtro.Name = "lblPhongtro";
             this.lblPhongtro.Size = new System.Drawing.Size(12, 70);
             this.lblPhongtro.TabIndex = 7;
+            this.lblPhongtro.Visible = false;
             // 
             // lblUser
             // 
@@ -253,6 +281,26 @@
             this.lblUser.Size = new System.Drawing.Size(12, 70);
             this.lblUser.TabIndex = 7;
             this.lblUser.Visible = false;
+            // 
+            // btnDichvu
+            // 
+            this.btnDichvu.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnDichvu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDichvu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDichvu.FlatAppearance.BorderSize = 0;
+            this.btnDichvu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDichvu.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDichvu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDichvu.Image = ((System.Drawing.Image)(resources.GetObject("btnDichvu.Image")));
+            this.btnDichvu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDichvu.Location = new System.Drawing.Point(11, 769);
+            this.btnDichvu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDichvu.Name = "btnDichvu";
+            this.btnDichvu.Size = new System.Drawing.Size(373, 70);
+            this.btnDichvu.TabIndex = 6;
+            this.btnDichvu.Text = "Dịch vụ";
+            this.btnDichvu.UseVisualStyleBackColor = false;
+            this.btnDichvu.Click += new System.EventHandler(this.btnDichvu_Click);
             // 
             // btnThanhtoan
             // 
@@ -347,7 +395,7 @@
             this.panel6.Controls.Add(this.lblHethong);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 153);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(384, 98);
             this.panel6.TabIndex = 2;
@@ -541,7 +589,7 @@
             this.panel7.Controls.Add(this.lblTitle);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(384, 153);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1558, 98);
             this.panel7.TabIndex = 4;
@@ -565,7 +613,7 @@
             this.panel8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel8.Location = new System.Drawing.Point(384, 1085);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1558, 17);
             this.panel8.TabIndex = 5;
@@ -575,7 +623,7 @@
             this.panel9.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel9.Location = new System.Drawing.Point(384, 251);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(19, 834);
             this.panel9.TabIndex = 6;
@@ -585,7 +633,7 @@
             this.panel10.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel10.Location = new System.Drawing.Point(1923, 251);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(19, 834);
             this.panel10.TabIndex = 7;
@@ -599,7 +647,7 @@
             this.pnHome.Controls.Add(this.groupBox5);
             this.pnHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnHome.Location = new System.Drawing.Point(403, 251);
-            this.pnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnHome.Margin = new System.Windows.Forms.Padding(4);
             this.pnHome.Name = "pnHome";
             this.pnHome.Size = new System.Drawing.Size(1520, 834);
             this.pnHome.TabIndex = 8;
@@ -616,9 +664,9 @@
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox6.Location = new System.Drawing.Point(0, 289);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox6.Size = new System.Drawing.Size(747, 251);
             this.groupBox6.TabIndex = 6;
             this.groupBox6.TabStop = false;
@@ -698,9 +746,9 @@
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(756, 281);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
@@ -802,7 +850,7 @@
             this.panel15.Controls.Add(this.label49);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel15.Location = new System.Drawing.Point(756, 0);
-            this.panel15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel15.Margin = new System.Windows.Forms.Padding(4);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(764, 580);
             this.panel15.TabIndex = 4;
@@ -815,7 +863,7 @@
             this.txtThongBao.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtThongBao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtThongBao.Location = new System.Drawing.Point(0, 98);
-            this.txtThongBao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtThongBao.Margin = new System.Windows.Forms.Padding(4);
             this.txtThongBao.Multiline = true;
             this.txtThongBao.Name = "txtThongBao";
             this.txtThongBao.ReadOnly = true;
@@ -854,9 +902,9 @@
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox5.Location = new System.Drawing.Point(0, 580);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox5.Size = new System.Drawing.Size(1520, 254);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
@@ -868,7 +916,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(1134, 28);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(239, 204);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1011,16 +1059,17 @@
             this.pnUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnUser.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.pnUser.Location = new System.Drawing.Point(403, 251);
-            this.pnUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnUser.Margin = new System.Windows.Forms.Padding(4);
             this.pnUser.Name = "pnUser";
             this.pnUser.Size = new System.Drawing.Size(1520, 834);
             this.pnUser.TabIndex = 0;
+            this.pnUser.Visible = false;
             // 
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.Location = new System.Drawing.Point(331, 530);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(274, 30);
@@ -1030,7 +1079,7 @@
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(331, 455);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(274, 30);
@@ -1040,7 +1089,7 @@
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(331, 383);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(274, 30);
@@ -1055,7 +1104,7 @@
             this.btnDatlaimatkhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatlaimatkhau.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDatlaimatkhau.Location = new System.Drawing.Point(1094, 679);
-            this.btnDatlaimatkhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDatlaimatkhau.Margin = new System.Windows.Forms.Padding(4);
             this.btnDatlaimatkhau.Name = "btnDatlaimatkhau";
             this.btnDatlaimatkhau.Size = new System.Drawing.Size(279, 68);
             this.btnDatlaimatkhau.TabIndex = 11;
@@ -1067,7 +1116,7 @@
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(331, 113);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(274, 30);
@@ -1094,7 +1143,7 @@
             this.btnThaydoithongUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThaydoithongUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnThaydoithongUser.Location = new System.Drawing.Point(73, 659);
-            this.btnThaydoithongUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThaydoithongUser.Margin = new System.Windows.Forms.Padding(4);
             this.btnThaydoithongUser.Name = "btnThaydoithongUser";
             this.btnThaydoithongUser.Size = new System.Drawing.Size(279, 68);
             this.btnThaydoithongUser.TabIndex = 8;
@@ -1147,7 +1196,7 @@
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(332, 321);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(305, 28);
             this.dateTimePicker1.TabIndex = 5;
@@ -1171,7 +1220,7 @@
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(331, 252);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(180, 30);
             this.comboBox1.TabIndex = 3;
@@ -1180,7 +1229,7 @@
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(331, 183);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(350, 30);
@@ -1190,7 +1239,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(331, 48);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(180, 30);
@@ -1255,7 +1304,7 @@
             this.pnThanhtoan.Controls.Add(this.label23);
             this.pnThanhtoan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnThanhtoan.Location = new System.Drawing.Point(403, 251);
-            this.pnThanhtoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnThanhtoan.Margin = new System.Windows.Forms.Padding(4);
             this.pnThanhtoan.Name = "pnThanhtoan";
             this.pnThanhtoan.Size = new System.Drawing.Size(1520, 834);
             this.pnThanhtoan.TabIndex = 0;
@@ -1339,7 +1388,7 @@
             this.checkBox3.AutoSize = true;
             this.checkBox3.ForeColor = System.Drawing.Color.MediumBlue;
             this.checkBox3.Location = new System.Drawing.Point(78, 412);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(107, 29);
             this.checkBox3.TabIndex = 62;
@@ -1350,7 +1399,7 @@
             // 
             this.textBox25.ForeColor = System.Drawing.Color.OrangeRed;
             this.textBox25.Location = new System.Drawing.Point(383, 412);
-            this.textBox25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox25.Margin = new System.Windows.Forms.Padding(4);
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(224, 30);
             this.textBox25.TabIndex = 61;
@@ -1372,7 +1421,7 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.ForeColor = System.Drawing.Color.MediumBlue;
             this.checkBox2.Location = new System.Drawing.Point(78, 298);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(84, 29);
             this.checkBox2.TabIndex = 59;
@@ -1382,7 +1431,7 @@
             // textBox23
             // 
             this.textBox23.Location = new System.Drawing.Point(382, 356);
-            this.textBox23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox23.Margin = new System.Windows.Forms.Padding(4);
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(226, 30);
             this.textBox23.TabIndex = 57;
@@ -1390,7 +1439,7 @@
             // textBox24
             // 
             this.textBox24.Location = new System.Drawing.Point(381, 295);
-            this.textBox24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox24.Margin = new System.Windows.Forms.Padding(4);
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(129, 30);
             this.textBox24.TabIndex = 58;
@@ -1425,7 +1474,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.ForeColor = System.Drawing.Color.MediumBlue;
             this.checkBox1.Location = new System.Drawing.Point(78, 178);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(78, 29);
             this.checkBox1.TabIndex = 54;
@@ -1435,7 +1484,7 @@
             // textBox21
             // 
             this.textBox21.Location = new System.Drawing.Point(381, 235);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox21.Margin = new System.Windows.Forms.Padding(4);
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(230, 30);
             this.textBox21.TabIndex = 52;
@@ -1443,7 +1492,7 @@
             // textBox22
             // 
             this.textBox22.Location = new System.Drawing.Point(380, 175);
-            this.textBox22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox22.Margin = new System.Windows.Forms.Padding(4);
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(132, 30);
             this.textBox22.TabIndex = 53;
@@ -1662,6 +1711,7 @@
             this.pnPhongtro.Name = "pnPhongtro";
             this.pnPhongtro.Size = new System.Drawing.Size(1520, 834);
             this.pnPhongtro.TabIndex = 0;
+            this.pnPhongtro.Visible = false;
             // 
             // groupBox1
             // 
@@ -1857,6 +1907,139 @@
             this.label21.TabIndex = 40;
             this.label21.Text = "Số Lượng Tối Đa:";
             // 
+            // pnDichdu
+            // 
+            this.pnDichdu.Controls.Add(this.vbButton2);
+            this.pnDichdu.Controls.Add(this.vbButton1);
+            this.pnDichdu.Controls.Add(this.groupBox7);
+            this.pnDichdu.Controls.Add(this.groupBox3);
+            this.pnDichdu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnDichdu.Location = new System.Drawing.Point(403, 251);
+            this.pnDichdu.Name = "pnDichdu";
+            this.pnDichdu.Size = new System.Drawing.Size(1520, 834);
+            this.pnDichdu.TabIndex = 10;
+            this.pnDichdu.Visible = false;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox7.Controls.Add(this.label61);
+            this.groupBox7.Controls.Add(this.label13);
+            this.groupBox7.Controls.Add(this.dataGridView2);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.ForeColor = System.Drawing.Color.MediumBlue;
+            this.groupBox7.Location = new System.Drawing.Point(665, 0);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(855, 459);
+            this.groupBox7.TabIndex = 1;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Danh sách dịch vụ được yêu cầu";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(113, 399);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(107, 26);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Tổng tiền:";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 28);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(849, 349);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox3.Controls.Add(this.dgvService);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.MediumBlue;
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(662, 834);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Danh sách dịch vụ";
+            // 
+            // dgvService
+            // 
+            this.dgvService.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvService.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvService.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvService.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvService.Location = new System.Drawing.Point(3, 28);
+            this.dgvService.Name = "dgvService";
+            this.dgvService.RowHeadersWidth = 51;
+            this.dgvService.RowTemplate.Height = 24;
+            this.dgvService.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvService.Size = new System.Drawing.Size(656, 803);
+            this.dgvService.TabIndex = 0;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(232, 400);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(132, 26);
+            this.label61.TabIndex = 2;
+            this.label61.Text = "1000000000";
+            // 
+            // vbButton2
+            // 
+            this.vbButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.vbButton2.BackColor = System.Drawing.Color.MediumBlue;
+            this.vbButton2.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.vbButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton2.BorderRadius = 30;
+            this.vbButton2.BorderSize = 0;
+            this.vbButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbButton2.FlatAppearance.BorderSize = 0;
+            this.vbButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton2.ForeColor = System.Drawing.Color.White;
+            this.vbButton2.Location = new System.Drawing.Point(1195, 482);
+            this.vbButton2.Name = "vbButton2";
+            this.vbButton2.Size = new System.Drawing.Size(164, 70);
+            this.vbButton2.TabIndex = 2;
+            this.vbButton2.Text = "Hủy";
+            this.vbButton2.TextColor = System.Drawing.Color.White;
+            this.vbButton2.UseVisualStyleBackColor = false;
+            // 
+            // vbButton1
+            // 
+            this.vbButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.vbButton1.BackColor = System.Drawing.Color.MediumBlue;
+            this.vbButton1.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.vbButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton1.BorderRadius = 30;
+            this.vbButton1.BorderSize = 0;
+            this.vbButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbButton1.FlatAppearance.BorderSize = 0;
+            this.vbButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton1.ForeColor = System.Drawing.Color.White;
+            this.vbButton1.Location = new System.Drawing.Point(889, 482);
+            this.vbButton1.Name = "vbButton1";
+            this.vbButton1.Size = new System.Drawing.Size(164, 70);
+            this.vbButton1.TabIndex = 2;
+            this.vbButton1.Text = "Thanh toán";
+            this.vbButton1.TextColor = System.Drawing.Color.White;
+            this.vbButton1.UseVisualStyleBackColor = false;
+            // 
             // btnTraphong
             // 
             this.btnTraphong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1907,9 +2090,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1942, 1102);
-            this.Controls.Add(this.pnUser);
-            this.Controls.Add(this.pnPhongtro);
+            this.Controls.Add(this.pnDichdu);
             this.Controls.Add(this.pnHome);
+            this.Controls.Add(this.pnPhongtro);
+            this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnThanhtoan);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
@@ -1919,7 +2103,7 @@
             this.Controls.Add(this.pnNavagation);
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GiaodienUser";
             this.Text = "GiaodienUser";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1955,6 +2139,12 @@
             this.pnPhongtro.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.pnDichdu.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2096,5 +2286,16 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.TextBox textBox25;
         private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label lblDichvu;
+        private System.Windows.Forms.Button btnDichvu;
+        private System.Windows.Forms.Panel pnDichdu;
+        private VBButton vbButton2;
+        private VBButton vbButton1;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView dgvService;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label61;
     }
 }

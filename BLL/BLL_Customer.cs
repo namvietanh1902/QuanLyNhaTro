@@ -54,7 +54,7 @@ namespace QuanLyNhaTro.BLL
                         break;
                    }
                 }
-                customer_View.Birthday = cus.Birthday.ToString("dd-MM-yyyy");
+                customer_View.Birthday = cus.Birthday.ToString("yyyy-MM-dd");
                 customer_View.Gender = cus.Gender;
                 customer_View.CMND = cus.CMND;
                 customer_View.SDT = cus.SDT;
@@ -140,7 +140,7 @@ namespace QuanLyNhaTro.BLL
                                 break;
                             }
                         }
-                        customer.Birthday = cus.Birthday.ToString("dd-MM-yyyy");
+                        customer.Birthday = cus.Birthday.ToString("yyyy-MM-dd");
                         customer.Gender = cus.Gender;
                         customer.CMND = cus.CMND;
                         customer.SDT = cus.SDT;

@@ -156,7 +156,25 @@
             this.btnSearch_phongtro = new System.Windows.Forms.Button();
             this.lblreload_phongtro = new System.Windows.Forms.Label();
             this.pnDichvu = new System.Windows.Forms.Panel();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.vbButton6 = new QuanLyNhaTro.VBButton();
+            this.vbButton5 = new QuanLyNhaTro.VBButton();
+            this.vbButton3 = new QuanLyNhaTro.VBButton();
+            this.vbButton2 = new QuanLyNhaTro.VBButton();
+            this.vbButton1 = new QuanLyNhaTro.VBButton();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.dgvService = new System.Windows.Forms.DataGridView();
             this.pnTinhtientro = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -262,24 +280,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.btnNav = new System.Windows.Forms.Button();
-            this.dgvService = new System.Windows.Forms.DataGridView();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.label76 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.vbButton1 = new QuanLyNhaTro.VBButton();
-            this.vbButton2 = new QuanLyNhaTro.VBButton();
-            this.vbButton3 = new QuanLyNhaTro.VBButton();
-            this.vbButton5 = new QuanLyNhaTro.VBButton();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.vbButton6 = new QuanLyNhaTro.VBButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -308,7 +308,10 @@
             this.panel21.SuspendLayout();
             this.panel20.SuspendLayout();
             this.pnDichvu.SuspendLayout();
+            this.groupBox17.SuspendLayout();
+            this.groupBox16.SuspendLayout();
             this.groupBox13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
             this.pnTinhtientro.SuspendLayout();
             this.panel13.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -329,9 +332,6 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
-            this.groupBox16.SuspendLayout();
-            this.groupBox17.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -2046,6 +2046,223 @@
             this.pnDichvu.TabIndex = 0;
             this.pnDichvu.Visible = false;
             // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.comboBox1);
+            this.groupBox17.Controls.Add(this.textBox19);
+            this.groupBox17.Controls.Add(this.vbButton6);
+            this.groupBox17.Controls.Add(this.vbButton5);
+            this.groupBox17.Controls.Add(this.vbButton3);
+            this.groupBox17.Controls.Add(this.vbButton2);
+            this.groupBox17.Controls.Add(this.vbButton1);
+            this.groupBox17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox17.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox17.ForeColor = System.Drawing.Color.MediumBlue;
+            this.groupBox17.Location = new System.Drawing.Point(966, 362);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(560, 444);
+            this.groupBox17.TabIndex = 2;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Các chức năng";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(251, 333);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(334, 33);
+            this.comboBox1.TabIndex = 3;
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(252, 215);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(333, 33);
+            this.textBox19.TabIndex = 2;
+            // 
+            // vbButton6
+            // 
+            this.vbButton6.BackColor = System.Drawing.Color.MediumBlue;
+            this.vbButton6.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.vbButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton6.BorderRadius = 20;
+            this.vbButton6.BorderSize = 0;
+            this.vbButton6.FlatAppearance.BorderSize = 0;
+            this.vbButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton6.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton6.ForeColor = System.Drawing.Color.White;
+            this.vbButton6.Location = new System.Drawing.Point(63, 318);
+            this.vbButton6.Name = "vbButton6";
+            this.vbButton6.Size = new System.Drawing.Size(130, 56);
+            this.vbButton6.TabIndex = 1;
+            this.vbButton6.Text = "Sắp xếp";
+            this.vbButton6.TextColor = System.Drawing.Color.White;
+            this.vbButton6.UseVisualStyleBackColor = false;
+            // 
+            // vbButton5
+            // 
+            this.vbButton5.BackColor = System.Drawing.Color.MediumBlue;
+            this.vbButton5.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.vbButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton5.BorderRadius = 20;
+            this.vbButton5.BorderSize = 0;
+            this.vbButton5.FlatAppearance.BorderSize = 0;
+            this.vbButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton5.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton5.ForeColor = System.Drawing.Color.White;
+            this.vbButton5.Location = new System.Drawing.Point(63, 200);
+            this.vbButton5.Name = "vbButton5";
+            this.vbButton5.Size = new System.Drawing.Size(130, 56);
+            this.vbButton5.TabIndex = 1;
+            this.vbButton5.Text = "Tìm kiếm";
+            this.vbButton5.TextColor = System.Drawing.Color.White;
+            this.vbButton5.UseVisualStyleBackColor = false;
+            // 
+            // vbButton3
+            // 
+            this.vbButton3.BackColor = System.Drawing.Color.MediumBlue;
+            this.vbButton3.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.vbButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton3.BorderRadius = 20;
+            this.vbButton3.BorderSize = 0;
+            this.vbButton3.FlatAppearance.BorderSize = 0;
+            this.vbButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton3.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton3.ForeColor = System.Drawing.Color.White;
+            this.vbButton3.Location = new System.Drawing.Point(453, 71);
+            this.vbButton3.Name = "vbButton3";
+            this.vbButton3.Size = new System.Drawing.Size(132, 54);
+            this.vbButton3.TabIndex = 0;
+            this.vbButton3.Text = "Xóa";
+            this.vbButton3.TextColor = System.Drawing.Color.White;
+            this.vbButton3.UseVisualStyleBackColor = false;
+            // 
+            // vbButton2
+            // 
+            this.vbButton2.BackColor = System.Drawing.Color.MediumBlue;
+            this.vbButton2.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.vbButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton2.BorderRadius = 20;
+            this.vbButton2.BorderSize = 0;
+            this.vbButton2.FlatAppearance.BorderSize = 0;
+            this.vbButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton2.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton2.ForeColor = System.Drawing.Color.White;
+            this.vbButton2.Location = new System.Drawing.Point(252, 71);
+            this.vbButton2.Name = "vbButton2";
+            this.vbButton2.Size = new System.Drawing.Size(132, 54);
+            this.vbButton2.TabIndex = 0;
+            this.vbButton2.Text = "Sửa ";
+            this.vbButton2.TextColor = System.Drawing.Color.White;
+            this.vbButton2.UseVisualStyleBackColor = false;
+            // 
+            // vbButton1
+            // 
+            this.vbButton1.BackColor = System.Drawing.Color.MediumBlue;
+            this.vbButton1.BackgroundColor = System.Drawing.Color.MediumBlue;
+            this.vbButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton1.BorderRadius = 20;
+            this.vbButton1.BorderSize = 0;
+            this.vbButton1.FlatAppearance.BorderSize = 0;
+            this.vbButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton1.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton1.ForeColor = System.Drawing.Color.White;
+            this.vbButton1.Location = new System.Drawing.Point(61, 71);
+            this.vbButton1.Name = "vbButton1";
+            this.vbButton1.Size = new System.Drawing.Size(132, 54);
+            this.vbButton1.TabIndex = 0;
+            this.vbButton1.Text = "Thêm";
+            this.vbButton1.TextColor = System.Drawing.Color.White;
+            this.vbButton1.UseVisualStyleBackColor = false;
+            // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.textBox18);
+            this.groupBox16.Controls.Add(this.textBox17);
+            this.groupBox16.Controls.Add(this.textBox16);
+            this.groupBox16.Controls.Add(this.textBox15);
+            this.groupBox16.Controls.Add(this.label79);
+            this.groupBox16.Controls.Add(this.label78);
+            this.groupBox16.Controls.Add(this.label77);
+            this.groupBox16.Controls.Add(this.label76);
+            this.groupBox16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox16.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox16.ForeColor = System.Drawing.Color.MediumBlue;
+            this.groupBox16.Location = new System.Drawing.Point(966, 0);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(560, 362);
+            this.groupBox16.TabIndex = 1;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "Thông tin dịch vụ";
+            // 
+            // textBox18
+            // 
+            this.textBox18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox18.Location = new System.Drawing.Point(158, 227);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(243, 30);
+            this.textBox18.TabIndex = 1;
+            // 
+            // textBox17
+            // 
+            this.textBox17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox17.Location = new System.Drawing.Point(158, 171);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(243, 30);
+            this.textBox17.TabIndex = 1;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox16.Location = new System.Drawing.Point(158, 115);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(243, 30);
+            this.textBox16.TabIndex = 1;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox15.Location = new System.Drawing.Point(158, 56);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(243, 30);
+            this.textBox15.TabIndex = 1;
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(15, 228);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(68, 27);
+            this.label79.TabIndex = 0;
+            this.label79.Text = "Price:";
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(15, 174);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(59, 27);
+            this.label78.TabIndex = 0;
+            this.label78.Text = "Unit:";
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(15, 118);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(75, 27);
+            this.label77.TabIndex = 0;
+            this.label77.Text = "Name:";
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(15, 59);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(109, 27);
+            this.label76.TabIndex = 0;
+            this.label76.Text = "ServiceId:";
+            // 
             // groupBox13
             // 
             this.groupBox13.Controls.Add(this.dgvService);
@@ -2060,6 +2277,19 @@
             this.groupBox13.TabIndex = 0;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Danh sách dịch vụ";
+            // 
+            // dgvService
+            // 
+            this.dgvService.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvService.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvService.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvService.Location = new System.Drawing.Point(4, 31);
+            this.dgvService.Name = "dgvService";
+            this.dgvService.RowHeadersWidth = 51;
+            this.dgvService.RowTemplate.Height = 24;
+            this.dgvService.Size = new System.Drawing.Size(958, 771);
+            this.dgvService.TabIndex = 0;
             // 
             // pnTinhtientro
             // 
@@ -3413,245 +3643,15 @@
             this.btnNav.UseVisualStyleBackColor = false;
             this.btnNav.Click += new System.EventHandler(this.btnNav_Click);
             // 
-            // dgvService
-            // 
-            this.dgvService.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvService.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvService.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvService.Location = new System.Drawing.Point(4, 31);
-            this.dgvService.Name = "dgvService";
-            this.dgvService.RowHeadersWidth = 51;
-            this.dgvService.RowTemplate.Height = 24;
-            this.dgvService.Size = new System.Drawing.Size(958, 771);
-            this.dgvService.TabIndex = 0;
-            // 
-            // groupBox16
-            // 
-            this.groupBox16.Controls.Add(this.textBox18);
-            this.groupBox16.Controls.Add(this.textBox17);
-            this.groupBox16.Controls.Add(this.textBox16);
-            this.groupBox16.Controls.Add(this.textBox15);
-            this.groupBox16.Controls.Add(this.label79);
-            this.groupBox16.Controls.Add(this.label78);
-            this.groupBox16.Controls.Add(this.label77);
-            this.groupBox16.Controls.Add(this.label76);
-            this.groupBox16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox16.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox16.ForeColor = System.Drawing.Color.MediumBlue;
-            this.groupBox16.Location = new System.Drawing.Point(966, 0);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(560, 362);
-            this.groupBox16.TabIndex = 1;
-            this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Thông tin dịch vụ";
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(15, 59);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(109, 27);
-            this.label76.TabIndex = 0;
-            this.label76.Text = "ServiceId:";
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(15, 118);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(75, 27);
-            this.label77.TabIndex = 0;
-            this.label77.Text = "Name:";
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(15, 174);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(59, 27);
-            this.label78.TabIndex = 0;
-            this.label78.Text = "Unit:";
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Location = new System.Drawing.Point(15, 228);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(68, 27);
-            this.label79.TabIndex = 0;
-            this.label79.Text = "Price:";
-            // 
-            // textBox15
-            // 
-            this.textBox15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(158, 56);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(243, 30);
-            this.textBox15.TabIndex = 1;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(158, 115);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(243, 30);
-            this.textBox16.TabIndex = 1;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(158, 171);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(243, 30);
-            this.textBox17.TabIndex = 1;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(158, 227);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(243, 30);
-            this.textBox18.TabIndex = 1;
-            // 
-            // groupBox17
-            // 
-            this.groupBox17.Controls.Add(this.comboBox1);
-            this.groupBox17.Controls.Add(this.textBox19);
-            this.groupBox17.Controls.Add(this.vbButton6);
-            this.groupBox17.Controls.Add(this.vbButton5);
-            this.groupBox17.Controls.Add(this.vbButton3);
-            this.groupBox17.Controls.Add(this.vbButton2);
-            this.groupBox17.Controls.Add(this.vbButton1);
-            this.groupBox17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox17.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox17.ForeColor = System.Drawing.Color.MediumBlue;
-            this.groupBox17.Location = new System.Drawing.Point(966, 362);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(560, 444);
-            this.groupBox17.TabIndex = 2;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Các chức năng";
-            // 
-            // vbButton1
-            // 
-            this.vbButton1.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton1.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton1.BorderRadius = 20;
-            this.vbButton1.BorderSize = 0;
-            this.vbButton1.FlatAppearance.BorderSize = 0;
-            this.vbButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton1.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton1.ForeColor = System.Drawing.Color.White;
-            this.vbButton1.Location = new System.Drawing.Point(61, 71);
-            this.vbButton1.Name = "vbButton1";
-            this.vbButton1.Size = new System.Drawing.Size(132, 54);
-            this.vbButton1.TabIndex = 0;
-            this.vbButton1.Text = "Thêm";
-            this.vbButton1.TextColor = System.Drawing.Color.White;
-            this.vbButton1.UseVisualStyleBackColor = false;
-            // 
-            // vbButton2
-            // 
-            this.vbButton2.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton2.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton2.BorderRadius = 20;
-            this.vbButton2.BorderSize = 0;
-            this.vbButton2.FlatAppearance.BorderSize = 0;
-            this.vbButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton2.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton2.ForeColor = System.Drawing.Color.White;
-            this.vbButton2.Location = new System.Drawing.Point(252, 71);
-            this.vbButton2.Name = "vbButton2";
-            this.vbButton2.Size = new System.Drawing.Size(132, 54);
-            this.vbButton2.TabIndex = 0;
-            this.vbButton2.Text = "Sửa ";
-            this.vbButton2.TextColor = System.Drawing.Color.White;
-            this.vbButton2.UseVisualStyleBackColor = false;
-            // 
-            // vbButton3
-            // 
-            this.vbButton3.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton3.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton3.BorderRadius = 20;
-            this.vbButton3.BorderSize = 0;
-            this.vbButton3.FlatAppearance.BorderSize = 0;
-            this.vbButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton3.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton3.ForeColor = System.Drawing.Color.White;
-            this.vbButton3.Location = new System.Drawing.Point(453, 71);
-            this.vbButton3.Name = "vbButton3";
-            this.vbButton3.Size = new System.Drawing.Size(132, 54);
-            this.vbButton3.TabIndex = 0;
-            this.vbButton3.Text = "Xóa";
-            this.vbButton3.TextColor = System.Drawing.Color.White;
-            this.vbButton3.UseVisualStyleBackColor = false;
-            // 
-            // vbButton5
-            // 
-            this.vbButton5.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton5.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton5.BorderRadius = 20;
-            this.vbButton5.BorderSize = 0;
-            this.vbButton5.FlatAppearance.BorderSize = 0;
-            this.vbButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton5.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton5.ForeColor = System.Drawing.Color.White;
-            this.vbButton5.Location = new System.Drawing.Point(63, 200);
-            this.vbButton5.Name = "vbButton5";
-            this.vbButton5.Size = new System.Drawing.Size(130, 56);
-            this.vbButton5.TabIndex = 1;
-            this.vbButton5.Text = "Tìm kiếm";
-            this.vbButton5.TextColor = System.Drawing.Color.White;
-            this.vbButton5.UseVisualStyleBackColor = false;
-            // 
-            // textBox19
-            // 
-            this.textBox19.Location = new System.Drawing.Point(252, 215);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(333, 33);
-            this.textBox19.TabIndex = 2;
-            // 
-            // vbButton6
-            // 
-            this.vbButton6.BackColor = System.Drawing.Color.MediumBlue;
-            this.vbButton6.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.vbButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton6.BorderRadius = 20;
-            this.vbButton6.BorderSize = 0;
-            this.vbButton6.FlatAppearance.BorderSize = 0;
-            this.vbButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton6.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton6.ForeColor = System.Drawing.Color.White;
-            this.vbButton6.Location = new System.Drawing.Point(63, 318);
-            this.vbButton6.Name = "vbButton6";
-            this.vbButton6.Size = new System.Drawing.Size(130, 56);
-            this.vbButton6.TabIndex = 1;
-            this.vbButton6.Text = "Sắp xếp";
-            this.vbButton6.TextColor = System.Drawing.Color.White;
-            this.vbButton6.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(251, 333);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(334, 33);
-            this.comboBox1.TabIndex = 3;
-            // 
             // GiaodienAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1942, 1055);
+            this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnDichvu);
             this.Controls.Add(this.pnPhongtro);
-            this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnKhanhtro);
             this.Controls.Add(this.pnHome);
             this.Controls.Add(this.pnTinhtientro);
@@ -3707,7 +3707,12 @@
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
             this.pnDichvu.ResumeLayout(false);
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
+            this.groupBox16.ResumeLayout(false);
+            this.groupBox16.PerformLayout();
             this.groupBox13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
             this.pnTinhtientro.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -3737,11 +3742,6 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
-            this.groupBox16.ResumeLayout(false);
-            this.groupBox16.PerformLayout();
-            this.groupBox17.ResumeLayout(false);
-            this.groupBox17.PerformLayout();
             this.ResumeLayout(false);
 
         }
