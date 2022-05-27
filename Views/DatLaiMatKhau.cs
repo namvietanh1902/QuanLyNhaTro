@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyNhaTro.Models;
+using QuanLyNhaTro.BLL;
 
 
 namespace QuanLyNhaTro.Views
@@ -17,15 +18,21 @@ namespace QuanLyNhaTro.Views
     {
         private int ID;
 
-        private Customer cm;
+      
         public DatLaiMatKhau(int ID)
         {
-            //this.ID = ID;
-            //cm = BLL_Account.Instance.GetKhachTroByID(ID);
-            //InitializeComponent();
-            //textBox1.Text = ID.ToString();
-            //textBox3.Text = BLL_Account.Instance.GetAccountByID(ID).Username;
-
+            this.ID = ID;
+            
+            InitializeComponent();
+            GUI();
+        }
+        void GUI()
+        {
+            Account account = BLL_Account.Instance.GetAccountByID(ID);
+            txtUsername.Text = account.Username;
+            txtID.Text = account.AccountId.ToString();
+            txtID.ReadOnly = true;
+            txtUsername.ReadOnly = true;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -35,48 +42,48 @@ namespace QuanLyNhaTro.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-          ////  int id = BLL_Account.Instance.GetIDByUserAndPass(textBox3.Text, textBox4.Text);
+            Account account = BLL_Account.Instance.GetAccountByUserAndPass(txtUsername.Text, txtPass.Text);
 
-          //  if (id == -1)
-          //  {
-          //      MessageBox.Show(
-          //          "Your username or password is incorrect ",
-          //          "Thông báo",
-          //          MessageBoxButtons.OK,
-          //          MessageBoxIcon.Error
-          //          );
-          //  }
-          //  else
-          //  {
-          //      if (textBox2.Text == textBox4.Text)
-          //      {
-          //          MessageBox.Show(
-          //          "Mật khẩu mới trùng với mật khẩu cũ",
-          //          "Thông báo",
-          //          MessageBoxButtons.OK,
-          //          MessageBoxIcon.Error
-          //          );
-          //      }
-          //      else
-          //      {
-          //          BLL_Account.Instance.ThayDoiMatKhau(ID, textBox2.Text);
-          //          MessageBox.Show
-          //          (
-          //          "Đổi mật khẩu thành công",
-          //          "Thông báo",
-          //          MessageBoxButtons.OK,
-          //          MessageBoxIcon.Information
-          //          );
-          //          Close();
-          //      }
-          //  }
+            if (account==null)
+            {
+                MessageBox.Show(
+                    "Your username or password is incorrect ",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+            }
+            else
+            {
+                if (txtPass.Text == txtConfirm.Text)
+                {
+                    MessageBox.Show(
+                    "Mật khẩu mới trùng với mật khẩu cũ",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
+                }
+                else
+                {
+                    BLL_Account.Instance.ChangePass(account.AccountId,txtConfirm.Text);
+                    MessageBox.Show
+                    (
+                    "Đổi mật khẩu thành công",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
+                    Close();
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
+            txtConfirm.Text = "";
+           
+            txtPass.Text = "";
         }
     }
 }
