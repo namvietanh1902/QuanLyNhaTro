@@ -15,7 +15,8 @@ namespace QuanLyNhaTro.Models
             this.Contracts = new HashSet<Contract>();
         }
         [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+
         public int RoomId { get; set; }
         [Required(ErrorMessage ="Tên phòng không được để trống")]
         

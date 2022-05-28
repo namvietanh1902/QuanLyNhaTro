@@ -28,34 +28,34 @@ namespace QuanLyNhaTro.BLL
 
         public List<Account> GetAllAccount()
         {
-            return QuanLy.Instance.Accounts.Select(p=>p).ToList() ;
+            return QuanLy.Instance.Accounts.Select(p => p).ToList();
         }
         public Account GetAccountByUserAndPass(string user, string pass)
         {
-            
-            var account =QuanLy.Instance.Accounts.Where(p => p.Username == user ).FirstOrDefault() ;   
-            if (account.Username ==user && account.Password ==pass) return account ;
+
+            var account = QuanLy.Instance.Accounts.Where(p => p.Username == user).FirstOrDefault();
+            if (account.Username == user && account.Password == pass) return account;
             return null;
-           
+
         }
         public Account GetAccountByID(int id)
         {
             return QuanLy.Instance.Accounts.Find(id);
-           
+
         }
         public string GetNameByAccount(int id)
         {
             return QuanLy.Instance.Accounts.Find(id).Name;
         }
         public string GetTenNguoiDungByID(int id)
-        {    
+        {
             return GetAccountByID(id).Name;
         }
 
 
         public void ChangePass(int ID, string NewPass)
         {
-            Account account  = GetAccountByID(ID);
+            Account account = GetAccountByID(ID);
             account.Password = NewPass;
             QuanLy.Instance.SaveChanges();
         }
@@ -111,15 +111,20 @@ namespace QuanLyNhaTro.BLL
         {
             foreach (int id in del)
             {
-               QuanLy.Instance.Accounts.Remove(GetAccountByID(id));
-               QuanLy.Instance.SaveChanges();
+                QuanLy.Instance.Accounts.Remove(GetAccountByID(id));
+                QuanLy.Instance.SaveChanges();
             }
+        }
+        public int GetNextID()
+        {
+            if (QuanLy.Instance.Accounts.Count() == 0) return 1;
+            return QuanLy.Instance.Accounts.Max(c => c.AccountId) + 1;
         }
 
         public List<Account_View> SearchAccount(string txt)
         {
             List<Account_View> data = new List<Account_View>();
-            foreach(Account account in GetAllAccount())
+            foreach (Account account in GetAllAccount())
             {
                 if (account.Name.Contains(txt))
                 {
@@ -144,9 +149,9 @@ namespace QuanLyNhaTro.BLL
             List<Account_View> data = new List<Account_View>();
             foreach (int id in accountID)
             {
-                foreach(Account_View account_View in GetAccount_Views())
+                foreach (Account_View account_View in GetAccount_Views())
                 {
-                    if(account_View.AccountId == id)
+                    if (account_View.AccountId == id)
                     {
                         data.Add(account_View);
                     }

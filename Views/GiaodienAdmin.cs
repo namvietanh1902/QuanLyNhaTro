@@ -30,7 +30,7 @@ namespace QuanLyNhaTro.Views
 
             InitializeComponent();
             hienthidulieulenthanhthongbao();
-           
+
 
         }
         private void GiaodienAdmin_Load(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace QuanLyNhaTro.Views
             lblUsername.Text = BLL_Account.Instance.GetNameByAccount(ID);
         }
         private void GUIPhongTro()
-        {   
+        {
             CBBItems All = new CBBItems
             {
                 Text = "All",
@@ -246,7 +246,7 @@ namespace QuanLyNhaTro.Views
                     {
                         if (account1.SDT == txtSDT_user.Text && account1.SDT == cusAdd.SDT)
                         {
-                            cusAdd.AccountId = account1.AccountId;
+                            cusAdd.CustomerId = account1.AccountId;
                             BLL_Customer.Instance.UpdateIDOfCustomers(cusAdd);
                             isDathuephong = false;
                             break;
@@ -262,7 +262,7 @@ namespace QuanLyNhaTro.Views
 
                 foreach (Customer customer in BLL_Customer.Instance.GetAllCustomer())
                 {
-                    if (customer.AccountId == account.AccountId)
+                    if (customer.CustomerId == account.AccountId)
                     {
                         Customer cus = new Customer();
                         cus.CustomerId = customer.CustomerId;
@@ -271,7 +271,7 @@ namespace QuanLyNhaTro.Views
                         cus.CMND = customer.CMND;
                         cus.SDT = account.SDT;
                         cus.Job = customer.Job;
-                        cus.AccountId = customer.AccountId;
+                        cus.CustomerId = customer.CustomerId;
                         cus.Birthday = account.Birthday;
                         BLL_Customer.Instance.UpdateKhachTro(cus);
                         break;
@@ -285,10 +285,10 @@ namespace QuanLyNhaTro.Views
                 {
                     foreach (Customer cus in BLL_Customer.Instance.GetAllCustomer())
                     {
-                        if (cus.CustomerId == hd.CustomerId)
+                        if (cus.CustomerId == hd.ContractId)
                         {
                             contract.ContractId = hd.ContractId;
-                            contract.CustomerId = hd.CustomerId;
+                            contract.ContractId = hd.ContractId;
                             contract.RoomId = hd.RoomId;
                             contract.CreatedAt = hd.CreatedAt;
                             contract.CustomerName = cus.Name;
@@ -461,7 +461,7 @@ namespace QuanLyNhaTro.Views
                     if (cus.SDT == txtSDT_khachtro.Text)
                     {
                         Contract contract = new Contract();
-                        contract.CustomerId = cus.CustomerId;
+                        contract.ContractId = cus.CustomerId;
                         foreach (CBBItems items in cbbTenphongtro_khanhtro.Items)
                         {
                             if (items.Text == cbbTenphongtro_khanhtro.SelectedItem.ToString())
@@ -516,7 +516,7 @@ namespace QuanLyNhaTro.Views
                 {
                     if (cus.CustomerId == cusAdd.CustomerId)
                     {
-                        cusAdd.AccountId = cus.AccountId;
+                        cusAdd.CustomerId = cus.CustomerId;
                         break;
                     }
                 }
@@ -525,7 +525,7 @@ namespace QuanLyNhaTro.Views
 
                 foreach (Account acc in BLL_Account.Instance.GetAllAccount())
                 {
-                    if (acc.AccountId == cusAdd.AccountId)
+                    if (acc.AccountId == cusAdd.CustomerId)
                     {
                         account.AccountId = acc.AccountId;
                         account.Username = acc.Username;
@@ -543,10 +543,10 @@ namespace QuanLyNhaTro.Views
                 Contract contract = new Contract();
                 foreach (Contract hd in BLL_Contract.Instance.GetAllContract())
                 {
-                    if (hd.CustomerId == cusAdd.CustomerId)
+                    if (hd.ContractId == cusAdd.CustomerId)
                     {
                         contract.ContractId = hd.ContractId;
-                        contract.CustomerId = hd.CustomerId;
+                        contract.ContractId = hd.ContractId;
                         contract.RoomId = hd.RoomId;
                         contract.CreatedAt = hd.CreatedAt;
                         contract.CustomerName = cusAdd.Name;
@@ -605,7 +605,7 @@ namespace QuanLyNhaTro.Views
                 {
                     if (cus.CustomerId == makhach)
                     {
-                        listUserIDdel.Add(cus.AccountId);
+                        listUserIDdel.Add(cus.CustomerId);
                     }
                 }
             }
@@ -703,8 +703,10 @@ namespace QuanLyNhaTro.Views
 
         private void btnThemPhongTro_Click(object sender, EventArgs e)
         {
-            ThemPhongTro frm = new ThemPhongTro(-1);
+            int x = BLL_Room.Instance.GetNextID();
+            ThemPhongTro frm = new ThemPhongTro(BLL_Room.Instance.GetNextID());
             frm.d += new ThemPhongTro.Mydel(reaload_phongtro);
+
             frm.ShowDialog();
         }
         private void btnSuaPhongTro_Click(object sender, EventArgs e)
@@ -834,7 +836,7 @@ namespace QuanLyNhaTro.Views
         {
             if (dgvService.SelectedRows.Count > 0)
             {
-                foreach(DataGridViewRow i in dgvService.SelectedRows)
+                foreach (DataGridViewRow i in dgvService.SelectedRows)
                 {
                     BLL_Service.Instance.DeleteService(Convert.ToInt32(i.Cells["ServiceID"].Value.ToString()));
                 }
@@ -852,11 +854,11 @@ namespace QuanLyNhaTro.Views
         private void btnSort_Service_Click(object sender, EventArgs e)
         {
             List<int> list = new List<int>();
-            foreach(DataGridViewRow i in dgvService.Rows)
+            foreach (DataGridViewRow i in dgvService.Rows)
             {
                 list.Add(Convert.ToInt32(i.Cells["ServiceId"].Value.ToString()));
             }
-            dgvService.DataSource = BLL_Service.Instance.Sort(list,cbbSort_Service.SelectedItem.ToString());
+            dgvService.DataSource = BLL_Service.Instance.Sort(list, cbbSort_Service.SelectedItem.ToString());
             dgvService.ClearSelection();
         }
 

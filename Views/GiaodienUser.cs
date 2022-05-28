@@ -93,16 +93,16 @@ namespace QuanLyNhaTro.Views
         }
         public void GUI()
         {
-            Customer cm = BLL_Customer.Instance.GetCustomerByID(ID);
-            textBox1.Text = ID.ToString();
-            textBox3.Text = BLL_Account.Instance.GetAccountByID(ID).Username;
-            textBox2.Text = cm.Name;
-            if (cm.Gender) comboBox1.Text = "Nam";
-            else comboBox1.Text = "Nữ";
-            textBox4.Text = cm.SDT;
-            textBox5.Text = cm.CMND;
-            textBox6.Text = cm.Job;
-            dateTimePicker1.Value = cm.Birthday;
+            //Customer cm = BLL_Customer.Instance.GetCustomerByID(ID);
+            //textBox1.Text = ID.ToString();
+            //textBox3.Text = BLL_Account.Instance.GetAccountByID(ID).Username;
+            //textBox2.Text = cm.Name;
+            //if (cm.Gender) comboBox1.Text = "Nam";
+            //else comboBox1.Text = "Nữ";
+            //textBox4.Text = cm.SDT;
+            //textBox5.Text = cm.CMND;
+            //textBox6.Text = cm.Job;
+            //dateTimePicker1.Value = cm.Birthday;
         }
         private void btnPhongtro_Click_1(object sender, EventArgs e)
         {
@@ -118,18 +118,18 @@ namespace QuanLyNhaTro.Views
             pnThanhtoan.Visible = false;
             pnDichdu.Visible = false;
 
-            int CustomerID = BLL_Customer.Instance.GetCustomerByID(ID).CustomerId;
-            int RoomID = BLL_Contract.Instance.GetContractByCustomerID(CustomerID).RoomId;
-            textBox12.Text = RoomID.ToString();
-            textBox11.Text = BLL_Room.Instance.GetRoomByIDRoom(RoomID).Name;
-            textBox8.Text = BLL_Room.Instance.GetRoomByIDRoom(RoomID).Capacity.ToString();
-            textBox13.Text = BLL_Customer.Instance.GetAllRoommateByNameRoom(BLL_Room.Instance.GetRoomByIDRoom(RoomID).Name).Count.ToString();
-            //Lấy ra tên từ Getroom rồi truyền vào GetAll để lấy ra số lượng bạn cùng phòng
-            dataGridView1.DataSource = BLL_Customer.Instance.GetAllRoommateByNameRoom(BLL_Room.Instance.GetRoomByIDRoom(RoomID).Name);
-            textBox9.Text = BLL_Room.Instance.GetRoomByIDRoom(RoomID).Price.ToString();
-            textBox10.Text = CustomerID.ToString();
-            textBox7.Text = BLL_Contract.Instance.GetContractByCustomerID(CustomerID).CustomerName;
-            dateTimePicker2.Value = (DateTime)BLL_Contract.Instance.GetContractByCustomerID(CustomerID).CreatedAt;
+          // // int CustomerID = BLL_Customer.Instance.GetCustomerByID(ID).CustomerId;
+          //  int RoomID = BLL_Contract.Instance.GetContractByCustomerID(CustomerID).RoomId;
+          //  textBox12.Text = RoomID.ToString();
+          //  textBox11.Text = BLL_Room.Instance.GetRoomByIDRoom(RoomID).Name;
+          //  textBox8.Text = BLL_Room.Instance.GetRoomByIDRoom(RoomID).Capacity.ToString();
+          //  textBox13.Text = BLL_Customer.Instance.GetAllRoommateByNameRoom(BLL_Room.Instance.GetRoomByIDRoom(RoomID).Name).Count.ToString();
+          //  //Lấy ra tên từ Getroom rồi truyền vào GetAll để lấy ra số lượng bạn cùng phòng
+          //  dataGridView1.DataSource = BLL_Customer.Instance.GetAllRoommateByNameRoom(BLL_Room.Instance.GetRoomByIDRoom(RoomID).Name);
+          //  textBox9.Text = BLL_Room.Instance.GetRoomByIDRoom(RoomID).Price.ToString();
+          ////  textBox10.Text = CustomerID.ToString();
+          //  textBox7.Text = BLL_Contract.Instance.GetContractByCustomerID(CustomerID).CustomerName;
+          //  dateTimePicker2.Value = (DateTime)BLL_Contract.Instance.GetContractByCustomerID(CustomerID).CreatedAt;
             
 
 

@@ -27,7 +27,7 @@ namespace QuanLyNhaTro.BLL
 
         public List<Contract> GetAllContract()
         {
-            return QuanLy.Instance.Contracts.Select(p=>p).ToList();
+            return QuanLy.Instance.Contracts.Select(p => p).ToList();
         }
 
         public void AddContract(Contract contract)
@@ -38,21 +38,21 @@ namespace QuanLyNhaTro.BLL
 
         public void UpdateContract(Contract contract)
         {
-            Contract tam = QuanLy.Instance.Contracts.Find(contract.ContractId);
-            if (tam == null) return;
-            else
-            {
-                tam.ContractId = contract.ContractId;
-                tam.CustomerId = contract.CustomerId;
-                tam.RoomId = contract.RoomId;
-                tam.CustomerName = contract.CustomerName;
-                tam.CreatedAt = contract.CreatedAt;
-                QuanLy.Instance.SaveChanges();
-            }
+            //Contract tam = QuanLy.Instance.Contracts.Find(contract.ContractId);
+            //if (tam == null) return;
+            //else
+            //{
+            //    tam.ContractId = contract.ContractId;
+            //    tam.CustomerId = contract.CustomerId;
+            //    tam.RoomId = contract.RoomId;
+            //    tam.CustomerName = contract.CustomerName;
+            //    tam.CreatedAt = contract.CreatedAt;
+            //    QuanLy.Instance.SaveChanges();
+            //}
         }
         public Contract GetContractByCustomerID(int id) //Lấy ra hợp đồng của khách
         {
-            return QuanLy.Instance.Contracts.Where(p => p.CustomerId == id).Select(p => p).FirstOrDefault();
+            return QuanLy.Instance.Contracts.Where(p => p.ContractId == id).Select(p => p).FirstOrDefault();
         }
 
         public Contract GetContractByRoomID(int idroom) //Lấy ra Hợp đồng của phòng

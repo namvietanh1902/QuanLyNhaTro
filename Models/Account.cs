@@ -9,9 +9,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace QuanLyNhaTro.Models
 {
     public class Account
-    {
+    {   
+        
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int AccountId { get; set; }
         [Required(ErrorMessage ="Username không được để trống")]
         [StringLength(20, ErrorMessage ="Chiều dài tối đa của username là 20 kí tự")]

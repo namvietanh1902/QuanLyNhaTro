@@ -70,9 +70,13 @@
     <Compile Include="DTO\Customer_View.cs" />
     <Compile Include="DTO\Room_View.cs" />
     <Compile Include="DTO\Service_View.cs" />
-    <Compile Include="Migrations\202205271346053_first.cs" />
-    <Compile Include="Migrations\202205271346053_first.designer.cs">
-      <DependentUpon>202205271346053_first.cs</DependentUpon>
+    <Compile Include="Migrations\202205280254246_alo.cs" />
+    <Compile Include="Migrations\202205280254246_alo.designer.cs">
+      <DependentUpon>202205280254246_alo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205280304310_alo1.cs" />
+    <Compile Include="Migrations\202205280304310_alo1.designer.cs">
+      <DependentUpon>202205280304310_alo1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -132,8 +136,11 @@
     <Compile Include="Views\ThemPhongTro.Designer.cs">
       <DependentUpon>ThemPhongTro.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202205271346053_first.resx">
-      <DependentUpon>202205271346053_first.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205280254246_alo.resx">
+      <DependentUpon>202205280254246_alo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205280304310_alo1.resx">
+      <DependentUpon>202205280304310_alo1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ChiTietPhongThue.resx">
       <DependentUpon>ChiTietPhongThue.cs</DependentUpon>

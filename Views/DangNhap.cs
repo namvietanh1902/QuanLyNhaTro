@@ -107,6 +107,7 @@ namespace QuanLyNhaTro.Views
         {
             db.Accounts.Add(new Account
             {
+               AccountId = 1,
                 Username = "Anh",
                 Password = "123456",
                 isAdmin = true,
@@ -114,8 +115,11 @@ namespace QuanLyNhaTro.Views
                 Birthday = DateTime.Now,
                 Gender = false,
                 SDT = "098213",
-            });
+            }) ;
             db.SaveChanges();
+           
+            
+           
             var data = db.Accounts.Select(c => c).FirstOrDefault().Name;
             MessageBox.Show(data);
             //int id = BLL_Account.Instance.GetIDByUserAndPass(textBox4.Text, textBox3.Text);

@@ -9,13 +9,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace QuanLyNhaTro.Models
 {
     public class Customer
-    {   
+    {
         public Customer()
         {
           
         }
         [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [ForeignKey("Account")]
         public int CustomerId { get; set; }
         [Required(ErrorMessage ="Tên khách trọ không được để trống")]
         public string Name { get; set; }
@@ -31,11 +32,12 @@ namespace QuanLyNhaTro.Models
         public string Job { get; set; }
 
         
-        public  int AccountId { get; set; }
+        
+      
     
         public bool isDelete { get; set; } = false;
        
-        [ForeignKey("AccountId")]
+        
         public virtual Account Account { get; set; }
         public virtual  Contract Contract { get; set; } 
     

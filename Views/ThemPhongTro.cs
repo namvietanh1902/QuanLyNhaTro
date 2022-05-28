@@ -20,7 +20,10 @@ namespace QuanLyNhaTro.Views
         
         public ThemPhongTro(int ma)
         {
+            
             maphong = ma;
+
+            
             InitializeComponent();
             GUI();
             
@@ -30,7 +33,8 @@ namespace QuanLyNhaTro.Views
         {
             Room room = BLL_Room.Instance.GetRoomModelByMaPhong(maphong);
             if (room == null)
-            {
+            {   
+                txtMaphongthue.Text = BLL_Room.Instance.GetNextID().ToString();
                 txtHientrangthue.Text = "Trống";
             }
             else
@@ -98,7 +102,7 @@ namespace QuanLyNhaTro.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            txtMaphongthue.Text = "";
+            txtMaphongthue.Text = BLL_Room.Instance.GetNextID().ToString();
             txtTenphongthue.Text = "";
             txtGiaphongthue.Text = "";
             txtHientrangthue.Text = "";
