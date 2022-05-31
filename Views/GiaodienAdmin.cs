@@ -21,12 +21,11 @@ namespace QuanLyNhaTro.Views
         public GiaodienAdmin(int id)
         {
             ID = id;
-
-
             InitializeComponent();
             hienthidulieulenthanhthongbao();
-
-
+            cbbGioitinh_khachtro.Items.Clear();
+            cbbGioitinh_khachtro.Items.Add("Nam");
+            cbbGioitinh_khachtro.Items.Add("Nữ");
         }
         private void GiaodienAdmin_Load(object sender, EventArgs e)
         {
@@ -150,7 +149,7 @@ namespace QuanLyNhaTro.Views
         private void btnLammoi_user_Click(object sender, EventArgs e)
         {
             cleardata_user();
-        }
+        }  
 
         private void btnLuu_user_Click(object sender, EventArgs e)
         {        
@@ -177,22 +176,27 @@ namespace QuanLyNhaTro.Views
             if (dgvthongtin_user.SelectedRows.Count < 1) //add
             {                
                 BLL_Account.Instance.AddAccount(account);
+                if(account.isAdmin == false)
+                {
+                    foreach(Account acc in BLL_Account.Instance.GetAllAccount())
+                    {
+                        if(acc.SDT == account.SDT)
+                        {
+                            txtTennguoithue_khachtro.Text = acc.Name;
+                            txtSDT_khachtro.Text = acc.SDT;
+                            txtMakhachtro_khachtro.Text = acc.AccountId.ToString();
+                            if(acc.Gender == true)
+                            {
+                                cbbGioitinh_khachtro.SelectedItem = "Nam";
+                            }
+                            else
+                                cbbGioitinh_khachtro.SelectedItem = "Nữ";
+                            dtpNgaysinh_khachtro.Value = acc.Birthday;
+                             break;
+                        }
+                    }
+                }
             }
-            //else
-            //{              
-            //    {
-            //        BLL_Account.Instance.AddAccount(account);
-            //        foreach (Account account1 in BLL_Account.Instance.GetAllAccount())
-            //        {
-            //            if (account1.SDT == txtSDT_user.Text && account1.SDT == cusAdd.SDT)
-            //            {
-            //                cusAdd.CustomerId = account1.AccountId;
-            //                BLL_Customer.Instance.UpdateIDOfCustomers(cusAdd);
-            //                break;
-            //            }
-            //        }
-            //    }
-            //}
             if (dgvthongtin_user.SelectedRows.Count == 1)//update
             {
                 account.AccountId = Convert.ToInt32(txtIduser_user.Text);
@@ -339,9 +343,6 @@ namespace QuanLyNhaTro.Views
             cbbSort_khachtro.Items.Add("CustomerId");
             cbbSort_khachtro.Items.Add("Name");
             cbbSort_khachtro.Items.Add("Birthday");
-            cbbGioitinh_khachtro.Items.Clear();
-            cbbGioitinh_khachtro.Items.Add("Nam");
-            cbbGioitinh_khachtro.Items.Add("Nữ");
             cbbTenphongtro_khanhtro.Items.Clear();
             cbbTenphongtro_khanhtro.Items.AddRange(BLL_Room.Instance.GetRoomEmtyAndNoFullUpCombobox().ToArray());
             dgvthongtin_khachtro.DataSource = BLL_Customer.Instance.GetCustomer_Views();
@@ -352,7 +353,7 @@ namespace QuanLyNhaTro.Views
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 col.HeaderCell.Style.Font = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
             }
-            txtMakhachtro_khachtro.Text = BLL_Customer.Instance.GetNextID().ToString();
+           // txtMakhachtro_khachtro.Text = BLL_Customer.Instance.GetNextID().ToString();
             txtMakhachtro_khachtro.ReadOnly = true;
             dgvthongtin_khachtro.ClearSelection();
         }
@@ -360,7 +361,7 @@ namespace QuanLyNhaTro.Views
         private void cleardata_khachtro()
         {
             dgvthongtin_khachtro.ClearSelection();
-            txtMakhachtro_khachtro.Text = BLL_Customer.Instance.GetNextID().ToString();
+            txtMakhachtro_khachtro.Text = "";
             txtTennguoithue_khachtro.Text = "";
             txtCmnd_khachtro.Text = "";
             txtSDT_khachtro.Text = "";
@@ -379,9 +380,9 @@ namespace QuanLyNhaTro.Views
 
 
 
+        Customer cusAdd = new Customer();
         private void btnLuukhachtro_Click(object sender, EventArgs e)
         {
-            Customer cusAdd = new Customer();
             cusAdd.Name = txtTennguoithue_khachtro.Text;
             cusAdd.Birthday = dtpNgaysinh_khachtro.Value;
             if (cbbGioitinh_khachtro.SelectedItem.ToString() == "Nam")
@@ -397,22 +398,30 @@ namespace QuanLyNhaTro.Views
             cusAdd.Job = txtNghenghiep_khachtro.Text;
             if (dgvthongtin_khachtro.SelectedRows.Count < 1) //add
             {
-                if (BLL_Account.Instance.CheckID(Convert.ToInt32(txtMakhachtro_khachtro.Text)))
+                if (BLL_Account.Instance.CheckSDT(txtSDT_khachtro.Text))
                 {
-                    cusAdd.CustomerId = Convert.ToInt32(txtMakhachtro_khachtro.Text);
+                    
+                    foreach(Account acc in BLL_Account.Instance.GetAllAccount())
+                    {
+                        if(acc.SDT == txtSDT_khachtro.Text)
+                        {
+                            cusAdd.CustomerId = acc.AccountId;
+                            break;
+                        }
+                    }
                     BLL_Customer.Instance.AddKhachTro(cusAdd);
                     foreach (Customer cus in BLL_Customer.Instance.GetAllCustomer())
                     {
-                        if (cus.SDT == txtSDT_khachtro.Text)
+                        if (cus.CustomerId == cusAdd.CustomerId)
                         {
                             Contract contract = new Contract();
                             contract.ContractId = cus.CustomerId;
-                            foreach (CBBItems items in cbbTenphongtro_khanhtro.Items)
+                            foreach(Room phong in BLL_Room.Instance.GetAllRoom())
                             {
-                                if (items.Text == cbbTenphongtro_khanhtro.SelectedItem.ToString())
+                                if(phong.Name == cbbTenphongtro_khanhtro.SelectedItem.ToString())
                                 {
-                                    contract.RoomId = items.Value;
-                                    break;
+                                    contract.RoomId = phong.RoomId;
+                                    break; 
                                 }
                             }
                             contract.CustomerName = cus.Name;

@@ -41,9 +41,7 @@ namespace QuanLyNhaTro.BLL
             Contract tam = QuanLy.Instance.Contracts.Find(contract.ContractId);
             if (tam == null) return;
             else
-            {
-                tam.ContractId = contract.ContractId;
-                
+            {                
                 tam.RoomId = contract.RoomId;
                 tam.CustomerName = contract.CustomerName;
                 tam.CreatedAt = contract.CreatedAt;

@@ -112,8 +112,8 @@ namespace QuanLyNhaTro.BLL
         }
         public int GetNextID()
         {
-            if (QuanLy.Instance.Customers.Count() == 0) return 1;
-            return QuanLy.Instance.Customers.Max(c => c.CustomerId) + 1;
+            if (QuanLy.Instance.Accounts.Count() == 0) return 1;
+            return QuanLy.Instance.Accounts.Max(c => c.AccountId) + 1;
         }
 
         public List<Customer_View> SearchKhachTro(string txt)

@@ -192,11 +192,11 @@ namespace QuanLyNhaTro.BLL
 
         }
 
-        public bool CheckID(int id)
+        public bool CheckSDT(string sdt)
         {
             foreach(Account acc in GetAllAccount())
             {
-                if(acc.AccountId == id)
+                if(acc.SDT == sdt)
                 {
                     return true;
                     break;
