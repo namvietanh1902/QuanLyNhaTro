@@ -26,6 +26,7 @@ namespace QuanLyNhaTro.Models
         public bool Gender { get; set; }
         public DateTime Birthday { get; set; }
         public string SDT { get; set; }
+        public bool isDelete { get; set; } =false;
         public virtual Customer Customer { get; set; }
     }
 }

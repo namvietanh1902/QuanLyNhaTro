@@ -78,6 +78,10 @@
     <Compile Include="Migrations\202205280304310_alo1.designer.cs">
       <DependentUpon>202205280304310_alo1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205310907100_AddisDelete.cs" />
+    <Compile Include="Migrations\202205310907100_AddisDelete.designer.cs">
+      <DependentUpon>202205310907100_AddisDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Contract.cs" />
@@ -141,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205280304310_alo1.resx">
       <DependentUpon>202205280304310_alo1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205310907100_AddisDelete.resx">
+      <DependentUpon>202205310907100_AddisDelete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ChiTietPhongThue.resx">
       <DependentUpon>ChiTietPhongThue.cs</DependentUpon>

@@ -34,7 +34,7 @@ namespace QuanLyNhaTro.BLL
         {
 
             var account = QuanLy.Instance.Accounts.Where(p => p.Username == user).FirstOrDefault();
-            if (account.Username == user && account.Password == pass) return account;
+            if (account.Username == user && account.Password == pass && account.isDelete == false) return account;
             return null;
 
         }
@@ -65,17 +65,20 @@ namespace QuanLyNhaTro.BLL
             List<Account_View> data = new List<Account_View>();
             foreach (Account account in GetAllAccount())
             {
-                data.Add(new Account_View
+                if(account.isDelete == false)
                 {
-                    AccountId = account.AccountId,
-                    Username = account.Username,
-                    Password = account.Password,
-                    isAdmin = account.isAdmin,
-                    Name = account.Name,
-                    Gender = account.Gender,
-                    Birthday = account.Birthday.ToString("yyyy-MM-dd"),
-                    SDT = account.SDT,
-                });
+                    data.Add(new Account_View
+                    {
+                        AccountId = account.AccountId,
+                        Username = account.Username,
+                        Password = account.Password,
+                        isAdmin = account.isAdmin,
+                        Name = account.Name,
+                        Gender = account.Gender,
+                        Birthday = account.Birthday.ToString("yyyy-MM-dd"),
+                        SDT = account.SDT,
+                    });
+                }
 
             }
 
@@ -111,8 +114,19 @@ namespace QuanLyNhaTro.BLL
         {
             foreach (int id in del)
             {
-                QuanLy.Instance.Accounts.Remove(GetAccountByID(id));
-                QuanLy.Instance.SaveChanges();
+                foreach (Account acc in GetAllAccount())
+                {
+                    if (id == acc.AccountId)
+                    {
+                        Account tam = QuanLy.Instance.Accounts.Find(acc.AccountId);
+                        if (tam == null) return;
+                        else
+                        {
+                            tam.isDelete = true;
+                            QuanLy.Instance.SaveChanges();
+                        }
+                    }
+                }
             }
         }
         public int GetNextID()
@@ -126,7 +140,7 @@ namespace QuanLyNhaTro.BLL
             List<Account_View> data = new List<Account_View>();
             foreach (Account account in GetAllAccount())
             {
-                if (account.Name.Contains(txt))
+                if (account.Name.Contains(txt) && account.isDelete == false)
                 {
                     data.Add(new Account_View
                     {
@@ -176,6 +190,19 @@ namespace QuanLyNhaTro.BLL
                     return data;
             }
 
+        }
+
+        public bool CheckID(int id)
+        {
+            foreach(Account acc in GetAllAccount())
+            {
+                if(acc.AccountId == id)
+                {
+                    return true;
+                    break;
+                }
+            }
+            return false;
         }
     }
 }

@@ -29,15 +29,8 @@ namespace QuanLyNhaTro.Models
         [Required(ErrorMessage = "Số điện thoại không được để trống")]
         public string SDT { get; set; }
         [Required(ErrorMessage = "Nghề nghiệp không được để trống")]
-        public string Job { get; set; }
-
-        
-        
-      
-    
+        public string Job { get; set; }          
         public bool isDelete { get; set; } = false;
-       
-        
         public virtual Account Account { get; set; }
         public virtual  Contract Contract { get; set; } 
     

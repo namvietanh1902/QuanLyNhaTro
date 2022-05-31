@@ -46,14 +46,6 @@ namespace QuanLyNhaTro.BLL
                     customer_View.CustomerId = cus.CustomerId;
                     customer_View.Name = cus.Name;
                     customer_View.RoomName = cus.Contract.Room.Name;
-                    //foreach (Contract contract in BLL_Contract.Instance.GetAllContract())
-                    //{
-                    //    if (cus.CustomerId == contract.ContractId)
-                    //    {
-                    //        customer_View.RoomName = contract.Room.Name;
-                    //        break;
-                    //    }
-                    //}
                     customer_View.Birthday = cus.Birthday.ToString("yyyy-MM-dd");
                     customer_View.Gender = cus.Gender;
                     customer_View.CMND = cus.CMND;
@@ -77,7 +69,7 @@ namespace QuanLyNhaTro.BLL
             if (tam == null) return;
             else
             {
-               // tam.AccountId = cus.AccountId;
+               
                 QuanLy.Instance.SaveChanges();
             }
 
@@ -94,8 +86,7 @@ namespace QuanLyNhaTro.BLL
                 tam.Birthday = cus.Birthday;
                 tam.CMND = cus.CMND;
                 tam.Job = cus.Job;
-                tam.Gender = cus.Gender;
-              
+                tam.Gender = cus.Gender;              
                 QuanLy.Instance.SaveChanges();
             }
         }
@@ -121,8 +112,8 @@ namespace QuanLyNhaTro.BLL
         }
         public int GetNextID()
         {
-            if (QuanLy.Instance.Accounts.Count() == 0) return 1;
-            return QuanLy.Instance.Accounts.Max(c => c.AccountId) + 1;
+            if (QuanLy.Instance.Customers.Count() == 0) return 1;
+            return QuanLy.Instance.Customers.Max(c => c.CustomerId) + 1;
         }
 
         public List<Customer_View> SearchKhachTro(string txt)
