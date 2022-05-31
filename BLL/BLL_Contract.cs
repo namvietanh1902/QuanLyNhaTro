@@ -38,17 +38,17 @@ namespace QuanLyNhaTro.BLL
 
         public void UpdateContract(Contract contract)
         {
-            //Contract tam = QuanLy.Instance.Contracts.Find(contract.ContractId);
-            //if (tam == null) return;
-            //else
-            //{
-            //    tam.ContractId = contract.ContractId;
-            //    tam.CustomerId = contract.CustomerId;
-            //    tam.RoomId = contract.RoomId;
-            //    tam.CustomerName = contract.CustomerName;
-            //    tam.CreatedAt = contract.CreatedAt;
-            //    QuanLy.Instance.SaveChanges();
-            //}
+            Contract tam = QuanLy.Instance.Contracts.Find(contract.ContractId);
+            if (tam == null) return;
+            else
+            {
+                tam.ContractId = contract.ContractId;
+                
+                tam.RoomId = contract.RoomId;
+                tam.CustomerName = contract.CustomerName;
+                tam.CreatedAt = contract.CreatedAt;
+                QuanLy.Instance.SaveChanges();
+            }
         }
         public Contract GetContractByCustomerID(int id) //Lấy ra hợp đồng của khách
         {

@@ -3677,8 +3677,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1942, 1055);
-            this.Controls.Add(this.pnPhongtro);
             this.Controls.Add(this.pnUser);
+            this.Controls.Add(this.pnPhongtro);
             this.Controls.Add(this.pnKhanhtro);
             this.Controls.Add(this.pnTinhtientro);
             this.Controls.Add(this.pnDichvu);

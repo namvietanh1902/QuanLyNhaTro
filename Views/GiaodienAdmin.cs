@@ -167,6 +167,8 @@ namespace QuanLyNhaTro.Views
             cboSortUser_user.Items.Add("AccountId");
             cboSortUser_user.Items.Add("Name");
             cboSortUser_user.Items.Add("Birthday");
+            txtIduser_user.Text = BLL_Account.Instance.GetNextID().ToString();
+
             if (isDathuephong == true)
             {
                 cbRoleuser.SelectedItem = "Khach Tro";
@@ -192,7 +194,7 @@ namespace QuanLyNhaTro.Views
         {
             dgvthongtin_user.ClearSelection();
             cbRoleuser.Enabled = true;
-            txtIduser_user.Text = "";
+            txtIduser_user.Text = BLL_Account.Instance.GetNextID().ToString();
             txtUsername_User.Text = "";
             txtPass_user.Text = "";
             cbRoleuser.Text = "";
@@ -211,6 +213,7 @@ namespace QuanLyNhaTro.Views
         private void btnLuu_user_Click(object sender, EventArgs e)
         {
             Account account = new Account();
+            account.AccountId = Convert.ToInt32(txtIduser_user.Text);
             account.Username = txtUsername_User.Text;
             account.Password = txtPass_user.Text;
             if (cbRoleuser.SelectedItem.ToString() == "Admin")
@@ -705,7 +708,7 @@ namespace QuanLyNhaTro.Views
         {
             int x = BLL_Room.Instance.GetNextID();
             ThemPhongTro frm = new ThemPhongTro(BLL_Room.Instance.GetNextID());
-            frm.d += new ThemPhongTro.Mydel(reaload_phongtro);
+            frm.d += new ThemPhongTro.Mydel(reaload_phongtro); 
 
             frm.ShowDialog();
         }
