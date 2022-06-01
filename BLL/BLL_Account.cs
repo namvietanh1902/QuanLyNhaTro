@@ -128,6 +128,8 @@ namespace QuanLyNhaTro.BLL
                     }
                 }
             }
+
+
         }
         public int GetNextID()
         {

@@ -294,6 +294,9 @@ namespace QuanLyNhaTro.Views
                     btnDangxuat.PerformClick();
                 }
             }
+            BLL_Customer.Instance.DeleteKhachTro(listIDdell);
+
+
 
             cleardata_user();
             dgvthongtin_user.DataSource = BLL_Account.Instance.GetAccount_Views();
