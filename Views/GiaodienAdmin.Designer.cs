@@ -159,17 +159,11 @@
             this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.cbbSort_Service = new System.Windows.Forms.ComboBox();
             this.txtSearch_Service = new System.Windows.Forms.TextBox();
-            this.btnSort_Service = new QuanLyNhaTro.VBButton();
-            this.btnSearch_Service = new QuanLyNhaTro.VBButton();
-            this.btnDelete_Service = new QuanLyNhaTro.VBButton();
-            this.btnEdit_Service = new QuanLyNhaTro.VBButton();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.txtServicePrice = new System.Windows.Forms.TextBox();
             this.txtServiceUnit = new System.Windows.Forms.TextBox();
             this.txtServiceName = new System.Windows.Forms.TextBox();
             this.txtServiceID = new System.Windows.Forms.TextBox();
-            this.btnReset_Service = new QuanLyNhaTro.VBButton();
-            this.btnSave_Service = new QuanLyNhaTro.VBButton();
             this.label79 = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
             this.label77 = new System.Windows.Forms.Label();
@@ -198,24 +192,20 @@
             this.textBox29 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.vbButton4 = new QuanLyNhaTro.VBButton();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -277,10 +267,15 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblHethong = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.btnNav = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.vbButton4 = new QuanLyNhaTro.VBButton();
+            this.btnSort_Service = new QuanLyNhaTro.VBButton();
+            this.btnSearch_Service = new QuanLyNhaTro.VBButton();
+            this.btnDelete_Service = new QuanLyNhaTro.VBButton();
+            this.btnEdit_Service = new QuanLyNhaTro.VBButton();
+            this.btnReset_Service = new QuanLyNhaTro.VBButton();
+            this.btnSave_Service = new QuanLyNhaTro.VBButton();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -332,12 +327,10 @@
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.panel1.Controls.Add(this.lblUsername);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.lblTenNguoiDung);
@@ -419,7 +412,7 @@
             // 
             // label10
             // 
-            this.label10.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -432,7 +425,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.FlatAppearance.BorderSize = 0;
@@ -461,7 +454,7 @@
             this.lblTitle.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(1558, 80);
@@ -526,7 +519,7 @@
             this.groupBox4.Controls.Add(this.label35);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
@@ -539,7 +532,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label28.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label28.Location = new System.Drawing.Point(215, 148);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
@@ -550,7 +543,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label29.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label29.Location = new System.Drawing.Point(215, 113);
             this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
@@ -561,7 +554,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label30.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label30.Location = new System.Drawing.Point(215, 79);
             this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
@@ -572,7 +565,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label31.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label31.Location = new System.Drawing.Point(215, 43);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
@@ -583,7 +576,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label32.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label32.Location = new System.Drawing.Point(15, 148);
             this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
@@ -594,7 +587,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label33.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label33.Location = new System.Drawing.Point(15, 113);
             this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
@@ -605,7 +598,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label34.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label34.Location = new System.Drawing.Point(15, 79);
             this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label34.Name = "label34";
@@ -616,7 +609,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label35.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label35.Location = new System.Drawing.Point(15, 43);
             this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label35.Name = "label35";
@@ -644,7 +637,7 @@
             this.groupBox6.Controls.Add(this.label45);
             this.groupBox6.Controls.Add(this.label38);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.groupBox6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox6.Location = new System.Drawing.Point(0, 16);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
@@ -657,7 +650,7 @@
             // label46
             // 
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label46.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label46.Location = new System.Drawing.Point(4, 94);
             this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label46.Name = "label46";
@@ -670,7 +663,7 @@
             // 
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label48.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label48.Location = new System.Drawing.Point(7, 180);
             this.label48.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label48.Name = "label48";
@@ -682,7 +675,7 @@
             // 
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label47.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label47.Location = new System.Drawing.Point(8, 148);
             this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label47.Name = "label47";
@@ -694,7 +687,7 @@
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label45.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label45.Location = new System.Drawing.Point(4, 63);
             this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label45.Name = "label45";
@@ -706,7 +699,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label38.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label38.Location = new System.Drawing.Point(8, 31);
             this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label38.Name = "label38";
@@ -806,7 +799,7 @@
             this.groupBox5.Controls.Add(this.label43);
             this.groupBox5.Controls.Add(this.label44);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
@@ -834,7 +827,7 @@
             this.label50.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label50.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label50.Image = ((System.Drawing.Image)(resources.GetObject("label50.Image")));
             this.label50.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label50.Location = new System.Drawing.Point(880, 90);
@@ -849,7 +842,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label37.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label37.Location = new System.Drawing.Point(12, 85);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
@@ -861,7 +854,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label36.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label36.Location = new System.Drawing.Point(11, 44);
             this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label36.Name = "label36";
@@ -873,7 +866,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label39.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label39.Location = new System.Drawing.Point(197, 203);
             this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label39.Name = "label39";
@@ -885,7 +878,7 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label40.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label40.Location = new System.Drawing.Point(12, 203);
             this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label40.Name = "label40";
@@ -897,7 +890,7 @@
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label41.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label41.Location = new System.Drawing.Point(197, 164);
             this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label41.Name = "label41";
@@ -909,7 +902,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label42.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label42.Location = new System.Drawing.Point(13, 164);
             this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label42.Name = "label42";
@@ -921,7 +914,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label43.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label43.Location = new System.Drawing.Point(197, 126);
             this.label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label43.Name = "label43";
@@ -933,7 +926,7 @@
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label44.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label44.Location = new System.Drawing.Point(12, 126);
             this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label44.Name = "label44";
@@ -1027,11 +1020,12 @@
             // 
             this.btnsearch_user.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnsearch_user.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnsearch_user.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
             this.btnsearch_user.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnsearch_user.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.btnsearch_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsearch_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsearch_user.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnsearch_user.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.btnsearch_user.Location = new System.Drawing.Point(34, 20);
             this.btnsearch_user.Margin = new System.Windows.Forms.Padding(4);
             this.btnsearch_user.Name = "btnsearch_user";
@@ -1045,11 +1039,11 @@
             // 
             this.btnSort_user.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSort_user.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnSort_user.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
             this.btnSort_user.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSort_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSort_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSort_user.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSort_user.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.btnSort_user.Location = new System.Drawing.Point(1095, 24);
             this.btnSort_user.Margin = new System.Windows.Forms.Padding(4);
             this.btnSort_user.Name = "btnSort_user";
@@ -1063,11 +1057,11 @@
             // 
             this.btnXoa_user.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa_user.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnXoa_user.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
             this.btnXoa_user.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoa_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa_user.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnXoa_user.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.btnXoa_user.Location = new System.Drawing.Point(838, 21);
             this.btnXoa_user.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa_user.Name = "btnXoa_user";
@@ -1081,11 +1075,12 @@
             // 
             this.btnSua_user.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSua_user.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnSua_user.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
             this.btnSua_user.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSua_user.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.btnSua_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua_user.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSua_user.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.btnSua_user.Location = new System.Drawing.Point(616, 23);
             this.btnSua_user.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua_user.Name = "btnSua_user";
@@ -1142,7 +1137,7 @@
             // 
             this.radNu.AutoSize = true;
             this.radNu.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.radNu.ForeColor = System.Drawing.Color.MediumBlue;
+            this.radNu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.radNu.Location = new System.Drawing.Point(208, 17);
             this.radNu.Name = "radNu";
             this.radNu.Size = new System.Drawing.Size(56, 28);
@@ -1155,7 +1150,7 @@
             // 
             this.radNam.AutoSize = true;
             this.radNam.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.radNam.ForeColor = System.Drawing.Color.MediumBlue;
+            this.radNam.ForeColor = System.Drawing.SystemColors.ControlText;
             this.radNam.Location = new System.Drawing.Point(28, 17);
             this.radNam.Name = "radNam";
             this.radNam.Size = new System.Drawing.Size(71, 28);
@@ -1217,7 +1212,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label54.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label54.Location = new System.Drawing.Point(1035, 92);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(97, 24);
@@ -1228,7 +1223,7 @@
             // 
             this.label56.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label56.AutoSize = true;
-            this.label56.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label56.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label56.Location = new System.Drawing.Point(569, 113);
             this.label56.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label56.Name = "label56";
@@ -1251,7 +1246,7 @@
             this.label55.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label55.AutoSize = true;
-            this.label55.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label55.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label55.Location = new System.Drawing.Point(1057, 49);
             this.label55.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label55.Name = "label55";
@@ -1274,7 +1269,7 @@
             this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label27.AutoSize = true;
-            this.label27.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label27.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label27.Location = new System.Drawing.Point(1006, 144);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
@@ -1316,7 +1311,7 @@
             // label53
             // 
             this.label53.AutoSize = true;
-            this.label53.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label53.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label53.Location = new System.Drawing.Point(75, 148);
             this.label53.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label53.Name = "label53";
@@ -1337,7 +1332,7 @@
             // 
             this.label58.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label58.AutoSize = true;
-            this.label58.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label58.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label58.Location = new System.Drawing.Point(598, 47);
             this.label58.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label58.Name = "label58";
@@ -1348,7 +1343,7 @@
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label52.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label52.Location = new System.Drawing.Point(63, 94);
             this.label52.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label52.Name = "label52";
@@ -1359,7 +1354,7 @@
             // label51
             // 
             this.label51.AutoSize = true;
-            this.label51.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label51.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label51.Location = new System.Drawing.Point(97, 48);
             this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label51.Name = "label51";
@@ -1383,11 +1378,12 @@
             // 
             // groupBox15
             // 
+            this.groupBox15.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox15.Controls.Add(this.dgvthongtin_khachtro);
             this.groupBox15.Controls.Add(this.panel10);
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox15.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox15.Location = new System.Drawing.Point(0, 273);
             this.groupBox15.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox15.Name = "groupBox15";
@@ -1415,6 +1411,7 @@
             // 
             // panel10
             // 
+            this.panel10.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel10.Controls.Add(this.txtSearch_khachtro);
             this.panel10.Controls.Add(this.cbbSort_khachtro);
             this.panel10.Controls.Add(this.btnSearch_khachtro);
@@ -1455,12 +1452,12 @@
             // 
             this.btnSearch_khachtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSearch_khachtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
+            this.btnSearch_khachtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
             this.btnSearch_khachtro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch_khachtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSearch_khachtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.btnSearch_khachtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch_khachtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch_khachtro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSearch_khachtro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.btnSearch_khachtro.Location = new System.Drawing.Point(44, 20);
             this.btnSearch_khachtro.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch_khachtro.Name = "btnSearch_khachtro";
@@ -1474,12 +1471,12 @@
             // 
             this.btnSort_khachtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSort_khachtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
+            this.btnSort_khachtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
             this.btnSort_khachtro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSort_khachtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSort_khachtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.btnSort_khachtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSort_khachtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSort_khachtro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSort_khachtro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.btnSort_khachtro.Location = new System.Drawing.Point(1092, 22);
             this.btnSort_khachtro.Margin = new System.Windows.Forms.Padding(4);
             this.btnSort_khachtro.Name = "btnSort_khachtro";
@@ -1492,12 +1489,12 @@
             // btnXoa_khachtro
             // 
             this.btnXoa_khachtro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnXoa_khachtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
+            this.btnXoa_khachtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
             this.btnXoa_khachtro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoa_khachtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnXoa_khachtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.btnXoa_khachtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa_khachtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa_khachtro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnXoa_khachtro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.btnXoa_khachtro.Location = new System.Drawing.Point(824, 22);
             this.btnXoa_khachtro.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa_khachtro.Name = "btnXoa_khachtro";
@@ -1510,12 +1507,12 @@
             // btnSua_khachtro
             // 
             this.btnSua_khachtro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnSua_khachtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
+            this.btnSua_khachtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
             this.btnSua_khachtro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSua_khachtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSua_khachtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.btnSua_khachtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua_khachtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua_khachtro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSua_khachtro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.btnSua_khachtro.Location = new System.Drawing.Point(545, 25);
             this.btnSua_khachtro.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua_khachtro.Name = "btnSua_khachtro";
@@ -1527,6 +1524,7 @@
             // 
             // groupBox14
             // 
+            this.groupBox14.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox14.Controls.Add(this.dtpNgaysinh_khachtro);
             this.groupBox14.Controls.Add(this.txtSDT_khachtro);
             this.groupBox14.Controls.Add(this.txtCmnd_khachtro);
@@ -1547,7 +1545,7 @@
             this.groupBox14.Controls.Add(this.btnLuu_khachtro);
             this.groupBox14.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox14.ForeColor = System.Drawing.SystemColors.Desktop;
             this.groupBox14.Location = new System.Drawing.Point(0, 0);
             this.groupBox14.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox14.Name = "groupBox14";
@@ -1714,7 +1712,7 @@
             // 
             this.label74.AutoSize = true;
             this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label74.Location = new System.Drawing.Point(81, 158);
+            this.label74.Location = new System.Drawing.Point(87, 158);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(141, 20);
             this.label74.TabIndex = 18;
@@ -1797,6 +1795,7 @@
             // 
             // panel21
             // 
+            this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.panel21.Controls.Add(this.btnChitietphongthue_phongtro);
             this.panel21.Controls.Add(this.btnThem_phongtro);
             this.panel21.Controls.Add(this.cbbSort_phongtro);
@@ -1814,12 +1813,12 @@
             // 
             this.btnChitietphongthue_phongtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnChitietphongthue_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
+            this.btnChitietphongthue_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
             this.btnChitietphongthue_phongtro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChitietphongthue_phongtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnChitietphongthue_phongtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChitietphongthue_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChitietphongthue_phongtro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnChitietphongthue_phongtro.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.btnChitietphongthue_phongtro.Location = new System.Drawing.Point(50, 25);
             this.btnChitietphongthue_phongtro.Margin = new System.Windows.Forms.Padding(4);
             this.btnChitietphongthue_phongtro.Name = "btnChitietphongthue_phongtro";
@@ -1831,12 +1830,12 @@
             // 
             // btnThem_phongtro
             // 
-            this.btnThem_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
+            this.btnThem_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
             this.btnThem_phongtro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem_phongtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnThem_phongtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem_phongtro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnThem_phongtro.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.btnThem_phongtro.Location = new System.Drawing.Point(388, 24);
             this.btnThem_phongtro.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem_phongtro.Name = "btnThem_phongtro";
@@ -1862,12 +1861,12 @@
             // 
             this.btnSort_phongtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSort_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
+            this.btnSort_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
             this.btnSort_phongtro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSort_phongtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnSort_phongtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSort_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSort_phongtro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSort_phongtro.ForeColor = System.Drawing.Color.Black;
             this.btnSort_phongtro.Location = new System.Drawing.Point(1102, 23);
             this.btnSort_phongtro.Margin = new System.Windows.Forms.Padding(4);
             this.btnSort_phongtro.Name = "btnSort_phongtro";
@@ -1879,12 +1878,12 @@
             // 
             // btnXoa_phongtro
             // 
-            this.btnXoa_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
+            this.btnXoa_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
             this.btnXoa_phongtro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoa_phongtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnXoa_phongtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa_phongtro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnXoa_phongtro.ForeColor = System.Drawing.Color.Black;
             this.btnXoa_phongtro.Location = new System.Drawing.Point(875, 24);
             this.btnXoa_phongtro.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa_phongtro.Name = "btnXoa_phongtro";
@@ -1896,12 +1895,12 @@
             // 
             // btnSua_phongtro
             // 
-            this.btnSua_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
+            this.btnSua_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
             this.btnSua_phongtro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSua_phongtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnSua_phongtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua_phongtro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSua_phongtro.ForeColor = System.Drawing.Color.Black;
             this.btnSua_phongtro.Location = new System.Drawing.Point(664, 23);
             this.btnSua_phongtro.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua_phongtro.Name = "btnSua_phongtro";
@@ -1913,6 +1912,7 @@
             // 
             // panel20
             // 
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.panel20.Controls.Add(this.label67);
             this.panel20.Controls.Add(this.label13);
             this.panel20.Controls.Add(this.lblStatus);
@@ -2001,11 +2001,12 @@
             // 
             this.btnSearch_phongtro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(230)))));
+            this.btnSearch_phongtro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
             this.btnSearch_phongtro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch_phongtro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnSearch_phongtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch_phongtro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch_phongtro.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSearch_phongtro.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch_phongtro.Image")));
             this.btnSearch_phongtro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearch_phongtro.Location = new System.Drawing.Point(1294, 42);
@@ -2057,7 +2058,7 @@
             this.groupBox17.Controls.Add(this.btnEdit_Service);
             this.groupBox17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox17.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox17.ForeColor = System.Drawing.Color.MediumBlue;
+            this.groupBox17.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox17.Location = new System.Drawing.Point(966, 362);
             this.groupBox17.Name = "groupBox17";
             this.groupBox17.Size = new System.Drawing.Size(560, 444);
@@ -2081,86 +2082,6 @@
             this.txtSearch_Service.TabIndex = 2;
             this.txtSearch_Service.TextChanged += new System.EventHandler(this.txtSearch_Service_TextChanged);
             // 
-            // btnSort_Service
-            // 
-            this.btnSort_Service.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnSort_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.btnSort_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSort_Service.BorderRadius = 20;
-            this.btnSort_Service.BorderSize = 0;
-            this.btnSort_Service.FlatAppearance.BorderSize = 0;
-            this.btnSort_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSort_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSort_Service.ForeColor = System.Drawing.Color.White;
-            this.btnSort_Service.Location = new System.Drawing.Point(63, 318);
-            this.btnSort_Service.Name = "btnSort_Service";
-            this.btnSort_Service.Size = new System.Drawing.Size(130, 56);
-            this.btnSort_Service.TabIndex = 1;
-            this.btnSort_Service.Text = "Sắp xếp";
-            this.btnSort_Service.TextColor = System.Drawing.Color.White;
-            this.btnSort_Service.UseVisualStyleBackColor = false;
-            this.btnSort_Service.Click += new System.EventHandler(this.btnSort_Service_Click);
-            // 
-            // btnSearch_Service
-            // 
-            this.btnSearch_Service.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnSearch_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.btnSearch_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSearch_Service.BorderRadius = 20;
-            this.btnSearch_Service.BorderSize = 0;
-            this.btnSearch_Service.FlatAppearance.BorderSize = 0;
-            this.btnSearch_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch_Service.ForeColor = System.Drawing.Color.White;
-            this.btnSearch_Service.Location = new System.Drawing.Point(63, 200);
-            this.btnSearch_Service.Name = "btnSearch_Service";
-            this.btnSearch_Service.Size = new System.Drawing.Size(130, 56);
-            this.btnSearch_Service.TabIndex = 1;
-            this.btnSearch_Service.Text = "Tìm kiếm";
-            this.btnSearch_Service.TextColor = System.Drawing.Color.White;
-            this.btnSearch_Service.UseVisualStyleBackColor = false;
-            this.btnSearch_Service.Click += new System.EventHandler(this.btnSearch_Service_Click);
-            // 
-            // btnDelete_Service
-            // 
-            this.btnDelete_Service.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnDelete_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.btnDelete_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnDelete_Service.BorderRadius = 20;
-            this.btnDelete_Service.BorderSize = 0;
-            this.btnDelete_Service.FlatAppearance.BorderSize = 0;
-            this.btnDelete_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete_Service.ForeColor = System.Drawing.Color.White;
-            this.btnDelete_Service.Location = new System.Drawing.Point(347, 79);
-            this.btnDelete_Service.Name = "btnDelete_Service";
-            this.btnDelete_Service.Size = new System.Drawing.Size(132, 54);
-            this.btnDelete_Service.TabIndex = 0;
-            this.btnDelete_Service.Text = "Xóa";
-            this.btnDelete_Service.TextColor = System.Drawing.Color.White;
-            this.btnDelete_Service.UseVisualStyleBackColor = false;
-            this.btnDelete_Service.Click += new System.EventHandler(this.btnDelete_Service_Click);
-            // 
-            // btnEdit_Service
-            // 
-            this.btnEdit_Service.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnEdit_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.btnEdit_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnEdit_Service.BorderRadius = 20;
-            this.btnEdit_Service.BorderSize = 0;
-            this.btnEdit_Service.FlatAppearance.BorderSize = 0;
-            this.btnEdit_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit_Service.ForeColor = System.Drawing.Color.White;
-            this.btnEdit_Service.Location = new System.Drawing.Point(127, 79);
-            this.btnEdit_Service.Name = "btnEdit_Service";
-            this.btnEdit_Service.Size = new System.Drawing.Size(132, 54);
-            this.btnEdit_Service.TabIndex = 0;
-            this.btnEdit_Service.Text = "Sửa ";
-            this.btnEdit_Service.TextColor = System.Drawing.Color.White;
-            this.btnEdit_Service.UseVisualStyleBackColor = false;
-            this.btnEdit_Service.Click += new System.EventHandler(this.btnEdit_Service_Click);
-            // 
             // groupBox16
             // 
             this.groupBox16.Controls.Add(this.txtServicePrice);
@@ -2175,7 +2096,7 @@
             this.groupBox16.Controls.Add(this.label76);
             this.groupBox16.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox16.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox16.ForeColor = System.Drawing.Color.MediumBlue;
+            this.groupBox16.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox16.Location = new System.Drawing.Point(966, 0);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(560, 362);
@@ -2214,46 +2135,6 @@
             this.txtServiceID.Name = "txtServiceID";
             this.txtServiceID.Size = new System.Drawing.Size(243, 30);
             this.txtServiceID.TabIndex = 1;
-            // 
-            // btnReset_Service
-            // 
-            this.btnReset_Service.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnReset_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.btnReset_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnReset_Service.BorderRadius = 20;
-            this.btnReset_Service.BorderSize = 0;
-            this.btnReset_Service.FlatAppearance.BorderSize = 0;
-            this.btnReset_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset_Service.ForeColor = System.Drawing.Color.White;
-            this.btnReset_Service.Location = new System.Drawing.Point(328, 288);
-            this.btnReset_Service.Name = "btnReset_Service";
-            this.btnReset_Service.Size = new System.Drawing.Size(132, 54);
-            this.btnReset_Service.TabIndex = 0;
-            this.btnReset_Service.Text = "Làm mới";
-            this.btnReset_Service.TextColor = System.Drawing.Color.White;
-            this.btnReset_Service.UseVisualStyleBackColor = false;
-            this.btnReset_Service.Click += new System.EventHandler(this.btnReset_Service_Click);
-            // 
-            // btnSave_Service
-            // 
-            this.btnSave_Service.BackColor = System.Drawing.Color.MediumBlue;
-            this.btnSave_Service.BackgroundColor = System.Drawing.Color.MediumBlue;
-            this.btnSave_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSave_Service.BorderRadius = 20;
-            this.btnSave_Service.BorderSize = 0;
-            this.btnSave_Service.FlatAppearance.BorderSize = 0;
-            this.btnSave_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave_Service.ForeColor = System.Drawing.Color.White;
-            this.btnSave_Service.Location = new System.Drawing.Point(104, 288);
-            this.btnSave_Service.Name = "btnSave_Service";
-            this.btnSave_Service.Size = new System.Drawing.Size(132, 54);
-            this.btnSave_Service.TabIndex = 0;
-            this.btnSave_Service.Text = "Lưu";
-            this.btnSave_Service.TextColor = System.Drawing.Color.White;
-            this.btnSave_Service.UseVisualStyleBackColor = false;
-            this.btnSave_Service.Click += new System.EventHandler(this.btnSave_Service_Click);
             // 
             // label79
             // 
@@ -2296,7 +2177,7 @@
             this.groupBox13.Controls.Add(this.dgvService);
             this.groupBox13.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox13.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox13.ForeColor = System.Drawing.Color.MediumBlue;
+            this.groupBox13.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox13.Location = new System.Drawing.Point(0, 0);
             this.groupBox13.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox13.Name = "groupBox13";
@@ -2321,11 +2202,11 @@
             // 
             // pnTinhtientro
             // 
-            this.pnTinhtientro.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnTinhtientro.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pnTinhtientro.Controls.Add(this.panel13);
             this.pnTinhtientro.Controls.Add(this.panel12);
             this.pnTinhtientro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnTinhtientro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnTinhtientro.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnTinhtientro.Location = new System.Drawing.Point(400, 233);
             this.pnTinhtientro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnTinhtientro.Name = "pnTinhtientro";
@@ -2363,7 +2244,7 @@
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox3.Location = new System.Drawing.Point(476, 0);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
@@ -2541,25 +2422,22 @@
             // 
             this.groupBox2.Controls.Add(this.panel16);
             this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox3);
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.textBox13);
             this.groupBox2.Controls.Add(this.textBox11);
             this.groupBox2.Controls.Add(this.textBox8);
             this.groupBox2.Controls.Add(this.textBox12);
-            this.groupBox2.Controls.Add(this.textBox14);
             this.groupBox2.Controls.Add(this.textBox10);
             this.groupBox2.Controls.Add(this.textBox9);
             this.groupBox2.Controls.Add(this.label24);
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox2.Location = new System.Drawing.Point(967, 0);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
@@ -2598,7 +2476,7 @@
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.Color.Transparent;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.Navy;
+            this.label26.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label26.Location = new System.Drawing.Point(29, 33);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
@@ -2609,7 +2487,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.ForeColor = System.Drawing.Color.DarkBlue;
+            this.checkBox2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.checkBox2.Location = new System.Drawing.Point(33, 362);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox2.Name = "checkBox2";
@@ -2618,22 +2496,10 @@
             this.checkBox2.Text = "Nước";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.ForeColor = System.Drawing.Color.DarkBlue;
-            this.checkBox3.Location = new System.Drawing.Point(33, 512);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(99, 29);
-            this.checkBox3.TabIndex = 6;
-            this.checkBox3.Text = "Internet";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.ForeColor = System.Drawing.Color.DarkBlue;
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.checkBox1.Location = new System.Drawing.Point(33, 213);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
@@ -2673,15 +2539,6 @@
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(152, 30);
             this.textBox12.TabIndex = 5;
-            // 
-            // textBox14
-            // 
-            this.textBox14.ForeColor = System.Drawing.Color.OrangeRed;
-            this.textBox14.Location = new System.Drawing.Point(344, 510);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(152, 30);
-            this.textBox14.TabIndex = 5;
             // 
             // textBox10
             // 
@@ -2743,17 +2600,6 @@
             this.label23.TabIndex = 3;
             this.label23.Text = "Số khối nước:";
             // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(165, 513);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(93, 25);
-            this.label25.TabIndex = 3;
-            this.label25.Text = "Phí cước:";
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -2787,7 +2633,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
@@ -2796,29 +2642,6 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "THÔNG TIN PHÒNG THUÊ";
-            // 
-            // vbButton4
-            // 
-            this.vbButton4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.vbButton4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.vbButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton4.BorderRadius = 30;
-            this.vbButton4.BorderSize = 0;
-            this.vbButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vbButton4.FlatAppearance.BorderSize = 0;
-            this.vbButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton4.ForeColor = System.Drawing.Color.Navy;
-            this.vbButton4.Image = ((System.Drawing.Image)(resources.GetObject("vbButton4.Image")));
-            this.vbButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.vbButton4.Location = new System.Drawing.Point(117, 444);
-            this.vbButton4.Margin = new System.Windows.Forms.Padding(4);
-            this.vbButton4.Name = "vbButton4";
-            this.vbButton4.Size = new System.Drawing.Size(221, 86);
-            this.vbButton4.TabIndex = 3;
-            this.vbButton4.Text = "      Tính tiền";
-            this.vbButton4.TextColor = System.Drawing.Color.Navy;
-            this.vbButton4.UseVisualStyleBackColor = false;
             // 
             // dateTimePicker2
             // 
@@ -3333,7 +3156,7 @@
             // 
             // pnNavagation
             // 
-            this.pnNavagation.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnNavagation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.pnNavagation.Controls.Add(this.btnDangxuat);
             this.pnNavagation.Controls.Add(this.lblThongke);
             this.pnNavagation.Controls.Add(this.lblTinhtientro);
@@ -3442,7 +3265,7 @@
             // 
             // btnThongke
             // 
-            this.btnThongke.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnThongke.BackColor = System.Drawing.Color.Transparent;
             this.btnThongke.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnThongke.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThongke.FlatAppearance.BorderSize = 0;
@@ -3462,7 +3285,7 @@
             // 
             // btnTinhtientro
             // 
-            this.btnTinhtientro.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnTinhtientro.BackColor = System.Drawing.Color.Transparent;
             this.btnTinhtientro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTinhtientro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTinhtientro.FlatAppearance.BorderSize = 0;
@@ -3482,7 +3305,7 @@
             // 
             // btnDichvu
             // 
-            this.btnDichvu.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnDichvu.BackColor = System.Drawing.Color.Transparent;
             this.btnDichvu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDichvu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDichvu.FlatAppearance.BorderSize = 0;
@@ -3502,7 +3325,7 @@
             // 
             // btnPhongtro
             // 
-            this.btnPhongtro.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnPhongtro.BackColor = System.Drawing.Color.Transparent;
             this.btnPhongtro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPhongtro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPhongtro.FlatAppearance.BorderSize = 0;
@@ -3522,7 +3345,7 @@
             // 
             // btnKhachtro
             // 
-            this.btnKhachtro.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnKhachtro.BackColor = System.Drawing.Color.Transparent;
             this.btnKhachtro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnKhachtro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKhachtro.FlatAppearance.BorderSize = 0;
@@ -3542,7 +3365,7 @@
             // 
             // btnUser
             // 
-            this.btnUser.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnUser.BackColor = System.Drawing.Color.Transparent;
             this.btnUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUser.FlatAppearance.BorderSize = 0;
@@ -3562,7 +3385,7 @@
             // 
             // btnHome
             // 
-            this.btnHome.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnHome.BackColor = System.Drawing.Color.Transparent;
             this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHome.FlatAppearance.BorderSize = 0;
@@ -3582,6 +3405,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnNav);
             this.panel4.Controls.Add(this.lblHethong);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 153);
@@ -3605,7 +3429,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -3613,75 +3436,188 @@
             this.panel2.Size = new System.Drawing.Size(384, 153);
             this.panel2.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(113, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(271, 153);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.btnNav);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(113, 153);
-            this.panel3.TabIndex = 0;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(0, 78);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(113, 78);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "?";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // btnNav
             // 
-            this.btnNav.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnNav.BackColor = System.Drawing.Color.Transparent;
             this.btnNav.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNav.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNav.FlatAppearance.BorderSize = 0;
             this.btnNav.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNav.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNav.Font = new System.Drawing.Font("Microsoft Sans Serif", 34F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNav.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnNav.Location = new System.Drawing.Point(0, 0);
             this.btnNav.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNav.Name = "btnNav";
-            this.btnNav.Size = new System.Drawing.Size(113, 78);
-            this.btnNav.TabIndex = 0;
+            this.btnNav.Size = new System.Drawing.Size(100, 78);
+            this.btnNav.TabIndex = 5;
             this.btnNav.Text = "☰";
             this.btnNav.UseVisualStyleBackColor = false;
             this.btnNav.Click += new System.EventHandler(this.btnNav_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(51, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(280, 111);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // vbButton4
+            // 
+            this.vbButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
+            this.vbButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
+            this.vbButton4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.vbButton4.BorderRadius = 30;
+            this.vbButton4.BorderSize = 0;
+            this.vbButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vbButton4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.vbButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton4.ForeColor = System.Drawing.Color.Navy;
+            this.vbButton4.Image = ((System.Drawing.Image)(resources.GetObject("vbButton4.Image")));
+            this.vbButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.vbButton4.Location = new System.Drawing.Point(117, 444);
+            this.vbButton4.Margin = new System.Windows.Forms.Padding(4);
+            this.vbButton4.Name = "vbButton4";
+            this.vbButton4.Size = new System.Drawing.Size(221, 86);
+            this.vbButton4.TabIndex = 3;
+            this.vbButton4.Text = "      Tính tiền";
+            this.vbButton4.TextColor = System.Drawing.Color.Navy;
+            this.vbButton4.UseVisualStyleBackColor = false;
+            // 
+            // btnSort_Service
+            // 
+            this.btnSort_Service.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
+            this.btnSort_Service.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
+            this.btnSort_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSort_Service.BorderRadius = 20;
+            this.btnSort_Service.BorderSize = 0;
+            this.btnSort_Service.FlatAppearance.BorderSize = 0;
+            this.btnSort_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSort_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSort_Service.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.btnSort_Service.Location = new System.Drawing.Point(63, 318);
+            this.btnSort_Service.Name = "btnSort_Service";
+            this.btnSort_Service.Size = new System.Drawing.Size(130, 56);
+            this.btnSort_Service.TabIndex = 1;
+            this.btnSort_Service.Text = "Sắp xếp";
+            this.btnSort_Service.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.btnSort_Service.UseVisualStyleBackColor = false;
+            this.btnSort_Service.Click += new System.EventHandler(this.btnSort_Service_Click);
+            // 
+            // btnSearch_Service
+            // 
+            this.btnSearch_Service.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
+            this.btnSearch_Service.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
+            this.btnSearch_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSearch_Service.BorderRadius = 20;
+            this.btnSearch_Service.BorderSize = 0;
+            this.btnSearch_Service.FlatAppearance.BorderSize = 0;
+            this.btnSearch_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch_Service.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.btnSearch_Service.Location = new System.Drawing.Point(63, 200);
+            this.btnSearch_Service.Name = "btnSearch_Service";
+            this.btnSearch_Service.Size = new System.Drawing.Size(130, 56);
+            this.btnSearch_Service.TabIndex = 1;
+            this.btnSearch_Service.Text = "Tìm kiếm";
+            this.btnSearch_Service.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.btnSearch_Service.UseVisualStyleBackColor = false;
+            this.btnSearch_Service.Click += new System.EventHandler(this.btnSearch_Service_Click);
+            // 
+            // btnDelete_Service
+            // 
+            this.btnDelete_Service.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
+            this.btnDelete_Service.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
+            this.btnDelete_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDelete_Service.BorderRadius = 20;
+            this.btnDelete_Service.BorderSize = 0;
+            this.btnDelete_Service.FlatAppearance.BorderSize = 0;
+            this.btnDelete_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete_Service.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.btnDelete_Service.Location = new System.Drawing.Point(347, 79);
+            this.btnDelete_Service.Name = "btnDelete_Service";
+            this.btnDelete_Service.Size = new System.Drawing.Size(132, 54);
+            this.btnDelete_Service.TabIndex = 0;
+            this.btnDelete_Service.Text = "Xóa";
+            this.btnDelete_Service.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.btnDelete_Service.UseVisualStyleBackColor = false;
+            this.btnDelete_Service.Click += new System.EventHandler(this.btnDelete_Service_Click);
+            // 
+            // btnEdit_Service
+            // 
+            this.btnEdit_Service.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
+            this.btnEdit_Service.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(212)))), ((int)(((byte)(198)))));
+            this.btnEdit_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnEdit_Service.BorderRadius = 20;
+            this.btnEdit_Service.BorderSize = 0;
+            this.btnEdit_Service.FlatAppearance.BorderSize = 0;
+            this.btnEdit_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit_Service.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.btnEdit_Service.Location = new System.Drawing.Point(127, 79);
+            this.btnEdit_Service.Name = "btnEdit_Service";
+            this.btnEdit_Service.Size = new System.Drawing.Size(132, 54);
+            this.btnEdit_Service.TabIndex = 0;
+            this.btnEdit_Service.Text = "Sửa ";
+            this.btnEdit_Service.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
+            this.btnEdit_Service.UseVisualStyleBackColor = false;
+            this.btnEdit_Service.Click += new System.EventHandler(this.btnEdit_Service_Click);
+            // 
+            // btnReset_Service
+            // 
+            this.btnReset_Service.BackColor = System.Drawing.Color.Red;
+            this.btnReset_Service.BackgroundColor = System.Drawing.Color.Red;
+            this.btnReset_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnReset_Service.BorderRadius = 20;
+            this.btnReset_Service.BorderSize = 0;
+            this.btnReset_Service.FlatAppearance.BorderSize = 0;
+            this.btnReset_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset_Service.ForeColor = System.Drawing.Color.White;
+            this.btnReset_Service.Location = new System.Drawing.Point(328, 288);
+            this.btnReset_Service.Name = "btnReset_Service";
+            this.btnReset_Service.Size = new System.Drawing.Size(132, 54);
+            this.btnReset_Service.TabIndex = 0;
+            this.btnReset_Service.Text = "Làm mới";
+            this.btnReset_Service.TextColor = System.Drawing.Color.White;
+            this.btnReset_Service.UseVisualStyleBackColor = false;
+            this.btnReset_Service.Click += new System.EventHandler(this.btnReset_Service_Click);
+            // 
+            // btnSave_Service
+            // 
+            this.btnSave_Service.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnSave_Service.BackgroundColor = System.Drawing.Color.LimeGreen;
+            this.btnSave_Service.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSave_Service.BorderRadius = 20;
+            this.btnSave_Service.BorderSize = 0;
+            this.btnSave_Service.FlatAppearance.BorderSize = 0;
+            this.btnSave_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave_Service.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave_Service.ForeColor = System.Drawing.Color.White;
+            this.btnSave_Service.Location = new System.Drawing.Point(104, 288);
+            this.btnSave_Service.Name = "btnSave_Service";
+            this.btnSave_Service.Size = new System.Drawing.Size(132, 54);
+            this.btnSave_Service.TabIndex = 0;
+            this.btnSave_Service.Text = "Lưu";
+            this.btnSave_Service.TextColor = System.Drawing.Color.White;
+            this.btnSave_Service.UseVisualStyleBackColor = false;
+            this.btnSave_Service.Click += new System.EventHandler(this.btnSave_Service_Click);
             // 
             // GiaodienAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(90)))), ((int)(((byte)(49)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1942, 1055);
+            this.Controls.Add(this.pnDichvu);
+            this.Controls.Add(this.pnTinhtientro);
+            this.Controls.Add(this.pnKhanhtro);
             this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnPhongtro);
-            this.Controls.Add(this.pnKhanhtro);
-            this.Controls.Add(this.pnTinhtientro);
-            this.Controls.Add(this.pnDichvu);
             this.Controls.Add(this.pnHome);
             this.Controls.Add(this.pnThongke);
             this.Controls.Add(this.panel9);
@@ -3690,6 +3626,7 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnNavagation);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "GiaodienAdmin";
@@ -3769,7 +3706,6 @@
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -3786,9 +3722,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btnNav;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblHethong;
         private System.Windows.Forms.Label lblHome;
@@ -3842,20 +3775,17 @@
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -3994,7 +3924,6 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button btnLuuThongBao;
         private System.Windows.Forms.TextBox txtThongBao;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnLammoi_user;
         private System.Windows.Forms.Button btnLuu_user;
         private System.Windows.Forms.Panel panel22;
@@ -4028,5 +3957,7 @@
         private System.Windows.Forms.TextBox txtServiceID;
         private VBButton btnSave_Service;
         private VBButton btnReset_Service;
+        private System.Windows.Forms.Button btnNav;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

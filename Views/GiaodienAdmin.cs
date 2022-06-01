@@ -888,9 +888,11 @@ namespace QuanLyNhaTro.Views
                 btnDangxuat.Text = "";
                 btnDangxuat.Width = 70;
                 pnTongdoanhthu.Location = new Point(505, 31);
+                pictureBox1.Visible = false;
             }
             else
             {
+                pictureBox1.Visible = true;
                 pnTongdoanhthu.Location = new Point(510, 32);
                 btnDangxuat.Location = new Point(50, 791);
                 btnDangxuat.Text = "Đăng xuất";

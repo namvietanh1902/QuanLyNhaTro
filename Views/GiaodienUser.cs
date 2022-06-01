@@ -229,10 +229,10 @@ namespace QuanLyNhaTro.Views
             foreach (DataGridViewColumn col in dgvService.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                col.HeaderCell.Style.Font = new Font("Arial", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 14, FontStyle.Bold, GraphicsUnit.Pixel);
             }
             this.dgvService.DefaultCellStyle.ForeColor = Color.Black;
-            this.dgvService.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            this.dgvService.DefaultCellStyle.Font = new Font("Source Sans Pro", 10);
             dgvService.ClearSelection();
         }
 
