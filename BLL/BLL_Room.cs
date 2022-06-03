@@ -370,6 +370,37 @@ namespace QuanLyNhaTro.BLL
             }
 
         }
+        public Room GetRoombyIDcontract(int id)
+        {
+            foreach(Contract contract in BLL_Contract.Instance.GetAllContract())
+            {
+                if(contract.ContractId == id)
+                {
+                    foreach(Room room in GetAllRoom())
+                    {
+                        if(room.RoomId == contract.RoomId)
+                        {
+                            return room;
+                            break;
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        public int Getsoluongnguoihientai(int id)
+        {
+            int dem = 0;
+            foreach(Contract contract in BLL_Contract.Instance.GetAllContract())
+            {
+                if(contract.RoomId == id && QuanLy.Instance.Customers.Find(contract.ContractId).isDelete==false)
+                {
+                    dem++;
+                }
+            }
+            return dem;
+        }
 
     }
 }

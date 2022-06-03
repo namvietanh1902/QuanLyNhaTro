@@ -181,13 +181,21 @@ namespace QuanLyNhaTro.BLL
                     return data;
             }
         }
-        public List<Customer_View> GetAllRoommateByNameRoom(string NameRoom) // CustomerView không có IDRoom nên xài tạm nameroom z :v
+        public List<Customer_View> GetAllCustomerByIDRoom(int id) 
         {
-            List<Customer_View> Phucdz = new List<Customer_View>();
+            List<Customer_View> data = new List<Customer_View>();
             foreach (Customer_View cv in GetCustomer_Views())
-                if (cv.RoomName == NameRoom)
-                    Phucdz.Add(cv);
-            return Phucdz;
+            {
+                foreach(Contract contract in BLL_Contract.Instance.GetAllContract())
+                {
+                    if(cv.CustomerId == contract.ContractId && contract.RoomId == id)
+                    {
+                        data.Add(cv);
+                    }
+                }
+            }
+            return data;
+               
         }
     }
 }
