@@ -3395,9 +3395,9 @@
             this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label85.Location = new System.Drawing.Point(492, 11);
             this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(82, 22);
+            this.label85.Size = new System.Drawing.Size(92, 22);
             this.label85.TabIndex = 24;
-            this.label85.Text = "Ngày thu";
+            this.label85.Text = "Tình trạng";
             // 
             // label84
             // 
@@ -3873,9 +3873,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1942, 1055);
+            this.Controls.Add(this.pnThongke);
             this.Controls.Add(this.pnTinhtientro);
             this.Controls.Add(this.pnDichvu);
-            this.Controls.Add(this.pnThongke);
             this.Controls.Add(this.pnPhongtro);
             this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnKhanhtro);

@@ -1554,7 +1554,7 @@
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(164, 70);
             this.btnCalculate.TabIndex = 2;
-            this.btnCalculate.Text = "Thanh toán";
+            this.btnCalculate.Text = "Đặt ";
             this.btnCalculate.TextColor = System.Drawing.Color.White;
             this.btnCalculate.UseVisualStyleBackColor = false;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
