@@ -34,7 +34,7 @@ namespace QuanLyNhaTro.BLL
         {
 
             var account = QuanLy.Instance.Accounts.Where(p => p.Username == user).FirstOrDefault();
-            if (account.Username == user && account.Password == pass && account.isDelete == false) return account;
+            if (account != null && (account.Username == user && account.Password == pass && account.isDelete == false)) return account;
             return null;
 
         }
@@ -201,7 +201,7 @@ namespace QuanLyNhaTro.BLL
                 if(acc.SDT == sdt)
                 {
                     return true;
-                    break;
+                    
                 }
             }
             return false;

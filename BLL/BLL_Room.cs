@@ -381,7 +381,7 @@ namespace QuanLyNhaTro.BLL
                         if(room.RoomId == contract.RoomId)
                         {
                             return room;
-                            break;
+                           
                         }
                     }
                 }

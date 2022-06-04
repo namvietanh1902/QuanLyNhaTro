@@ -50,7 +50,7 @@ namespace QuanLyNhaTro.Models
                 HasKey(c => new { c.ServiceId,c.ServiceReceiptId})
                 ;
             modelBuilder.Entity<Account>().
-                HasRequired(c => c.Customer).WithRequiredPrincipal(ab => ab.Account);
+                HasOptional(c => c.Customer).WithRequired(ab => ab.Account);
                
             modelBuilder.Entity<Customer>()
                 .HasRequired(c => c.Contract).WithRequiredPrincipal(c => c.Customer);

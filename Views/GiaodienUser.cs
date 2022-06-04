@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyNhaTro.Models;
 using QuanLyNhaTro.BLL;
+using QuanLyNhaTro.DTO;
 
 namespace QuanLyNhaTro.Views
 {
@@ -25,6 +26,7 @@ namespace QuanLyNhaTro.Views
             InitializeComponent();
             hienthidulieulenthanhthongbao();
             this.dgvThanhvienphongthue.DefaultCellStyle.ForeColor = Color.Black;
+       
         }
         private void GiaodienUser_Load(object sender, EventArgs e)
         {
@@ -174,6 +176,7 @@ namespace QuanLyNhaTro.Views
                 btnDangxuat.ImageIndex = -1;
             }
         }
+       
 
         private void btnThaydoithongUser_Click(object sender, EventArgs e)
         {
@@ -198,6 +201,13 @@ namespace QuanLyNhaTro.Views
             }
             this.dgvService.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvService.DefaultCellStyle.Font = new Font("Source Sans Pro", 10);
+            dgvOrder.DataSource = serviceList;
+           
+
+           
+
+
+
             dgvService.ClearSelection();
         }
 
@@ -212,7 +222,64 @@ namespace QuanLyNhaTro.Views
             pnUser.Visible = false;
             pnPhongtro.Visible = false;
             pnDichdu.Visible = true;
+            
+          
             reload_dichvu();
+        }
+        List<ServiceReceipt_View> serviceList = new List<ServiceReceipt_View>();
+
+        BindingSource binding = new BindingSource();
+        private void dgvService_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {   
+            dgvOrder.DataSource = null;
+            int n = Convert.ToInt32(dgvService.SelectedRows[0].Cells["ServiceID"].Value.ToString());
+            if (serviceList.Exists(c => c.ServiceID == n))
+            {
+                foreach (ServiceReceipt_View item in serviceList)
+                {
+                    if (item.ServiceID == Convert.ToInt32(dgvService.SelectedRows[0].Cells["ServiceID"].Value.ToString()))
+                    {
+                        item.Number += 1;
+                        break;
+                    }
+
+                }
+            }
+            else
+            {
+                serviceList.Add(new ServiceReceipt_View
+                {
+                    ServiceID = Convert.ToInt32(dgvService.SelectedRows[0].Cells["ServiceID"].Value.ToString()),
+                    Number = 1,
+                    Price = Convert.ToInt32(dgvService.SelectedRows[0].Cells["Price"].Value.ToString()),
+                    Name = dgvService.SelectedRows[0].Cells["Name"].Value.ToString()
+                });
+            }
+
+
+            dgvOrder.DataSource = serviceList;
+
+
+
+
+
+
+        }
+
+        private void ClearOrder()
+        {
+            serviceList.Clear();
+            dgvOrder.DataSource = null;
+        }
+        private void btnAbort_Click(object sender, EventArgs e)
+        {
+            ClearOrder();
+        }
+
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
+            BLL_Receipt.Instance.AddServiceReceipt(serviceList,ID);
+            ClearOrder();
         }
     }
 }

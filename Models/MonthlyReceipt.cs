@@ -24,6 +24,7 @@ namespace QuanLyNhaTro.Models
         public int WaterBill { get; set; }
         public int RoomBill { get; set; }   
         public int TotalBill { get; set; }
+        public bool isPaid { get; set; } = false;
         [ForeignKey("ContractID")]
         public virtual Contract Contract { get; set; }
 
