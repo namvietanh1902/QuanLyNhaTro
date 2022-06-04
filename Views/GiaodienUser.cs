@@ -121,7 +121,6 @@ namespace QuanLyNhaTro.Views
             txtGiaphongthue.Text = room.Price.ToString();
             txtSoluonghientai.Text = BLL_Room.Instance.Getsoluongnguoihientai(room.RoomId).ToString();
 
-
             dgvThanhvienphongthue.DataSource = BLL_Customer.Instance.GetAllCustomerByIDRoom(room.RoomId);
             foreach (DataGridViewColumn col in dgvThanhvienphongthue.Columns)
             {
@@ -131,10 +130,6 @@ namespace QuanLyNhaTro.Views
             this.dgvThanhvienphongthue.DefaultCellStyle.ForeColor = Color.Black;
             this.dgvThanhvienphongthue.DefaultCellStyle.Font = new Font("Source Sans Pro", 10);
             dgvThanhvienphongthue.ClearSelection();
-
-
-
-
 
         }
         private void thanhtoan_click()

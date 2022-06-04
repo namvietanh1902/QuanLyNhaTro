@@ -4,6 +4,7 @@ using QuanLyNhaTro.BLL;
 using QuanLyNhaTro.Models;
 
 using System.Linq;
+using System.Drawing;
 
 namespace QuanLyNhaTro.Views
 {   
@@ -11,11 +12,14 @@ namespace QuanLyNhaTro.Views
     public partial class DangNhap : Form
     {   
         QuanLy db = new QuanLy();
-
        
+
+
         public DangNhap()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
+            this.SuspendLayout();
             txtPassword.KeyDown += (p, e) =>
                 {
                     if (e.KeyCode == Keys.Enter)
