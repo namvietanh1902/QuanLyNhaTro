@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GiaodienUser));
             this.pnNavagation = new System.Windows.Forms.Panel();
+            this.btnDangxuat = new QuanLyNhaTro.VBButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.lblDichvu = new System.Windows.Forms.Label();
             this.lblPhongtro = new System.Windows.Forms.Label();
@@ -90,6 +91,8 @@
             this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.pnUser = new System.Windows.Forms.Panel();
+            this.vbButton4 = new QuanLyNhaTro.VBButton();
+            this.vbButton3 = new QuanLyNhaTro.VBButton();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNghenghiep_user = new System.Windows.Forms.Label();
@@ -127,17 +130,14 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.pnDichdu = new System.Windows.Forms.Panel();
+            this.btnAbort = new QuanLyNhaTro.VBButton();
+            this.btnCalculate = new QuanLyNhaTro.VBButton();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label61 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvService = new System.Windows.Forms.DataGridView();
-            this.btnAbort = new QuanLyNhaTro.VBButton();
-            this.btnCalculate = new QuanLyNhaTro.VBButton();
-            this.vbButton4 = new QuanLyNhaTro.VBButton();
-            this.vbButton3 = new QuanLyNhaTro.VBButton();
-            this.btnDangxuat = new QuanLyNhaTro.VBButton();
             this.pnNavagation.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -183,6 +183,30 @@
             this.pnNavagation.Name = "pnNavagation";
             this.pnNavagation.Size = new System.Drawing.Size(384, 1088);
             this.pnNavagation.TabIndex = 0;
+            // 
+            // btnDangxuat
+            // 
+            this.btnDangxuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDangxuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(17)))));
+            this.btnDangxuat.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(17)))));
+            this.btnDangxuat.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDangxuat.BorderRadius = 28;
+            this.btnDangxuat.BorderSize = 0;
+            this.btnDangxuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDangxuat.FlatAppearance.BorderSize = 0;
+            this.btnDangxuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangxuat.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDangxuat.ImageList = this.imageList1;
+            this.btnDangxuat.Location = new System.Drawing.Point(105, 959);
+            this.btnDangxuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDangxuat.Name = "btnDangxuat";
+            this.btnDangxuat.Size = new System.Drawing.Size(175, 70);
+            this.btnDangxuat.TabIndex = 8;
+            this.btnDangxuat.Text = "Đăng xuất";
+            this.btnDangxuat.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDangxuat.UseVisualStyleBackColor = false;
+            this.btnDangxuat.Click += new System.EventHandler(this.btnDangxuat_Click);
             // 
             // imageList1
             // 
@@ -959,6 +983,49 @@
             this.pnUser.TabIndex = 0;
             this.pnUser.Visible = false;
             // 
+            // vbButton4
+            // 
+            this.vbButton4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.vbButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.vbButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.vbButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.vbButton4.BorderRadius = 28;
+            this.vbButton4.BorderSize = 0;
+            this.vbButton4.FlatAppearance.BorderSize = 0;
+            this.vbButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton4.ForeColor = System.Drawing.Color.White;
+            this.vbButton4.Location = new System.Drawing.Point(1109, 709);
+            this.vbButton4.Margin = new System.Windows.Forms.Padding(4);
+            this.vbButton4.Name = "vbButton4";
+            this.vbButton4.Size = new System.Drawing.Size(332, 69);
+            this.vbButton4.TabIndex = 13;
+            this.vbButton4.Text = "Thay đổi mật khẩu";
+            this.vbButton4.TextColor = System.Drawing.Color.White;
+            this.vbButton4.UseVisualStyleBackColor = false;
+            this.vbButton4.Click += new System.EventHandler(this.btnDatlaimatkhau_Click);
+            // 
+            // vbButton3
+            // 
+            this.vbButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(14)))), ((int)(((byte)(63)))));
+            this.vbButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(14)))), ((int)(((byte)(63)))));
+            this.vbButton3.BorderColor = System.Drawing.Color.PapayaWhip;
+            this.vbButton3.BorderRadius = 28;
+            this.vbButton3.BorderSize = 0;
+            this.vbButton3.FlatAppearance.BorderSize = 0;
+            this.vbButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vbButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vbButton3.ForeColor = System.Drawing.Color.White;
+            this.vbButton3.Location = new System.Drawing.Point(313, 709);
+            this.vbButton3.Margin = new System.Windows.Forms.Padding(4);
+            this.vbButton3.Name = "vbButton3";
+            this.vbButton3.Size = new System.Drawing.Size(365, 69);
+            this.vbButton3.TabIndex = 12;
+            this.vbButton3.Text = "Thay đổi thông tin khách thuê";
+            this.vbButton3.TextColor = System.Drawing.Color.White;
+            this.vbButton3.UseVisualStyleBackColor = false;
+            this.vbButton3.Click += new System.EventHandler(this.btnThaydoithongUser_Click);
+            // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.label1);
@@ -1446,6 +1513,52 @@
             this.pnDichdu.TabIndex = 10;
             this.pnDichdu.Visible = false;
             // 
+            // btnAbort
+            // 
+            this.btnAbort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAbort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(17)))));
+            this.btnAbort.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(17)))));
+            this.btnAbort.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAbort.BorderRadius = 28;
+            this.btnAbort.BorderSize = 0;
+            this.btnAbort.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbort.FlatAppearance.BorderSize = 0;
+            this.btnAbort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbort.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbort.ForeColor = System.Drawing.Color.White;
+            this.btnAbort.Location = new System.Drawing.Point(1207, 482);
+            this.btnAbort.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAbort.Name = "btnAbort";
+            this.btnAbort.Size = new System.Drawing.Size(164, 70);
+            this.btnAbort.TabIndex = 2;
+            this.btnAbort.Text = "Hủy";
+            this.btnAbort.TextColor = System.Drawing.Color.White;
+            this.btnAbort.UseVisualStyleBackColor = false;
+            this.btnAbort.Click += new System.EventHandler(this.btnAbort_Click);
+            // 
+            // btnCalculate
+            // 
+            this.btnCalculate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCalculate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(179)))), ((int)(((byte)(16)))));
+            this.btnCalculate.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(179)))), ((int)(((byte)(16)))));
+            this.btnCalculate.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCalculate.BorderRadius = 28;
+            this.btnCalculate.BorderSize = 0;
+            this.btnCalculate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCalculate.FlatAppearance.BorderSize = 0;
+            this.btnCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalculate.ForeColor = System.Drawing.Color.White;
+            this.btnCalculate.Location = new System.Drawing.Point(900, 482);
+            this.btnCalculate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCalculate.Name = "btnCalculate";
+            this.btnCalculate.Size = new System.Drawing.Size(164, 70);
+            this.btnCalculate.TabIndex = 2;
+            this.btnCalculate.Text = "Thanh toán";
+            this.btnCalculate.TextColor = System.Drawing.Color.White;
+            this.btnCalculate.UseVisualStyleBackColor = false;
+            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
+            // 
             // groupBox7
             // 
             this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1534,120 +1647,7 @@
             this.dgvService.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvService.Size = new System.Drawing.Size(657, 675);
             this.dgvService.TabIndex = 0;
-            this.dgvService.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvService_RowHeaderMouseDoubleClick);
-            // 
-            // btnAbort
-            // 
-            this.btnAbort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAbort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(17)))));
-            this.btnAbort.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(17)))));
-            this.btnAbort.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAbort.BorderRadius = 28;
-            this.btnAbort.BorderSize = 0;
-            this.btnAbort.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAbort.FlatAppearance.BorderSize = 0;
-            this.btnAbort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbort.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbort.ForeColor = System.Drawing.Color.White;
-            this.btnAbort.Location = new System.Drawing.Point(1207, 482);
-            this.btnAbort.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAbort.Name = "btnAbort";
-            this.btnAbort.Size = new System.Drawing.Size(164, 70);
-            this.btnAbort.TabIndex = 2;
-            this.btnAbort.Text = "Hủy";
-            this.btnAbort.TextColor = System.Drawing.Color.White;
-            this.btnAbort.UseVisualStyleBackColor = false;
-            this.btnAbort.Click += new System.EventHandler(this.btnAbort_Click);
-            // 
-            // btnCalculate
-            // 
-            this.btnCalculate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCalculate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(179)))), ((int)(((byte)(16)))));
-            this.btnCalculate.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(179)))), ((int)(((byte)(16)))));
-            this.btnCalculate.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnCalculate.BorderRadius = 28;
-            this.btnCalculate.BorderSize = 0;
-            this.btnCalculate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCalculate.FlatAppearance.BorderSize = 0;
-            this.btnCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalculate.ForeColor = System.Drawing.Color.White;
-            this.btnCalculate.Location = new System.Drawing.Point(900, 482);
-            this.btnCalculate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(164, 70);
-            this.btnCalculate.TabIndex = 2;
-            this.btnCalculate.Text = "Thanh toán";
-            this.btnCalculate.TextColor = System.Drawing.Color.White;
-            this.btnCalculate.UseVisualStyleBackColor = false;
-            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
-            // 
-            // vbButton4
-            // 
-            this.vbButton4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.vbButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.vbButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.vbButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton4.BorderRadius = 28;
-            this.vbButton4.BorderSize = 0;
-            this.vbButton4.FlatAppearance.BorderSize = 0;
-            this.vbButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton4.ForeColor = System.Drawing.Color.White;
-            this.vbButton4.Location = new System.Drawing.Point(1109, 709);
-            this.vbButton4.Margin = new System.Windows.Forms.Padding(4);
-            this.vbButton4.Name = "vbButton4";
-            this.vbButton4.Size = new System.Drawing.Size(332, 69);
-            this.vbButton4.TabIndex = 13;
-            this.vbButton4.Text = "Thay đổi mật khẩu";
-            this.vbButton4.TextColor = System.Drawing.Color.White;
-            this.vbButton4.UseVisualStyleBackColor = false;
-            this.vbButton4.Click += new System.EventHandler(this.btnDatlaimatkhau_Click);
-            // 
-            // vbButton3
-            // 
-            this.vbButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(14)))), ((int)(((byte)(63)))));
-            this.vbButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(14)))), ((int)(((byte)(63)))));
-            this.vbButton3.BorderColor = System.Drawing.Color.PapayaWhip;
-            this.vbButton3.BorderRadius = 28;
-            this.vbButton3.BorderSize = 0;
-            this.vbButton3.FlatAppearance.BorderSize = 0;
-            this.vbButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton3.ForeColor = System.Drawing.Color.White;
-            this.vbButton3.Location = new System.Drawing.Point(313, 709);
-            this.vbButton3.Margin = new System.Windows.Forms.Padding(4);
-            this.vbButton3.Name = "vbButton3";
-            this.vbButton3.Size = new System.Drawing.Size(365, 69);
-            this.vbButton3.TabIndex = 12;
-            this.vbButton3.Text = "Thay đổi thông tin khách thuê";
-            this.vbButton3.TextColor = System.Drawing.Color.White;
-            this.vbButton3.UseVisualStyleBackColor = false;
-            this.vbButton3.Click += new System.EventHandler(this.btnThaydoithongUser_Click);
-            // 
-            // btnDangxuat
-            // 
-            this.btnDangxuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDangxuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(17)))));
-            this.btnDangxuat.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(17)))));
-            this.btnDangxuat.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnDangxuat.BorderRadius = 28;
-            this.btnDangxuat.BorderSize = 0;
-            this.btnDangxuat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDangxuat.FlatAppearance.BorderSize = 0;
-            this.btnDangxuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangxuat.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDangxuat.ImageList = this.imageList1;
-            this.btnDangxuat.Location = new System.Drawing.Point(105, 959);
-            this.btnDangxuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDangxuat.Name = "btnDangxuat";
-            this.btnDangxuat.Size = new System.Drawing.Size(175, 70);
-            this.btnDangxuat.TabIndex = 8;
-            this.btnDangxuat.Text = "Đăng xuất";
-            this.btnDangxuat.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDangxuat.UseVisualStyleBackColor = false;
-            this.btnDangxuat.Click += new System.EventHandler(this.btnDangxuat_Click);
+            this.dgvService.DoubleClick += new System.EventHandler(this.dgvService_DoubleClick);
             // 
             // GiaodienUser
             // 

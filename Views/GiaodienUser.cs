@@ -229,8 +229,24 @@ namespace QuanLyNhaTro.Views
         List<ServiceReceipt_View> serviceList = new List<ServiceReceipt_View>();
 
         BindingSource binding = new BindingSource();
-        private void dgvService_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {   
+        private void ClearOrder()
+        {
+            serviceList.Clear();
+            dgvOrder.DataSource = null;
+        }
+        private void btnAbort_Click(object sender, EventArgs e)
+        {
+            ClearOrder();
+        }
+
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
+            BLL_Receipt.Instance.AddServiceReceipt(serviceList,ID);
+            ClearOrder();
+        }
+
+        private void dgvService_DoubleClick(object sender, EventArgs e)
+        {
             dgvOrder.DataSource = null;
             int n = Convert.ToInt32(dgvService.SelectedRows[0].Cells["ServiceID"].Value.ToString());
             if (serviceList.Exists(c => c.ServiceID == n))
@@ -258,28 +274,6 @@ namespace QuanLyNhaTro.Views
 
 
             dgvOrder.DataSource = serviceList;
-
-
-
-
-
-
-        }
-
-        private void ClearOrder()
-        {
-            serviceList.Clear();
-            dgvOrder.DataSource = null;
-        }
-        private void btnAbort_Click(object sender, EventArgs e)
-        {
-            ClearOrder();
-        }
-
-        private void btnCalculate_Click(object sender, EventArgs e)
-        {
-            BLL_Receipt.Instance.AddServiceReceipt(serviceList,ID);
-            ClearOrder();
         }
     }
 }
