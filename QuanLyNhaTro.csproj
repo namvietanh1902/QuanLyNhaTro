@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\BLL_Contract.cs" />
+    <Compile Include="BLL\BLL_Receipt.cs" />
     <Compile Include="BLL\BLL_Room.cs" />
     <Compile Include="BLL\BLL_Service.cs" />
     <Compile Include="ButtonBoGoc.cs">
@@ -70,6 +71,7 @@
     <Compile Include="DTO\Customer_View.cs" />
     <Compile Include="DTO\Receipt.cs" />
     <Compile Include="DTO\Room_View.cs" />
+    <Compile Include="DTO\ServiceReceipt_View.cs" />
     <Compile Include="DTO\Service_View.cs" />
     <Compile Include="Migrations\202205280254246_alo.cs" />
     <Compile Include="Migrations\202205280254246_alo.designer.cs">

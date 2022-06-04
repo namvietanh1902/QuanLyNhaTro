@@ -23,6 +23,12 @@ namespace QuanLyNhaTro.BLL
             }
             private set { }
         }
+        public int GetNextServiceReceiptID()
+        {
+            if (QuanLy.Instance.ServiceReceipts.Count() == 0) return 1;
+            return QuanLy.Instance.ServiceReceipts.Max(c => c.ServiceReceiptId) + 1;
+        }
+        
         public List<MonthlyReceipt> getAllMonthlyReceipt()
         {
             return QuanLy.Instance.MonthlyReceipts.Select(c=>c).ToList();
@@ -87,7 +93,7 @@ namespace QuanLyNhaTro.BLL
                         QuanLy.Instance.SaveChanges();
                         break;
                     }
-                default:
+                case "Hóa đơn dịch vụ":
                     {
                         GetServiceReceiptByID(i.ReceiptID).isPaid= true;
                         QuanLy.Instance.SaveChanges();
@@ -95,6 +101,39 @@ namespace QuanLyNhaTro.BLL
                     }
             }
 
+        }
+        public void AddServiceReceipt(List<ServiceReceipt_View> data,int CustomerID)
+        {
+            if (data!= null)
+            {
+                int total = 0;
+                foreach(ServiceReceipt_View item in data)
+                {
+                    total += item.Price * item.Number;
+                }
+                ServiceReceipt receipt = new ServiceReceipt
+                {
+                    ContractID = BLL_Contract.Instance.GetContractByCustomerID(CustomerID).ContractId,
+                    Total = total,
+                    PaidDate = DateTime.Now,
+
+                };
+                QuanLy.Instance.ServiceReceipts.Add(receipt);
+                QuanLy.Instance.SaveChanges();
+                List<ServiceReceiptDetail> details = new List<ServiceReceiptDetail>();
+                foreach (ServiceReceipt_View item in data)
+                {
+                    details.Add(new ServiceReceiptDetail
+                    {
+                        ServiceReceiptId = receipt.ServiceReceiptId,
+                        Number = item.Number,
+                        ServiceId = item.ServiceID,
+                        
+                    });
+                }
+                QuanLy.Instance.ServiceReceiptDetails.AddRange(details);
+                QuanLy.Instance.SaveChanges();
+            }
         }
     }
 }
