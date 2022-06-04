@@ -201,7 +201,7 @@ namespace QuanLyNhaTro.BLL
                 if(acc.SDT == sdt)
                 {
                     return true;
-                    break;
+                    
                 }
             }
             return false;

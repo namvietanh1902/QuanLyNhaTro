@@ -214,14 +214,7 @@ namespace QuanLyNhaTro.Views
 
         private void label5_Click(object sender, EventArgs e)
         {
-            var data = QuanLy.Instance.Accounts.Where(c=>c.Name.Contains("Khá")).Select(c => c).FirstOrDefault();
-            var data2 = QuanLy.Instance.Contracts.Select(c => c).FirstOrDefault();
-        
-            var data3 = QuanLy.Instance.Customers.Where(c => c.Name.Contains("Khá")).Select(c => c).FirstOrDefault();
-            
-          
            
-            MessageBox.Show(data.Name);
         }
     }
 }
