@@ -861,6 +861,7 @@ namespace QuanLyNhaTro.Views
             pnDichvu.Visible = false;
             pnTinhtientro.Visible = true;
             pnThongke.Visible = false;
+            reload_ThanhToan();
         }
 
         private void btnThongke_Click(object sender, EventArgs e)
@@ -943,6 +944,90 @@ namespace QuanLyNhaTro.Views
         private void txtSearch_Service_TextChanged(object sender, EventArgs e)
         {
             dgvService.DataSource = BLL_Service.Instance.SearchService(txtSearch_Service.Text);
+        }
+        private void reload_ThanhToan()
+        {
+            foreach (Customer i in BLL_Customer.Instance.GetAllCustomer())
+            {
+                if (i.isDelete == false)
+                {
+                    cbbCustomer.Items.Add(new CBBItems
+                    {
+                        Text = i.Name,
+                        Value = i.CustomerId,
+                    });
+                }
+            }
+            
+           
+            
+           
+            txtRoomID_Month.Enabled = false;
+            txtRoomName_Month.Enabled = false;
+            txtCusID_ThanhToan.Enabled = false;
+            txtCusName_ThanhToan.Enabled = false;
+            txtCusSDT.Enabled = false;
+            txtCusCCCD.Enabled = false;
+            txtCusJob.Enabled = false;
+            txtGender.Enabled = false;
+            RentDate.Enabled = false;
+            birthDate.Enabled = false;
+            cbbCustomer.SelectedIndex = 0;
+            txtPrice.Enabled = false;
+            txtElecAfter.Text = "";
+            txtElecFirst.Text = "";
+            txtElecPrice.Text = "";
+            txtWaterAfter.Text = "";
+            txtWaterFirst.Text = "";
+            txtWaterPrice.Text = "";
+
+        }
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            int ElecBefore = Convert.ToInt32(txtElecFirst.Text);
+            int ElecAfter = Convert.ToInt32(txtElecAfter.Text);
+            int WaterBefore = Convert.ToInt32(txtWaterFirst.Text);
+            int WaterAfter = Convert.ToInt32(txtWaterAfter.Text);
+            int WaterPrice = Convert.ToInt32(txtWaterPrice.Text);
+            int ElecPrice = Convert.ToInt32(txtElecPrice.Text);
+            MonthlyReceipt receipt = new MonthlyReceipt
+            {
+                ContractID = ((CBBItems)cbbCustomer.SelectedItem).Value,
+                Month = Month.Value,
+                ElecBefore = ElecBefore,
+                ElecAfter = ElecAfter,
+                WaterBefore= WaterBefore,
+                WaterAfter = WaterAfter,
+                WaterBill = (WaterAfter -WaterBefore)*WaterPrice,
+                ElecBill = (ElecAfter - ElecBefore)*ElecPrice,
+                RoomBill = Convert.ToInt32(txtPrice.Text),
+                
+        };
+            receipt.TotalBill = receipt.ElecBill + receipt.WaterBill + receipt.RoomBill;
+            MessageBox.Show("Số tiền khách phải trả là: "+ receipt.TotalBill);
+            BLL_Receipt.Instance.AddMonthlyReceipt(receipt);
+            reload_ThanhToan();
+        }
+        private void GUI()
+        {
+            int i = ((CBBItems)cbbCustomer.SelectedItem).Value;
+            Customer data = BLL_Customer.Instance.GetCustomerByID(i);
+            txtRoomID_Month.Text = data.Contract.Room.RoomId.ToString();
+            txtCusID_ThanhToan.Text = i.ToString();
+            txtRoomName_Month.Text = data.Contract.Room.Name;
+            txtGender.Text= data.Gender ? "Nam" : "Nữ";
+            txtCusName_ThanhToan.Text = data.Name;
+            txtCusSDT.Text = data.SDT;
+            txtCusCCCD.Text= data.CMND;
+            txtCusJob.Text = data.Job;
+            RentDate.Value = (DateTime)data.Contract.CreatedAt;
+            birthDate.Value = (DateTime)data.Birthday;
+            txtPrice.Text = data.Contract.Room.Price.ToString();
+
+        }
+        private void cbbCustomer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GUI();
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using QuanLyNhaTro.Models;
 using QuanLyNhaTro.DTO;
+using System.Windows.Forms;
 
 namespace QuanLyNhaTro.BLL
 {
@@ -102,6 +103,33 @@ namespace QuanLyNhaTro.BLL
             }
 
         }
+        public bool checkMonth(MonthlyReceipt i)
+        {
+            foreach(MonthlyReceipt item in getAllMonthlyReceipt())
+            {
+                if (i.ContractID ==item.ContractID &&i.Month.Month ==item.Month.Month &&item.Month.Year == i.Month.Year)
+                {
+                    return false;
+                }
+            }
+                return true;
+        }
+        public void AddMonthlyReceipt(MonthlyReceipt i)
+        {
+            if (!checkMonth(i))
+            {
+                MessageBox.Show("Tháng này đã được tính tiền");
+                return;
+            }
+            else
+            {
+                QuanLy.Instance.MonthlyReceipts.Add(i);
+                QuanLy.Instance.SaveChanges();
+            }
+        }
+        
+
+        
         public void AddServiceReceipt(List<ServiceReceipt_View> data,int CustomerID)
         {
             if (data!= null)
