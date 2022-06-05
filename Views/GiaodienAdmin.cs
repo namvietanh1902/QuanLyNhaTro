@@ -802,15 +802,30 @@ namespace QuanLyNhaTro.Views
 
         private void btnSave_Service_Click(object sender, EventArgs e)
         {
-            Service service = new Service
+            try
             {
-                ServiceId = Convert.ToInt32(txtServiceID.Text),
-                Name = txtServiceName.Text,
-                Unit = txtServiceUnit.Text,
-                Price = Convert.ToInt32(txtServicePrice.Text)
-            };
+                int Price;
+                if (!Int32.TryParse(txtServicePrice.Text, out Price))
+                {
+                    throw new Exception("Giá phải là số");
+                }
+                Service service = new Service
+                {
+                    ServiceId = Convert.ToInt32(txtServiceID.Text),
+                    Name = txtServiceName.Text,
+                    Unit = txtServiceUnit.Text,
+                    Price = Price
+                };
+                new BLL.Common.ModelDataValidation().Validate(service);
+            
             BLL_Service.Instance.AddOrUpdate(isEdit_Service, service);
             reload_Service();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Thông báo lỗi");
+            }
 
         }
         private void btnDelete_Service_Click(object sender, EventArgs e)
