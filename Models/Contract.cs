@@ -22,9 +22,7 @@ namespace QuanLyNhaTro.Models
         public virtual Room Room { get; set; }
        
         public virtual Customer Customer { get; set; }
-        public virtual ICollection<ServiceReceipt> ServiceReceipt { get; set; }
-
-
+        public virtual ICollection<Receipt> Receipt { get; set; }
 
 
     }
