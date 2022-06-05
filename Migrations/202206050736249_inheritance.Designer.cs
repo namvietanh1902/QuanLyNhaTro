@@ -7,13 +7,13 @@ namespace QuanLyNhaTro.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AddisDelete : IMigrationMetadata
+    public sealed partial class inheritance : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddisDelete));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(inheritance));
         
         string IMigrationMetadata.Id
         {
-            get { return "202205310907100_AddisDelete"; }
+            get { return "202206050736249_inheritance"; }
         }
         
         string IMigrationMetadata.Source

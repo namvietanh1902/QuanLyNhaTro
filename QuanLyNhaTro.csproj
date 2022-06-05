@@ -69,29 +69,12 @@
     <Compile Include="DTO\CBBItems.cs" />
     <Compile Include="DTO\ChiTietPhongThue.cs" />
     <Compile Include="DTO\Customer_View.cs" />
-    <Compile Include="DTO\Receipt.cs" />
     <Compile Include="DTO\Room_View.cs" />
     <Compile Include="DTO\ServiceReceipt_View.cs" />
     <Compile Include="DTO\Service_View.cs" />
-    <Compile Include="Migrations\202205280254246_alo.cs" />
-    <Compile Include="Migrations\202205280254246_alo.designer.cs">
-      <DependentUpon>202205280254246_alo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205280304310_alo1.cs" />
-    <Compile Include="Migrations\202205280304310_alo1.designer.cs">
-      <DependentUpon>202205280304310_alo1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205310907100_AddisDelete.cs" />
-    <Compile Include="Migrations\202205310907100_AddisDelete.designer.cs">
-      <DependentUpon>202205310907100_AddisDelete.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206020406566_dafug.cs" />
-    <Compile Include="Migrations\202206020406566_dafug.designer.cs">
-      <DependentUpon>202206020406566_dafug.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202206040352429_alo2.cs" />
-    <Compile Include="Migrations\202206040352429_alo2.designer.cs">
-      <DependentUpon>202206040352429_alo2.cs</DependentUpon>
+    <Compile Include="Migrations\202206050736249_inheritance.cs" />
+    <Compile Include="Migrations\202206050736249_inheritance.designer.cs">
+      <DependentUpon>202206050736249_inheritance.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -99,6 +82,7 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MonthlyReceipt.cs" />
     <Compile Include="Models\QuanLy.cs" />
+    <Compile Include="Models\Receipt.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\ServiceReceipt.cs" />
@@ -151,20 +135,8 @@
     <Compile Include="Views\ThemPhongTro.Designer.cs">
       <DependentUpon>ThemPhongTro.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202205280254246_alo.resx">
-      <DependentUpon>202205280254246_alo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205280304310_alo1.resx">
-      <DependentUpon>202205280304310_alo1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205310907100_AddisDelete.resx">
-      <DependentUpon>202205310907100_AddisDelete.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206020406566_dafug.resx">
-      <DependentUpon>202206020406566_dafug.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202206040352429_alo2.resx">
-      <DependentUpon>202206040352429_alo2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206050736249_inheritance.resx">
+      <DependentUpon>202206050736249_inheritance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ChiTietPhongThue.resx">
       <DependentUpon>ChiTietPhongThue.cs</DependentUpon>

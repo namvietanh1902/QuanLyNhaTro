@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class alo : DbMigration
+    public partial class inheritance : DbMigration
     {
         public override void Up()
         {
@@ -19,6 +19,7 @@
                         Gender = c.Boolean(nullable: false),
                         Birthday = c.DateTime(nullable: false),
                         SDT = c.String(),
+                        isDelete = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.AccountId)
                 .Index(t => t.Username, unique: true);
@@ -44,15 +45,15 @@
                 "dbo.Contracts",
                 c => new
                     {
-                        CustomerId = c.Int(nullable: false),
+                        ContractId = c.Int(nullable: false),
                         RoomId = c.Int(nullable: false),
                         CreatedAt = c.DateTime(nullable: false),
                         CustomerName = c.String(),
                     })
-                .PrimaryKey(t => t.CustomerId)
+                .PrimaryKey(t => t.ContractId)
                 .ForeignKey("dbo.Rooms", t => t.RoomId, cascadeDelete: true)
-                .ForeignKey("dbo.Customers", t => t.CustomerId)
-                .Index(t => t.CustomerId)
+                .ForeignKey("dbo.Customers", t => t.ContractId)
+                .Index(t => t.ContractId)
                 .Index(t => t.RoomId);
             
             CreateTable(
@@ -69,17 +70,30 @@
                 .PrimaryKey(t => t.RoomId);
             
             CreateTable(
-                "dbo.ServiceReceipts",
+                "dbo.Receipts",
                 c => new
                     {
-                        ServiceReceiptId = c.Int(nullable: false, identity: true),
+                        ReceiptID = c.Int(nullable: false, identity: true),
                         ContractID = c.Int(nullable: false),
-                        PaidDate = c.DateTime(nullable: false),
                         Total = c.Int(nullable: false),
+                        isPaid = c.Boolean(nullable: false),
+                        PaidDate = c.DateTime(),
+                        Month = c.DateTime(),
+                        ElecBefore = c.Int(),
+                        WaterBefore = c.Int(),
+                        ElecAfter = c.Int(),
+                        WaterAfter = c.Int(),
+                        ElecBill = c.Int(),
+                        WaterBill = c.Int(),
+                        RoomBill = c.Int(),
+                        Discriminator = c.String(nullable: false, maxLength: 128),
+                        Contract_ContractId = c.Int(),
                     })
-                .PrimaryKey(t => t.ServiceReceiptId)
+                .PrimaryKey(t => t.ReceiptID)
+                .ForeignKey("dbo.Contracts", t => t.Contract_ContractId)
                 .ForeignKey("dbo.Contracts", t => t.ContractID, cascadeDelete: true)
-                .Index(t => t.ContractID);
+                .Index(t => t.ContractID)
+                .Index(t => t.Contract_ContractId);
             
             CreateTable(
                 "dbo.ServiceReceiptDetails",
@@ -91,7 +105,7 @@
                     })
                 .PrimaryKey(t => new { t.ServiceId, t.ServiceReceiptId })
                 .ForeignKey("dbo.Services", t => t.ServiceId, cascadeDelete: true)
-                .ForeignKey("dbo.ServiceReceipts", t => t.ServiceReceiptId, cascadeDelete: true)
+                .ForeignKey("dbo.Receipts", t => t.ServiceReceiptId, cascadeDelete: true)
                 .Index(t => t.ServiceId)
                 .Index(t => t.ServiceReceiptId);
             
@@ -107,49 +121,28 @@
                     })
                 .PrimaryKey(t => t.ServiceId);
             
-            CreateTable(
-                "dbo.MonthlyReceipts",
-                c => new
-                    {
-                        MonthlyReceiptId = c.Int(nullable: false, identity: true),
-                        ContractID = c.Int(nullable: false),
-                        Month = c.DateTime(nullable: false),
-                        ElecBefore = c.Int(nullable: false),
-                        WaterBefore = c.Int(nullable: false),
-                        ElecAfter = c.Int(nullable: false),
-                        WaterAfter = c.Int(nullable: false),
-                        ElecBill = c.Int(nullable: false),
-                        WaterBill = c.Int(nullable: false),
-                        RoomBill = c.Int(nullable: false),
-                        TotalBill = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.MonthlyReceiptId)
-                .ForeignKey("dbo.Contracts", t => t.ContractID, cascadeDelete: true)
-                .Index(t => t.ContractID);
-            
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.MonthlyReceipts", "ContractID", "dbo.Contracts");
+            DropForeignKey("dbo.Receipts", "ContractID", "dbo.Contracts");
             DropForeignKey("dbo.Customers", "CustomerId", "dbo.Accounts");
-            DropForeignKey("dbo.Contracts", "CustomerId", "dbo.Customers");
-            DropForeignKey("dbo.ServiceReceiptDetails", "ServiceReceiptId", "dbo.ServiceReceipts");
+            DropForeignKey("dbo.Contracts", "ContractId", "dbo.Customers");
+            DropForeignKey("dbo.Receipts", "Contract_ContractId", "dbo.Contracts");
+            DropForeignKey("dbo.ServiceReceiptDetails", "ServiceReceiptId", "dbo.Receipts");
             DropForeignKey("dbo.ServiceReceiptDetails", "ServiceId", "dbo.Services");
-            DropForeignKey("dbo.ServiceReceipts", "ContractID", "dbo.Contracts");
             DropForeignKey("dbo.Contracts", "RoomId", "dbo.Rooms");
-            DropIndex("dbo.MonthlyReceipts", new[] { "ContractID" });
             DropIndex("dbo.ServiceReceiptDetails", new[] { "ServiceReceiptId" });
             DropIndex("dbo.ServiceReceiptDetails", new[] { "ServiceId" });
-            DropIndex("dbo.ServiceReceipts", new[] { "ContractID" });
+            DropIndex("dbo.Receipts", new[] { "Contract_ContractId" });
+            DropIndex("dbo.Receipts", new[] { "ContractID" });
             DropIndex("dbo.Contracts", new[] { "RoomId" });
-            DropIndex("dbo.Contracts", new[] { "CustomerId" });
+            DropIndex("dbo.Contracts", new[] { "ContractId" });
             DropIndex("dbo.Customers", new[] { "CustomerId" });
             DropIndex("dbo.Accounts", new[] { "Username" });
-            DropTable("dbo.MonthlyReceipts");
             DropTable("dbo.Services");
             DropTable("dbo.ServiceReceiptDetails");
-            DropTable("dbo.ServiceReceipts");
+            DropTable("dbo.Receipts");
             DropTable("dbo.Rooms");
             DropTable("dbo.Contracts");
             DropTable("dbo.Customers");

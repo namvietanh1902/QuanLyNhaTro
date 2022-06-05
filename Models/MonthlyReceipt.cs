@@ -8,12 +8,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuanLyNhaTro.Models
 {
-    public class MonthlyReceipt
+    public class MonthlyReceipt :Receipt
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int MonthlyReceiptId { get; set; }
-        public int ContractID { get; set; }
+       
+      
         [Required(ErrorMessage = "Tháng không được để trống")]
         public DateTime Month { get; set; }
         public int ElecBefore { get; set; }
@@ -23,10 +21,7 @@ namespace QuanLyNhaTro.Models
         public int ElecBill { get; set; }
         public int WaterBill { get; set; }
         public int RoomBill { get; set; }   
-        public int TotalBill { get; set; }
-        public bool isPaid { get; set; } = false;
-        [ForeignKey("ContractID")]
-        public virtual Contract Contract { get; set; }
+       
 
     }
 }

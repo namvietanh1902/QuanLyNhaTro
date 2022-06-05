@@ -27,7 +27,7 @@ namespace QuanLyNhaTro.BLL
         public int GetNextServiceReceiptID()
         {
             if (QuanLy.Instance.ServiceReceipts.Count() == 0) return 1;
-            return QuanLy.Instance.ServiceReceipts.Max(c => c.ServiceReceiptId) + 1;
+            return QuanLy.Instance.ServiceReceipts.Max(c => c.ReceiptID) + 1;
         }
         
         public List<MonthlyReceipt> getAllMonthlyReceipt()
@@ -38,34 +38,7 @@ namespace QuanLyNhaTro.BLL
         {
             return QuanLy.Instance.ServiceReceipts.Select(c => c).ToList();
         }
-        public List<Receipt> GetAllReceipts()
-        {
-            List<Receipt> data = new List<Receipt>();
-            foreach (MonthlyReceipt i in getAllMonthlyReceipt())
-            {
-                data.Add(new Receipt
-                {
-                    ContractID = i.ContractID,
-                    ReceiptID = i.MonthlyReceiptId,
-                    ReceiptType = "Hóa đơn tháng",
-                    Total = i.TotalBill,
-                    isPaid = i.isPaid
-                });
-            }
-            foreach (ServiceReceipt i in getAllServiceReceipt())
-            {
-                data.Add(new Receipt
-                {
-                    ContractID = i.ContractID,
-                    ReceiptID = i.ServiceReceiptId,
-                    ReceiptType = "Hóa đơn dịch vụ",
-                    Total = i.Total,
-                    isPaid = i.isPaid
-                });
-            }
-            return data;
-
-        }
+        
         public ServiceReceipt GetServiceReceiptByID(int ID)
         {
             return QuanLy.Instance.ServiceReceipts.Find(ID);
@@ -74,35 +47,8 @@ namespace QuanLyNhaTro.BLL
         {
             return QuanLy.Instance.MonthlyReceipts.Find(ID);
         }
-        public List<Receipt> GetAllUnpaidReceipt()
-        {
-            List<Receipt> data = new List<Receipt>();
-            foreach (Receipt i in GetAllReceipts())
-            {
-                if (i.isPaid == false) data.Add(i);
-            }
-            return data;
-        }
-
-        public void PayReceipt(Receipt i)
-        {
-            switch (i.ReceiptType)
-            {
-                case "Hóa đơn tháng":
-                    {
-                        GetMonthlyReceiptByID(i.ReceiptID).isPaid = true;
-                        QuanLy.Instance.SaveChanges();
-                        break;
-                    }
-                case "Hóa đơn dịch vụ":
-                    {
-                        GetServiceReceiptByID(i.ReceiptID).isPaid= true;
-                        QuanLy.Instance.SaveChanges();
-                        break;
-                    }
-            }
-
-        }
+       
+       
         public bool checkMonth(MonthlyReceipt i)
         {
             foreach(MonthlyReceipt item in getAllMonthlyReceipt())
@@ -153,7 +99,7 @@ namespace QuanLyNhaTro.BLL
                 {
                     details.Add(new ServiceReceiptDetail
                     {
-                        ServiceReceiptId = receipt.ServiceReceiptId,
+                        ServiceReceiptId = receipt.ReceiptID,
                         Number = item.Number,
                         ServiceId = item.ServiceID,
                         

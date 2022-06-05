@@ -1018,8 +1018,8 @@ namespace QuanLyNhaTro.Views
                 RoomBill = Convert.ToInt32(txtPrice.Text),
                 
         };
-            receipt.TotalBill = receipt.ElecBill + receipt.WaterBill + receipt.RoomBill;
-            MessageBox.Show("Số tiền khách phải trả là: "+ receipt.TotalBill);
+            receipt.Total = receipt.ElecBill + receipt.WaterBill + receipt.RoomBill;
+            MessageBox.Show("Số tiền khách phải trả là: "+ receipt.Total);
             BLL_Receipt.Instance.AddMonthlyReceipt(receipt);
             reload_ThanhToan();
         }

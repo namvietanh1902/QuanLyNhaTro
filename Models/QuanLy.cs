@@ -41,7 +41,7 @@ namespace QuanLyNhaTro.Models
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<ServiceReceipt> ServiceReceipts { get; set; }
         public virtual DbSet<ServiceReceiptDetail> ServiceReceiptDetails { get; set; }
-     
+        public virtual DbSet<Receipt> Receipts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -54,6 +54,7 @@ namespace QuanLyNhaTro.Models
                
             modelBuilder.Entity<Customer>()
                 .HasRequired(c => c.Contract).WithRequiredPrincipal(c => c.Customer);
+            modelBuilder.Entity<Receipt>().ToTable("Receipts");
         }
     }
 }
