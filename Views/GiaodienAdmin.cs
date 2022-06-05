@@ -411,135 +411,156 @@ namespace QuanLyNhaTro.Views
 
 
 
-        Customer cusAdd = new Customer();
         private void btnLuukhachtro_Click(object sender, EventArgs e)
         {
-            cusAdd.Name = txtTennguoithue_khachtro.Text;
-            cusAdd.Birthday = dtpNgaysinh_khachtro.Value;
-            if (cbbGioitinh_khachtro.SelectedItem.ToString() == "Nam")
+            try
             {
-                cusAdd.Gender = true;
-            }
-            if (cbbGioitinh_khachtro.SelectedItem.ToString() == "Nữ")
-            {
-                cusAdd.Gender = false;
-            }
-            cusAdd.CMND = txtCmnd_khachtro.Text;
-            cusAdd.SDT = txtSDT_khachtro.Text;
-            cusAdd.Job = txtNghenghiep_khachtro.Text;
-            if (dgvthongtin_khachtro.SelectedRows.Count < 1) //add
-            {
-                if (BLL_Account.Instance.CheckSDT(txtSDT_khachtro.Text))
+                if(cbbTenphongtro_khanhtro.SelectedIndex == -1) throw new FormatException("Tên phòng không dc để trống");
+                Customer cusAdd = new Customer();
+                if (txtTennguoithue_khachtro.Text == "") throw new FormatException("Tên không được để trống");
+                else cusAdd.Name = txtTennguoithue_khachtro.Text;
+                if (DateTime.Now.Year - dtpNgaysinh_khachtro.Value.Year < 18) throw new FormatException("Tuổi dưới 18");
+                else cusAdd.Birthday = dtpNgaysinh_khachtro.Value;
+                if (cbbGioitinh_khachtro.SelectedIndex == 0) cusAdd.Gender = true;
+                else if (cbbGioitinh_khachtro.SelectedIndex == 1) cusAdd.Gender = false;
+                else if (cbbGioitinh_khachtro.SelectedIndex == -1)
+                    throw new FormatException("Giới tính không dc để trống");
+                if (txtCmnd_khachtro.Text == "") throw new FormatException("CMND không dc để trống");
+                long cmnd;
+                if (long.TryParse(txtCmnd_khachtro.Text, out cmnd))
                 {
-                    
-                    foreach(Account acc in BLL_Account.Instance.GetAllAccount())
+                    cusAdd.CMND = txtCmnd_khachtro.Text;
+                }
+                else throw new FormatException("CMND phải là số");
+                if (txtSDT_khachtro.Text == "") throw new FormatException("Số điện thoại không dc để trống");
+                if (txtSDT_khachtro.Text.Length != 10) throw new FormatException("Số điện thoại phải có 10 số");
+                long sdt;
+                if (long.TryParse(txtSDT_khachtro.Text, out sdt))
+                {
+                    cusAdd.SDT = txtSDT_khachtro.Text;
+                }
+                else throw new FormatException("Số điện thoại phải là số");
+                if (txtNghenghiep_khachtro.Text == "") throw new FormatException("Nghề nghiệp không dc để trống");
+                else cusAdd.Job = txtNghenghiep_khachtro.Text;
+
+                if (dgvthongtin_khachtro.SelectedRows.Count < 1) //add
+                {
+                    if (BLL_Account.Instance.CheckSDT(txtSDT_khachtro.Text))
                     {
-                        if(acc.SDT == txtSDT_khachtro.Text && acc.isAdmin == false && acc.isDelete == false)
+                        foreach (Account acc in BLL_Account.Instance.GetAllAccount())
                         {
-                            cusAdd.CustomerId = acc.AccountId;
-                            break;
+                            if (acc.SDT == txtSDT_khachtro.Text && acc.isAdmin == false && acc.isDelete == false)
+                            {
+                                cusAdd.CustomerId = acc.AccountId;
+                                break;
+                            }
+                        }
+                        BLL_Customer.Instance.AddKhachTro(cusAdd);
+                        foreach (Customer cus in BLL_Customer.Instance.GetAllCustomer())
+                        {
+                            if (cus.CustomerId == cusAdd.CustomerId)
+                            {
+                                Contract contract = new Contract();
+                                contract.ContractId = cus.CustomerId;
+                                foreach (Room phong in BLL_Room.Instance.GetAllRoom())
+                                {
+                                    if (phong.Name == cbbTenphongtro_khanhtro.SelectedItem.ToString())
+                                    {
+                                        contract.RoomId = phong.RoomId;
+                                        break;
+                                    }
+                                }
+                                contract.CustomerName = cus.Name;
+                                BLL_Contract.Instance.AddContract(contract);
+                                foreach (Room room in BLL_Room.Instance.GetAllRoom())
+                                {
+                                    if (room.isRent == false && contract.RoomId == room.RoomId)
+                                    {
+                                        room.isRent = true;
+                                        BLL_Room.Instance.UpdateIsRentRoomWhenAddCustomer(room);
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
                         }
                     }
-                    BLL_Customer.Instance.AddKhachTro(cusAdd);
+                    else
+                    {
+                        MessageBox.Show(
+                           "Bạn chưa có tài khoản," +
+                           "Bẩm OK để chuyển tiếp đến giao diện tạo tài khoản",
+                           "Thông báo",
+                           MessageBoxButtons.OK,
+                           MessageBoxIcon.Information
+                           );
+                        txtName_User.Text = txtTennguoithue_khachtro.Text;
+                        txtSDT_user.Text = txtSDT_khachtro.Text;
+                        dtpNgaysinh_user.Value = dtpNgaysinh_khachtro.Value;
+                        if (cbbGioitinh_khachtro.SelectedItem.ToString() == "Nam")
+                        {
+                            radNam.Checked = true;
+                        }
+                        else radNu.Checked = true;
+                        btnUser.PerformClick();
+                    }
+                }
+
+
+                if (dgvthongtin_khachtro.SelectedRows.Count == 1) //update
+                {
+                    cusAdd.CustomerId = Convert.ToInt32(txtMakhachtro_khachtro.Text);
+                    Account account = new Account();
                     foreach (Customer cus in BLL_Customer.Instance.GetAllCustomer())
                     {
                         if (cus.CustomerId == cusAdd.CustomerId)
                         {
-                            Contract contract = new Contract();
-                            contract.ContractId = cus.CustomerId;
-                            foreach(Room phong in BLL_Room.Instance.GetAllRoom())
-                            {
-                                if(phong.Name == cbbTenphongtro_khanhtro.SelectedItem.ToString())
-                                {
-                                    contract.RoomId = phong.RoomId;
-                                    break; 
-                                }
-                            }
-                            contract.CustomerName = cus.Name;
-                            BLL_Contract.Instance.AddContract(contract);
-                            foreach (Room room in BLL_Room.Instance.GetAllRoom())
-                            {
-                                if (room.isRent == false && contract.RoomId == room.RoomId)
-                                {
-                                    room.isRent = true;
-                                    BLL_Room.Instance.UpdateIsRentRoomWhenAddCustomer(room);
-                                    break;
-                                }
-                            }
+                            cusAdd.CustomerId = cus.CustomerId;
                             break;
                         }
-                    } 
-                }
-                else
-                {
-                    MessageBox.Show(
-                       "Bạn chưa có tài khoản," +
-                       "Bẩm OK để chuyển tiếp đến giao diện tạo tài khoản",
-                       "Thông báo",
-                       MessageBoxButtons.OK,
-                       MessageBoxIcon.Information
-                       );
-                    txtName_User.Text = txtTennguoithue_khachtro.Text;
-                    txtSDT_user.Text = txtSDT_khachtro.Text;
-                    dtpNgaysinh_user.Value = dtpNgaysinh_khachtro.Value;
-                    if (cbbGioitinh_khachtro.SelectedItem.ToString() == "Nam")
-                    {
-                        radNam.Checked = true;
                     }
-                    else radNu.Checked = true;
-                    btnUser.PerformClick();
+
+                    BLL_Customer.Instance.UpdateKhachTro(cusAdd);
+
+                    foreach (Account acc in BLL_Account.Instance.GetAllAccount())
+                    {
+                        if (acc.AccountId == cusAdd.CustomerId)
+                        {
+                            account.AccountId = acc.AccountId;
+                            account.Username = acc.Username;
+                            account.Password = acc.Password;
+                            account.isAdmin = acc.isAdmin;
+                            account.Name = cusAdd.Name;
+                            account.Gender = cusAdd.Gender;
+                            account.Birthday = cusAdd.Birthday;
+                            account.SDT = cusAdd.SDT;
+                            break;
+                        }
+                    }
+                    BLL_Account.Instance.UpdateAccount(account);
+
+                    Contract contract = new Contract();
+                    foreach (Contract hd in BLL_Contract.Instance.GetAllContract())
+                    {
+                        if (hd.ContractId == cusAdd.CustomerId)
+                        {
+                            contract.ContractId = hd.ContractId;
+                            contract.RoomId = hd.RoomId;
+                            contract.CreatedAt = hd.CreatedAt;
+                            contract.CustomerName = cusAdd.Name;
+                            break;
+                        }
+                    }
+                    BLL_Contract.Instance.UpdateContract(contract);
                 }
+                reloadkhachtro();
+                cleardata_khachtro();
             }
-
-
-            if (dgvthongtin_khachtro.SelectedRows.Count == 1) //update
+            catch (Exception ex)
             {
-                cusAdd.CustomerId = Convert.ToInt32(txtMakhachtro_khachtro.Text);
-                Account account = new Account();
-                foreach (Customer cus in BLL_Customer.Instance.GetAllCustomer())
-                {
-                    if (cus.CustomerId == cusAdd.CustomerId)
-                    {
-                        cusAdd.CustomerId = cus.CustomerId;
-                        break;
-                    }
-                }
-
-                BLL_Customer.Instance.UpdateKhachTro(cusAdd);
-
-                foreach (Account acc in BLL_Account.Instance.GetAllAccount())
-                {
-                    if (acc.AccountId == cusAdd.CustomerId)
-                    {
-                        account.AccountId = acc.AccountId;
-                        account.Username = acc.Username;
-                        account.Password = acc.Password;
-                        account.isAdmin = acc.isAdmin;
-                        account.Name = cusAdd.Name;
-                        account.Gender = cusAdd.Gender;
-                        account.Birthday = cusAdd.Birthday;
-                        account.SDT = cusAdd.SDT;
-                        break;
-                    }
-                }
-                BLL_Account.Instance.UpdateAccount(account);
-
-                Contract contract = new Contract();
-                foreach (Contract hd in BLL_Contract.Instance.GetAllContract())
-                {
-                    if (hd.ContractId == cusAdd.CustomerId)
-                    {
-                        contract.ContractId = hd.ContractId;
-                        contract.RoomId = hd.RoomId;
-                        contract.CreatedAt = hd.CreatedAt;
-                        contract.CustomerName = cusAdd.Name;
-                        break;
-                    }
-                }
-                BLL_Contract.Instance.UpdateContract(contract);
+                MessageBox.Show(ex.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            reloadkhachtro();
-            cleardata_khachtro();
+            
         }
 
         private void btnLammoi_khachtro_Click(object sender, EventArgs e)
