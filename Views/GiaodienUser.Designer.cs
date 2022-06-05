@@ -1655,10 +1655,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1942, 1088);
+            this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnDichdu);
             this.Controls.Add(this.pnHome);
             this.Controls.Add(this.pnPhongtro);
-            this.Controls.Add(this.pnUser);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);

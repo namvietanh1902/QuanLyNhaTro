@@ -25,17 +25,17 @@ namespace QuanLyNhaTro.Views
             comboBox1.Items.Add("Nam");
             comboBox1.Items.Add("Nữ");
 
-            ////Customer cm = BLL_Customer.Instance.GetCustomerByID(ID);
+            Customer cm = BLL_Customer.Instance.GetCustomerByID(ID);
 
-            ////textBox1.Text = ID.ToString();
-            ////textBox3.Text = BLL_Account.Instance.GetAccountByID(ID).Username;
-            ////textBox2.Text = cm.Name;
-            ////if (cm.Gender) comboBox1.Text = "Nam";
-            ////else comboBox1.Text = "Nữ";
-            ////textBox4.Text = cm.SDT;
-            ////textBox5.Text = cm.CMND;
-            ////textBox6.Text = cm.Job;
-            //dateTimePicker1.Value = cm.Birthday;
+            textBox1.Text = ID.ToString();
+            textBox3.Text = BLL_Account.Instance.GetAccountByID(ID).Username;
+            textBox2.Text = cm.Name;
+            if (cm.Gender) comboBox1.Text = "Nam";
+            else comboBox1.Text = "Nữ";
+            textBox4.Text = cm.SDT;
+            textBox5.Text = cm.CMND;
+            textBox6.Text = cm.Job;
+            dateTimePicker1.Value = cm.Birthday;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace QuanLyNhaTro.Views
         private void button1_Click(object sender, EventArgs e) //Lưu
         {
             Customer phuc = new Customer();
-         //   phuc.AccountId = Convert.ToInt32(textBox1.Text);
+            phuc.CustomerId = Convert.ToInt32(textBox1.Text);
             
             phuc.Name = textBox2.Text;
             if (comboBox1.Text.ToString() == "Nam") phuc.Gender = true;
