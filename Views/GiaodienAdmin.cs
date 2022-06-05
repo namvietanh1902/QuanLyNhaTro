@@ -197,6 +197,7 @@ namespace QuanLyNhaTro.Views
 
                 if (dgvthongtin_user.SelectedRows.Count < 1) //add
                 {
+                    new BLL.Common.ModelDataValidation().Validate(account);
                     BLL_Account.Instance.AddAccount(account);
                     if (account.isAdmin == false)
                     {
@@ -222,6 +223,9 @@ namespace QuanLyNhaTro.Views
                 if (dgvthongtin_user.SelectedRows.Count == 1)//update
                 {
                     account.AccountId = Convert.ToInt32(txtIduser_user.Text);
+
+                    new BLL.Common.ModelDataValidation().Validate(account);
+
                     BLL_Account.Instance.UpdateAccount(account);
                     cbRoleuser.Enabled = true;
 
@@ -450,11 +454,15 @@ namespace QuanLyNhaTro.Views
                         foreach (Account acc in BLL_Account.Instance.GetAllAccount())
                         {
                             if (acc.SDT == txtSDT_khachtro.Text && acc.isAdmin == false && acc.isDelete == false)
-                            {
+                            {   
                                 cusAdd.CustomerId = acc.AccountId;
+                                if(acc.Name != cusAdd.Name) throw new FormatException("Tên bạn nhập không khớp với tên bạn đăng kí tài khoản");
+                                if(acc.Gender != cusAdd.Gender) throw new FormatException("Giới tính bạn nhập không khớp với giới tính bạn đăng kí tài khoản");
+                                if(acc.Birthday.ToString("dd-MM-yyyy") != cusAdd.Birthday.ToString("dd-MM-yyyy")) throw new FormatException("Ngày sinh bạn nhập không khớp với ngày sinh bạn đăng kí tài khoản");
                                 break;
                             }
                         }
+                        new BLL.Common.ModelDataValidation().Validate(cusAdd);
                         BLL_Customer.Instance.AddKhachTro(cusAdd);
                         foreach (Customer cus in BLL_Customer.Instance.GetAllCustomer())
                         {
@@ -509,6 +517,7 @@ namespace QuanLyNhaTro.Views
 
                 if (dgvthongtin_khachtro.SelectedRows.Count == 1) //update
                 {
+
                     cusAdd.CustomerId = Convert.ToInt32(txtMakhachtro_khachtro.Text);
                     Account account = new Account();
                     foreach (Customer cus in BLL_Customer.Instance.GetAllCustomer())
@@ -519,6 +528,9 @@ namespace QuanLyNhaTro.Views
                             break;
                         }
                     }
+
+
+                    new BLL.Common.ModelDataValidation().Validate(cusAdd);
 
                     BLL_Customer.Instance.UpdateKhachTro(cusAdd);
 

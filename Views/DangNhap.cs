@@ -162,6 +162,15 @@ namespace QuanLyNhaTro.Views
                     MessageBoxIcon.Error
                     );
             }
+            else if (account.isAdmin==false && BLL_Contract.Instance.GetContractByCustomerID(account.AccountId)==null)
+            {
+                MessageBox.Show(
+                   "Your account hasn't rented a room yet ",
+                   "Thông báo",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Warning
+                   );
+            }
             else
             {
                 if (account.isAdmin)
