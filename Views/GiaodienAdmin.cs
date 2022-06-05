@@ -186,6 +186,7 @@ namespace QuanLyNhaTro.Views
                 else throw new FormatException("Giới tính không dc trống");
                 if (DateTime.Now.Year - dtpNgaysinh_user.Value.Year < 18) throw new FormatException("Tuổi dưới 18");
                 else account.Birthday = dtpNgaysinh_user.Value;
+                if(BLL_Account.Instance.CheckSDT(txtSDT_user.Text)==true) throw new FormatException("Số điện thoại này đã tồn tại");
                 if (txtSDT_user.Text == "") throw new FormatException("Số điện thoại không dc để trống");
                 if (txtSDT_user.Text.Length != 10) throw new FormatException("Số điện thoại phải có 10 số");
                 long sdt;
