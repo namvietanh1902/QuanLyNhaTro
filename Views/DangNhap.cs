@@ -5,6 +5,7 @@ using QuanLyNhaTro.Models;
 
 using System.Linq;
 using System.Drawing;
+using System.Reflection;
 
 namespace QuanLyNhaTro.Views
 {   
@@ -19,6 +20,7 @@ namespace QuanLyNhaTro.Views
         {
             InitializeComponent();
             this.DoubleBuffered = true;
+            
             this.SuspendLayout();
             txtPassword.KeyDown += (p, e) =>
                 {
@@ -26,7 +28,11 @@ namespace QuanLyNhaTro.Views
                     {
                         btnLogin_Click(this,EventArgs.Empty);
                     }
-                };           
+                };
+
+            typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty
+            | BindingFlags.Instance | BindingFlags.NonPublic, null,
+            pnDangnhap, new object[] { true });
         }
         private void button1_Click(object sender, EventArgs e)
         {
