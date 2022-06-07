@@ -426,6 +426,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(1453, -4);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
@@ -2660,7 +2661,7 @@
             // txtWaterPrice
             // 
             this.txtWaterPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWaterPrice.Location = new System.Drawing.Point(196, 444);
+            this.txtWaterPrice.Location = new System.Drawing.Point(190, 444);
             this.txtWaterPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtWaterPrice.Name = "txtWaterPrice";
             this.txtWaterPrice.Size = new System.Drawing.Size(152, 30);
@@ -2669,7 +2670,7 @@
             // label82
             // 
             this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label82.Location = new System.Drawing.Point(8, 447);
+            this.label82.Location = new System.Drawing.Point(3, 447);
             this.label82.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label82.Name = "label82";
             this.label82.Size = new System.Drawing.Size(172, 30);
@@ -2679,7 +2680,7 @@
             // txtWaterAfter
             // 
             this.txtWaterAfter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWaterAfter.Location = new System.Drawing.Point(196, 384);
+            this.txtWaterAfter.Location = new System.Drawing.Point(190, 384);
             this.txtWaterAfter.Margin = new System.Windows.Forms.Padding(4);
             this.txtWaterAfter.Name = "txtWaterAfter";
             this.txtWaterAfter.Size = new System.Drawing.Size(152, 30);
@@ -2688,7 +2689,7 @@
             // label81
             // 
             this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label81.Location = new System.Drawing.Point(6, 384);
+            this.label81.Location = new System.Drawing.Point(3, 384);
             this.label81.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(176, 30);
@@ -2698,7 +2699,7 @@
             // txtElecAfter
             // 
             this.txtElecAfter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtElecAfter.Location = new System.Drawing.Point(189, 203);
+            this.txtElecAfter.Location = new System.Drawing.Point(190, 203);
             this.txtElecAfter.Margin = new System.Windows.Forms.Padding(4);
             this.txtElecAfter.Name = "txtElecAfter";
             this.txtElecAfter.Size = new System.Drawing.Size(152, 30);
@@ -2718,7 +2719,7 @@
             // txtElecFirst
             // 
             this.txtElecFirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtElecFirst.Location = new System.Drawing.Point(189, 155);
+            this.txtElecFirst.Location = new System.Drawing.Point(190, 155);
             this.txtElecFirst.Margin = new System.Windows.Forms.Padding(4);
             this.txtElecFirst.Name = "txtElecFirst";
             this.txtElecFirst.Size = new System.Drawing.Size(152, 30);
@@ -2728,7 +2729,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(2, 158);
+            this.label25.Location = new System.Drawing.Point(3, 158);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(186, 25);
@@ -2787,7 +2788,7 @@
             // txtElecPrice
             // 
             this.txtElecPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtElecPrice.Location = new System.Drawing.Point(189, 256);
+            this.txtElecPrice.Location = new System.Drawing.Point(190, 256);
             this.txtElecPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtElecPrice.Name = "txtElecPrice";
             this.txtElecPrice.Size = new System.Drawing.Size(152, 30);
@@ -2805,7 +2806,7 @@
             // label23
             // 
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(-6, 320);
+            this.label23.Location = new System.Drawing.Point(3, 320);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(172, 30);
@@ -2816,7 +2817,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(4, 260);
+            this.label21.Location = new System.Drawing.Point(3, 260);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(90, 25);
@@ -3481,9 +3482,9 @@
             // 
             // imageList1
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "undo-4-32.png");
             // 
             // lblThongke
             // 
@@ -3563,7 +3564,7 @@
             this.btnThongke.Name = "btnThongke";
             this.btnThongke.Size = new System.Drawing.Size(373, 70);
             this.btnThongke.TabIndex = 2;
-            this.btnThongke.Text = "Thống kê";
+            this.btnThongke.Text = "Kiểm toán";
             this.btnThongke.UseVisualStyleBackColor = false;
             this.btnThongke.Click += new System.EventHandler(this.btnThongke_Click);
             // 

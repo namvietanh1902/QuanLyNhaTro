@@ -138,6 +138,8 @@
             this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvService = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnNavagation.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -161,6 +163,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnNavagation
@@ -351,7 +355,7 @@
             this.btnNav.Location = new System.Drawing.Point(0, 0);
             this.btnNav.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNav.Name = "btnNav";
-            this.btnNav.Size = new System.Drawing.Size(116, 84);
+            this.btnNav.Size = new System.Drawing.Size(108, 84);
             this.btnNav.TabIndex = 1;
             this.btnNav.Text = "☰";
             this.btnNav.UseVisualStyleBackColor = false;
@@ -971,6 +975,7 @@
             // pnUser
             // 
             this.pnUser.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnUser.Controls.Add(this.groupBox2);
             this.pnUser.Controls.Add(this.vbButton4);
             this.pnUser.Controls.Add(this.vbButton3);
             this.pnUser.Controls.Add(this.groupBox8);
@@ -1049,7 +1054,7 @@
             this.groupBox8.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox8.Size = new System.Drawing.Size(985, 622);
+            this.groupBox8.Size = new System.Drawing.Size(908, 622);
             this.groupBox8.TabIndex = 11;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Thông tin khách thuê";
@@ -1649,6 +1654,36 @@
             this.dgvService.TabIndex = 0;
             this.dgvService.DoubleClick += new System.EventHandler(this.dgvService_DoubleClick);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Font = new System.Drawing.Font("Source Sans Pro", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBox2.Location = new System.Drawing.Point(941, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(580, 623);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Danh sách hóa đơn chưa thanh toán";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.GridColor = System.Drawing.Color.Gray;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 39);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(574, 581);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // GiaodienUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1703,6 +1738,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1817,5 +1854,7 @@
         private System.Windows.Forms.Label lblGioitinh_user;
         private System.Windows.Forms.Label lblId_user;
         private System.Windows.Forms.Label lblName_user;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
