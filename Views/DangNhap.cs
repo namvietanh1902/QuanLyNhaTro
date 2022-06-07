@@ -10,17 +10,14 @@ using System.Reflection;
 namespace QuanLyNhaTro.Views
 {   
     
-    public partial class DangNhap : Form
+    public partial class DangNhap : Form 
     {   
         QuanLy db = new QuanLy();
-       
 
-
-        public DangNhap()
+        public DangNhap() 
         {
             InitializeComponent();
-            this.DoubleBuffered = true;
-            
+            this.DoubleBuffered = true;  
             this.SuspendLayout();
             txtPassword.KeyDown += (p, e) =>
                 {
@@ -28,7 +25,10 @@ namespace QuanLyNhaTro.Views
                     {
                         btnLogin_Click(this,EventArgs.Empty);
                     }
-                };
+             };
+           
+
+
 
             typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty
             | BindingFlags.Instance | BindingFlags.NonPublic, null,

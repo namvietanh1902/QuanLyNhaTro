@@ -187,6 +187,7 @@
             this.txtCusSDT = new System.Windows.Forms.TextBox();
             this.txtCusCCCD = new System.Windows.Forms.TextBox();
             this.txtCusJob = new System.Windows.Forms.TextBox();
+            this.txtGender = new System.Windows.Forms.TextBox();
             this.txtCusName_ThanhToan = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCusID_ThanhToan = new System.Windows.Forms.TextBox();
@@ -282,7 +283,6 @@
             this.lblHethong = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtGender = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -2515,6 +2515,18 @@
             this.txtCusJob.Size = new System.Drawing.Size(173, 30);
             this.txtCusJob.TabIndex = 15;
             // 
+            // txtGender
+            // 
+            this.txtGender.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGender.Location = new System.Drawing.Point(277, 214);
+            this.txtGender.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGender.Name = "txtGender";
+            this.txtGender.Size = new System.Drawing.Size(173, 30);
+            this.txtGender.TabIndex = 10;
+            // 
             // txtCusName_ThanhToan
             // 
             this.txtCusName_ThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -3734,18 +3746,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // txtGender
-            // 
-            this.txtGender.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGender.Location = new System.Drawing.Point(277, 214);
-            this.txtGender.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(173, 30);
-            this.txtGender.TabIndex = 10;
             // 
             // GiaodienAdmin
             // 

@@ -33,15 +33,14 @@ namespace QuanLyNhaTro.Views
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.button1 = new System.Windows.Forms.Button();
             this.pnDangnhap = new System.Windows.Forms.Panel();
+            this.txtPassword = new ZBobb.AlphaBlendTextBox();
+            this.txtUsername = new ZBobb.AlphaBlendTextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblhienpass = new System.Windows.Forms.Label();
-            this.lblanpass = new System.Windows.Forms.Label();
             this.lblSignup = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnYourname = new System.Windows.Forms.Panel();
@@ -58,6 +57,7 @@ namespace QuanLyNhaTro.Views
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblanpass = new System.Windows.Forms.Label();
             this.btnConfirm = new QuanLyNhaTro.VBButton();
             this.btnSignup = new QuanLyNhaTro.VBButton();
             this.pnDangnhap.SuspendLayout();
@@ -88,16 +88,16 @@ namespace QuanLyNhaTro.Views
             // 
             // pnDangnhap
             // 
-            this.pnDangnhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnDangnhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pnDangnhap.Controls.Add(this.lblanpass);
+            this.pnDangnhap.Controls.Add(this.txtPassword);
+            this.pnDangnhap.Controls.Add(this.txtUsername);
             this.pnDangnhap.Controls.Add(this.btnLogin);
             this.pnDangnhap.Controls.Add(this.lblhienpass);
-            this.pnDangnhap.Controls.Add(this.lblanpass);
             this.pnDangnhap.Controls.Add(this.lblSignup);
             this.pnDangnhap.Controls.Add(this.label5);
             this.pnDangnhap.Controls.Add(this.checkBox1);
-            this.pnDangnhap.Controls.Add(this.txtPassword);
             this.pnDangnhap.Controls.Add(this.label4);
-            this.pnDangnhap.Controls.Add(this.txtUsername);
             this.pnDangnhap.Controls.Add(this.label3);
             this.pnDangnhap.Controls.Add(this.label2);
             this.pnDangnhap.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -107,57 +107,75 @@ namespace QuanLyNhaTro.Views
             this.pnDangnhap.Size = new System.Drawing.Size(752, 639);
             this.pnDangnhap.TabIndex = 33;
             // 
+            // txtPassword
+            // 
+            this.txtPassword.BackAlpha = 1;
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtPassword.Location = new System.Drawing.Point(122, 357);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(488, 45);
+            this.txtPassword.TabIndex = 22;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.BackAlpha = 1;
+            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.Color.Gainsboro;
+            this.txtUsername.ImeMode = System.Windows.Forms.ImeMode.Alpha;
+            this.txtUsername.Location = new System.Drawing.Point(122, 233);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(488, 45);
+            this.txtUsername.TabIndex = 22;
+            this.txtUsername.Validating += new System.ComponentModel.CancelEventHandler(this.txtUsername_Validating);
+            // 
             // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(123)))), ((int)(((byte)(53)))));
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnLogin.FlatAppearance.BorderSize = 3;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Font = new System.Drawing.Font("Source Sans Pro", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLogin.Location = new System.Drawing.Point(124, 508);
+            this.btnLogin.Location = new System.Drawing.Point(122, 483);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(488, 59);
+            this.btnLogin.Size = new System.Drawing.Size(488, 63);
             this.btnLogin.TabIndex = 21;
             this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblhienpass
             // 
-            this.lblhienpass.BackColor = System.Drawing.Color.White;
+            this.lblhienpass.BackColor = System.Drawing.Color.Transparent;
             this.lblhienpass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblhienpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblhienpass.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblhienpass.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblhienpass.Image = ((System.Drawing.Image)(resources.GetObject("lblhienpass.Image")));
-            this.lblhienpass.Location = new System.Drawing.Point(579, 389);
+            this.lblhienpass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblhienpass.Location = new System.Drawing.Point(509, 315);
             this.lblhienpass.Name = "lblhienpass";
-            this.lblhienpass.Size = new System.Drawing.Size(26, 23);
+            this.lblhienpass.Size = new System.Drawing.Size(101, 34);
             this.lblhienpass.TabIndex = 20;
+            this.lblhienpass.Text = "Show";
+            this.lblhienpass.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblhienpass.UseMnemonic = false;
             this.lblhienpass.Click += new System.EventHandler(this.lblhienpass_Click);
-            // 
-            // lblanpass
-            // 
-            this.lblanpass.BackColor = System.Drawing.Color.White;
-            this.lblanpass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblanpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblanpass.Image = ((System.Drawing.Image)(resources.GetObject("lblanpass.Image")));
-            this.lblanpass.Location = new System.Drawing.Point(581, 389);
-            this.lblanpass.Name = "lblanpass";
-            this.lblanpass.Size = new System.Drawing.Size(22, 23);
-            this.lblanpass.TabIndex = 20;
-            this.lblanpass.Visible = false;
-            this.lblanpass.Click += new System.EventHandler(this.lblanpass_Click);
             // 
             // lblSignup
             // 
             this.lblSignup.AutoSize = true;
             this.lblSignup.BackColor = System.Drawing.Color.Transparent;
             this.lblSignup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSignup.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignup.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSignup.Location = new System.Drawing.Point(522, 251);
+            this.lblSignup.Location = new System.Drawing.Point(520, 195);
             this.lblSignup.Name = "lblSignup";
-            this.lblSignup.Size = new System.Drawing.Size(94, 29);
+            this.lblSignup.Size = new System.Drawing.Size(86, 26);
             this.lblSignup.TabIndex = 18;
             this.lblSignup.Text = "Sign up";
             this.lblSignup.Click += new System.EventHandler(this.lblSignup_Click);
@@ -167,11 +185,11 @@ namespace QuanLyNhaTro.Views
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label5.Font = new System.Drawing.Font("Source Sans Pro", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(467, 434);
+            this.label5.Location = new System.Drawing.Point(443, 416);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(145, 23);
+            this.label5.Size = new System.Drawing.Size(170, 25);
             this.label5.TabIndex = 13;
             this.label5.Text = "Forgot Password?";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -180,62 +198,37 @@ namespace QuanLyNhaTro.Views
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Font = new System.Drawing.Font("Source Sans Pro", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBox1.Location = new System.Drawing.Point(122, 434);
+            this.checkBox1.Location = new System.Drawing.Point(121, 416);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(162, 27);
+            this.checkBox1.Size = new System.Drawing.Size(172, 29);
             this.checkBox1.TabIndex = 12;
             this.checkBox1.Text = "  Remember Me";
             this.checkBox1.UseVisualStyleBackColor = false;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.Color.White;
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtPassword.Location = new System.Drawing.Point(124, 382);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(489, 34);
-            this.txtPassword.TabIndex = 11;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Source Sans Pro", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(122, 350);
+            this.label4.Location = new System.Drawing.Point(115, 308);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 29);
+            this.label4.Size = new System.Drawing.Size(160, 41);
             this.label4.TabIndex = 9;
             this.label4.Text = "Password";
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.BackColor = System.Drawing.Color.White;
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtUsername.Location = new System.Drawing.Point(124, 288);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(489, 34);
-            this.txtUsername.TabIndex = 10;
-            this.txtUsername.Validating += new System.ComponentModel.CancelEventHandler(this.txtUsername_Validating);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Source Sans Pro", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(119, 251);
+            this.label3.Location = new System.Drawing.Point(114, 180);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 29);
+            this.label3.Size = new System.Drawing.Size(166, 41);
             this.label3.TabIndex = 8;
             this.label3.Text = "Username";
             // 
@@ -243,11 +236,11 @@ namespace QuanLyNhaTro.Views
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Source Sans Pro", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Source Sans Pro", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(281, 102);
+            this.label2.Location = new System.Drawing.Point(272, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 75);
+            this.label2.Size = new System.Drawing.Size(203, 88);
             this.label2.TabIndex = 7;
             this.label2.Text = "Login";
             // 
@@ -416,6 +409,23 @@ namespace QuanLyNhaTro.Views
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lblanpass
+            // 
+            this.lblanpass.BackColor = System.Drawing.Color.Transparent;
+            this.lblanpass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblanpass.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblanpass.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblanpass.Image = ((System.Drawing.Image)(resources.GetObject("lblanpass.Image")));
+            this.lblanpass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblanpass.Location = new System.Drawing.Point(509, 315);
+            this.lblanpass.Name = "lblanpass";
+            this.lblanpass.Size = new System.Drawing.Size(91, 34);
+            this.lblanpass.TabIndex = 23;
+            this.lblanpass.Text = "Hide";
+            this.lblanpass.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblanpass.Visible = false;
+            this.lblanpass.Click += new System.EventHandler(this.lblanpass_Click);
+            // 
             // btnConfirm
             // 
             this.btnConfirm.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -494,9 +504,7 @@ namespace QuanLyNhaTro.Views
         private System.Windows.Forms.Label lblSignup;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pnYourname;
@@ -514,9 +522,11 @@ namespace QuanLyNhaTro.Views
         private System.Windows.Forms.Label label11;
         private VBButton btnConfirm;
         private VBButton btnSignup;
-        private System.Windows.Forms.Label lblanpass;
         private System.Windows.Forms.Label lblhienpass;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button btnLogin;
+        private ZBobb.AlphaBlendTextBox txtPassword;
+        private ZBobb.AlphaBlendTextBox txtUsername;
+        private System.Windows.Forms.Label lblanpass;
     }
 }
