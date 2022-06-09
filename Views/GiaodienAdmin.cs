@@ -26,12 +26,20 @@ namespace QuanLyNhaTro.Views
             cbbGioitinh_khachtro.Items.Clear();
             cbbGioitinh_khachtro.Items.Add("Nam");
             cbbGioitinh_khachtro.Items.Add("Nữ");
+
+            foreach (Customer c in BLL_Customer.Instance.GetAllCustomer())
+                comboBox1.Items.Add(new CBBItems
+                {
+                    Text = c.Name + " - " + c.CustomerId,
+                    Value = c.CustomerId
+                });
+            comboBox1.Items.Add(new CBBItems { Text = "Tất cả", Value = 0 });
         }
         private void GiaodienAdmin_Load(object sender, EventArgs e)
         {
             lblUsername.Text = BLL_Account.Instance.GetNameByAccount(ID);
         }
-        
+
         private void hienthidulieulenthanhthongbao()
         {
             string line = "";
@@ -150,7 +158,7 @@ namespace QuanLyNhaTro.Views
         private void btnLammoi_user_Click(object sender, EventArgs e)
         {
             cleardata_user();
-        }  
+        }
 
         private void btnLuu_user_Click(object sender, EventArgs e)
         {
@@ -186,7 +194,7 @@ namespace QuanLyNhaTro.Views
                 else throw new FormatException("Giới tính không dc trống");
                 if (DateTime.Now.Year - dtpNgaysinh_user.Value.Year < 18) throw new FormatException("Tuổi dưới 18");
                 else account.Birthday = dtpNgaysinh_user.Value;
-                if(BLL_Account.Instance.CheckSDT(txtSDT_user.Text)==true) throw new FormatException("Số điện thoại này đã tồn tại");
+                if (BLL_Account.Instance.CheckSDT(txtSDT_user.Text) == true) throw new FormatException("Số điện thoại này đã tồn tại");
                 if (txtSDT_user.Text == "") throw new FormatException("Số điện thoại không dc để trống");
                 if (txtSDT_user.Text.Length != 10) throw new FormatException("Số điện thoại phải có 10 số");
                 long sdt;
@@ -275,7 +283,7 @@ namespace QuanLyNhaTro.Views
             {
                 MessageBox.Show(ex.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
 
 
         }
@@ -320,9 +328,9 @@ namespace QuanLyNhaTro.Views
             }
             BLL_Account.Instance.DeleteAccount(listIDdell);
 
-            foreach(int id in listIDdell)
+            foreach (int id in listIDdell)
             {
-                if(id == ID)
+                if (id == ID)
                 {
                     btnDangxuat.PerformClick();
                 }
@@ -389,7 +397,7 @@ namespace QuanLyNhaTro.Views
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 col.HeaderCell.Style.Font = new Font("Source Sans Pro", 14, FontStyle.Bold, GraphicsUnit.Pixel);
             }
-           // txtMakhachtro_khachtro.Text = BLL_Customer.Instance.GetNextID().ToString();
+            // txtMakhachtro_khachtro.Text = BLL_Customer.Instance.GetNextID().ToString();
             txtMakhachtro_khachtro.ReadOnly = true;
             dgvthongtin_khachtro.ClearSelection();
         }
@@ -420,7 +428,7 @@ namespace QuanLyNhaTro.Views
         {
             try
             {
-                if(cbbTenphongtro_khanhtro.SelectedIndex == -1) throw new FormatException("Tên phòng không dc để trống");
+                if (cbbTenphongtro_khanhtro.SelectedIndex == -1) throw new FormatException("Tên phòng không dc để trống");
                 Customer cusAdd = new Customer();
                 if (txtTennguoithue_khachtro.Text == "") throw new FormatException("Tên không được để trống");
                 else cusAdd.Name = txtTennguoithue_khachtro.Text;
@@ -455,11 +463,11 @@ namespace QuanLyNhaTro.Views
                         foreach (Account acc in BLL_Account.Instance.GetAllAccount())
                         {
                             if (acc.SDT == txtSDT_khachtro.Text && acc.isAdmin == false && acc.isDelete == false)
-                            {   
+                            {
                                 cusAdd.CustomerId = acc.AccountId;
-                                if(acc.Name != cusAdd.Name) throw new FormatException("Tên bạn nhập không khớp với tên bạn đăng kí tài khoản");
-                                if(acc.Gender != cusAdd.Gender) throw new FormatException("Giới tính bạn nhập không khớp với giới tính bạn đăng kí tài khoản");
-                                if(acc.Birthday.ToString("dd-MM-yyyy") != cusAdd.Birthday.ToString("dd-MM-yyyy")) throw new FormatException("Ngày sinh bạn nhập không khớp với ngày sinh bạn đăng kí tài khoản");
+                                if (acc.Name != cusAdd.Name) throw new FormatException("Tên bạn nhập không khớp với tên bạn đăng kí tài khoản");
+                                if (acc.Gender != cusAdd.Gender) throw new FormatException("Giới tính bạn nhập không khớp với giới tính bạn đăng kí tài khoản");
+                                if (acc.Birthday.ToString("dd-MM-yyyy") != cusAdd.Birthday.ToString("dd-MM-yyyy")) throw new FormatException("Ngày sinh bạn nhập không khớp với ngày sinh bạn đăng kí tài khoản");
                                 break;
                             }
                         }
@@ -573,7 +581,7 @@ namespace QuanLyNhaTro.Views
             {
                 MessageBox.Show(ex.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void btnLammoi_khachtro_Click(object sender, EventArgs e)
@@ -727,7 +735,7 @@ namespace QuanLyNhaTro.Views
             pnThongke.Visible = false;
             reaload_phongtro();
         }
-   
+
 
         private void btnChitietphongthue_phongtro_Click(object sender, EventArgs e)
         {
@@ -747,7 +755,7 @@ namespace QuanLyNhaTro.Views
         {
             int x = BLL_Room.Instance.GetNextID();
             ThemPhongTro frm = new ThemPhongTro(BLL_Room.Instance.GetNextID());
-            frm.d += new ThemPhongTro.Mydel(reaload_phongtro); 
+            frm.d += new ThemPhongTro.Mydel(reaload_phongtro);
 
             frm.ShowDialog();
         }
@@ -878,14 +886,14 @@ namespace QuanLyNhaTro.Views
                     Price = Price
                 };
                 new BLL.Common.ModelDataValidation().Validate(service);
-            
-            BLL_Service.Instance.AddOrUpdate(isEdit_Service, service);
-            reload_Service();
+
+                BLL_Service.Instance.AddOrUpdate(isEdit_Service, service);
+                reload_Service();
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Thông báo lỗi");
+                MessageBox.Show(ex.Message, "Thông báo lỗi");
             }
 
         }
@@ -957,6 +965,15 @@ namespace QuanLyNhaTro.Views
             pnDichvu.Visible = false;
             pnTinhtientro.Visible = false;
             pnThongke.Visible = true;
+
+            label63.Text = BLL_Room.Instance.GetAllRoom().Count.ToString();
+            label65.Text = (BLL_Room.Instance.GetAllRoom().Count - BLL_Room.Instance.GetAllRoomEmty().Count).ToString();
+
+            dataGridView3.DataSource = BLL_Service.Instance.GetAllServicePaid_Views();
+            dataGridView1.DataSource = BLL_Receipt.Instance.GetAllReceiptPaid_Views();
+
+            textBox27.Text = (BLL_Receipt.Instance.TotalServiceFull() + BLL_Service.Instance.TotalServiceFull()).ToString();
+
         }
 
         private void btnNav_Click(object sender, EventArgs e)
@@ -1034,10 +1051,10 @@ namespace QuanLyNhaTro.Views
                     });
                 }
             }
-            
-           
-            
-           
+
+
+
+
             txtRoomID_Month.Enabled = false;
             txtRoomName_Month.Enabled = false;
             txtCusID_ThanhToan.Enabled = false;
@@ -1072,15 +1089,15 @@ namespace QuanLyNhaTro.Views
                 Month = Month.Value,
                 ElecBefore = ElecBefore,
                 ElecAfter = ElecAfter,
-                WaterBefore= WaterBefore,
+                WaterBefore = WaterBefore,
                 WaterAfter = WaterAfter,
-                WaterBill = (WaterAfter -WaterBefore)*WaterPrice,
-                ElecBill = (ElecAfter - ElecBefore)*ElecPrice,
+                WaterBill = (WaterAfter - WaterBefore) * WaterPrice,
+                ElecBill = (ElecAfter - ElecBefore) * ElecPrice,
                 RoomBill = Convert.ToInt32(txtPrice.Text),
-                
-        };
+
+            };
             receipt.Total = receipt.ElecBill + receipt.WaterBill + receipt.RoomBill;
-            MessageBox.Show("Số tiền khách phải trả là: "+ receipt.Total);
+            MessageBox.Show("Số tiền khách phải trả là: " + receipt.Total);
             BLL_Receipt.Instance.AddMonthlyReceipt(receipt);
             reload_ThanhToan();
         }
@@ -1091,10 +1108,10 @@ namespace QuanLyNhaTro.Views
             txtRoomID_Month.Text = data.Contract.Room.RoomId.ToString();
             txtCusID_ThanhToan.Text = i.ToString();
             txtRoomName_Month.Text = data.Contract.Room.Name;
-            txtGender.Text= data.Gender ? "Nam" : "Nữ";
+            txtGender.Text = data.Gender ? "Nam" : "Nữ";
             txtCusName_ThanhToan.Text = data.Name;
             txtCusSDT.Text = data.SDT;
-            txtCusCCCD.Text= data.CMND;
+            txtCusCCCD.Text = data.CMND;
             txtCusJob.Text = data.Job;
             RentDate.Value = (DateTime)data.Contract.CreatedAt;
             birthDate.Value = (DateTime)data.Birthday;
@@ -1104,6 +1121,107 @@ namespace QuanLyNhaTro.Views
         private void cbbCustomer_SelectedIndexChanged(object sender, EventArgs e)
         {
             GUI();
+        }
+
+        private void groupBox9_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == null || comboBox4.SelectedItem == null)
+                MessageBox.Show("Chưa chọn tên hoặc loại", "Tìm kiếm không thành công",
+                                 MessageBoxButtons.OK,
+                                 MessageBoxIcon.Warning);
+            else
+            {
+                string name = "";
+                string paid = "";
+                if (comboBox1.SelectedIndex == 0)
+                    name = "";
+                if (comboBox4.SelectedItem.ToString() == "Đã thanh toán")
+                    paid = "True";
+                else if (comboBox4.SelectedItem.ToString() == "Chưa thanh toán")
+                    paid = "False";
+                else paid = "Tất cả";
+                dataGridView3.DataSource = BLL_Service.Instance.FindService(name, paid);
+                dataGridView1.DataSource = BLL_Receipt.Instance.FindService(name, paid);               
+
+            }
+        }
+
+        private void dataGridView3_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+        }
+        private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!(Convert.ToBoolean(dataGridView3.Rows[e.RowIndex].Cells[5].Value)))
+            {
+                if (MessageBox.Show("Bạn chưa thanh toán, có xác nhận thanh toán", "Thanh toán",
+                                                MessageBoxButtons.YesNo,
+                                                MessageBoxIcon.Question) == DialogResult.Yes)
+                    BLL_Service.Instance.PaidService(Convert.ToInt32(dataGridView3.Rows[e.RowIndex].Cells[0].Value), true);
+            }
+
+            else if (MessageBox.Show("Bạn đã thanh toán rồi, có muốn hủy thanh toán", "Hủy thanh toán",
+                                      MessageBoxButtons.YesNo,
+                                      MessageBoxIcon.Question) == DialogResult.Yes)
+                BLL_Service.Instance.PaidService(Convert.ToInt32(dataGridView3.Rows[e.RowIndex].Cells[0].Value), false);
+            dataGridView3.DataSource = BLL_Service.Instance.GetAllServicePaid_Views();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!(Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[3].Value)))
+            {
+                if (MessageBox.Show("Bạn chưa thanh toán, có xác nhận thanh toán", "Thanh toán",
+                                                MessageBoxButtons.YesNo,
+                                                MessageBoxIcon.Question) == DialogResult.Yes)
+                    BLL_Receipt.Instance.PaidReceipt(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value), true);
+            }
+
+            else if (MessageBox.Show("Bạn đã thanh toán rồi, có muốn hủy thanh toán", "Hủy thanh toán",
+                                      MessageBoxButtons.YesNo,
+                                      MessageBoxIcon.Question) == DialogResult.Yes)
+                BLL_Receipt.Instance.PaidReceipt(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value), false);
+            dataGridView1.DataSource = BLL_Receipt.Instance.GetAllReceiptPaid_Views();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            dataGridView3.DataSource = BLL_Service.Instance.Sort();
+            dataGridView1.DataSource = BLL_Receipt.Instance.Sort();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBox25.Text = (BLL_Service.Instance.TotalService(dateTimePicker5.Value) + BLL_Receipt.Instance.TotalService(dateTimePicker5.Value)).ToString();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            textBox26.Text = (BLL_Service.Instance.TotalService(dateTimePicker6.Value) + BLL_Receipt.Instance.TotalService(dateTimePicker6.Value)).ToString();
+        }
+
+        private void dgvthongtin_user_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            lblTitle.Text = "Quản Lý Phòng Trọ";
+            lblHome.Visible = false;
+            lblUser.Visible = false;
+            lblKhachtro.Visible = false;
+            lblPhongtro.Visible = true;
+            lblDichvu.Visible = false;
+            lblTinhtientro.Visible = false;
+            lblThongke.Visible = false;
+            pnHome.Visible = false;
+            pnUser.Visible = false;
+            pnKhanhtro.Visible = false;
+            pnPhongtro.Visible = true;
+            pnDichvu.Visible = false;
+            pnTinhtientro.Visible = false;
+            pnThongke.Visible = false;
+            reaload_phongtro();
         }
     }
 }

@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AlphaBlendTextBox">
-      <HintPath>..\Nguyễn Văn Thịnh stt 4\AlphaBlendTextBox.dll</HintPath>
+      <HintPath>..\..\..\Downloads\AlphaBlendTextBox.dll</HintPath>
     </Reference>
     <Reference Include="AlphaUtils">
       <HintPath>..\Demo1\AlphaUtils.dll</HintPath>
@@ -75,7 +75,9 @@
     <Compile Include="DTO\CBBItems.cs" />
     <Compile Include="DTO\ChiTietPhongThue.cs" />
     <Compile Include="DTO\Customer_View.cs" />
+    <Compile Include="DTO\ReceiptPaid_View.cs" />
     <Compile Include="DTO\Room_View.cs" />
+    <Compile Include="DTO\ServicePaid_View.cs" />
     <Compile Include="DTO\ServiceReceipt_View.cs" />
     <Compile Include="DTO\Service_View.cs" />
     <Compile Include="Migrations\202206050736249_inheritance.cs" />

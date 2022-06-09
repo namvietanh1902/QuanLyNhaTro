@@ -123,6 +123,84 @@ namespace QuanLyNhaTro.BLL
             }
 
         }
+        public List<ServicePaid_View> GetAllServicePaid_Views()
+        {
+            List<ServicePaid_View> spv = new List<ServicePaid_View>();
+            foreach (ServiceReceipt rcp in BLL_Receipt.Instance.getAllServiceReceipt())
+            {
+                if(!BLL_Customer.Instance.IsDelete(rcp.ContractID))
+                {
+                    ServicePaid_View a = new ServicePaid_View();
+                    a.ReceiptID = rcp.ReceiptID;
+                    a.Total = rcp.Total;
+                    a.IsPaid = rcp.isPaid;
+                    a.PaidDate = (DateTime)rcp.PaidDate;
+                    foreach (Customer c in BLL_Customer.Instance.GetAllCustomer())
+                        if (rcp.ContractID == c.CustomerId)
+                            a.CustomerName = c.Name;
+                    foreach (ServiceReceiptDetail srd in BLL_Receipt.Instance.GetAllServiceReceiptDetails())
+                    {
+                        if (rcp.ReceiptID == srd.ServiceReceiptId)
+                        {
+                            a.Number = srd.Number;
+                            foreach (Service s in BLL_Service.Instance.GetAllService())
+                                if (srd.ServiceId == s.ServiceId)
+                                    a.ServiceName = s.Name;
+                        }
+                    }
+                    spv.Add(a);
+                }               
+            }
+            return spv;
+        }
+        public List<ServicePaid_View> FindService(string name, string tinhtrang)
+        {
+            List<ServicePaid_View> find = new List<ServicePaid_View>();
+            List<ServicePaid_View> find2 = new List<ServicePaid_View>();
+            if (tinhtrang == "Tất cả")
+            {
+                foreach (ServicePaid_View spv in GetAllServicePaid_Views())
+                    if (spv.CustomerName.Contains(name))
+                        find.Add(spv);
+                return find;
+            }
 
+            foreach (ServicePaid_View spv in GetAllServicePaid_Views())
+                if (spv.CustomerName.Contains(name))
+                    find.Add(spv);
+
+            foreach (ServicePaid_View spv in find)
+                find2.Add(spv);
+
+            foreach (ServicePaid_View spv in find2)
+                if (spv.IsPaid.ToString() != tinhtrang)
+                    find.Remove(spv);
+            return find;
+        }
+        public void PaidService(int id, bool ispaid)
+        {
+            QuanLy.Instance.ServiceReceipts.Find(id).isPaid = ispaid;
+            QuanLy.Instance.SaveChanges();
+        }
+        public List<ServicePaid_View> Sort()
+        {
+            return GetAllServicePaid_Views().OrderBy(s => s.Total).ToList();
+        }
+        public int TotalService(DateTime a)
+        {
+            int Total = 0;
+            foreach (ServicePaid_View spv in GetAllServicePaid_Views())
+                if (spv.PaidDate.Month == a.Month && spv.PaidDate.Year == a.Year && spv.IsPaid == true)
+                    Total += spv.Total;
+            return Total;
+        }
+        public int TotalServiceFull()
+        {
+            int Total = 0;
+            foreach (ServicePaid_View spv in GetAllServicePaid_Views())
+                    Total += spv.Total;
+
+            return Total;
+        }
     }
 }

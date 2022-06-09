@@ -197,5 +197,10 @@ namespace QuanLyNhaTro.BLL
             return data;
                
         }
+        public bool IsDelete(int id)
+        {
+            return QuanLy.Instance.Customers.Find(id).isDelete;
+        }
     }
+
 }
