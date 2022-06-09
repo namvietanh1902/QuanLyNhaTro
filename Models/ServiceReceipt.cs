@@ -14,7 +14,7 @@ namespace QuanLyNhaTro.Models
        
        
         [Required(ErrorMessage ="Ngày thu không được để trống")]
-        public DateTime? PaidDate { get; set; }
+       
        
         public virtual ICollection<ServiceReceiptDetail> Detail { get; set; }
 

@@ -16,6 +16,7 @@ namespace QuanLyNhaTro.Models
         public int ContractID { get; set; }
         public int Total { get; set; }
         public bool isPaid { get; set; } = false;
+        public DateTime? PaidDate { get; set; }
         [ForeignKey("ContractID")]
         public virtual Contract Contract { get; set; }
     }

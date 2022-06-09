@@ -88,6 +88,10 @@
     <Compile Include="Migrations\202206050745335_inheritance1.designer.cs">
       <DependentUpon>202206050745335_inheritance1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206090804577_addCreated.cs" />
+    <Compile Include="Migrations\202206090804577_addCreated.designer.cs">
+      <DependentUpon>202206090804577_addCreated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Contract.cs" />
@@ -152,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206050745335_inheritance1.resx">
       <DependentUpon>202206050745335_inheritance1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206090804577_addCreated.resx">
+      <DependentUpon>202206090804577_addCreated.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ChiTietPhongThue.resx">
       <DependentUpon>ChiTietPhongThue.cs</DependentUpon>

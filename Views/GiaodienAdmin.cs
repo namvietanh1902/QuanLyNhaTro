@@ -1093,6 +1093,7 @@ namespace QuanLyNhaTro.Views
                 WaterAfter = WaterAfter,
                 WaterBill = (WaterAfter - WaterBefore) * WaterPrice,
                 ElecBill = (ElecAfter - ElecBefore) * ElecPrice,
+                PaidDate = DateTime.Now,
                 RoomBill = Convert.ToInt32(txtPrice.Text),
 
             };
