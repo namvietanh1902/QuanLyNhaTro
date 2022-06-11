@@ -90,6 +90,19 @@ namespace QuanLyNhaTro.BLL
                 QuanLy.Instance.SaveChanges();
             }
         }
+        public List<CBBItems> GetAllCustomerCBB()
+        {   
+            var data= new List<CBBItems>();
+            foreach(var cus in GetAllCustomer())
+            {
+                data.Add(new CBBItems
+                {
+                    Text = cus.Name,
+                    Value = cus.CustomerId,
+                });
+            }
+            return data;
+        }
 
         public void DeleteKhachTro(List<int> listdel)
         {

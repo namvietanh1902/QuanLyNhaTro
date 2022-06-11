@@ -25,11 +25,7 @@ namespace QuanLyNhaTro.BLL
             }
             private set { }
         }
-        public int GetNextServiceReceiptID()
-        {
-            if (QuanLy.Instance.ServiceReceipts.Count() == 0) return 1;
-            return QuanLy.Instance.ServiceReceipts.Max(c => c.ReceiptID) + 1;
-        }
+      
 
         public List<MonthlyReceipt> getAllMonthlyReceipt()
         {
@@ -44,12 +40,16 @@ namespace QuanLyNhaTro.BLL
         {
             return QuanLy.Instance.ServiceReceipts.Find(ID);
         }
+        public List<Receipt> GetReceiptByCusID(int id)
+        {
+            return QuanLy.Instance.Receipts.Where(p => p.Contract.Customer.CustomerId.Equals(id)).ToList(); 
+        }
         public MonthlyReceipt GetMonthlyReceiptByID(int ID)
         {
             return QuanLy.Instance.MonthlyReceipts.Find(ID);
         }
 
-        public List<Receipt> getAllReceipt()
+        public List<Receipt> GetAllReceipt()
         {
             return QuanLy.Instance.Receipts.Select(c => c).ToList();
         }
@@ -75,8 +75,17 @@ namespace QuanLyNhaTro.BLL
             }
             else
             {
+                try
+                {
+
+                new Common.ModelDataValidation().Validate(i);
                 QuanLy.Instance.MonthlyReceipts.Add(i);
                 QuanLy.Instance.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Thông báo lỗi");
+                }
             }
         }
 
@@ -163,23 +172,59 @@ namespace QuanLyNhaTro.BLL
                     find.Remove(spv);
             return find;
         }
-
-        public void PaidReceipt(int id, bool ispaid)
+        public int GetTotalIncome()
         {
-            QuanLy.Instance.MonthlyReceipts.Find(id).isPaid = ispaid;
+            return QuanLy.Instance.Receipts.Where(p => p.isPaid).Select(p => p).Sum(p=> (int?)p.Total) ??  0;
         }
-        public List<ReceiptPaid_View> Sort()
+        public void PaidReceipt(int id)
         {
-            return GetAllReceiptPaid_Views().OrderBy(s => s.Total).ToList();
+            QuanLy.Instance.Receipts.Find(id).isPaid = true;
+            QuanLy.Instance.SaveChanges();
         }
-        public int TotalService(DateTime a)
+        public List<Receipt_View> Sort(List<int> current,string SortType)
+        {
+            var list = new List<Receipt_View>();
+            foreach(var item in GetAllReceiptView())
+            {
+                foreach (var i in current)
+                {
+                    if (item.ReceiptID == i)
+                    {
+                        list.Add(item);
+                        break;
+                    }
+                }
+            }
+            switch (SortType)
+            {
+                case "Giá tiền":
+                    {
+                        return list.OrderBy(p => p.Total).ToList();
+                    }
+                default:
+                    {
+                        return list.OrderBy(p=>p.CreatedAt).ToList();
+                    }
+            }
+        }
+        public int TotalInMonth(DateTime a)
         {
             int Total = 0;
-            foreach (ReceiptPaid_View spv in GetAllReceiptPaid_Views())
-                if (spv.Month.Month == a.Month && spv.Month.Year == a.Year && spv.IsPaid == true)
+            foreach (Receipt spv in GetAllReceipt())
+                if (((DateTime)spv.PaidDate).Month == a.Month && ((DateTime)spv.PaidDate).Year == a.Year && spv.isPaid == true)
                     Total += spv.Total;
 
             return Total;
+        }
+        public int TotalInYear(DateTime a)
+        {
+            int Total = 0;
+            foreach (Receipt spv in GetAllReceipt())
+                if (((DateTime)spv.PaidDate).Month == a.Month && ((DateTime)spv.PaidDate).Year == a.Year && spv.isPaid == true)
+                    Total += spv.Total;
+
+            return Total;
+
         }
         public int TotalServiceFull()
         {
@@ -194,21 +239,85 @@ namespace QuanLyNhaTro.BLL
         }
         public List<Receipt_View> GetAllReceiptView()
         {
-            var data = QuanLy.Instance.Receipts.Select(p => p);
-            var list = new List<Receipt_View>();    
+            
+          
+                return GetReceiptView(GetAllReceipt());
+               
+           
+        }
+        public List<Receipt_View> GetReceiptView(List<Receipt> data)
+        {
+            var list = new List<Receipt_View>();
             foreach (Receipt i in data)
             {
                 list.Add(new Receipt_View
                 {
                     ReceiptID = i.ReceiptID,
-                    ContractID = i.ContractID,
+                    CustomerName = i.Contract.Customer.Name,
                     Total = i.Total,
-                    CreatedAt = (DateTime)i.PaidDate,
+                    CreatedAt = ((DateTime)i.PaidDate).ToString("dd-MM-yyyy"),
                     isPaid = i.isPaid,
-                    ReceiptType = i.GetType().Name,
+                    ReceiptType = i is MonthlyReceipt ? "Hóa đơn tháng" : "Hóa đơn dịch vụ"
                 });
+
             }
             return list;
+        }
+
+        public List<Receipt_View> Search(int id, string Status, string Type)
+        {
+            var list = new List<Receipt_View>();
+            var data = new List<Receipt_View>();
+            if (id == 0)
+            {
+                list = GetReceiptView(GetAllReceipt());
+
+            }
+            else
+            {
+                list = GetReceiptView(GetReceiptByCusID(id));
+            }
+            if (Status == "All" && Type == "All")
+            {
+                data = list;
+            }
+            else if (Status != "All"&&Type=="All")
+            {
+            bool isPaid = Status == "Đã thanh toán" ? true : false;
+
+                foreach (var i in list)
+                {
+                    if(i.isPaid == isPaid)
+                    {
+                        data.Add(i);
+                    }
+                }
+
+            }
+            else if(Status == "All" && Type != "All")
+            {
+                foreach(var i in list)
+                {
+                    if(i.ReceiptType == Type)
+                    {
+                        data.Add(i);
+                    }
+                }
+            }
+            else
+            {
+                bool isPaid = Status == "Đã thanh toán" ? true : false;
+
+                foreach (var i in list)
+                {
+                    if (i.ReceiptType == Type&&i.isPaid == isPaid)
+                    {
+                        data.Add(i);
+                    }
+                }
+            }
+
+            return data;
         }
     }
 }

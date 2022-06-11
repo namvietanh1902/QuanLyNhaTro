@@ -28,12 +28,12 @@ namespace QuanLyNhaTro.Views
             cbbGioitinh_khachtro.Items.Add("Nữ");
 
             foreach (Customer c in BLL_Customer.Instance.GetAllCustomer())
-                comboBox1.Items.Add(new CBBItems
+                cbbUser_Stat.Items.Add(new CBBItems
                 {
                     Text = c.Name + " - " + c.CustomerId,
                     Value = c.CustomerId
                 });
-            comboBox1.Items.Add(new CBBItems { Text = "Tất cả", Value = 0 });
+            cbbUser_Stat.Items.Add(new CBBItems { Text = "Tất cả", Value = 0 });
         }
         private void GiaodienAdmin_Load(object sender, EventArgs e)
         {
@@ -379,6 +379,51 @@ namespace QuanLyNhaTro.Views
             pnThongke.Visible = false;
 
 
+        }
+        private void GUI()
+        {
+            int i = ((CBBItems)cbbCustomer.SelectedItem).Value;
+            Customer data = BLL_Customer.Instance.GetCustomerByID(i);
+            txtRoomID_Month.Text = data.Contract.Room.RoomId.ToString();
+            txtCusID_ThanhToan.Text = i.ToString();
+            txtRoomName_Month.Text = data.Contract.Room.Name;
+            txtGender.Text = data.Gender ? "Nam" : "Nữ";
+            txtCusName_ThanhToan.Text = data.Name;
+            txtCusSDT.Text = data.SDT;
+            txtCusCCCD.Text = data.CMND;
+            txtCusJob.Text = data.Job;
+            RentDate.Value = (DateTime)data.Contract.CreatedAt;
+            birthDate.Value = (DateTime)data.Birthday;
+            txtPrice.Text = data.Contract.Room.Price.ToString();
+
+        }
+        private void cbbCustomer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GUI();
+        }
+
+
+
+
+
+        private void dgvthongtin_user_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            lblTitle.Text = "Quản Lý Phòng Trọ";
+            lblHome.Visible = false;
+            lblUser.Visible = false;
+            lblKhachtro.Visible = false;
+            lblPhongtro.Visible = true;
+            lblDichvu.Visible = false;
+            lblTinhtientro.Visible = false;
+            lblThongke.Visible = false;
+            pnHome.Visible = false;
+            pnUser.Visible = false;
+            pnKhanhtro.Visible = false;
+            pnPhongtro.Visible = true;
+            pnDichvu.Visible = false;
+            pnTinhtientro.Visible = false;
+            pnThongke.Visible = false;
+            reaload_phongtro();
         }
 
         private void reloadkhachtro()
@@ -965,16 +1010,14 @@ namespace QuanLyNhaTro.Views
             pnDichvu.Visible = false;
             pnTinhtientro.Visible = false;
             pnThongke.Visible = true;
+            reload_KiemToan();
 
-            label63.Text = BLL_Room.Instance.GetAllRoom().Count.ToString();
-            label65.Text = (BLL_Room.Instance.GetAllRoom().Count - BLL_Room.Instance.GetAllRoomEmty().Count).ToString();
+            
 
-            dgvReceipt.DataSource = BLL_Receipt.Instance.GetAllReceiptView();
-          
-
-            textBox27.Text = (BLL_Receipt.Instance.TotalServiceFull() + BLL_Service.Instance.TotalServiceFull()).ToString();
+           
 
         }
+       
 
         private void btnNav_Click(object sender, EventArgs e)
         {
@@ -1039,18 +1082,9 @@ namespace QuanLyNhaTro.Views
             dgvService.DataSource = BLL_Service.Instance.SearchService(txtSearch_Service.Text);
         }
         private void reload_ThanhToan()
-        {
-            foreach (Customer i in BLL_Customer.Instance.GetAllCustomer())
-            {
-                if (i.isDelete == false)
-                {
-                    cbbCustomer.Items.Add(new CBBItems
-                    {
-                        Text = i.Name,
-                        Value = i.CustomerId,
-                    });
-                }
-            }
+        {   
+            cbbCustomer.Items.Clear();
+            cbbCustomer.Items.AddRange(BLL_Customer.Instance.GetAllCustomerCBB().ToArray());
 
 
 
@@ -1077,12 +1111,25 @@ namespace QuanLyNhaTro.Views
         }
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+            try
+            {
+
             int ElecBefore = Convert.ToInt32(txtElecFirst.Text);
             int ElecAfter = Convert.ToInt32(txtElecAfter.Text);
             int WaterBefore = Convert.ToInt32(txtWaterFirst.Text);
             int WaterAfter = Convert.ToInt32(txtWaterAfter.Text);
             int WaterPrice = Convert.ToInt32(txtWaterPrice.Text);
             int ElecPrice = Convert.ToInt32(txtElecPrice.Text);
+           
+            if (ElecBefore > ElecAfter)
+                {
+                    throw new Exception("Tiền điện cuối tháng phải lớn hơn tiền điện đầu tháng");
+                }
+            if (WaterBefore > WaterAfter)
+                {
+                    throw new Exception("Tiền nước cuối tháng phải lớn hơn tiền nước đầu tháng");
+                }
+
             MonthlyReceipt receipt = new MonthlyReceipt
             {
                 ContractID = ((CBBItems)cbbCustomer.SelectedItem).Value,
@@ -1097,120 +1144,99 @@ namespace QuanLyNhaTro.Views
                 RoomBill = Convert.ToInt32(txtPrice.Text),
 
             };
+            
             receipt.Total = receipt.ElecBill + receipt.WaterBill + receipt.RoomBill;
             MessageBox.Show("Số tiền khách phải trả là: " + receipt.Total);
             BLL_Receipt.Instance.AddMonthlyReceipt(receipt);
             reload_ThanhToan();
-        }
-        private void GUI()
-        {
-            int i = ((CBBItems)cbbCustomer.SelectedItem).Value;
-            Customer data = BLL_Customer.Instance.GetCustomerByID(i);
-            txtRoomID_Month.Text = data.Contract.Room.RoomId.ToString();
-            txtCusID_ThanhToan.Text = i.ToString();
-            txtRoomName_Month.Text = data.Contract.Room.Name;
-            txtGender.Text = data.Gender ? "Nam" : "Nữ";
-            txtCusName_ThanhToan.Text = data.Name;
-            txtCusSDT.Text = data.SDT;
-            txtCusCCCD.Text = data.CMND;
-            txtCusJob.Text = data.Job;
-            RentDate.Value = (DateTime)data.Contract.CreatedAt;
-            birthDate.Value = (DateTime)data.Birthday;
-            txtPrice.Text = data.Contract.Room.Price.ToString();
-
-        }
-        private void cbbCustomer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            GUI();
-        }
-
-        private void groupBox9_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedItem == null || comboBox4.SelectedItem == null)
-                MessageBox.Show("Chưa chọn tên hoặc loại", "Tìm kiếm không thành công",
-                                 MessageBoxButtons.OK,
-                                 MessageBoxIcon.Warning);
-            else
+            }
+            catch(Exception ex)
             {
-                string name = "";
-                string paid = "";
-                if (comboBox1.SelectedIndex == 0)
-                    name = "";
-                if (comboBox4.SelectedItem.ToString() == "Đã thanh toán")
-                    paid = "True";
-                else if (comboBox4.SelectedItem.ToString() == "Chưa thanh toán")
-                    paid = "False";
-                else paid = "Tất cả";
-                dgvReceipt.DataSource = BLL_Service.Instance.FindService(name, paid);
-                      
-
+                MessageBox.Show(ex.Message, "Thông báo lỗi", MessageBoxButtons.OK);
             }
         }
 
-        private void dataGridView3_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
+        private void reload_KiemToan()
+        {   
+            cbbStatus_Stat.Items.Clear();
+            cbbUser_Stat.Items.Clear();
+            cbbType.Items.Clear();
+            cbbSort_Receipt.Items.Clear();
+            dgvReceipt.DataSource = BLL_Receipt.Instance.GetAllReceiptView();
+            label63.Text = BLL_Room.Instance.GetAllRoom().Count.ToString();
+            label65.Text = (BLL_Room.Instance.GetAllRoom().Count - BLL_Room.Instance.GetAllRoomEmty().Count).ToString();
+            cbbType.Items.AddRange(new object[] {
+                "All","Hóa đơn dịch vụ","Hóa đơn tháng"
+            });
+            cbbStatus_Stat.Items.AddRange(new object[] {
+                "All","Đã thanh toán","Chưa thanh toán"
+            });
+            cbbSort_Receipt.Items.AddRange(new object[] {
+                "Giá tiền","Ngày lập"
+            });
+            cbbUser_Stat.Items.Add(new CBBItems
+            {
+                Value = 0,
+                Text = "All"
+            });
+            cbbUser_Stat.Items.AddRange(BLL_Customer.Instance.GetAllCustomerCBB().ToArray());
+            txtTotalDoanhThu.Text = (BLL_Receipt.Instance.GetTotalIncome()).ToString();
         }
-        private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvReceipt_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (!(Convert.ToBoolean(dgvReceipt.Rows[e.RowIndex].Cells["isPaid"].Value)))
             {
                 if (MessageBox.Show("Bạn chưa thanh toán, có xác nhận thanh toán", "Thanh toán",
                                                 MessageBoxButtons.YesNo,
                                                 MessageBoxIcon.Question) == DialogResult.Yes)
-                    BLL_Service.Instance.PaidService(Convert.ToInt32(dgvReceipt.Rows[e.RowIndex].Cells[0].Value), true);
+                    BLL_Receipt.Instance.PaidReceipt(Convert.ToInt32(dgvReceipt.Rows[e.RowIndex].Cells["ReceiptID"].Value.ToString()));
             }
-
-            else if (MessageBox.Show("Bạn đã thanh toán rồi, có muốn hủy thanh toán", "Hủy thanh toán",
-                                      MessageBoxButtons.YesNo,
-                                      MessageBoxIcon.Question) == DialogResult.Yes)
-                BLL_Service.Instance.PaidService(Convert.ToInt32(dgvReceipt.Rows[e.RowIndex].Cells[0].Value), false);
-            dgvReceipt.DataSource = BLL_Service.Instance.GetAllServicePaid_Views();
+            reload_KiemToan();
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void btnDoanhThuThang_Click(object sender, EventArgs e)
         {
-          
+            txtDoanhThuThang.Text = BLL_Receipt.Instance.TotalInMonth(dtpMonth.Value).ToString();
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void btnDoanhThuNam_Click(object sender, EventArgs e)
         {
-            dgvReceipt.DataSource = BLL_Service.Instance.Sort();
+            txtDoanhThuThang.Text = BLL_Receipt.Instance.TotalInYear(dtpYear.Value).ToString();
+        }
+
+        private void btnSearchReceipt_Click(object sender, EventArgs e)
+        {
+            if(cbbUser_Stat.SelectedIndex == -1 || cbbType.SelectedIndex == -1||cbbStatus_Stat.SelectedIndex == -1)
+            {
+                MessageBox.Show("Bạn chưa chọn đủ chỉ mục tìm kiếm","Thông báo lỗi");
+
+            }
+            else
+            dgvReceipt.DataSource = BLL_Receipt.Instance.Search(((CBBItems)cbbUser_Stat.SelectedItem).Value, cbbStatus_Stat.SelectedItem.ToString(), cbbType.SelectedItem.ToString());
+
+            
             
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void btnSortReceipt_Click(object sender, EventArgs e)
         {
-            textBox25.Text = (BLL_Service.Instance.TotalService(dateTimePicker5.Value) + BLL_Receipt.Instance.TotalService(dateTimePicker5.Value)).ToString();
-        }
+            if  ( cbbSort_Receipt.SelectedIndex == -1 || cbbStatus_Stat.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Bạn chưa chọn chỉ mục sắp xếp", "Thông báo lỗi");
 
-        private void button11_Click(object sender, EventArgs e)
-        {
-            textBox26.Text = (BLL_Service.Instance.TotalService(dateTimePicker6.Value) + BLL_Receipt.Instance.TotalService(dateTimePicker6.Value)).ToString();
-        }
+                }
+            else
+            {
+            List<int> current = new List<int>();
+            foreach(DataGridViewRow i in dgvReceipt.Rows)
+            {
+                current.Add(Convert.ToInt32(i.Cells["ReceiptID"].Value.ToString()));
+            }
+            dgvReceipt.DataSource=BLL_Receipt.Instance.Sort(current, cbbSort_Receipt.SelectedItem.ToString());
 
-        private void dgvthongtin_user_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            lblTitle.Text = "Quản Lý Phòng Trọ";
-            lblHome.Visible = false;
-            lblUser.Visible = false;
-            lblKhachtro.Visible = false;
-            lblPhongtro.Visible = true;
-            lblDichvu.Visible = false;
-            lblTinhtientro.Visible = false;
-            lblThongke.Visible = false;
-            pnHome.Visible = false;
-            pnUser.Visible = false;
-            pnKhanhtro.Visible = false;
-            pnPhongtro.Visible = true;
-            pnDichvu.Visible = false;
-            pnTinhtientro.Visible = false;
-            pnThongke.Visible = false;
-            reaload_phongtro();
+            }
+
+           
         }
     }
 }
