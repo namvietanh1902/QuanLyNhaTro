@@ -13,10 +13,14 @@ namespace QuanLyNhaTro.Models
     {
        
        
-        [Required(ErrorMessage ="Ngày thu không được để trống")]
+      
        
        
         public virtual ICollection<ServiceReceiptDetail> Detail { get; set; }
+        public override string ToString()
+        {
+            return "Hóa đơn dịch vụ";
+        }
 
 
     }

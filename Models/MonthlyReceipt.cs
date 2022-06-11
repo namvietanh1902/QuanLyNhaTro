@@ -20,8 +20,11 @@ namespace QuanLyNhaTro.Models
         public int WaterAfter { get; set; }
         public int ElecBill { get; set; }
         public int WaterBill { get; set; }
-        public int RoomBill { get; set; }   
-       
+        public int RoomBill { get; set; }
+        public override string ToString()
+        {
+            return "Hóa đơn tháng";
+        }
 
     }
 }

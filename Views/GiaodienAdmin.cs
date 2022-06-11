@@ -969,8 +969,8 @@ namespace QuanLyNhaTro.Views
             label63.Text = BLL_Room.Instance.GetAllRoom().Count.ToString();
             label65.Text = (BLL_Room.Instance.GetAllRoom().Count - BLL_Room.Instance.GetAllRoomEmty().Count).ToString();
 
-            dataGridView3.DataSource = BLL_Service.Instance.GetAllServicePaid_Views();
-            dataGridView1.DataSource = BLL_Receipt.Instance.GetAllReceiptPaid_Views();
+            dgvReceipt.DataSource = BLL_Receipt.Instance.GetAllReceiptView();
+          
 
             textBox27.Text = (BLL_Receipt.Instance.TotalServiceFull() + BLL_Service.Instance.TotalServiceFull()).ToString();
 
@@ -1065,7 +1065,7 @@ namespace QuanLyNhaTro.Views
             txtGender.Enabled = false;
             RentDate.Enabled = false;
             birthDate.Enabled = false;
-            cbbCustomer.SelectedIndex = 0;
+            
             txtPrice.Enabled = false;
             txtElecAfter.Text = "";
             txtElecFirst.Text = "";
@@ -1146,8 +1146,8 @@ namespace QuanLyNhaTro.Views
                 else if (comboBox4.SelectedItem.ToString() == "Chưa thanh toán")
                     paid = "False";
                 else paid = "Tất cả";
-                dataGridView3.DataSource = BLL_Service.Instance.FindService(name, paid);
-                dataGridView1.DataSource = BLL_Receipt.Instance.FindService(name, paid);               
+                dgvReceipt.DataSource = BLL_Service.Instance.FindService(name, paid);
+                      
 
             }
         }
@@ -1157,42 +1157,30 @@ namespace QuanLyNhaTro.Views
         }
         private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (!(Convert.ToBoolean(dataGridView3.Rows[e.RowIndex].Cells[5].Value)))
+            if (!(Convert.ToBoolean(dgvReceipt.Rows[e.RowIndex].Cells["isPaid"].Value)))
             {
                 if (MessageBox.Show("Bạn chưa thanh toán, có xác nhận thanh toán", "Thanh toán",
                                                 MessageBoxButtons.YesNo,
                                                 MessageBoxIcon.Question) == DialogResult.Yes)
-                    BLL_Service.Instance.PaidService(Convert.ToInt32(dataGridView3.Rows[e.RowIndex].Cells[0].Value), true);
+                    BLL_Service.Instance.PaidService(Convert.ToInt32(dgvReceipt.Rows[e.RowIndex].Cells[0].Value), true);
             }
 
             else if (MessageBox.Show("Bạn đã thanh toán rồi, có muốn hủy thanh toán", "Hủy thanh toán",
                                       MessageBoxButtons.YesNo,
                                       MessageBoxIcon.Question) == DialogResult.Yes)
-                BLL_Service.Instance.PaidService(Convert.ToInt32(dataGridView3.Rows[e.RowIndex].Cells[0].Value), false);
-            dataGridView3.DataSource = BLL_Service.Instance.GetAllServicePaid_Views();
+                BLL_Service.Instance.PaidService(Convert.ToInt32(dgvReceipt.Rows[e.RowIndex].Cells[0].Value), false);
+            dgvReceipt.DataSource = BLL_Service.Instance.GetAllServicePaid_Views();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (!(Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[3].Value)))
-            {
-                if (MessageBox.Show("Bạn chưa thanh toán, có xác nhận thanh toán", "Thanh toán",
-                                                MessageBoxButtons.YesNo,
-                                                MessageBoxIcon.Question) == DialogResult.Yes)
-                    BLL_Receipt.Instance.PaidReceipt(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value), true);
-            }
-
-            else if (MessageBox.Show("Bạn đã thanh toán rồi, có muốn hủy thanh toán", "Hủy thanh toán",
-                                      MessageBoxButtons.YesNo,
-                                      MessageBoxIcon.Question) == DialogResult.Yes)
-                BLL_Receipt.Instance.PaidReceipt(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value), false);
-            dataGridView1.DataSource = BLL_Receipt.Instance.GetAllReceiptPaid_Views();
+          
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            dataGridView3.DataSource = BLL_Service.Instance.Sort();
-            dataGridView1.DataSource = BLL_Receipt.Instance.Sort();
+            dgvReceipt.DataSource = BLL_Service.Instance.Sort();
+            
         }
 
         private void button10_Click(object sender, EventArgs e)

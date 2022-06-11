@@ -185,9 +185,30 @@ namespace QuanLyNhaTro.BLL
         {
             int Total = 0;
             foreach (ReceiptPaid_View spv in GetAllReceiptPaid_Views())
+            {
+                    if(spv.IsPaid == true)
                     Total += spv.Total;
 
+            }
             return Total;
+        }
+        public List<Receipt_View> GetAllReceiptView()
+        {
+            var data = QuanLy.Instance.Receipts.Select(p => p);
+            var list = new List<Receipt_View>();    
+            foreach (Receipt i in data)
+            {
+                list.Add(new Receipt_View
+                {
+                    ReceiptID = i.ReceiptID,
+                    ContractID = i.ContractID,
+                    Total = i.Total,
+                    CreatedAt = (DateTime)i.PaidDate,
+                    isPaid = i.isPaid,
+                    ReceiptType = i.GetType().Name,
+                });
+            }
+            return list;
         }
     }
 }

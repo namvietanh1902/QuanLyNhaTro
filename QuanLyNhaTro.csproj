@@ -76,6 +76,7 @@
     <Compile Include="DTO\ChiTietPhongThue.cs" />
     <Compile Include="DTO\Customer_View.cs" />
     <Compile Include="DTO\ReceiptPaid_View.cs" />
+    <Compile Include="DTO\Receipt_View.cs" />
     <Compile Include="DTO\Room_View.cs" />
     <Compile Include="DTO\ServicePaid_View.cs" />
     <Compile Include="DTO\ServiceReceipt_View.cs" />
