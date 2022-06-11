@@ -105,7 +105,6 @@ namespace QuanLyNhaTro.Views
             txtMaphongthue.Text = BLL_Room.Instance.GetNextID().ToString();
             txtTenphongthue.Text = "";
             txtGiaphongthue.Text = "";
-            txtHientrangthue.Text = "";
             txtSoluong.Text = "";
         }
     }

@@ -88,6 +88,30 @@ namespace QuanLyNhaTro.BLL
                 }
             }
         }
+        public List<ServiceReceipt_View> GetReceiptDetail(int mahoadon)
+        {
+            List<ServiceReceipt_View> list = new List<ServiceReceipt_View>();
+            Receipt receipt = GetReceiptByID(mahoadon);
+            foreach(ServiceReceiptDetail srd in GetAllServiceReceiptDetails())
+            {
+                if(srd.ServiceReceiptId == receipt.ReceiptID)
+                {
+                    ServiceReceipt_View data = new ServiceReceipt_View();
+                    data.ServiceID = srd.ServiceId;
+                    data.Number = srd.Number;
+                    foreach(Service sr in BLL_Service.Instance.GetAllService())
+                    {
+                        if(sr.ServiceId == data.ServiceID)
+                        {
+                            data.Name = sr.Name;
+                            data.Price = sr.Price*data.Number;
+                            list.Add(data);
+                        }
+                    }
+                }
+            }
+            return list;
+        }
 
 
 
@@ -238,12 +262,15 @@ namespace QuanLyNhaTro.BLL
             return Total;
         }
         public List<Receipt_View> GetAllReceiptView()
-        {
-            
-          
+        {         
                 return GetReceiptView(GetAllReceipt());
                
            
+        }
+
+        public Receipt GetReceiptByID(int id)
+        {
+            return QuanLy.Instance.Receipts.Find(id);
         }
         public List<Receipt_View> GetReceiptView(List<Receipt> data)
         {
@@ -318,6 +345,18 @@ namespace QuanLyNhaTro.BLL
             }
 
             return data;
+        }
+        public MonthlyReceipt GetMonthlyReceiptbyId(int mahoadon)
+        {
+            foreach(MonthlyReceipt mr in getAllMonthlyReceipt())
+            {
+                if(mr.ReceiptID == mahoadon)
+                {
+                    return mr;
+                    
+                }
+            }
+            return null;
         }
     }
 }

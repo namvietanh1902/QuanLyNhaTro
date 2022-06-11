@@ -10,7 +10,7 @@ namespace QuanLyNhaTro.DTO
     {
         public int ReceiptID { get; set; }
 
-        //public int ContractID { get; set; }
+        //  public int ContractID { get; set; }
 
         public string CustomerName { get; set; }
 

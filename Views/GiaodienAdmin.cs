@@ -290,58 +290,92 @@ namespace QuanLyNhaTro.Views
 
         private void btnSuathongtinuser_Click(object sender, EventArgs e)
         {
-            cbRoleuser.Enabled = false;
-            txtIduser_user.Text = dgvthongtin_user.SelectedRows[0].Cells["AccountId"].Value.ToString();
-            txtUsername_User.Text = dgvthongtin_user.SelectedRows[0].Cells["Username"].Value.ToString();
-            txtPass_user.Text = dgvthongtin_user.SelectedRows[0].Cells["Password"].Value.ToString();
+            if(dgvthongtin_user.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Bạn chưa chọn dòng nào", "Thông báo lỗi");
+            }
+            else
+            {
+                cbRoleuser.Enabled = false;
+                txtIduser_user.Text = dgvthongtin_user.SelectedRows[0].Cells["AccountId"].Value.ToString();
+                txtUsername_User.Text = dgvthongtin_user.SelectedRows[0].Cells["Username"].Value.ToString();
+                txtPass_user.Text = dgvthongtin_user.SelectedRows[0].Cells["Password"].Value.ToString();
 
-            if (Convert.ToBoolean(dgvthongtin_user.SelectedRows[0].Cells["isAdmin"].Value.ToString()) == true)
-            {
-                cbRoleuser.SelectedItem = "Admin";
+                if (Convert.ToBoolean(dgvthongtin_user.SelectedRows[0].Cells["isAdmin"].Value.ToString()) == true)
+                {
+                    cbRoleuser.SelectedItem = "Admin";
+                }
+                else
+                {
+                    cbRoleuser.SelectedItem = "Khach Tro";
+                }
+                txtName_User.Text = dgvthongtin_user.SelectedRows[0].Cells["Name"].Value.ToString();
+                if (Convert.ToBoolean(dgvthongtin_user.SelectedRows[0].Cells["Gender"].Value.ToString()) == true)
+                {
+                    radNam.Checked = true;
+                }
+                else
+                {
+                    radNu.Checked = true;
+                }
+                dtpNgaysinh_user.Value = Convert.ToDateTime(dgvthongtin_user.SelectedRows[0].Cells["Birthday"].Value.ToString());
+                txtSDT_user.Text = dgvthongtin_user.SelectedRows[0].Cells["SDT"].Value.ToString();
             }
-            else
-            {
-                cbRoleuser.SelectedItem = "Khach Tro";
-            }
-            txtName_User.Text = dgvthongtin_user.SelectedRows[0].Cells["Name"].Value.ToString();
-            if (Convert.ToBoolean(dgvthongtin_user.SelectedRows[0].Cells["Gender"].Value.ToString()) == true)
-            {
-                radNam.Checked = true;
-            }
-            else
-            {
-                radNu.Checked = true;
-            }
-            dtpNgaysinh_user.Value = Convert.ToDateTime(dgvthongtin_user.SelectedRows[0].Cells["Birthday"].Value.ToString());
-            txtSDT_user.Text = dgvthongtin_user.SelectedRows[0].Cells["SDT"].Value.ToString();
+    
         }
 
         private void btnXoa_user_Click(object sender, EventArgs e)
         {
-            List<int> listIDdell = new List<int>();
-            if (dgvthongtin_user.SelectedRows.Count > 0)
+            if (dgvthongtin_user.SelectedRows.Count == 0)
             {
-                foreach (DataGridViewRow row in dgvthongtin_user.SelectedRows)
-                {
-                    listIDdell.Add(Convert.ToInt32(row.Cells["AccountId"].Value.ToString()));
-                }
+                MessageBox.Show("Bạn chưa chọn dòng nào", "Thông báo lỗi");
             }
-            BLL_Account.Instance.DeleteAccount(listIDdell);
-
-            foreach (int id in listIDdell)
+            else
             {
-                if (id == ID)
+                List<int> listIDdell = new List<int>();
+                if (dgvthongtin_user.SelectedRows.Count > 0)
                 {
-                    btnDangxuat.PerformClick();
+                    foreach (DataGridViewRow row in dgvthongtin_user.SelectedRows)
+                    {
+                        listIDdell.Add(Convert.ToInt32(row.Cells["AccountId"].Value.ToString()));
+                    }
                 }
+                bool check = false;
+                foreach (int i in listIDdell)
+                {
+                    foreach (Receipt receipt in BLL_Receipt.Instance.GetAllReceipt())
+                    {
+                        if (receipt.ContractID == i && receipt.isPaid == false)
+                        {
+                            check = true;
+                            MessageBox.Show(
+                                "Bạn có hóa đơn chưa thanh toán" +
+                                "Vui lòng thanh toán trước khi xóa khách trọ",
+                                "Thông báo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning
+                                );
+                            break;
+                        }
+                    }
+                }
+                if (check == false)
+                {
+                    BLL_Account.Instance.DeleteAccount(listIDdell);
+                    foreach (int id in listIDdell)
+                    {
+                        if (id == ID)
+                        {
+                            btnDangxuat.PerformClick();
+                        }
+                    }
+                    BLL_Customer.Instance.DeleteKhachTro(listIDdell);
+                }
+                cleardata_user();
+                dgvthongtin_user.DataSource = BLL_Account.Instance.GetAccount_Views();
+                dgvthongtin_user.ClearSelection();
             }
-            BLL_Customer.Instance.DeleteKhachTro(listIDdell);
-
-
-
-            cleardata_user();
-            dgvthongtin_user.DataSource = BLL_Account.Instance.GetAccount_Views();
-            dgvthongtin_user.ClearSelection();
+            
         }
 
         private void btnsearch_user_Click(object sender, EventArgs e)
@@ -351,12 +385,20 @@ namespace QuanLyNhaTro.Views
 
         private void btnSort_user_Click(object sender, EventArgs e)
         {
-            List<int> listnow = new List<int>();
-            foreach (DataGridViewRow row in dgvthongtin_user.Rows)
+            if (cboSortUser_user.SelectedIndex == -1)
             {
-                listnow.Add(Convert.ToInt32(row.Cells["AccountId"].Value.ToString()));
+                MessageBox.Show("Bạn chưa chọn kiểu sắp xếp", "Thông báo lỗi");
             }
-            dgvthongtin_user.DataSource = BLL_Account.Instance.SortAccount(listnow, cboSortUser_user.SelectedItem.ToString());
+            else
+            {
+                List<int> listnow = new List<int>();
+                foreach (DataGridViewRow row in dgvthongtin_user.Rows)
+                {
+                    listnow.Add(Convert.ToInt32(row.Cells["AccountId"].Value.ToString()));
+                }
+                dgvthongtin_user.DataSource = BLL_Account.Instance.SortAccount(listnow, cboSortUser_user.SelectedItem.ToString());
+            }
+           
         }
 
 
@@ -636,55 +678,90 @@ namespace QuanLyNhaTro.Views
 
         private void btnSua_khachtro_Click(object sender, EventArgs e)
         {
-
-            txtMakhachtro_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["CustomerId"].Value.ToString();
-            txtTennguoithue_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["Name"].Value.ToString();
-            txtCmnd_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["CMND"].Value.ToString();
-            txtSDT_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["SDT"].Value.ToString();
-            txtNghenghiep_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["Job"].Value.ToString();
-            dtpNgaysinh_khachtro.Value = Convert.ToDateTime(dgvthongtin_khachtro.SelectedRows[0].Cells["Birthday"].Value.ToString());
-            foreach (CBBItems r in cbbTenphongtro_khanhtro.Items)
+            if (dgvthongtin_khachtro.SelectedRows.Count == 0)
             {
-                if (r.Text == dgvthongtin_khachtro.SelectedRows[0].Cells["RoomName"].Value.ToString())
+                MessageBox.Show("Bạn chưa chọn dòng nào", "Thông báo lỗi");
+            }
+            else
+            {
+                txtMakhachtro_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["CustomerId"].Value.ToString();
+                txtTennguoithue_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["Name"].Value.ToString();
+                txtCmnd_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["CMND"].Value.ToString();
+                txtSDT_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["SDT"].Value.ToString();
+                txtNghenghiep_khachtro.Text = dgvthongtin_khachtro.SelectedRows[0].Cells["Job"].Value.ToString();
+                dtpNgaysinh_khachtro.Value = Convert.ToDateTime(dgvthongtin_khachtro.SelectedRows[0].Cells["Birthday"].Value.ToString());
+                foreach (CBBItems r in cbbTenphongtro_khanhtro.Items)
                 {
-                    cbbTenphongtro_khanhtro.SelectedItem = r;
+                    if (r.Text == dgvthongtin_khachtro.SelectedRows[0].Cells["RoomName"].Value.ToString())
+                    {
+                        cbbTenphongtro_khanhtro.SelectedItem = r;
+                    }
                 }
+                if (Convert.ToBoolean(dgvthongtin_khachtro.SelectedRows[0].Cells["Gender"].Value.ToString()) == true)
+                {
+                    cbbGioitinh_khachtro.SelectedItem = "Nam";
+                }
+                else cbbGioitinh_khachtro.SelectedItem = "Nữ";
             }
-            if (Convert.ToBoolean(dgvthongtin_khachtro.SelectedRows[0].Cells["Gender"].Value.ToString()) == true)
-            {
-                cbbGioitinh_khachtro.SelectedItem = "Nam";
-            }
-            else cbbGioitinh_khachtro.SelectedItem = "Nữ";
+            
         }
 
         private void btnXoa_khachtro_Click(object sender, EventArgs e)
         {
-            List<int> listMaKhachdel = new List<int>();
-            if (dgvthongtin_khachtro.SelectedRows.Count > 0)
+            if (dgvthongtin_khachtro.SelectedRows.Count == 0)
             {
-                foreach (DataGridViewRow row in dgvthongtin_khachtro.SelectedRows)
-                {
-                    listMaKhachdel.Add(Convert.ToInt32(row.Cells["CustomerId"].Value.ToString()));
-                }
+                MessageBox.Show("Bạn chưa chọn dòng nào", "Thông báo lỗi");
             }
-            BLL_Customer.Instance.DeleteKhachTro(listMaKhachdel);
-            List<int> listUserIDdel = new List<int>();
-            foreach (Customer cus in BLL_Customer.Instance.GetAllCustomer())
+            else
             {
-                foreach (int makhach in listMaKhachdel)
+                List<int> listMaKhachdel = new List<int>();
+                if (dgvthongtin_khachtro.SelectedRows.Count > 0)
                 {
-                    if (cus.CustomerId == makhach)
+                    foreach (DataGridViewRow row in dgvthongtin_khachtro.SelectedRows)
                     {
-                        listUserIDdel.Add(cus.CustomerId);
+                        listMaKhachdel.Add(Convert.ToInt32(row.Cells["CustomerId"].Value.ToString()));
                     }
                 }
+
+                bool check = false;
+                foreach (int i in listMaKhachdel)
+                {
+                    foreach (Receipt receipt in BLL_Receipt.Instance.GetAllReceipt())
+                    {
+                        if (receipt.ContractID == i && receipt.isPaid == false)
+                        {
+                            check = true;
+                            MessageBox.Show(
+                                "Bạn có hóa đơn chưa thanh toán" +
+                                "Vui lòng thanh toán trước khi xóa khách trọ",
+                                "Thông báo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning
+                                );
+                            break;
+                        }
+                    }
+                }
+                if (check == false)
+                {
+                    BLL_Customer.Instance.DeleteKhachTro(listMaKhachdel);
+                    List<int> listUserIDdel = new List<int>();
+                    foreach (Customer cus in BLL_Customer.Instance.GetAllCustomer())
+                    {
+                        foreach (int makhach in listMaKhachdel)
+                        {
+                            if (cus.CustomerId == makhach)
+                            {
+                                listUserIDdel.Add(cus.CustomerId);
+                            }
+                        }
+                    }
+                    BLL_Account.Instance.DeleteAccount(listUserIDdel);
+                    BLL_Room.Instance.ResetisRent();
+                }
+                reloadkhachtro();
             }
-            BLL_Account.Instance.DeleteAccount(listUserIDdel);
-            BLL_Room.Instance.ResetisRent();
-            reloadkhachtro();
-
-
-
+            
 
         }
 
@@ -696,13 +773,21 @@ namespace QuanLyNhaTro.Views
 
         private void btnSort_khachtro_Click(object sender, EventArgs e)
         {
-            List<int> listnow = new List<int>();
-            foreach (DataGridViewRow i in dgvthongtin_khachtro.Rows)
+            if (cbbSort_khachtro.SelectedIndex == - 1 )
             {
-                listnow.Add(Convert.ToInt32(i.Cells["CustomerId"].Value.ToString()));
+                MessageBox.Show("Bạn chưa chọn kiểu sắp xếp", "Thông báo lỗi");
             }
-            dgvthongtin_khachtro.DataSource = BLL_Customer.Instance.SortKhachTro(listnow, cbbSort_khachtro.SelectedItem.ToString());
-            dgvthongtin_khachtro.ClearSelection();
+            else
+            {
+                List<int> listnow = new List<int>();
+                foreach (DataGridViewRow i in dgvthongtin_khachtro.Rows)
+                {
+                    listnow.Add(Convert.ToInt32(i.Cells["CustomerId"].Value.ToString()));
+                }
+                dgvthongtin_khachtro.DataSource = BLL_Customer.Instance.SortKhachTro(listnow, cbbSort_khachtro.SelectedItem.ToString());
+                dgvthongtin_khachtro.ClearSelection();
+            }
+            
         }
         private void lblreload_phongtro_Click(object sender, EventArgs e)
         {
@@ -784,16 +869,24 @@ namespace QuanLyNhaTro.Views
 
         private void btnChitietphongthue_phongtro_Click(object sender, EventArgs e)
         {
-            if (Convert.ToBoolean(dgvThongtin_phongtro.SelectedRows[0].Cells["isRent"].Value.ToString()))
+            if (dgvThongtin_phongtro.SelectedRows.Count == 0)
             {
-                int ma = Convert.ToInt32(dgvThongtin_phongtro.SelectedRows[0].Cells["RoomId"].Value.ToString());
-                ChiTietPhongThue frm = new ChiTietPhongThue(ma);
-                frm.Show();
+                MessageBox.Show("Bạn chưa chọn dòng nào", "Thông báo lỗi");
             }
-            else
+            else 
             {
-                MessageBox.Show("Phòng này trống");
+                if (Convert.ToBoolean(dgvThongtin_phongtro.SelectedRows[0].Cells["isRent"].Value.ToString()))
+                {
+                    int ma = Convert.ToInt32(dgvThongtin_phongtro.SelectedRows[0].Cells["RoomId"].Value.ToString());
+                    ChiTietPhongThue frm = new ChiTietPhongThue(ma);
+                    frm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Phòng này trống");
+                }
             }
+           
         }
 
         private void btnThemPhongTro_Click(object sender, EventArgs e)
@@ -806,6 +899,10 @@ namespace QuanLyNhaTro.Views
         }
         private void btnSuaPhongTro_Click(object sender, EventArgs e)
         {
+            if(dgvThongtin_phongtro.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Bạn chưa chọn dòng nào", "Thông báo lỗi");
+            }
             if (dgvThongtin_phongtro.SelectedRows.Count == 1)
             {
                 int ma = Convert.ToInt32(dgvThongtin_phongtro.SelectedRows[0].Cells["RoomId"].Value.ToString());
@@ -816,19 +913,34 @@ namespace QuanLyNhaTro.Views
         }
         private void btnXoa_phongtro_Click(object sender, EventArgs e)
         {
-            List<int> listdel = new List<int>();
-            foreach (DataGridViewRow row in dgvThongtin_phongtro.SelectedRows)
+            if (dgvThongtin_phongtro.SelectedRows.Count == 0)
             {
-                listdel.Add(Convert.ToInt32(row.Cells["RoomId"].Value.ToString()));
+                MessageBox.Show("Bạn chưa chọn dòng nào", "Thông báo lỗi");
             }
-            BLL_Room.Instance.DeletePhongTro(listdel);
-            reaload_phongtro();
+            else
+            {
+                List<int> listdel = new List<int>();
+                foreach (DataGridViewRow row in dgvThongtin_phongtro.SelectedRows)
+                {
+                    listdel.Add(Convert.ToInt32(row.Cells["RoomId"].Value.ToString()));
+                }
+                BLL_Room.Instance.DeletePhongTro(listdel);
+                reaload_phongtro();
+            }
+            
         }
 
         private void btnSort_phongtro_Click(object sender, EventArgs e)
         {
-
+            if(cbbSort_phongtro.SelectedIndex == -1)
+            {
+                MessageBox.Show("Bạn chưa kiểu sắp xếp", "Thông báo lỗi");
+            }
+            else
+            {
             dgvThongtin_phongtro.DataSource = BLL_Room.Instance.RoomSort(GetCurrentList(), cbbSort_phongtro.SelectedItem.ToString());
+
+            }
         }
         List<string> GetCurrentList()
         {
@@ -1235,8 +1347,17 @@ namespace QuanLyNhaTro.Views
             dgvReceipt.DataSource=BLL_Receipt.Instance.Sort(current, cbbSort_Receipt.SelectedItem.ToString());
 
             }
-
            
+        }
+
+        private void btnDetailReceipt_Click(object sender, EventArgs e)
+        {
+            if(dgvReceipt.SelectedRows.Count > 0)
+            {
+                int mahoadon = Convert.ToInt32(dgvReceipt.SelectedRows[0].Cells["ReceiptID"].Value.ToString());
+                Chitietdichvu frm = new Chitietdichvu(mahoadon);
+                frm.Show();              
+            }
         }
     }
 }

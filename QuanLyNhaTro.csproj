@@ -108,6 +108,12 @@
     <Compile Include="BLL\BLL_Account.cs" />
     <Compile Include="BLL\BLL_Customer.cs" />
     <Compile Include="BLL\Common\ModelDataValidation.cs" />
+    <Compile Include="Views\Chitietdichvu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Chitietdichvu.Designer.cs">
+      <DependentUpon>Chitietdichvu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ChiTietPhongThue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206090804577_addCreated.resx">
       <DependentUpon>202206090804577_addCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Chitietdichvu.resx">
+      <DependentUpon>Chitietdichvu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ChiTietPhongThue.resx">
       <DependentUpon>ChiTietPhongThue.cs</DependentUpon>
