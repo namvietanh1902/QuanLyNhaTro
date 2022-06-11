@@ -92,7 +92,7 @@
             this.label44 = new System.Windows.Forms.Label();
             this.pnUser = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvHDisPaid = new System.Windows.Forms.DataGridView();
             this.vbButton4 = new QuanLyNhaTro.VBButton();
             this.vbButton3 = new QuanLyNhaTro.VBButton();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -155,7 +155,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnUser.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHDisPaid)).BeginInit();
             this.groupBox8.SuspendLayout();
             this.pnPhongtro.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -992,34 +992,35 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvHDisPaid);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox2.Location = new System.Drawing.Point(1059, 4);
+            this.groupBox2.Location = new System.Drawing.Point(946, 4);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(651, 779);
+            this.groupBox2.Size = new System.Drawing.Size(764, 779);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách hóa đơn chưa thanh toán";
             // 
-            // dataGridView1
+            // dgvHDisPaid
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.GridColor = System.Drawing.Color.Gray;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 43);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(645, 732);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvHDisPaid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHDisPaid.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvHDisPaid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvHDisPaid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHDisPaid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHDisPaid.GridColor = System.Drawing.Color.Gray;
+            this.dgvHDisPaid.Location = new System.Drawing.Point(3, 43);
+            this.dgvHDisPaid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvHDisPaid.Name = "dgvHDisPaid";
+            this.dgvHDisPaid.RowHeadersWidth = 51;
+            this.dgvHDisPaid.RowTemplate.Height = 24;
+            this.dgvHDisPaid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHDisPaid.Size = new System.Drawing.Size(758, 732);
+            this.dgvHDisPaid.TabIndex = 0;
+            this.dgvHDisPaid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHDisPaid_CellDoubleClick);
             // 
             // vbButton4
             // 
@@ -1087,7 +1088,7 @@
             this.groupBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox8.Size = new System.Drawing.Size(1022, 778);
+            this.groupBox8.Size = new System.Drawing.Size(905, 778);
             this.groupBox8.TabIndex = 11;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Thông tin khách thuê";
@@ -1622,9 +1623,9 @@
             this.label61.ForeColor = System.Drawing.Color.Black;
             this.label61.Location = new System.Drawing.Point(201, 500);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(207, 38);
+            this.label61.Size = new System.Drawing.Size(36, 38);
             this.label61.TabIndex = 2;
-            this.label61.Text = "1000000000";
+            this.label61.Text = "0";
             // 
             // label13
             // 
@@ -1695,8 +1696,8 @@
             this.ClientSize = new System.Drawing.Size(2185, 1360);
             this.Controls.Add(this.pnDichdu);
             this.Controls.Add(this.pnUser);
-            this.Controls.Add(this.pnHome);
             this.Controls.Add(this.pnPhongtro);
+            this.Controls.Add(this.pnHome);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
@@ -1730,7 +1731,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnUser.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHDisPaid)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.pnPhongtro.ResumeLayout(false);
@@ -1858,6 +1859,6 @@
         private System.Windows.Forms.Label lblId_user;
         private System.Windows.Forms.Label lblName_user;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvHDisPaid;
     }
 }

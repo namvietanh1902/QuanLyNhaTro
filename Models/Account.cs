@@ -19,7 +19,7 @@ namespace QuanLyNhaTro.Models
         [Index(IsUnique = true)]
         public string Username { get; set; }
         [Required(ErrorMessage = "Mật khẩu không được để trống")]
-        [Range(6,int.MaxValue,ErrorMessage ="Mật khẩu phải chứa ít nhất 6 kí tự")]
+        [Range(6,int.MaxValue,ErrorMessage = "Mật khẩu phải chứa ít nhất 6 kí tự")]
         public string Password { get; set; }
         public bool isAdmin { get; set; } 
         public string Name { get; set; }

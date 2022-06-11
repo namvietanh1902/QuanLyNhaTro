@@ -95,6 +95,7 @@ namespace QuanLyNhaTro.BLL
             var data= new List<CBBItems>();
             foreach(var cus in GetAllCustomer())
             {
+                if(!cus.isDelete)
                 data.Add(new CBBItems
                 {
                     Text = cus.Name,

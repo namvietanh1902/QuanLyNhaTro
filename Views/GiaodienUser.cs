@@ -99,6 +99,8 @@ namespace QuanLyNhaTro.Views
             lblCMND_user.Text = cm.CMND;
             lblNghenghiep_user.Text = cm.Job;
             lblNgaysinh_user.Text = cm.Birthday.ToString("dd-MM-yyyy");
+
+            dgvHDisPaid.DataSource = BLL_Receipt.Instance.GetAllReceiptViewInUser(ID);
         }
         private void btnPhongtro_Click_1(object sender, EventArgs e)
         {
@@ -241,8 +243,16 @@ namespace QuanLyNhaTro.Views
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            BLL_Receipt.Instance.AddServiceReceipt(serviceList,ID);
-            ClearOrder();
+            if(serviceList.Count>0)
+            {
+                BLL_Receipt.Instance.AddServiceReceipt(serviceList,ID);
+                ClearOrder();
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa đặt dịch vụ nào", "Đặt lỗi");
+            }
+
         }
 
         private void dgvService_DoubleClick(object sender, EventArgs e)
@@ -274,6 +284,13 @@ namespace QuanLyNhaTro.Views
 
 
             dgvOrder.DataSource = serviceList;
+        }
+
+        private void dgvHDisPaid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+                int mahoadon = Convert.ToInt32((dgvHDisPaid.Rows[e.RowIndex].Cells["ReceiptID"].Value.ToString()));
+                Chitietdichvu frm = new Chitietdichvu(mahoadon);
+                frm.Show();
         }
     }
 }
