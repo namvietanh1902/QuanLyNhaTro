@@ -1220,7 +1220,7 @@ namespace QuanLyNhaTro.Views
 
         private void btnSortReceipt_Click(object sender, EventArgs e)
         {
-            if  ( cbbSort_Receipt.SelectedIndex == -1 || cbbStatus_Stat.SelectedIndex == -1)
+            if  ( cbbSort_Receipt.SelectedIndex == -1 )
                 {
                     MessageBox.Show("Bạn chưa chọn chỉ mục sắp xếp", "Thông báo lỗi");
 
