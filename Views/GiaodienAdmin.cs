@@ -128,9 +128,9 @@ namespace QuanLyNhaTro.Views
             foreach (DataGridViewColumn col in dgvthongtin_user.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 15, FontStyle.Bold, GraphicsUnit.Pixel);
             }
-            this.dgvthongtin_user.DefaultCellStyle.Font = new Font("Source Sans Pro", 10);
+            this.dgvthongtin_user.DefaultCellStyle.Font = new Font("Source Sans Pro", 12);
             dgvthongtin_user.ClearSelection();
 
         }
@@ -478,11 +478,11 @@ namespace QuanLyNhaTro.Views
             cbbTenphongtro_khanhtro.Items.AddRange(BLL_Room.Instance.GetRoomEmtyAndNoFullUpCombobox().ToArray());
             dgvthongtin_khachtro.DataSource = BLL_Customer.Instance.GetCustomer_Views();
             this.dgvthongtin_khachtro.DefaultCellStyle.ForeColor = Color.Black;
-            this.dgvthongtin_khachtro.DefaultCellStyle.Font = new Font("Source Sans Pro", 10);
+            this.dgvthongtin_khachtro.DefaultCellStyle.Font = new Font("Source Sans Pro", 12);
             foreach (DataGridViewColumn col in dgvthongtin_khachtro.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 15, FontStyle.Bold, GraphicsUnit.Pixel);
             }
             // txtMakhachtro_khachtro.Text = BLL_Customer.Instance.GetNextID().ToString();
             txtMakhachtro_khachtro.ReadOnly = true;
@@ -839,10 +839,10 @@ namespace QuanLyNhaTro.Views
             foreach (DataGridViewColumn col in dgvThongtin_phongtro.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 15, FontStyle.Bold, GraphicsUnit.Pixel);
             }
             this.dgvThongtin_phongtro.DefaultCellStyle.ForeColor = Color.Black;
-            this.dgvThongtin_phongtro.DefaultCellStyle.Font = new Font("Source Sans Pro", 10);
+            this.dgvThongtin_phongtro.DefaultCellStyle.Font = new Font("Source Sans Pro", 12);
             dgvThongtin_phongtro.ClearSelection();
         }
 
@@ -993,10 +993,10 @@ namespace QuanLyNhaTro.Views
             foreach (DataGridViewColumn col in dgvService.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 15, FontStyle.Bold, GraphicsUnit.Pixel);
             }
             this.dgvService.DefaultCellStyle.ForeColor = Color.Black;
-            this.dgvService.DefaultCellStyle.Font = new Font("Source Sans Pro", 10);
+            this.dgvService.DefaultCellStyle.Font = new Font("Source Sans Pro", 12);
             Reset_Service();
             txtServiceID.ReadOnly = true;
             isEdit_Service = false;
@@ -1275,6 +1275,12 @@ namespace QuanLyNhaTro.Views
             cbbType.Items.Clear();
             cbbSort_Receipt.Items.Clear();
             dgvReceipt.DataSource = BLL_Receipt.Instance.GetAllReceiptView();
+            foreach (DataGridViewColumn col in dgvReceipt.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 15, FontStyle.Bold, GraphicsUnit.Pixel);
+            }
+            this.dgvReceipt.DefaultCellStyle.Font = new Font("Source Sans Pro", 12);
             label63.Text = BLL_Room.Instance.GetAllRoom().Count.ToString();
             label65.Text = (BLL_Room.Instance.GetAllRoom().Count - BLL_Room.Instance.GetAllRoomEmty().Count).ToString();
             cbbType.Items.AddRange(new object[] {

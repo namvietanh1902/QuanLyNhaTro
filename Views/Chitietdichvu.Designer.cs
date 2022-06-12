@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -294,9 +295,9 @@
             this.label10.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(126, 397);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(199, 29);
+            this.label10.Size = new System.Drawing.Size(205, 29);
             this.label10.TabIndex = 29;
-            this.label10.Text = "Số nước cuối tháng";
+            this.label10.Text = "Số nước cuối tháng:";
             // 
             // lblsonuocuoithang
             // 
@@ -314,9 +315,9 @@
             this.label12.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(127, 337);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(196, 29);
+            this.label12.Size = new System.Drawing.Size(202, 29);
             this.label12.TabIndex = 27;
-            this.label12.Text = "Số nước đầu tháng";
+            this.label12.Text = "Số nước đầu tháng:";
             // 
             // lblsonuocdauthang
             // 
@@ -351,9 +352,9 @@
             // label13
             // 
             this.label13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label13.Location = new System.Drawing.Point(460, 467);
+            this.label13.Location = new System.Drawing.Point(533, 467);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(411, 2);
+            this.label13.Size = new System.Drawing.Size(338, 2);
             this.label13.TabIndex = 32;
             this.label13.Text = "label13";
             // 
@@ -367,6 +368,8 @@
             this.listView1.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
+            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
             this.listView1.Location = new System.Drawing.Point(132, 97);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(739, 372);

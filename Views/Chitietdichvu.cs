@@ -46,13 +46,14 @@ namespace QuanLyNhaTro.Views
                 lblTiendien.Text = data.ElecBill.ToString();
                 lblsonuocdauthang.Text = data.WaterBefore.ToString();
                 lblsonuocuoithang.Text = data.WaterAfter.ToString();
-                lblTiendien.Text = data.WaterBill.ToString();
+                lblTiennuoc.Text = data.WaterBill.ToString();
                 lblTienphong.Text = data.RoomBill.ToString();
                 lblTongtien.Text = (data.RoomBill+data.WaterBill+data.ElecBill).ToString();
 
             }
             else
             {
+                label1.Text = "Chi Tiết Hóa Đơn Dịch Vụ";
                 listView1.Visible = true;
                 int total = 0;
                 foreach(ServiceReceipt_View srv in BLL_Receipt.Instance.GetReceiptDetail(Mahoadon))
