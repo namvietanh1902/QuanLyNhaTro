@@ -250,26 +250,6 @@ namespace QuanLyNhaTro.BLL
             return Total;
 
         }
-
-        public List<Receipt_View> GetAllReceiptViewInUser(int ID)
-        {
-            var list = new List<Receipt_View>();
-            foreach (Receipt i in GetAllReceipt())
-            {
-                if (i.Contract.Customer.isDelete == false && i.Contract.Customer.CustomerId == ID && i.isPaid==false)
-                    list.Add(new Receipt_View
-                    {
-                        ReceiptID = i.ReceiptID,
-                        //CustomerName = i.Contract.Customer.Name,
-                        Total = i.Total,
-                        CreatedAt = ((DateTime)i.PaidDate).ToString("dd-MM-yyyy"),
-                        isPaid = i.isPaid,
-                        ReceiptType = i is MonthlyReceipt ? "Hóa đơn tháng" : "Hóa đơn dịch vụ"
-                    });
-
-            }
-            return list;
-        }
         public List<Receipt_View> GetAllReceiptView()
         {         
                 return GetReceiptView(GetAllReceipt());    
@@ -365,6 +345,26 @@ namespace QuanLyNhaTro.BLL
                 }
             }
             return null;
+        }
+
+        public List<Receipt_View> GetReceipt_ViewsById(int id)
+        {
+            var list = new List<Receipt_View>();
+            foreach (Receipt i in GetAllReceipt())
+            {
+                if (i.Contract.Customer.isDelete == false && i.ContractID == id && i.isPaid == false)
+                    list.Add(new Receipt_View
+                    {
+                        ReceiptID = i.ReceiptID,
+                        CustomerName = i.Contract.Customer.Name,
+                        Total = i.Total,
+                        isPaid = i.isPaid,
+                        CreatedAt = ((DateTime)i.PaidDate).ToString("dd-MM-yyyy"),
+                        ReceiptType = i is MonthlyReceipt ? "Hóa đơn tháng" : "Hóa đơn dịch vụ"
+                    });
+
+            }
+            return list;
         }
     }
 }

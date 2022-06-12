@@ -100,7 +100,14 @@ namespace QuanLyNhaTro.Views
             lblNghenghiep_user.Text = cm.Job;
             lblNgaysinh_user.Text = cm.Birthday.ToString("dd-MM-yyyy");
 
-            dgvHDisPaid.DataSource = BLL_Receipt.Instance.GetAllReceiptViewInUser(ID);
+            dgvHDisPaid.DataSource = BLL_Receipt.Instance.GetReceipt_ViewsById(ID);
+            foreach (DataGridViewColumn col in dgvHDisPaid.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+            }
+            this.dgvHDisPaid.DefaultCellStyle.ForeColor = Color.Black;
+            this.dgvHDisPaid.DefaultCellStyle.Font = new Font("Source Sans Pro", 10);
         }
         private void btnPhongtro_Click_1(object sender, EventArgs e)
         {
@@ -129,10 +136,10 @@ namespace QuanLyNhaTro.Views
             foreach (DataGridViewColumn col in dgvThanhvienphongthue.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 15, FontStyle.Bold, GraphicsUnit.Pixel);
             }
             this.dgvThanhvienphongthue.DefaultCellStyle.ForeColor = Color.Black;
-            this.dgvThanhvienphongthue.DefaultCellStyle.Font = new Font("Source Sans Pro", 10);
+            this.dgvThanhvienphongthue.DefaultCellStyle.Font = new Font("Source Sans Pro", 12);
             dgvThanhvienphongthue.ClearSelection();
 
         }
@@ -199,10 +206,10 @@ namespace QuanLyNhaTro.Views
             foreach (DataGridViewColumn col in dgvService.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 15, FontStyle.Bold, GraphicsUnit.Pixel);
             }
             this.dgvService.DefaultCellStyle.ForeColor = Color.Black;
-            this.dgvService.DefaultCellStyle.Font = new Font("Source Sans Pro", 10);
+            this.dgvService.DefaultCellStyle.Font = new Font("Source Sans Pro", 12);
             dgvOrder.DataSource = serviceList;
            
 
@@ -281,7 +288,6 @@ namespace QuanLyNhaTro.Views
                     Name = dgvService.SelectedRows[0].Cells["Name"].Value.ToString()
                 });
             }
-
 
             dgvOrder.DataSource = serviceList;
         }
