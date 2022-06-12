@@ -194,7 +194,7 @@ namespace QuanLyNhaTro.Views
                 else throw new FormatException("Giới tính không dc trống");
                 if (DateTime.Now.Year - dtpNgaysinh_user.Value.Year < 18) throw new FormatException("Tuổi dưới 18");
                 else account.Birthday = dtpNgaysinh_user.Value;
-                if (BLL_Account.Instance.CheckSDT(txtSDT_user.Text) == true) throw new FormatException("Số điện thoại này đã tồn tại");
+                if (BLL_Account.Instance.CheckSDT(txtSDT_user.Text) == true && !UpdateKey) throw new FormatException("Số điện thoại này đã tồn tại");
                 if (txtSDT_user.Text == "") throw new FormatException("Số điện thoại không dc để trống");
                 if (txtSDT_user.Text.Length != 10) throw new FormatException("Số điện thoại phải có 10 số");
                 long sdt;
@@ -284,15 +284,17 @@ namespace QuanLyNhaTro.Views
                 MessageBox.Show(ex.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
+            UpdateKey = false;
 
         }
 
+        bool UpdateKey = false;
         private void btnSuathongtinuser_Click(object sender, EventArgs e)
         {
             if(dgvthongtin_user.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Bạn chưa chọn dòng nào", "Thông báo lỗi");
+                UpdateKey = true;
             }
             else
             {
@@ -442,30 +444,6 @@ namespace QuanLyNhaTro.Views
         private void cbbCustomer_SelectedIndexChanged(object sender, EventArgs e)
         {
             GUI();
-        }
-
-
-
-
-
-        private void dgvthongtin_user_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            lblTitle.Text = "Quản Lý Phòng Trọ";
-            lblHome.Visible = false;
-            lblUser.Visible = false;
-            lblKhachtro.Visible = false;
-            lblPhongtro.Visible = true;
-            lblDichvu.Visible = false;
-            lblTinhtientro.Visible = false;
-            lblThongke.Visible = false;
-            pnHome.Visible = false;
-            pnUser.Visible = false;
-            pnKhanhtro.Visible = false;
-            pnPhongtro.Visible = true;
-            pnDichvu.Visible = false;
-            pnTinhtientro.Visible = false;
-            pnThongke.Visible = false;
-            reaload_phongtro();
         }
 
         private void reloadkhachtro()
@@ -1319,7 +1297,7 @@ namespace QuanLyNhaTro.Views
 
         private void btnDoanhThuNam_Click(object sender, EventArgs e)
         {
-            txtDoanhThuThang.Text = BLL_Receipt.Instance.TotalInYear(dtpYear.Value).ToString();
+            txtDoanhThuNam.Text = BLL_Receipt.Instance.TotalInYear(dtpYear.Value).ToString();
         }
 
         private void btnSearchReceipt_Click(object sender, EventArgs e)

@@ -198,7 +198,7 @@ namespace QuanLyNhaTro.BLL
         {
             foreach(Account acc in GetAllAccount())
             {
-                if(acc.SDT == sdt)
+                if(acc.SDT == sdt && !acc.isDelete)
                 {
                     return true;                   
                 }

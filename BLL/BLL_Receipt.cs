@@ -198,7 +198,7 @@ namespace QuanLyNhaTro.BLL
         }
         public int GetTotalIncome()
         {
-            return QuanLy.Instance.Receipts.Where(p => p.isPaid).Select(p => p).Sum(p=> (int?)p.Total) ??  0;
+            return QuanLy.Instance.Receipts.Where(p => p.isPaid && !p.Contract.Customer.isDelete).Select(p => p).Sum(p=> (int?)p.Total) ??  0;
         }
         public void PaidReceipt(int id)
         {
@@ -235,7 +235,7 @@ namespace QuanLyNhaTro.BLL
         {
             int Total = 0;
             foreach (Receipt spv in GetAllReceipt())
-                if (((DateTime)spv.PaidDate).Month == a.Month && ((DateTime)spv.PaidDate).Year == a.Year && spv.isPaid == true)
+                if (((DateTime)spv.PaidDate).Month == a.Month && ((DateTime)spv.PaidDate).Year == a.Year && spv.isPaid == true && spv.Contract.Customer.isDelete == false)
                     Total += spv.Total;
 
             return Total;
@@ -244,28 +244,35 @@ namespace QuanLyNhaTro.BLL
         {
             int Total = 0;
             foreach (Receipt spv in GetAllReceipt())
-                if (((DateTime)spv.PaidDate).Month == a.Month && ((DateTime)spv.PaidDate).Year == a.Year && spv.isPaid == true)
+                if (((DateTime)spv.PaidDate).Year == a.Year && spv.isPaid == true && spv.Contract.Customer.isDelete == false)
                     Total += spv.Total;
 
             return Total;
 
         }
-        public int TotalServiceFull()
+
+        public List<Receipt_View2> GetAllReceiptViewInUser(int ID)
         {
-            int Total = 0;
-            foreach (ReceiptPaid_View spv in GetAllReceiptPaid_Views())
+            var list = new List<Receipt_View2>();
+            foreach (Receipt i in GetAllReceipt())
             {
-                    if(spv.IsPaid == true)
-                    Total += spv.Total;
+                if (i.Contract.Customer.isDelete == false && i.Contract.Customer.CustomerId == ID && i.isPaid==false)
+                    list.Add(new Receipt_View2
+                    {
+                        ReceiptID = i.ReceiptID,
+                        //CustomerName = i.Contract.Customer.Name,
+                        Total = i.Total,
+                        CreatedAt = ((DateTime)i.PaidDate).ToString("dd-MM-yyyy"),
+                        isPaid = i.isPaid,
+                        ReceiptType = i is MonthlyReceipt ? "Hóa đơn tháng" : "Hóa đơn dịch vụ"
+                    });
 
             }
-            return Total;
+            return list;
         }
         public List<Receipt_View> GetAllReceiptView()
         {         
-                return GetReceiptView(GetAllReceipt());
-               
-           
+                return GetReceiptView(GetAllReceipt());    
         }
 
         public Receipt GetReceiptByID(int id)
@@ -277,6 +284,7 @@ namespace QuanLyNhaTro.BLL
             var list = new List<Receipt_View>();
             foreach (Receipt i in data)
             {
+                if(i.Contract.Customer.isDelete==false)
                 list.Add(new Receipt_View
                 {
                     ReceiptID = i.ReceiptID,
