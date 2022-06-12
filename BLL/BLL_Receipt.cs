@@ -251,13 +251,13 @@ namespace QuanLyNhaTro.BLL
 
         }
 
-        public List<Receipt_View2> GetAllReceiptViewInUser(int ID)
+        public List<Receipt_View> GetAllReceiptViewInUser(int ID)
         {
-            var list = new List<Receipt_View2>();
+            var list = new List<Receipt_View>();
             foreach (Receipt i in GetAllReceipt())
             {
                 if (i.Contract.Customer.isDelete == false && i.Contract.Customer.CustomerId == ID && i.isPaid==false)
-                    list.Add(new Receipt_View2
+                    list.Add(new Receipt_View
                     {
                         ReceiptID = i.ReceiptID,
                         //CustomerName = i.Contract.Customer.Name,
