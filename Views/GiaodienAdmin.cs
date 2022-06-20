@@ -626,12 +626,30 @@ namespace QuanLyNhaTro.Views
                     BLL_Account.Instance.UpdateAccount(account);
 
                     Contract contract = new Contract();
+
                     foreach (Contract hd in BLL_Contract.Instance.GetAllContract())
                     {
                         if (hd.ContractId == cusAdd.CustomerId)
                         {
+
                             contract.ContractId = hd.ContractId;
-                            contract.RoomId = hd.RoomId;
+                            foreach (Room phong in BLL_Room.Instance.GetAllRoom())
+                            {
+                                if (phong.Name == cbbTenphongtro_khanhtro.SelectedItem.ToString())
+                                {
+                                    contract.RoomId = phong.RoomId;
+                                    break;
+                                }
+                            }
+                            foreach (Room room in BLL_Room.Instance.GetAllRoom())
+                            {
+                                if (room.isRent == false && contract.RoomId == room.RoomId)
+                                {
+                                    room.isRent = true;
+                                    BLL_Room.Instance.UpdateIsRentRoomWhenAddCustomer(room);
+                                    break;
+                                }
+                            }
                             contract.CreatedAt = hd.CreatedAt;
                             contract.CustomerName = cusAdd.Name;
                             break;
@@ -1203,7 +1221,6 @@ namespace QuanLyNhaTro.Views
         {
             try
             {
-
             int ElecBefore = Convert.ToInt32(txtElecFirst.Text);
             int ElecAfter = Convert.ToInt32(txtElecAfter.Text);
             int WaterBefore = Convert.ToInt32(txtWaterFirst.Text);
