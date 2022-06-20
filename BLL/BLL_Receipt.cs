@@ -56,11 +56,17 @@ namespace QuanLyNhaTro.BLL
 
 
         public bool checkMonth(MonthlyReceipt i)
-        {
+        {   
+            if (i.Month < i.Contract.CreatedAt)
+            {
+                MessageBox.Show("Hợp đồng chưa tồn tại vào tháng này");
+                return false;
+            }
             foreach (MonthlyReceipt item in getAllMonthlyReceipt())
             {
                 if (i.ContractID == item.ContractID && i.Month.Month == item.Month.Month && item.Month.Year == i.Month.Year)
                 {
+                    MessageBox.Show("Tháng này đã được tính tiền");
                     return false;
                 }
             }
@@ -70,7 +76,7 @@ namespace QuanLyNhaTro.BLL
         {
             if (!checkMonth(i))
             {
-                MessageBox.Show("Tháng này đã được tính tiền");
+               
                 return;
             }
             else
