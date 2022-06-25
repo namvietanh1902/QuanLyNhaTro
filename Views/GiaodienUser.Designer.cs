@@ -1028,6 +1028,7 @@
             this.vbButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.vbButton4.BorderRadius = 28;
             this.vbButton4.BorderSize = 0;
+            this.vbButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.vbButton4.FlatAppearance.BorderSize = 0;
             this.vbButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vbButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1049,6 +1050,7 @@
             this.vbButton3.BorderColor = System.Drawing.Color.PapayaWhip;
             this.vbButton3.BorderRadius = 28;
             this.vbButton3.BorderSize = 0;
+            this.vbButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.vbButton3.FlatAppearance.BorderSize = 0;
             this.vbButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vbButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1696,9 +1698,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1942, 1102);
+            this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnDichdu);
             this.Controls.Add(this.pnPhongtro);
-            this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnHome);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);

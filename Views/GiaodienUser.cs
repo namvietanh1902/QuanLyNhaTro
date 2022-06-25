@@ -104,10 +104,12 @@ namespace QuanLyNhaTro.Views
             foreach (DataGridViewColumn col in dgvHDisPaid.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 14, FontStyle.Bold, GraphicsUnit.Pixel);
+                col.HeaderCell.Style.Font = new Font("Source Sans Pro", 15, FontStyle.Bold, GraphicsUnit.Pixel);
             }
             this.dgvHDisPaid.DefaultCellStyle.ForeColor = Color.Black;
-            this.dgvHDisPaid.DefaultCellStyle.Font = new Font("Source Sans Pro", 10);
+            this.dgvHDisPaid.DefaultCellStyle.Font = new Font("Source Sans Pro", 12);
+            dgvHDisPaid.Columns[1].Visible = false;
+            dgvHDisPaid.Columns[4].Visible = false;
         }
         private void btnPhongtro_Click_1(object sender, EventArgs e)
         {

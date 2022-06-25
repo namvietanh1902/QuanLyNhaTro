@@ -38,33 +38,11 @@ namespace QuanLyNhaTro.Views
             this.txtUsername = new ZBobb.AlphaBlendTextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblhienpass = new System.Windows.Forms.Label();
-            this.lblSignup = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pnYourname = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.pnDangky = new System.Windows.Forms.Panel();
-            this.lblLogin = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnConfirm = new QuanLyNhaTro.VBButton();
-            this.btnSignup = new QuanLyNhaTro.VBButton();
             this.pnDangnhap.SuspendLayout();
-            this.pnYourname.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.pnDangky.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,9 +72,6 @@ namespace QuanLyNhaTro.Views
             this.pnDangnhap.Controls.Add(this.txtUsername);
             this.pnDangnhap.Controls.Add(this.btnLogin);
             this.pnDangnhap.Controls.Add(this.lblhienpass);
-            this.pnDangnhap.Controls.Add(this.lblSignup);
-            this.pnDangnhap.Controls.Add(this.label5);
-            this.pnDangnhap.Controls.Add(this.checkBox1);
             this.pnDangnhap.Controls.Add(this.label4);
             this.pnDangnhap.Controls.Add(this.label3);
             this.pnDangnhap.Controls.Add(this.label2);
@@ -158,7 +133,7 @@ namespace QuanLyNhaTro.Views
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Source Sans Pro", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLogin.Location = new System.Drawing.Point(122, 499);
+            this.btnLogin.Location = new System.Drawing.Point(122, 487);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(488, 63);
             this.btnLogin.TabIndex = 6;
@@ -182,48 +157,6 @@ namespace QuanLyNhaTro.Views
             this.lblhienpass.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.lblhienpass.UseMnemonic = false;
             this.lblhienpass.Click += new System.EventHandler(this.lblhienpass_Click);
-            // 
-            // lblSignup
-            // 
-            this.lblSignup.AutoSize = true;
-            this.lblSignup.BackColor = System.Drawing.Color.Transparent;
-            this.lblSignup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignup.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSignup.Location = new System.Drawing.Point(520, 195);
-            this.lblSignup.Name = "lblSignup";
-            this.lblSignup.Size = new System.Drawing.Size(86, 26);
-            this.lblSignup.TabIndex = 18;
-            this.lblSignup.Text = "Sign up";
-            this.lblSignup.Click += new System.EventHandler(this.lblSignup_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(443, 416);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(170, 25);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Forgot Password?";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkBox1.Location = new System.Drawing.Point(121, 416);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(172, 29);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "  Remember Me";
-            this.checkBox1.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -261,210 +194,9 @@ namespace QuanLyNhaTro.Views
             this.label2.TabIndex = 0;
             this.label2.Text = "Login";
             // 
-            // pnYourname
-            // 
-            this.pnYourname.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnYourname.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnYourname.Controls.Add(this.btnConfirm);
-            this.pnYourname.Controls.Add(this.pictureBox3);
-            this.pnYourname.Controls.Add(this.textBox5);
-            this.pnYourname.Controls.Add(this.label14);
-            this.pnYourname.Controls.Add(this.label16);
-            this.pnYourname.Location = new System.Drawing.Point(651, 200);
-            this.pnYourname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnYourname.Name = "pnYourname";
-            this.pnYourname.Size = new System.Drawing.Size(749, 636);
-            this.pnYourname.TabIndex = 35;
-            this.pnYourname.Visible = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(236, 34);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(291, 142);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 27;
-            this.pictureBox3.TabStop = false;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBox5.Location = new System.Drawing.Point(135, 370);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.PasswordChar = '*';
-            this.textBox5.Size = new System.Drawing.Size(489, 34);
-            this.textBox5.TabIndex = 23;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label14.Location = new System.Drawing.Point(133, 338);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(97, 25);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "Full name";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label16.Location = new System.Drawing.Point(123, 212);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(392, 46);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "What is your name?";
-            // 
-            // pnDangky
-            // 
-            this.pnDangky.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnDangky.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pnDangky.Controls.Add(this.btnSignup);
-            this.pnDangky.Controls.Add(this.lblLogin);
-            this.pnDangky.Controls.Add(this.label8);
-            this.pnDangky.Controls.Add(this.pictureBox2);
-            this.pnDangky.Controls.Add(this.textBox3);
-            this.pnDangky.Controls.Add(this.label10);
-            this.pnDangky.Controls.Add(this.textBox4);
-            this.pnDangky.Controls.Add(this.label11);
-            this.pnDangky.Location = new System.Drawing.Point(659, 197);
-            this.pnDangky.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnDangky.Name = "pnDangky";
-            this.pnDangky.Size = new System.Drawing.Size(749, 636);
-            this.pnDangky.TabIndex = 34;
-            this.pnDangky.Visible = false;
-            // 
-            // lblLogin
-            // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblLogin.Location = new System.Drawing.Point(547, 279);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(65, 25);
-            this.lblLogin.TabIndex = 29;
-            this.lblLogin.Text = "Log in";
-            this.lblLogin.Click += new System.EventHandler(this.lblLogin_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(295, 278);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(239, 25);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Already have an account?";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(236, 50);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(291, 142);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 27;
-            this.pictureBox2.TabStop = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBox3.Location = new System.Drawing.Point(135, 410);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(489, 34);
-            this.textBox3.TabIndex = 23;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(133, 378);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(98, 25);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Password";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBox4.Location = new System.Drawing.Point(135, 316);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(489, 34);
-            this.textBox4.TabIndex = 22;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label11.Location = new System.Drawing.Point(129, 281);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 25);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Username";
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnConfirm.BackgroundColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnConfirm.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnConfirm.BorderRadius = 28;
-            this.btnConfirm.BorderSize = 0;
-            this.btnConfirm.FlatAppearance.BorderSize = 0;
-            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(135, 481);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(491, 59);
-            this.btnConfirm.TabIndex = 28;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.TextColor = System.Drawing.Color.White;
-            this.btnConfirm.UseVisualStyleBackColor = false;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // btnSignup
-            // 
-            this.btnSignup.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSignup.BackgroundColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSignup.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSignup.BorderRadius = 28;
-            this.btnSignup.BorderSize = 0;
-            this.btnSignup.FlatAppearance.BorderSize = 0;
-            this.btnSignup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignup.ForeColor = System.Drawing.Color.White;
-            this.btnSignup.Location = new System.Drawing.Point(135, 500);
-            this.btnSignup.Name = "btnSignup";
-            this.btnSignup.Size = new System.Drawing.Size(491, 59);
-            this.btnSignup.TabIndex = 30;
-            this.btnSignup.Text = "Sign up";
-            this.btnSignup.TextColor = System.Drawing.Color.White;
-            this.btnSignup.UseVisualStyleBackColor = false;
-            this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
             // 
             // DangNhap
             // 
@@ -476,8 +208,6 @@ namespace QuanLyNhaTro.Views
             this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(1942, 1000);
             this.Controls.Add(this.pnDangnhap);
-            this.Controls.Add(this.pnYourname);
-            this.Controls.Add(this.pnDangky);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -486,12 +216,6 @@ namespace QuanLyNhaTro.Views
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnDangnhap.ResumeLayout(false);
             this.pnDangnhap.PerformLayout();
-            this.pnYourname.ResumeLayout(false);
-            this.pnYourname.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.pnDangky.ResumeLayout(false);
-            this.pnDangky.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -501,27 +225,9 @@ namespace QuanLyNhaTro.Views
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnDangnhap;
-        private System.Windows.Forms.Label lblSignup;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel pnYourname;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel pnDangky;
-        private System.Windows.Forms.Label lblLogin;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label11;
-        private VBButton btnConfirm;
-        private VBButton btnSignup;
         private System.Windows.Forms.Label lblhienpass;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button btnLogin;

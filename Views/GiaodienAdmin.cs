@@ -147,7 +147,7 @@ namespace QuanLyNhaTro.Views
             txtIduser_user.Text = BLL_Account.Instance.GetNextID().ToString();
             txtUsername_User.Text = "";
             txtPass_user.Text = "";
-            cbRoleuser.Text = "";
+            cbRoleuser.SelectedIndex = -1;
             txtName_User.Text = "";
             radNam.Checked = false;
             radNu.Checked = false;
@@ -459,7 +459,7 @@ namespace QuanLyNhaTro.Views
             this.dgvthongtin_khachtro.DefaultCellStyle.Font = new Font("Source Sans Pro", 12);
             foreach (DataGridViewColumn col in dgvthongtin_khachtro.Columns)
             {
-                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 col.HeaderCell.Style.Font = new Font("Source Sans Pro", 15, FontStyle.Bold, GraphicsUnit.Pixel);
             }
             // txtMakhachtro_khachtro.Text = BLL_Customer.Instance.GetNextID().ToString();
@@ -1103,7 +1103,7 @@ namespace QuanLyNhaTro.Views
 
         private void btnThongke_Click(object sender, EventArgs e)
         {
-            lblTitle.Text = "Thống Kê";
+            lblTitle.Text ="Kiểm toán";
             lblHome.Visible = false;
             lblUser.Visible = false;
             lblKhachtro.Visible = false;
