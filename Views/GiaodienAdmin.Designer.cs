@@ -351,10 +351,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1558, 153);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // lblUsername
-            // 
             this.lblUsername.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.lblUsername.Location = new System.Drawing.Point(155, 79);
@@ -2035,10 +2031,6 @@
             this.label13.Size = new System.Drawing.Size(71, 22);
             this.label13.TabIndex = 10;
             this.label13.Text = "Số lượng";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
-            // 
-            // lblStatus
-            // 
             this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblStatus.AutoSize = true;

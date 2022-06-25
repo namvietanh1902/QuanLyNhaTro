@@ -25,8 +25,6 @@ namespace QuanLyNhaTro.BLL
             }
             private set { }
         }
-      
-
         public List<MonthlyReceipt> getAllMonthlyReceipt()
         {
             return db.MonthlyReceipts.Select(c => c).ToList();
@@ -34,11 +32,6 @@ namespace QuanLyNhaTro.BLL
         public List<ServiceReceipt> getAllServiceReceipt()
         {
             return db.ServiceReceipts.Select(c => c).ToList();
-        }
-
-        public ServiceReceipt GetServiceReceiptByID(int ID)
-        {
-            return db.ServiceReceipts.Find(ID);
         }
         public List<Receipt> GetReceiptByCusID(int id)
         {
@@ -48,12 +41,10 @@ namespace QuanLyNhaTro.BLL
         {
             return db.MonthlyReceipts.Find(ID);
         }
-
         public List<Receipt> GetAllReceipt()
         {
             return db.Receipts.Select(c => c).ToList();
         }
-
 
         public bool checkMonth(MonthlyReceipt i)
         {   
@@ -76,15 +67,13 @@ namespace QuanLyNhaTro.BLL
         public void AddMonthlyReceipt(MonthlyReceipt i)
         {
             if (!checkMonth(i))
-            {
-               
+            {               
                 return;
             }
             else
             {
                 try
                 {
-
                 new Common.ModelDataValidation().Validate(i);
                 db.MonthlyReceipts.Add(i);
                 db.SaveChanges();
@@ -119,9 +108,6 @@ namespace QuanLyNhaTro.BLL
             }
             return list;
         }
-
-
-
         public void AddServiceReceipt(List<ServiceReceipt_View> data, int CustomerID)
         {
             if (data != null)
@@ -136,7 +122,6 @@ namespace QuanLyNhaTro.BLL
                     ContractID = BLL_Contract.Instance.GetContractByCustomerID(CustomerID).ContractId,
                     Total = total,
                     PaidDate = DateTime.Now,
-
                 };
                 db.ServiceReceipts.Add(receipt);
                 db.SaveChanges();
@@ -148,7 +133,6 @@ namespace QuanLyNhaTro.BLL
                         ServiceReceiptId = receipt.ReceiptID,
                         Number = item.Number,
                         ServiceId = item.ServiceID,
-
                     });
                 }
                 db.ServiceReceiptDetails.AddRange(details);
@@ -159,8 +143,7 @@ namespace QuanLyNhaTro.BLL
         public List<ServiceReceiptDetail> GetAllServiceReceiptDetails()
         {
             return db.ServiceReceiptDetails.Select(c => c).ToList();
-        }
-        
+        }  
         public List<ReceiptPaid_View> GetAllReceiptPaid_Views()
         {
             List<ReceiptPaid_View> spv = new List<ReceiptPaid_View>();
@@ -185,23 +168,6 @@ namespace QuanLyNhaTro.BLL
                     spv.Add(a);
                 }
             return spv;
-        }
-        public List<ReceiptPaid_View> FindService(string name, string tinhtrang)
-        {
-            List<ReceiptPaid_View> find = new List<ReceiptPaid_View>();
-            List<ReceiptPaid_View> find2 = new List<ReceiptPaid_View>();
-            foreach (ReceiptPaid_View spv in GetAllReceiptPaid_Views())
-                if (spv.CustomerName.Contains(name))
-                    find.Add(spv);
-            if (tinhtrang == "Tất cả")
-                return find;
-            foreach (ReceiptPaid_View spv in find)
-                find2.Add(spv);
-
-            foreach (ReceiptPaid_View spv in find2)
-                if (spv.IsPaid.ToString() != tinhtrang)
-                    find.Remove(spv);
-            return find;
         }
         public int GetTotalIncome()
         {
@@ -244,7 +210,6 @@ namespace QuanLyNhaTro.BLL
             foreach (Receipt spv in GetAllReceipt())
                 if (((DateTime)spv.PaidDate).Month == a.Month && ((DateTime)spv.PaidDate).Year == a.Year && spv.isPaid == true && spv.Contract.Customer.isDelete == false)
                     Total += spv.Total;
-
             return Total;
         }
         public int TotalInYear(DateTime a)
@@ -255,13 +220,11 @@ namespace QuanLyNhaTro.BLL
                     Total += spv.Total;
 
             return Total;
-
         }
         public List<Receipt_View> GetAllReceiptView()
         {         
                 return GetReceiptView(GetAllReceipt());    
         }
-
         public Receipt GetReceiptByID(int id)
         {
             return db.Receipts.Find(id);
@@ -314,7 +277,6 @@ namespace QuanLyNhaTro.BLL
                         data.Add(i);
                     }
                 }
-
             }
             else if(Status == "All" && Type != "All")
             {
@@ -338,22 +300,8 @@ namespace QuanLyNhaTro.BLL
                     }
                 }
             }
-
             return data;
         }
-        public MonthlyReceipt GetMonthlyReceiptbyId(int mahoadon)
-        {
-            foreach(MonthlyReceipt mr in getAllMonthlyReceipt())
-            {
-                if(mr.ReceiptID == mahoadon)
-                {
-                    return mr;
-                    
-                }
-            }
-            return null;
-        }
-
         public List<Receipt_View> GetReceipt_ViewsById(int id)
         {
             var list = new List<Receipt_View>();

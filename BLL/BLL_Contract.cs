@@ -29,13 +29,11 @@ namespace QuanLyNhaTro.BLL
         {
             return db.Contracts.Select(p => p).ToList();
         }
-
         public void AddContract(Contract contract)
         {
             db.Contracts.Add(contract);
             db.SaveChanges();
         }
-
         public void UpdateContract(Contract contract)
         {
             Contract tam = db.Contracts.Find(contract.ContractId);
@@ -48,12 +46,11 @@ namespace QuanLyNhaTro.BLL
                 db.SaveChanges();
             }
         }
-        public Contract GetContractByCustomerID(int id) //Lấy ra hợp đồng của khách
+        public Contract GetContractByCustomerID(int id) 
         {
             return db.Contracts.Where(p => p.ContractId == id).Select(p => p).FirstOrDefault();
         }
-
-        public Contract GetContractByRoomID(int idroom) //Lấy ra Hợp đồng của phòng
+        public Contract GetContractByRoomID(int idroom) 
         {
             return db.Contracts.Where(p => p.RoomId == idroom).Select(p => p).FirstOrDefault();
         }

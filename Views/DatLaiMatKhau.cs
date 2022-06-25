@@ -21,8 +21,7 @@ namespace QuanLyNhaTro.Views
       
         public DatLaiMatKhau(int ID)
         {
-            this.ID = ID;
-            
+            this.ID = ID;          
             InitializeComponent();
             GUI();
         }
@@ -81,9 +80,12 @@ namespace QuanLyNhaTro.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            txtConfirm.Text = "";
-           
+            txtConfirm.Text = "";     
             txtPass.Text = "";
+        }
+        private void DatLaiMatKhau_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

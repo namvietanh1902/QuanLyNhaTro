@@ -204,7 +204,7 @@ namespace QuanLyNhaTro.Views
                 }
                 else throw new FormatException("Số điện thoại phải là số");
 
-                if (dgvthongtin_user.SelectedRows.Count < 1) //add
+                if (dgvthongtin_user.SelectedRows.Count < 1) 
                 {
                     new BLL.Common.ModelDataValidation().Validate(account);
                     BLL_Account.Instance.AddAccount(account);
@@ -229,7 +229,7 @@ namespace QuanLyNhaTro.Views
                         }
                     }
                 }
-                if (dgvthongtin_user.SelectedRows.Count == 1)//update
+                if (dgvthongtin_user.SelectedRows.Count == 1)
                 {
                     account.AccountId = Convert.ToInt32(txtIduser_user.Text);
 
@@ -255,9 +255,6 @@ namespace QuanLyNhaTro.Views
                             break;
                         }
                     }
-
-
-
                     Contract contract = new Contract();
                     foreach (Contract hd in BLL_Contract.Instance.GetAllContract())
                     {
@@ -283,9 +280,7 @@ namespace QuanLyNhaTro.Views
             {
                 MessageBox.Show(ex.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
             UpdateKey = false;
-
         }
 
         bool UpdateKey = false;
@@ -323,9 +318,7 @@ namespace QuanLyNhaTro.Views
                 dtpNgaysinh_user.Value = Convert.ToDateTime(dgvthongtin_user.SelectedRows[0].Cells["Birthday"].Value.ToString());
                 txtSDT_user.Text = dgvthongtin_user.SelectedRows[0].Cells["SDT"].Value.ToString();
             }
-    
         }
-
         private void btnXoa_user_Click(object sender, EventArgs e)
         {
             if (dgvthongtin_user.SelectedRows.Count == 0)
@@ -376,8 +369,7 @@ namespace QuanLyNhaTro.Views
                 cleardata_user();
                 dgvthongtin_user.DataSource = BLL_Account.Instance.GetAccount_Views();
                 dgvthongtin_user.ClearSelection();
-            }
-            
+            }    
         }
 
         private void btnsearch_user_Click(object sender, EventArgs e)
@@ -445,7 +437,6 @@ namespace QuanLyNhaTro.Views
         {
             GUI();
         }
-
         private void reloadkhachtro()
         {
             cbbSort_khachtro.Items.Clear();
@@ -462,7 +453,6 @@ namespace QuanLyNhaTro.Views
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 col.HeaderCell.Style.Font = new Font("Source Sans Pro", 15, FontStyle.Bold, GraphicsUnit.Pixel);
             }
-            // txtMakhachtro_khachtro.Text = BLL_Customer.Instance.GetNextID().ToString();
             txtMakhachtro_khachtro.ReadOnly = true;
             dgvthongtin_khachtro.ClearSelection();
         }
@@ -587,8 +577,6 @@ namespace QuanLyNhaTro.Views
                         btnUser.PerformClick();
                     }
                 }
-
-
                 if (dgvthongtin_khachtro.SelectedRows.Count == 1) //update
                 {
 
@@ -862,7 +850,6 @@ namespace QuanLyNhaTro.Views
             reaload_phongtro();
         }
 
-
         private void btnChitietphongthue_phongtro_Click(object sender, EventArgs e)
         {
             if (dgvThongtin_phongtro.SelectedRows.Count == 0)
@@ -882,7 +869,6 @@ namespace QuanLyNhaTro.Views
                     MessageBox.Show("Phòng này trống");
                 }
             }
-           
         }
 
         private void btnThemPhongTro_Click(object sender, EventArgs e)
@@ -922,8 +908,7 @@ namespace QuanLyNhaTro.Views
                 }
                 BLL_Room.Instance.DeletePhongTro(listdel);
                 reaload_phongtro();
-            }
-            
+            } 
         }
 
         private void btnSort_phongtro_Click(object sender, EventArgs e)
@@ -946,7 +931,6 @@ namespace QuanLyNhaTro.Views
                 listnow.Add(i.Cells["RoomId"].Value.ToString());
             }
             return listnow;
-
         }
 
         private void btnSearch_phongtro_Click(object sender, EventArgs e)
@@ -1060,13 +1044,11 @@ namespace QuanLyNhaTro.Views
                 }
                 reload_Service();
             }
-
         }
 
         private void btnSearch_Service_Click(object sender, EventArgs e)
         {
             dgvService.DataSource = BLL_Service.Instance.SearchService(txtSearch_Service.Text);
-
         }
 
         private void btnSort_Service_Click(object sender, EventArgs e)
@@ -1119,11 +1101,6 @@ namespace QuanLyNhaTro.Views
             pnTinhtientro.Visible = false;
             pnThongke.Visible = true;
             reload_KiemToan();
-
-            
-
-           
-
         }
        
 
@@ -1150,7 +1127,6 @@ namespace QuanLyNhaTro.Views
                 pnNavagation.Width = 288;
                 lblHethong.Text = "HỆ THỐNG";
                 btnDangxuat.ImageIndex = -1;
-
             }
         }
 
@@ -1172,19 +1148,6 @@ namespace QuanLyNhaTro.Views
             pnTinhtientro.Visible = false;
             pnThongke.Visible = false;
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtSearch_Service_TextChanged(object sender, EventArgs e)
         {
             dgvService.DataSource = BLL_Service.Instance.SearchService(txtSearch_Service.Text);
@@ -1193,9 +1156,6 @@ namespace QuanLyNhaTro.Views
         {   
             cbbCustomer.Items.Clear();
             cbbCustomer.Items.AddRange(BLL_Customer.Instance.GetAllCustomerCBB().ToArray());
-
-
-
 
             txtRoomID_Month.Enabled = false;
             txtRoomName_Month.Enabled = false;
@@ -1249,7 +1209,6 @@ namespace QuanLyNhaTro.Views
                 ElecBill = (ElecAfter - ElecBefore) * ElecPrice,
                 PaidDate = DateTime.Now,
                 RoomBill = Convert.ToInt32(txtPrice.Text),
-
             };
             
             receipt.Total = receipt.ElecBill + receipt.WaterBill + receipt.RoomBill;
@@ -1326,9 +1285,6 @@ namespace QuanLyNhaTro.Views
             }
             else
             dgvReceipt.DataSource = BLL_Receipt.Instance.Search(((CBBItems)cbbUser_Stat.SelectedItem).Value, cbbStatus_Stat.SelectedItem.ToString(), cbbType.SelectedItem.ToString());
-
-            
-            
         }
 
         private void btnSortReceipt_Click(object sender, EventArgs e)
@@ -1336,7 +1292,6 @@ namespace QuanLyNhaTro.Views
             if  ( cbbSort_Receipt.SelectedIndex == -1 )
                 {
                     MessageBox.Show("Bạn chưa chọn chỉ mục sắp xếp", "Thông báo lỗi");
-
                 }
             else
             {
@@ -1346,11 +1301,8 @@ namespace QuanLyNhaTro.Views
                 current.Add(Convert.ToInt32(i.Cells["ReceiptID"].Value.ToString()));
             }
             dgvReceipt.DataSource=BLL_Receipt.Instance.Sort(current, cbbSort_Receipt.SelectedItem.ToString());
-
-            }
-           
+            }     
         }
-
         private void btnDetailReceipt_Click(object sender, EventArgs e)
         {
             if(dgvReceipt.SelectedRows.Count > 0)

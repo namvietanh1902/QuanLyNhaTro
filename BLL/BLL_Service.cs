@@ -113,12 +113,10 @@ namespace QuanLyNhaTro.BLL
                 case "Tên":
                     {
                         return GetCurrentList(list).OrderBy(c => c.Name).ToList();
-
                     }
                 default:
                     {
                         return GetCurrentList(list).OrderBy(c => c.Price).ToList();
-
                     }
             }
 
@@ -152,55 +150,6 @@ namespace QuanLyNhaTro.BLL
                 }               
             }
             return spv;
-        }
-        public List<ServicePaid_View> FindService(string name, string tinhtrang)
-        {
-            List<ServicePaid_View> find = new List<ServicePaid_View>();
-            List<ServicePaid_View> find2 = new List<ServicePaid_View>();
-            if (tinhtrang == "Tất cả")
-            {
-                foreach (ServicePaid_View spv in GetAllServicePaid_Views())
-                    if (spv.CustomerName.Contains(name))
-                        find.Add(spv);
-                return find;
-            }
-
-            foreach (ServicePaid_View spv in GetAllServicePaid_Views())
-                if (spv.CustomerName.Contains(name))
-                    find.Add(spv);
-
-            foreach (ServicePaid_View spv in find)
-                find2.Add(spv);
-
-            foreach (ServicePaid_View spv in find2)
-                if (spv.IsPaid.ToString() != tinhtrang)
-                    find.Remove(spv);
-            return find;
-        }
-        public void PaidService(int id, bool ispaid)
-        {
-            db.ServiceReceipts.Find(id).isPaid = ispaid;
-            db.SaveChanges();
-        }
-        public List<ServicePaid_View> Sort()
-        {
-            return GetAllServicePaid_Views().OrderBy(s => s.Total).ToList();
-        }
-        public int TotalService(DateTime a)
-        {
-            int Total = 0;
-            foreach (ServicePaid_View spv in GetAllServicePaid_Views())
-                if (spv.PaidDate.Month == a.Month && spv.PaidDate.Year == a.Year && spv.IsPaid == true)
-                    Total += spv.Total;
-            return Total;
-        }
-        public int TotalServiceFull()
-        {
-            int Total = 0;
-            foreach (ServicePaid_View spv in GetAllServicePaid_Views())
-                    Total += spv.Total;
-
-            return Total;
         }
     }
 }

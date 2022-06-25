@@ -28,7 +28,6 @@ namespace QuanLyNhaTro.Views
             this.dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
             this.dataGridView1.DefaultCellStyle.Font = new Font("Tahoma", 10);
             dataGridView1.ClearSelection();
-
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -35,7 +35,6 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,21 +117,12 @@
             this.dataGridView1.Size = new System.Drawing.Size(1178, 478);
             this.dataGridView1.TabIndex = 7;
             // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(57, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(303, 65);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "label2";
-            // 
             // ChiTietPhongThue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1200, 600);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTitle);
@@ -158,6 +148,5 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
     }
 }

@@ -31,7 +31,6 @@ namespace QuanLyNhaTro.BLL
         {
             return db.Customers.Where(p => p.CustomerId == id).Select(p => p).FirstOrDefault();
         }
-
         public List<Customer_View> GetCustomer_Views()
         {
             List<Customer_View> data = new List<Customer_View>();
@@ -53,7 +52,6 @@ namespace QuanLyNhaTro.BLL
             }
             return data;
         }
-
         public void AddKhachTro(Customer cus)
         {
             db.Customers.Add(cus);
@@ -101,7 +99,6 @@ namespace QuanLyNhaTro.BLL
             }
             return data;
         }
-
         public void DeleteKhachTro(List<int> listdel)
         {
             foreach (int makhach in listdel)
@@ -121,12 +118,6 @@ namespace QuanLyNhaTro.BLL
                 }
             }
         }
-        public int GetNextID()
-        {
-            if (db.Accounts.Count() == 0) return 1;
-            return db.Accounts.Max(c => c.AccountId) + 1;
-        }
-
         public List<Customer_View> SearchKhachTro(string txt)
         {
             List<Customer_View> data = new List<Customer_View>();
@@ -154,13 +145,10 @@ namespace QuanLyNhaTro.BLL
                         customer.Job = cus.Job;
                         data.Add(customer);
                     }
-
                 }
             }
             return data;
         }
-
-
         public List<Customer_View> SortKhachTro(List<int> makhach, string SortType)
         {
             List<Customer_View> data = new List<Customer_View>();
@@ -206,7 +194,6 @@ namespace QuanLyNhaTro.BLL
                 }
             }
             return data;
-
         }
         public bool IsDelete(int id)
         {

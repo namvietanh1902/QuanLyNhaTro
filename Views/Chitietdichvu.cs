@@ -67,13 +67,12 @@ namespace QuanLyNhaTro.Views
                 }
                 lblTongtien.Text = total.ToString();
                 
-            }
-            
+            } 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Dispose();
         }
 
         private void Chitietdichvu_Load(object sender, EventArgs e)

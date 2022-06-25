@@ -8,8 +8,7 @@ using System.Drawing;
 using System.Reflection;
 
 namespace QuanLyNhaTro.Views
-{   
-    
+{     
     public partial class DangNhap : Form 
     {   
         QuanLy db = new QuanLy();
@@ -34,10 +33,8 @@ namespace QuanLyNhaTro.Views
         {
             Application.Exit();
         }
-
         private void Login(Account account)
-        {
-            
+        {         
             if (account == null)
             {
                 MessageBox.Show(
@@ -73,8 +70,6 @@ namespace QuanLyNhaTro.Views
                     frm.Show();
                 }
             }
-
-
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -85,7 +80,7 @@ namespace QuanLyNhaTro.Views
 
         private void lblhienpass_Click(object sender, EventArgs e)
         {
-            
+
             lblhienpass.Visible = false;
             txtPassword.PasswordChar = '\0';
             lblanpass.Visible = true;
@@ -103,13 +98,11 @@ namespace QuanLyNhaTro.Views
             if (txtUsername.Text.Trim() == "")
             {
                 errorProvider1.SetError(txtUsername, "Please Enter Username");
-
             }
             else
             {
                 errorProvider1.SetError(txtUsername, "");
             }
         }
-
     }
 }

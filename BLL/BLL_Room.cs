@@ -44,7 +44,6 @@ namespace QuanLyNhaTro.BLL
             return data;
         }
 
-
         public List<CBBItems> GetRoomEmtyAndNoFullUpCombobox()
         {
             List<CBBItems> data = new List<CBBItems>();
@@ -216,8 +215,6 @@ namespace QuanLyNhaTro.BLL
                 db.SaveChanges();
             }
         }
-
-
         public void DeletePhongTro(List<int> listdel)
         {
             foreach (int i in listdel)
@@ -263,7 +260,6 @@ namespace QuanLyNhaTro.BLL
                             data = data.OrderBy(c => c.Capacity).ToList();
                             break;
                         }
-
                     }
             }
             return GetRoom_Views(data);
@@ -341,8 +337,6 @@ namespace QuanLyNhaTro.BLL
                 }
 
             }
-
-
             return GetRoom_Views(data);
         }
 
@@ -368,7 +362,6 @@ namespace QuanLyNhaTro.BLL
                     }
                 }
             }
-
         }
         public Room GetRoombyIDcontract(int id)
         {
@@ -388,7 +381,6 @@ namespace QuanLyNhaTro.BLL
             }
             return null;
         }
-
         public int Getsoluongnguoihientai(int id)
         {
             int dem = 0;
