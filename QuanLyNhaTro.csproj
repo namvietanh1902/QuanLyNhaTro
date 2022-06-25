@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\BLL_Contract.cs" />
+    <Compile Include="BLL\BLL_Main.cs" />
     <Compile Include="BLL\BLL_Receipt.cs" />
     <Compile Include="BLL\BLL_Room.cs" />
     <Compile Include="BLL\BLL_Service.cs" />

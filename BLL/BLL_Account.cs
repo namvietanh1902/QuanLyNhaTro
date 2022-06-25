@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using QuanLyNhaTro.Models;
 using QuanLyNhaTro.DTO;
 
-namespace QuanLyNhaTro.BLL
+namespace QuanLyNhaTro.BLL 
 {
-    public class BLL_Account
+    public class BLL_Account : BLL_Main
     {
         private static BLL_Account _instance;
 
@@ -28,24 +28,24 @@ namespace QuanLyNhaTro.BLL
 
         public List<Account> GetAllAccount()
         {
-            return QuanLy.Instance.Accounts.Select(p => p).ToList();
+            return db.Accounts.Select(p => p).ToList();
         }
         public Account GetAccountByUserAndPass(string user, string pass)
         {
 
-            var account = QuanLy.Instance.Accounts.Where(p => p.Username == user).FirstOrDefault();
+            var account = db.Accounts.Where(p => p.Username == user).FirstOrDefault();
             if (account != null && (account.Username == user && account.Password == pass && account.isDelete == false)) return account;
             return null;
 
         }
         public Account GetAccountByID(int id)
         {
-            return QuanLy.Instance.Accounts.Find(id);
+            return db.Accounts.Find(id);
 
         }
         public string GetNameByAccount(int id)
         {
-            return QuanLy.Instance.Accounts.Find(id).Name;
+            return db.Accounts.Find(id).Name;
         }
         public string GetTenNguoiDungByID(int id)
         {
@@ -57,7 +57,7 @@ namespace QuanLyNhaTro.BLL
         {
             Account account = GetAccountByID(ID);
             account.Password = NewPass;
-            QuanLy.Instance.SaveChanges();
+            db.SaveChanges();
         }
 
         public List<Account_View> GetAccount_Views()
@@ -88,8 +88,8 @@ namespace QuanLyNhaTro.BLL
 
         public void AddAccount(Account account)
         {
-            QuanLy.Instance.Accounts.Add(account);
-            QuanLy.Instance.SaveChanges();
+            db.Accounts.Add(account);
+            db.SaveChanges();
         }
 
         public void UpdateAccount(Account account)
@@ -106,7 +106,7 @@ namespace QuanLyNhaTro.BLL
                 tam.Gender = account.Gender;
                 tam.Birthday = account.Birthday;
                 tam.SDT = account.SDT;
-                QuanLy.Instance.SaveChanges();
+                db.SaveChanges();
             }
         }
 
@@ -118,12 +118,12 @@ namespace QuanLyNhaTro.BLL
                 {
                     if (id == acc.AccountId)
                     {
-                        Account tam = QuanLy.Instance.Accounts.Find(acc.AccountId);
+                        Account tam = db.Accounts.Find(acc.AccountId);
                         if (tam == null) return;
                         else
                         {
                             tam.isDelete = true;
-                            QuanLy.Instance.SaveChanges();
+                            db.SaveChanges();
                         }
                     }
                 }
@@ -133,8 +133,8 @@ namespace QuanLyNhaTro.BLL
         }
         public int GetNextID()
         {
-            if (QuanLy.Instance.Accounts.Count() == 0) return 1;
-            return QuanLy.Instance.Accounts.Max(c => c.AccountId) + 1;
+            if (db.Accounts.Count() == 0) return 1;
+            return db.Accounts.Max(c => c.AccountId) + 1;
         }
 
         public List<Account_View> SearchAccount(string txt)

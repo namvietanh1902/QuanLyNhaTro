@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaTro.BLL
 {
-    public class BLL_Receipt
+    public class BLL_Receipt: BLL_Main
     {
         private static BLL_Receipt _instance;
 
@@ -29,35 +29,36 @@ namespace QuanLyNhaTro.BLL
 
         public List<MonthlyReceipt> getAllMonthlyReceipt()
         {
-            return QuanLy.Instance.MonthlyReceipts.Select(c => c).ToList();
+            return db.MonthlyReceipts.Select(c => c).ToList();
         }
         public List<ServiceReceipt> getAllServiceReceipt()
         {
-            return QuanLy.Instance.ServiceReceipts.Select(c => c).ToList();
+            return db.ServiceReceipts.Select(c => c).ToList();
         }
 
         public ServiceReceipt GetServiceReceiptByID(int ID)
         {
-            return QuanLy.Instance.ServiceReceipts.Find(ID);
+            return db.ServiceReceipts.Find(ID);
         }
         public List<Receipt> GetReceiptByCusID(int id)
         {
-            return QuanLy.Instance.Receipts.Where(p => p.Contract.Customer.CustomerId.Equals(id)).ToList(); 
+            return db.Receipts.Where(p => p.Contract.Customer.CustomerId.Equals(id)).ToList(); 
         }
         public MonthlyReceipt GetMonthlyReceiptByID(int ID)
         {
-            return QuanLy.Instance.MonthlyReceipts.Find(ID);
+            return db.MonthlyReceipts.Find(ID);
         }
 
         public List<Receipt> GetAllReceipt()
         {
-            return QuanLy.Instance.Receipts.Select(c => c).ToList();
+            return db.Receipts.Select(c => c).ToList();
         }
 
 
         public bool checkMonth(MonthlyReceipt i)
         {   
-            if (i.Month < i.Contract.CreatedAt)
+            var contract = db.Contracts.Find(i.ContractID);
+            if (i.Month < contract.CreatedAt)
             {
                 MessageBox.Show("Hợp đồng chưa tồn tại vào tháng này");
                 return false;
@@ -85,8 +86,8 @@ namespace QuanLyNhaTro.BLL
                 {
 
                 new Common.ModelDataValidation().Validate(i);
-                QuanLy.Instance.MonthlyReceipts.Add(i);
-                QuanLy.Instance.SaveChanges();
+                db.MonthlyReceipts.Add(i);
+                db.SaveChanges();
                 }
                 catch (Exception ex)
                 {
@@ -137,8 +138,8 @@ namespace QuanLyNhaTro.BLL
                     PaidDate = DateTime.Now,
 
                 };
-                QuanLy.Instance.ServiceReceipts.Add(receipt);
-                QuanLy.Instance.SaveChanges();
+                db.ServiceReceipts.Add(receipt);
+                db.SaveChanges();
                 List<ServiceReceiptDetail> details = new List<ServiceReceiptDetail>();
                 foreach (ServiceReceipt_View item in data)
                 {
@@ -150,14 +151,14 @@ namespace QuanLyNhaTro.BLL
 
                     });
                 }
-                QuanLy.Instance.ServiceReceiptDetails.AddRange(details);
-                QuanLy.Instance.SaveChanges();
+                db.ServiceReceiptDetails.AddRange(details);
+                db.SaveChanges();
             }
         }
 
         public List<ServiceReceiptDetail> GetAllServiceReceiptDetails()
         {
-            return QuanLy.Instance.ServiceReceiptDetails.Select(c => c).ToList();
+            return db.ServiceReceiptDetails.Select(c => c).ToList();
         }
         
         public List<ReceiptPaid_View> GetAllReceiptPaid_Views()
@@ -204,12 +205,12 @@ namespace QuanLyNhaTro.BLL
         }
         public int GetTotalIncome()
         {
-            return QuanLy.Instance.Receipts.Where(p => p.isPaid && !p.Contract.Customer.isDelete).Select(p => p).Sum(p=> (int?)p.Total) ??  0;
+            return db.Receipts.Where(p => p.isPaid && !p.Contract.Customer.isDelete).Select(p => p).Sum(p=> (int?)p.Total) ??  0;
         }
         public void PaidReceipt(int id)
         {
-            QuanLy.Instance.Receipts.Find(id).isPaid = true;
-            QuanLy.Instance.SaveChanges();
+            db.Receipts.Find(id).isPaid = true;
+            db.SaveChanges();
         }
         public List<Receipt_View> Sort(List<int> current,string SortType)
         {
@@ -263,7 +264,7 @@ namespace QuanLyNhaTro.BLL
 
         public Receipt GetReceiptByID(int id)
         {
-            return QuanLy.Instance.Receipts.Find(id);
+            return db.Receipts.Find(id);
         }
         public List<Receipt_View> GetReceiptView(List<Receipt> data)
         {

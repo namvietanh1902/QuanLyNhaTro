@@ -8,7 +8,7 @@ using QuanLyNhaTro.Models;
 
 namespace QuanLyNhaTro.BLL
 {
-    public class BLL_Contract
+    public class BLL_Contract: BLL_Main
     {
         private static BLL_Contract _instance;
 
@@ -27,35 +27,35 @@ namespace QuanLyNhaTro.BLL
 
         public List<Contract> GetAllContract()
         {
-            return QuanLy.Instance.Contracts.Select(p => p).ToList();
+            return db.Contracts.Select(p => p).ToList();
         }
 
         public void AddContract(Contract contract)
         {
-            QuanLy.Instance.Contracts.Add(contract);
-            QuanLy.Instance.SaveChanges();
+            db.Contracts.Add(contract);
+            db.SaveChanges();
         }
 
         public void UpdateContract(Contract contract)
         {
-            Contract tam = QuanLy.Instance.Contracts.Find(contract.ContractId);
+            Contract tam = db.Contracts.Find(contract.ContractId);
             if (tam == null) return;
             else
             {                
                 tam.RoomId = contract.RoomId;
                 tam.CustomerName = contract.CustomerName;
                 tam.CreatedAt = contract.CreatedAt;
-                QuanLy.Instance.SaveChanges();
+                db.SaveChanges();
             }
         }
         public Contract GetContractByCustomerID(int id) //Lấy ra hợp đồng của khách
         {
-            return QuanLy.Instance.Contracts.Where(p => p.ContractId == id).Select(p => p).FirstOrDefault();
+            return db.Contracts.Where(p => p.ContractId == id).Select(p => p).FirstOrDefault();
         }
 
         public Contract GetContractByRoomID(int idroom) //Lấy ra Hợp đồng của phòng
         {
-            return QuanLy.Instance.Contracts.Where(p => p.RoomId == idroom).Select(p => p).FirstOrDefault();
+            return db.Contracts.Where(p => p.RoomId == idroom).Select(p => p).FirstOrDefault();
         }
     }
 }

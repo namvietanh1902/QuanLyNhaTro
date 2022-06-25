@@ -1,16 +1,13 @@
-﻿using System;
+﻿using QuanLyNhaTro.DTO;
+using QuanLyNhaTro.Models;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using QuanLyNhaTro.Models;
-using QuanLyNhaTro.DTO;
 
 
 namespace QuanLyNhaTro.BLL
 {
-    public class BLL_Customer
+    public class BLL_Customer: BLL_Main
     {
         private static BLL_Customer _instance;
 
@@ -28,11 +25,11 @@ namespace QuanLyNhaTro.BLL
         }
         public List<Customer> GetAllCustomer()
         {
-            return QuanLy.Instance.Customers.Select(p => p).ToList();
+            return db.Customers.Select(p => p).ToList();
         }
         public Customer GetCustomerByID(int id)
         {
-            return QuanLy.Instance.Customers.Where(p => p.CustomerId == id).Select(p => p).FirstOrDefault();
+            return db.Customers.Where(p => p.CustomerId == id).Select(p => p).FirstOrDefault();
         }
 
         public List<Customer_View> GetCustomer_Views()
@@ -59,25 +56,25 @@ namespace QuanLyNhaTro.BLL
 
         public void AddKhachTro(Customer cus)
         {
-            QuanLy.Instance.Customers.Add(cus);
-            QuanLy.Instance.SaveChanges();
+            db.Customers.Add(cus);
+            db.SaveChanges();
         }
 
         public void UpdateIDOfCustomers(Customer cus)
         {
-            Customer tam = QuanLy.Instance.Customers.Find(cus.CustomerId);
+            Customer tam = db.Customers.Find(cus.CustomerId);
             if (tam == null) return;
             else
             {
-               
-                QuanLy.Instance.SaveChanges();
+
+                db.SaveChanges();
             }
 
         }
 
         public void UpdateKhachTro(Customer cus)
         {
-            Customer tam = QuanLy.Instance.Customers.Where(c => c.CustomerId == cus.CustomerId).Select(p => p).FirstOrDefault();
+            Customer tam = db.Customers.Where(c => c.CustomerId == cus.CustomerId).Select(p => p).FirstOrDefault();
             if (tam == null) return;
             else
             {
@@ -86,21 +83,21 @@ namespace QuanLyNhaTro.BLL
                 tam.Birthday = cus.Birthday;
                 tam.CMND = cus.CMND;
                 tam.Job = cus.Job;
-                tam.Gender = cus.Gender;              
-                QuanLy.Instance.SaveChanges();
+                tam.Gender = cus.Gender;
+                db.SaveChanges();
             }
         }
         public List<CBBItems> GetAllCustomerCBB()
-        {   
-            var data= new List<CBBItems>();
-            foreach(var cus in GetAllCustomer())
+        {
+            var data = new List<CBBItems>();
+            foreach (var cus in GetAllCustomer())
             {
-                if(!cus.isDelete)
-                data.Add(new CBBItems
-                {
-                    Text = cus.Name,
-                    Value = cus.CustomerId,
-                });
+                if (!cus.isDelete)
+                    data.Add(new CBBItems
+                    {
+                        Text = cus.Name,
+                        Value = cus.CustomerId,
+                    });
             }
             return data;
         }
@@ -113,12 +110,12 @@ namespace QuanLyNhaTro.BLL
                 {
                     if (makhach == cus.CustomerId)
                     {
-                        Customer tam = QuanLy.Instance.Customers.Find(cus.CustomerId);
+                        Customer tam = db.Customers.Find(cus.CustomerId);
                         if (tam == null) return;
                         else
                         {
                             tam.isDelete = true;
-                            QuanLy.Instance.SaveChanges();
+                            db.SaveChanges();
                         }
                     }
                 }
@@ -126,8 +123,8 @@ namespace QuanLyNhaTro.BLL
         }
         public int GetNextID()
         {
-            if (QuanLy.Instance.Accounts.Count() == 0) return 1;
-            return QuanLy.Instance.Accounts.Max(c => c.AccountId) + 1;
+            if (db.Accounts.Count() == 0) return 1;
+            return db.Accounts.Max(c => c.AccountId) + 1;
         }
 
         public List<Customer_View> SearchKhachTro(string txt)
@@ -162,7 +159,7 @@ namespace QuanLyNhaTro.BLL
             }
             return data;
         }
-       
+
 
         public List<Customer_View> SortKhachTro(List<int> makhach, string SortType)
         {
@@ -195,25 +192,25 @@ namespace QuanLyNhaTro.BLL
                     return data;
             }
         }
-        public List<Customer_View> GetAllCustomerByIDRoom(int id) 
+        public List<Customer_View> GetAllCustomerByIDRoom(int id)
         {
             List<Customer_View> data = new List<Customer_View>();
             foreach (Customer_View cv in GetCustomer_Views())
             {
-                foreach(Contract contract in BLL_Contract.Instance.GetAllContract())
+                foreach (Contract contract in BLL_Contract.Instance.GetAllContract())
                 {
-                    if(cv.CustomerId == contract.ContractId && contract.RoomId == id)
+                    if (cv.CustomerId == contract.ContractId && contract.RoomId == id)
                     {
                         data.Add(cv);
                     }
                 }
             }
             return data;
-               
+
         }
         public bool IsDelete(int id)
         {
-            return QuanLy.Instance.Customers.Find(id).isDelete;
+            return db.Customers.Find(id).isDelete;
         }
     }
 

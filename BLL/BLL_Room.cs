@@ -9,7 +9,7 @@ using QuanLyNhaTro.DTO;
 
 namespace QuanLyNhaTro.BLL
 {
-    public class BLL_Room
+    public class BLL_Room:BLL_Main
     {
         private static BLL_Room _instance;
 
@@ -28,7 +28,7 @@ namespace QuanLyNhaTro.BLL
 
         public List<Room> GetAllRoom()
         {
-            return QuanLy.Instance.Rooms.Select(p => p).ToList();
+            return db.Rooms.Select(p => p).ToList();
         }
         public List<CBBItems> GetAllRoomUpCombobox()
         {
@@ -53,7 +53,7 @@ namespace QuanLyNhaTro.BLL
                 int dem = 0;
                 foreach (Contract contract in BLL_Contract.Instance.GetAllContract())
                 {
-                    if (i.isDelete == false && contract.RoomId == i.RoomId && QuanLy.Instance.Customers.Find(contract.ContractId).isDelete == false)
+                    if (i.isDelete == false && contract.RoomId == i.RoomId && db.Customers.Find(contract.ContractId).isDelete == false)
                     {
                         dem++;
                     }
@@ -72,12 +72,12 @@ namespace QuanLyNhaTro.BLL
 
         public void UpdateIsRentRoomWhenAddCustomer(Room room)
         {
-            Room tam = QuanLy.Instance.Rooms.Find(room.RoomId);
+            Room tam = db.Rooms.Find(room.RoomId);
             if (tam != null) return;
             else
             {
                 tam.isRent = true;
-                QuanLy.Instance.SaveChanges();
+                db.SaveChanges();
             }
         }
 
@@ -122,7 +122,7 @@ namespace QuanLyNhaTro.BLL
                 int dem = 0;
                 foreach (Contract contract in BLL_Contract.Instance.GetAllContract())
                 {
-                    if (i.RoomId == contract.RoomId && i.isDelete == false && QuanLy.Instance.Customers.Find(contract.ContractId).isDelete == false)
+                    if (i.RoomId == contract.RoomId && i.isDelete == false && db.Customers.Find(contract.ContractId).isDelete == false)
                     {
                         dem++;
                     }
@@ -136,8 +136,8 @@ namespace QuanLyNhaTro.BLL
         }
         public int GetNextID()
         {
-            if(QuanLy.Instance.Rooms.Count() ==0) return 1;
-            return QuanLy.Instance.Rooms.Max(c => c.RoomId) + 1;
+            if(db.Rooms.Count() ==0) return 1;
+            return db.Rooms.Max(c => c.RoomId) + 1;
         }
 
         public List<Room> GetAllRoomRented()
@@ -148,7 +148,7 @@ namespace QuanLyNhaTro.BLL
                 int dem = 0;
                 foreach (Contract contract in BLL_Contract.Instance.GetAllContract())
                 {
-                    if (i.RoomId == contract.RoomId && i.isDelete == false && QuanLy.Instance.Customers.Find(contract.ContractId).isDelete == false)
+                    if (i.RoomId == contract.RoomId && i.isDelete == false && db.Customers.Find(contract.ContractId).isDelete == false)
                     {
                         dem++;
                     }
@@ -167,14 +167,14 @@ namespace QuanLyNhaTro.BLL
             foreach (Contract contract in BLL_Contract.Instance.GetAllContract())
             {
                 ChiTietPhongThue ctpt = new ChiTietPhongThue();
-                if (contract.RoomId == maphong && QuanLy.Instance.Customers.Find(contract.ContractId).isDelete == false)
+                if (contract.RoomId == maphong && db.Customers.Find(contract.ContractId).isDelete == false)
                 {
                     ctpt.ContractId = contract.ContractId;
                     ctpt.RoomId = contract.RoomId;
-                    ctpt.RoomName = QuanLy.Instance.Rooms.Find(contract.RoomId).Name;
+                    ctpt.RoomName = db.Rooms.Find(contract.RoomId).Name;
                     ctpt.CustomerName = contract.CustomerName;
-                    ctpt.Capacity = QuanLy.Instance.Rooms.Find(contract.RoomId).Capacity;
-                    ctpt.Price = QuanLy.Instance.Rooms.Find(contract.RoomId).Price;
+                    ctpt.Capacity = db.Rooms.Find(contract.RoomId).Capacity;
+                    ctpt.Price = db.Rooms.Find(contract.RoomId).Price;
                     ctpt.CreatedAt = (DateTime)contract.CreatedAt;
                     data.Add(ctpt);
                 }
@@ -194,7 +194,7 @@ namespace QuanLyNhaTro.BLL
 
         public Room GetRoomByIDRoom(int id)
         {
-            return QuanLy.Instance.Rooms.Find(id);
+            return db.Rooms.Find(id);
         }
 
         public void AddAndUpdate(Room room)
@@ -208,12 +208,12 @@ namespace QuanLyNhaTro.BLL
                 roomUpdate.Capacity = room.Capacity;
                 roomUpdate.Price = room.Price;
                 roomUpdate.isRent = room.isRent;
-                QuanLy.Instance.SaveChanges();
+                db.SaveChanges();
             }
             else
             {
-                QuanLy.Instance.Rooms.Add(room);
-                QuanLy.Instance.SaveChanges();
+                db.Rooms.Add(room);
+                db.SaveChanges();
             }
         }
 
@@ -231,7 +231,7 @@ namespace QuanLyNhaTro.BLL
                         else
                         {
                             tam.isDelete = true;
-                            QuanLy.Instance.SaveChanges();
+                            db.SaveChanges();
                         }
                     }
                 }
@@ -239,11 +239,11 @@ namespace QuanLyNhaTro.BLL
         }
         public List<int> GetAllPriceTags()
         {
-            return QuanLy.Instance.Rooms.Select(p => p.Price).Distinct().ToList();
+            return db.Rooms.Select(p => p.Price).Distinct().ToList();
         }
         public List<int> GetAllRoomCapacity()
         {
-            return QuanLy.Instance.Rooms.Select(p => p.Capacity).Distinct().ToList();
+            return db.Rooms.Select(p => p.Capacity).Distinct().ToList();
         }
 
         public List<Room_View> RoomSort(List<string> listnow, string SortType)
@@ -353,7 +353,7 @@ namespace QuanLyNhaTro.BLL
                 int soluong = 0;
                 foreach(Contract hd in BLL_Contract.Instance.GetAllContract())
                 {
-                    if(room.RoomId == hd.RoomId && QuanLy.Instance.Customers.Find(hd.ContractId).isDelete == false ){
+                    if(room.RoomId == hd.RoomId && db.Customers.Find(hd.ContractId).isDelete == false ){
                         soluong++;
                     }
                 }
@@ -364,7 +364,7 @@ namespace QuanLyNhaTro.BLL
                     else
                     {
                         tam.isRent = false;
-                        QuanLy.Instance.SaveChanges();
+                        db.SaveChanges();
                     }
                 }
             }
@@ -394,7 +394,7 @@ namespace QuanLyNhaTro.BLL
             int dem = 0;
             foreach(Contract contract in BLL_Contract.Instance.GetAllContract())
             {
-                if(contract.RoomId == id && QuanLy.Instance.Customers.Find(contract.ContractId).isDelete==false)
+                if(contract.RoomId == id && db.Customers.Find(contract.ContractId).isDelete==false)
                 {
                     dem++;
                 }
