@@ -28,11 +28,19 @@ namespace QuanLyNhaTro.BLL
         }
         public List<Customer> GetAllCustomer()
         {
-            return QuanLy.Instance.Customers.Select(p => p).ToList();
+            using (QuanLy db = new QuanLy())
+            {
+
+            return db.Customers.Select(p => p).ToList();
         }
+            }
         public Customer GetCustomerByID(int id)
         {
-            return QuanLy.Instance.Customers.Where(p => p.CustomerId == id).Select(p => p).FirstOrDefault();
+            using (QuanLy db = new QuanLy())
+            {
+
+            return db.Customers.Where(p => p.CustomerId == id).Select(p => p).FirstOrDefault();
+            }
         }
 
         public List<Customer_View> GetCustomer_Views()
@@ -59,25 +67,36 @@ namespace QuanLyNhaTro.BLL
 
         public void AddKhachTro(Customer cus)
         {
-            QuanLy.Instance.Customers.Add(cus);
-            QuanLy.Instance.SaveChanges();
+            using (QuanLy db = new QuanLy())
+            {
+
+            db.Customers.Add(cus);
+            db.SaveChanges();
+            }
         }
 
         public void UpdateIDOfCustomers(Customer cus)
         {
-            Customer tam = QuanLy.Instance.Customers.Find(cus.CustomerId);
+            using (QuanLy db = new QuanLy())
+            {
+
+            Customer tam = db.Customers.Find(cus.CustomerId);
             if (tam == null) return;
             else
             {
                
-                QuanLy.Instance.SaveChanges();
+                db.SaveChanges();
+            }
             }
 
         }
 
         public void UpdateKhachTro(Customer cus)
         {
-            Customer tam = QuanLy.Instance.Customers.Where(c => c.CustomerId == cus.CustomerId).Select(p => p).FirstOrDefault();
+            using (QuanLy db = new QuanLy())
+            {
+
+            Customer tam = db.Customers.Where(c => c.CustomerId == cus.CustomerId).Select(p => p).FirstOrDefault();
             if (tam == null) return;
             else
             {
@@ -87,7 +106,8 @@ namespace QuanLyNhaTro.BLL
                 tam.CMND = cus.CMND;
                 tam.Job = cus.Job;
                 tam.Gender = cus.Gender;              
-                QuanLy.Instance.SaveChanges();
+                db.SaveChanges();
+            }
             }
         }
         public List<CBBItems> GetAllCustomerCBB()
@@ -107,27 +127,35 @@ namespace QuanLyNhaTro.BLL
 
         public void DeleteKhachTro(List<int> listdel)
         {
+            using (QuanLy db = new QuanLy())
+            {
+
             foreach (int makhach in listdel)
             {
                 foreach (Customer cus in GetAllCustomer())
                 {
                     if (makhach == cus.CustomerId)
                     {
-                        Customer tam = QuanLy.Instance.Customers.Find(cus.CustomerId);
+                        Customer tam = db.Customers.Find(cus.CustomerId);
                         if (tam == null) return;
                         else
                         {
                             tam.isDelete = true;
-                            QuanLy.Instance.SaveChanges();
+                            db.SaveChanges();
                         }
                     }
                 }
             }
+            }
         }
         public int GetNextID()
         {
-            if (QuanLy.Instance.Accounts.Count() == 0) return 1;
-            return QuanLy.Instance.Accounts.Max(c => c.AccountId) + 1;
+            using (QuanLy db = new QuanLy())
+            {
+
+            if (db.Accounts.Count() == 0) return 1;
+            return db.Accounts.Max(c => c.AccountId) + 1;
+            }
         }
 
         public List<Customer_View> SearchKhachTro(string txt)
@@ -213,7 +241,11 @@ namespace QuanLyNhaTro.BLL
         }
         public bool IsDelete(int id)
         {
-            return QuanLy.Instance.Customers.Find(id).isDelete;
+            using (QuanLy db = new QuanLy())
+            {
+
+            return db.Customers.Find(id).isDelete;
+            }
         }
     }
 

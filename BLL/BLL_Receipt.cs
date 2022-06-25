@@ -29,29 +29,53 @@ namespace QuanLyNhaTro.BLL
 
         public List<MonthlyReceipt> getAllMonthlyReceipt()
         {
-            return QuanLy.Instance.MonthlyReceipts.Select(c => c).ToList();
+            using (QuanLy db = new QuanLy())
+            {
+
+            return db.MonthlyReceipts.Select(c => c).ToList();
+            }
         }
         public List<ServiceReceipt> getAllServiceReceipt()
         {
-            return QuanLy.Instance.ServiceReceipts.Select(c => c).ToList();
+            using (QuanLy db = new QuanLy())
+            {
+
+            return db.ServiceReceipts.Select(c => c).ToList();
+            }
         }
 
         public ServiceReceipt GetServiceReceiptByID(int ID)
         {
-            return QuanLy.Instance.ServiceReceipts.Find(ID);
+            using (QuanLy db = new QuanLy())
+            {
+            return db.ServiceReceipts.Find(ID);
+
+            }
         }
         public List<Receipt> GetReceiptByCusID(int id)
         {
-            return QuanLy.Instance.Receipts.Where(p => p.Contract.Customer.CustomerId.Equals(id)).ToList(); 
+            using (QuanLy db = new QuanLy())
+            {
+            return db.Receipts.Where(p => p.Contract.Customer.CustomerId.Equals(id)).ToList(); 
+
+            }
         }
         public MonthlyReceipt GetMonthlyReceiptByID(int ID)
         {
-            return QuanLy.Instance.MonthlyReceipts.Find(ID);
+            using (QuanLy db = new QuanLy())
+            {
+
+            return db.MonthlyReceipts.Find(ID);
+            }
         }
 
         public List<Receipt> GetAllReceipt()
         {
-            return QuanLy.Instance.Receipts.Select(c => c).ToList();
+            using (QuanLy db = new QuanLy())
+            {
+
+            return db.Receipts.Select(c => c).ToList();
+            }
         }
 
 
@@ -74,6 +98,9 @@ namespace QuanLyNhaTro.BLL
         }
         public void AddMonthlyReceipt(MonthlyReceipt i)
         {
+            using (QuanLy db = new QuanLy())
+            {
+
             if (!checkMonth(i))
             {
                
@@ -85,13 +112,14 @@ namespace QuanLyNhaTro.BLL
                 {
 
                 new Common.ModelDataValidation().Validate(i);
-                QuanLy.Instance.MonthlyReceipts.Add(i);
-                QuanLy.Instance.SaveChanges();
+                db.MonthlyReceipts.Add(i);
+                db.SaveChanges();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Thông báo lỗi");
                 }
+            }
             }
         }
         public List<ServiceReceipt_View> GetReceiptDetail(int mahoadon)
@@ -123,6 +151,9 @@ namespace QuanLyNhaTro.BLL
 
         public void AddServiceReceipt(List<ServiceReceipt_View> data, int CustomerID)
         {
+            using (QuanLy db = new QuanLy())
+            {
+
             if (data != null)
             {
                 int total = 0;
@@ -137,8 +168,8 @@ namespace QuanLyNhaTro.BLL
                     PaidDate = DateTime.Now,
 
                 };
-                QuanLy.Instance.ServiceReceipts.Add(receipt);
-                QuanLy.Instance.SaveChanges();
+                db.ServiceReceipts.Add(receipt);
+                db.SaveChanges();
                 List<ServiceReceiptDetail> details = new List<ServiceReceiptDetail>();
                 foreach (ServiceReceipt_View item in data)
                 {
@@ -150,14 +181,19 @@ namespace QuanLyNhaTro.BLL
 
                     });
                 }
-                QuanLy.Instance.ServiceReceiptDetails.AddRange(details);
-                QuanLy.Instance.SaveChanges();
+                db.ServiceReceiptDetails.AddRange(details);
+                db.SaveChanges();
+            }
             }
         }
 
         public List<ServiceReceiptDetail> GetAllServiceReceiptDetails()
         {
-            return QuanLy.Instance.ServiceReceiptDetails.Select(c => c).ToList();
+            using (QuanLy db = new QuanLy())
+            {
+
+            return db.ServiceReceiptDetails.Select(c => c).ToList();
+            }
         }
         
         public List<ReceiptPaid_View> GetAllReceiptPaid_Views()
@@ -204,12 +240,20 @@ namespace QuanLyNhaTro.BLL
         }
         public int GetTotalIncome()
         {
-            return QuanLy.Instance.Receipts.Where(p => p.isPaid && !p.Contract.Customer.isDelete).Select(p => p).Sum(p=> (int?)p.Total) ??  0;
+            using (QuanLy db = new QuanLy())
+            {
+
+            return db.Receipts.Where(p => p.isPaid && !p.Contract.Customer.isDelete).Select(p => p).Sum(p=> (int?)p.Total) ??  0;
+            }
         }
         public void PaidReceipt(int id)
         {
-            QuanLy.Instance.Receipts.Find(id).isPaid = true;
-            QuanLy.Instance.SaveChanges();
+            using (QuanLy db = new QuanLy())
+            {
+
+            db.Receipts.Find(id).isPaid = true;
+            db.SaveChanges();
+            }
         }
         public List<Receipt_View> Sort(List<int> current,string SortType)
         {
@@ -263,7 +307,11 @@ namespace QuanLyNhaTro.BLL
 
         public Receipt GetReceiptByID(int id)
         {
-            return QuanLy.Instance.Receipts.Find(id);
+            using (QuanLy db = new QuanLy())
+            {
+
+            return db.Receipts.Find(id);
+            }
         }
         public List<Receipt_View> GetReceiptView(List<Receipt> data)
         {

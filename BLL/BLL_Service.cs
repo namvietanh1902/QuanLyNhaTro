@@ -26,7 +26,10 @@ namespace QuanLyNhaTro.BLL
         }
         public List<Service> GetAllService()
         {
-            return QuanLy.Instance.Services.Where(p => p.isDelete == false).Select(p => p).ToList();
+            using (QuanLy db = new QuanLy())
+            {
+            return db.Services.Where(p => p.isDelete == false).Select(p => p).ToList();
+            }
         }
         public List<Service_View> GetViews()
         {
@@ -45,19 +48,28 @@ namespace QuanLyNhaTro.BLL
         }
         public bool CheckService(Service service)
         {
-            if (QuanLy.Instance.Services.Find(service.ServiceId) == null) return true;
+            using (QuanLy db = new QuanLy())
+            {
+            if (db.Services.Find(service.ServiceId) == null) return true;
             return false;
+            }
         }
         public int GetNextID()
         {
-            if (QuanLy.Instance.Services.Count() == 0) return 1;
-            return QuanLy.Instance.Services.Max(p => p.ServiceId) + 1;
+            using (QuanLy db = new QuanLy())
+            {
+            if (db.Services.Count() == 0) return 1;
+            return db.Services.Max(p => p.ServiceId) + 1;
+            }
         }
         public void DeleteService(int ID)
         {
-            var del = QuanLy.Instance.Services.Find(ID);
+            using (QuanLy db = new QuanLy())
+            {
+            var del = db.Services.Find(ID);
             del.isDelete = true;
-            QuanLy.Instance.SaveChanges();
+            db.SaveChanges();
+            }
         }
         public List<Service_View> SearchService(string txt)
         {
@@ -73,21 +85,24 @@ namespace QuanLyNhaTro.BLL
         }
         public void AddOrUpdate(bool isEdit, Service service)
         {
+            using (QuanLy db = new QuanLy())
+            {
             if (isEdit == false)
             {
                 if (CheckService(service))
                 {
-                    QuanLy.Instance.Services.Add(service);
-                    QuanLy.Instance.SaveChanges();
+                    db.Services.Add(service);
+                    db.SaveChanges();
                 }
             }
             else
             {
-                var curr = QuanLy.Instance.Services.Find(service.ServiceId);
+                var curr = db.Services.Find(service.ServiceId);
                 curr.Unit = service.Unit;
                 curr.Price = service.Price;
                 curr.Name = service.Name;
-                QuanLy.Instance.SaveChanges();
+                db.SaveChanges();
+            }
             }
         }
         public List<Service_View> GetCurrentList(List<int> list)
@@ -179,8 +194,11 @@ namespace QuanLyNhaTro.BLL
         }
         public void PaidService(int id, bool ispaid)
         {
-            QuanLy.Instance.ServiceReceipts.Find(id).isPaid = ispaid;
-            QuanLy.Instance.SaveChanges();
+            using (QuanLy db = new QuanLy())
+            {
+            db.ServiceReceipts.Find(id).isPaid = ispaid;
+            db.SaveChanges();
+            }
         }
         public List<ServicePaid_View> Sort()
         {

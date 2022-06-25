@@ -27,25 +27,40 @@ namespace QuanLyNhaTro.BLL
         }
 
         public List<Account> GetAllAccount()
-        {
-            return QuanLy.Instance.Accounts.Select(p => p).ToList();
+        {   
+            using (QuanLy db = new QuanLy())
+            {
+
+            return db.Accounts.Select(p => p).ToList();
+            }
         }
         public Account GetAccountByUserAndPass(string user, string pass)
         {
-
-            var account = QuanLy.Instance.Accounts.Where(p => p.Username == user).FirstOrDefault();
+            using (QuanLy db = new QuanLy())
+            {
+            var account = db.Accounts.Where(p => p.Username == user).FirstOrDefault();
             if (account != null && (account.Username == user && account.Password == pass && account.isDelete == false)) return account;
             return null;
+
+            }
 
         }
         public Account GetAccountByID(int id)
         {
-            return QuanLy.Instance.Accounts.Find(id);
+            using (QuanLy db = new QuanLy())
+            {
+            return db.Accounts.Find(id);
+
+            }
 
         }
         public string GetNameByAccount(int id)
         {
-            return QuanLy.Instance.Accounts.Find(id).Name;
+            using (QuanLy db = new QuanLy())
+            {
+            return db.Accounts.Find(id).Name;
+
+            }
         }
         public string GetTenNguoiDungByID(int id)
         {
@@ -55,9 +70,13 @@ namespace QuanLyNhaTro.BLL
 
         public void ChangePass(int ID, string NewPass)
         {
+            using (QuanLy db = new QuanLy())
+            {
             Account account = GetAccountByID(ID);
             account.Password = NewPass;
-            QuanLy.Instance.SaveChanges();
+            db.SaveChanges();
+
+            }
         }
 
         public List<Account_View> GetAccount_Views()
@@ -88,12 +107,18 @@ namespace QuanLyNhaTro.BLL
 
         public void AddAccount(Account account)
         {
-            QuanLy.Instance.Accounts.Add(account);
-            QuanLy.Instance.SaveChanges();
+            using (QuanLy db = new QuanLy())
+            {
+
+            db.Accounts.Add(account);
+            db.SaveChanges();
+            }
         }
 
         public void UpdateAccount(Account account)
         {
+            using (QuanLy db = new QuanLy())
+            {
             Account tam = GetAccountByID(account.AccountId);
             if (tam == null) return;
             else
@@ -106,35 +131,43 @@ namespace QuanLyNhaTro.BLL
                 tam.Gender = account.Gender;
                 tam.Birthday = account.Birthday;
                 tam.SDT = account.SDT;
-                QuanLy.Instance.SaveChanges();
+                db.SaveChanges();
+            }
             }
         }
 
         public void DeleteAccount(List<int> del)
         {
+            using (QuanLy db = new QuanLy())
+            {
             foreach (int id in del)
             {
                 foreach (Account acc in GetAllAccount())
                 {
                     if (id == acc.AccountId)
                     {
-                        Account tam = QuanLy.Instance.Accounts.Find(acc.AccountId);
+                        Account tam = db.Accounts.Find(acc.AccountId);
                         if (tam == null) return;
                         else
                         {
                             tam.isDelete = true;
-                            QuanLy.Instance.SaveChanges();
+                            db.SaveChanges();
                         }
                     }
                 }
             }
 
+            }
 
         }
         public int GetNextID()
         {
-            if (QuanLy.Instance.Accounts.Count() == 0) return 1;
-            return QuanLy.Instance.Accounts.Max(c => c.AccountId) + 1;
+            using (QuanLy db = new QuanLy())
+            {
+            if (db.Accounts.Count() == 0) return 1;
+            return db.Accounts.Max(c => c.AccountId) + 1;
+
+            }
         }
 
         public List<Account_View> SearchAccount(string txt)
