@@ -1034,7 +1034,7 @@
             this.cboSortUser_user.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSortUser_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSortUser_user.FormattingEnabled = true;
-            this.cboSortUser_user.Location = new System.Drawing.Point(1344, 42);
+            this.cboSortUser_user.Location = new System.Drawing.Point(1283, 42);
             this.cboSortUser_user.Margin = new System.Windows.Forms.Padding(4);
             this.cboSortUser_user.Name = "cboSortUser_user";
             this.cboSortUser_user.Size = new System.Drawing.Size(171, 33);
@@ -1071,7 +1071,7 @@
             this.btnSort_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSort_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSort_user.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(14)))), ((int)(((byte)(63)))));
-            this.btnSort_user.Location = new System.Drawing.Point(1183, 35);
+            this.btnSort_user.Location = new System.Drawing.Point(1094, 32);
             this.btnSort_user.Margin = new System.Windows.Forms.Padding(4);
             this.btnSort_user.Name = "btnSort_user";
             this.btnSort_user.Size = new System.Drawing.Size(131, 48);
@@ -3824,8 +3824,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1942, 1102);
-            this.Controls.Add(this.pnTinhtientro);
             this.Controls.Add(this.pnUser);
+            this.Controls.Add(this.pnTinhtientro);
             this.Controls.Add(this.pnHome);
             this.Controls.Add(this.pnKhanhtro);
             this.Controls.Add(this.pnPhongtro);

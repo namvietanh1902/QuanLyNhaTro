@@ -51,7 +51,7 @@ namespace QuanLyNhaTro.Views
             switch (this.action)
             {
                 case enmAction.wait:
-                    timer1.Interval = 5000;
+                    timer1.Interval = 2200;
                     action = enmAction.close;
                     break;
                 case ThongBao.enmAction.start:
@@ -96,32 +96,28 @@ namespace QuanLyNhaTro.Views
                 if (frm == null)
                 {
                     this.Name = fname;
-                    this.x = Screen.PrimaryScreen.WorkingArea.Width - this.Width + 15;
-                    this.y = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i - 5 * i;
+                    this.x = Screen.PrimaryScreen.WorkingArea.Width - this.Width + 40;
+                    this.y = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i - 30 * i;
                     this.Location = new Point(this.x, this.y);
                     break;
 
                 }
 
             }
-            this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
+            this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width + 20;
 
             switch (type)
             {
                 case enmType.Success:
-                    //this.pictureBox1.Image = Resources.success1;
                     this.BackColor = Color.SeaGreen;
                     break;
                 case enmType.Error:
-                    //this.pictureBox1.Image = Resources.error;
                     this.BackColor = Color.DarkRed;
                     break;
                 case enmType.Info:
-                    //this.pictureBox1.Image = Resources.info;
                     this.BackColor = Color.RoyalBlue;
                     break;
                 case enmType.Warning:
-                    //this.pictureBox1.Image = Resources.warning;
                     this.BackColor = Color.DarkOrange;
                     break;
             }
