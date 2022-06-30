@@ -31,7 +31,16 @@ namespace QuanLyNhaTro.Views
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+           DialogResult ret =  MessageBox.Show(
+                   "Bạn có chắc muốn thoát",
+                   "Thông báo",
+                   MessageBoxButtons.OKCancel,
+                   MessageBoxIcon.Warning
+                   );
+            if (ret == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
         private void Login(Account account)
         {         

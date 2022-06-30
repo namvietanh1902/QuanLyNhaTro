@@ -141,6 +141,20 @@ namespace QuanLyNhaTro.BLL
             }
             return data;
         }
+        public bool SSSDT(int id,string sdt)
+        {
+            foreach (Account acc in GetAllAccount())
+            {
+                if (acc.AccountId == id && !acc.isDelete)
+                {
+                    if(acc.SDT == sdt)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
         public List<Account_View> SortAccount(List<int> accountID, string SortType)
         {
             List<Account_View> data = new List<Account_View>();

@@ -159,6 +159,12 @@
     <Compile Include="Views\ThemPhongTro.Designer.cs">
       <DependentUpon>ThemPhongTro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ThongBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ThongBao.Designer.cs">
+      <DependentUpon>ThongBao.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Migrations\202206050736249_inheritance.resx">
       <DependentUpon>202206050736249_inheritance.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ThemPhongTro.resx">
       <DependentUpon>ThemPhongTro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ThongBao.resx">
+      <DependentUpon>ThongBao.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\QuanLyNhaTro.exe.config" />
     <None Include="packages.config" />

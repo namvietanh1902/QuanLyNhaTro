@@ -206,7 +206,7 @@
             this.txtElecFirst = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.label83 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.txtWaterFirst = new System.Windows.Forms.TextBox();
             this.txtElecPrice = new System.Windows.Forms.TextBox();
@@ -263,7 +263,6 @@
             this.btnSortReceipt = new System.Windows.Forms.Button();
             this.cbbSort_Receipt = new System.Windows.Forms.ComboBox();
             this.pnNavagation = new System.Windows.Forms.Panel();
-            this.btnDangxuat = new QuanLyNhaTro.VBButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.lblThongke = new System.Windows.Forms.Label();
             this.lblTinhtientro = new System.Windows.Forms.Label();
@@ -284,6 +283,7 @@
             this.lblHethong = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnDangxuat = new QuanLyNhaTro.VBButton();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -351,6 +351,9 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1558, 153);
             this.panel1.TabIndex = 2;
+            // 
+            // lblUsername
+            // 
             this.lblUsername.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.lblUsername.Location = new System.Drawing.Point(155, 79);
@@ -2031,6 +2034,9 @@
             this.label13.Size = new System.Drawing.Size(71, 22);
             this.label13.TabIndex = 10;
             this.label13.Text = "Số lượng";
+            // 
+            // lblStatus
+            // 
             this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblStatus.AutoSize = true;
@@ -2749,7 +2755,7 @@
             // 
             this.panel16.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel16.Controls.Add(this.label83);
+            this.panel16.Controls.Add(this.lblTotal);
             this.panel16.Controls.Add(this.label26);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel16.ForeColor = System.Drawing.SystemColors.Control;
@@ -2759,18 +2765,18 @@
             this.panel16.Size = new System.Drawing.Size(489, 101);
             this.panel16.TabIndex = 7;
             // 
-            // label83
+            // lblTotal
             // 
-            this.label83.AutoSize = true;
-            this.label83.BackColor = System.Drawing.Color.Transparent;
-            this.label83.Font = new System.Drawing.Font("Source Sans Pro", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label83.ForeColor = System.Drawing.Color.Red;
-            this.label83.Location = new System.Drawing.Point(315, 34);
-            this.label83.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(29, 36);
-            this.label83.TabIndex = 0;
-            this.label83.Text = "0";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotal.Font = new System.Drawing.Font("Source Sans Pro", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.Color.Red;
+            this.lblTotal.Location = new System.Drawing.Point(315, 34);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(29, 36);
+            this.lblTotal.TabIndex = 0;
+            this.lblTotal.Text = "0";
             // 
             // label26
             // 
@@ -3518,30 +3524,6 @@
             this.pnNavagation.Size = new System.Drawing.Size(384, 1102);
             this.pnNavagation.TabIndex = 1;
             // 
-            // btnDangxuat
-            // 
-            this.btnDangxuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDangxuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(17)))));
-            this.btnDangxuat.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(17)))));
-            this.btnDangxuat.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnDangxuat.BorderRadius = 28;
-            this.btnDangxuat.BorderSize = 0;
-            this.btnDangxuat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDangxuat.FlatAppearance.BorderSize = 0;
-            this.btnDangxuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangxuat.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangxuat.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDangxuat.ImageList = this.imageList1;
-            this.btnDangxuat.Location = new System.Drawing.Point(115, 985);
-            this.btnDangxuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDangxuat.Name = "btnDangxuat";
-            this.btnDangxuat.Size = new System.Drawing.Size(156, 66);
-            this.btnDangxuat.TabIndex = 9;
-            this.btnDangxuat.Text = "Đăng xuất";
-            this.btnDangxuat.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDangxuat.UseVisualStyleBackColor = false;
-            this.btnDangxuat.Click += new System.EventHandler(this.btnDangxuat_Click);
-            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -3811,6 +3793,30 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnDangxuat
+            // 
+            this.btnDangxuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDangxuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(17)))));
+            this.btnDangxuat.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(17)))));
+            this.btnDangxuat.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDangxuat.BorderRadius = 28;
+            this.btnDangxuat.BorderSize = 0;
+            this.btnDangxuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDangxuat.FlatAppearance.BorderSize = 0;
+            this.btnDangxuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangxuat.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangxuat.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDangxuat.ImageList = this.imageList1;
+            this.btnDangxuat.Location = new System.Drawing.Point(115, 985);
+            this.btnDangxuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDangxuat.Name = "btnDangxuat";
+            this.btnDangxuat.Size = new System.Drawing.Size(156, 66);
+            this.btnDangxuat.TabIndex = 9;
+            this.btnDangxuat.Text = "Đăng xuất";
+            this.btnDangxuat.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDangxuat.UseVisualStyleBackColor = false;
+            this.btnDangxuat.Click += new System.EventHandler(this.btnDangxuat_Click);
+            // 
             // GiaodienAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -3818,13 +3824,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1942, 1102);
+            this.Controls.Add(this.pnTinhtientro);
+            this.Controls.Add(this.pnUser);
+            this.Controls.Add(this.pnHome);
             this.Controls.Add(this.pnKhanhtro);
             this.Controls.Add(this.pnPhongtro);
             this.Controls.Add(this.pnDichvu);
-            this.Controls.Add(this.pnTinhtientro);
-            this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnThongke);
-            this.Controls.Add(this.pnHome);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
@@ -4152,7 +4158,7 @@
         private System.Windows.Forms.Label label80;
         private System.Windows.Forms.TextBox txtElecFirst;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Button btnDoanhThuNam;
         private System.Windows.Forms.Button btnDoanhThuThang;
