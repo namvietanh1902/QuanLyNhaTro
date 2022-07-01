@@ -1175,14 +1175,14 @@ namespace QuanLyNhaTro.Views
                 btnDangxuat.Location = new Point(8, 791);
                 btnDangxuat.Text = "";
                 btnDangxuat.Width = 70;
-                pnTongdoanhthu.Location = new Point(505, 31);
+                //pnTongdoanhthu.Location = new Point(505, 31);
                 pictureBox1.Visible = false;
                 btnDangxuat.ImageIndex = 0;
             }
             else
             {
                 pictureBox1.Visible = true;
-                pnTongdoanhthu.Location = new Point(510, 32);
+                //pnTongdoanhthu.Location = new Point(510, 32);
                 btnDangxuat.Location = new Point(-25, 791);
                 btnDangxuat.Text = "Đăng xuất";
                 btnDangxuat.Width = 125;
@@ -1340,12 +1340,12 @@ namespace QuanLyNhaTro.Views
 
         private void btnDoanhThuThang_Click(object sender, EventArgs e)
         {
-            txtDoanhThuThang.Text = BLL_Receipt.Instance.TotalInMonth(dtpMonth.Value).ToString();
+            //txtDoanhThuThang.Text = BLL_Receipt.Instance.TotalInMonth(dtpMonth.Value).ToString();
         }
 
         private void btnDoanhThuNam_Click(object sender, EventArgs e)
         {
-            txtDoanhThuNam.Text = BLL_Receipt.Instance.TotalInYear(dtpYear.Value).ToString();
+            //txtDoanhThuNam.Text = BLL_Receipt.Instance.TotalInYear(dtpYear.Value).ToString();
         }
 
         private void btnSearchReceipt_Click(object sender, EventArgs e)
