@@ -298,7 +298,7 @@ namespace QuanLyNhaTro.Views
         {
             bool ispaid = Convert.ToBoolean(dgvHDisPaid.Rows[e.RowIndex].Cells["IsPaid"].Value.ToString());
             int mahoadon = Convert.ToInt32(dgvHDisPaid.Rows[e.RowIndex].Cells["ReceiptID"].Value.ToString());
-            Chitietdichvu frm = new Chitietdichvu(mahoadon,ispaid);
+            Chitietdichvu frm = new Chitietdichvu(mahoadon,ispaid,false);
             frm.Show();
         }
     }

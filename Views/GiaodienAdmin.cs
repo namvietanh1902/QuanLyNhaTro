@@ -595,6 +595,8 @@ namespace QuanLyNhaTro.Views
                     if (BLL_Account.Instance.CheckSDT(txtSDT_user.Text) == true && !UpdateKey) throw new FormatException("Số điện thoại này đã tồn tại");
                     new BLL.Common.ModelDataValidation().Validate(account);
                     BLL_Account.Instance.AddAccount(account);
+                    reaload_user();
+                   
                     if (account.isAdmin == false)
                     {
                         foreach (Account acc in BLL_Account.Instance.GetAllAccount())
@@ -1358,7 +1360,7 @@ namespace QuanLyNhaTro.Views
             {
                 bool ispaid = Convert.ToBoolean(dgvReceipt.SelectedRows[0].Cells["isPaid"].Value);
                 int mahoadon = Convert.ToInt32(dgvReceipt.SelectedRows[0].Cells["ReceiptID"].Value.ToString());
-                Chitietdichvu frm = new Chitietdichvu(mahoadon,ispaid);
+                Chitietdichvu frm = new Chitietdichvu(mahoadon,ispaid,true);
                 frm.d = reload_KiemToan;
                 frm.Show();              
             }

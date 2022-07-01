@@ -19,20 +19,23 @@ namespace QuanLyNhaTro.Views
         public Mydel d { get; set; }
         public int Mahoadon { get; set; }
         public bool IsPaid { get; set; }
-        public Chitietdichvu(int n, bool ispaid)
+        public bool IsUser { get; set; }
+        public Chitietdichvu(int n, bool ispaid,bool isUser)
         {
             Mahoadon = n;
             IsPaid = ispaid;
+            IsUser = isUser;
             InitializeComponent();
             GUI();
         }
 
         public void GUI()
         {
-            if (IsPaid)
+            if (IsPaid || !IsUser)
             {
                 btnThanhToan.Visible = false;
             }
+            
             else
                 btnThanhToan.Visible = true;
             Receipt rct = BLL_Receipt.Instance.GetReceiptByID(Mahoadon);
