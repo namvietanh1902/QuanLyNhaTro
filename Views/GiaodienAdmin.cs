@@ -26,6 +26,12 @@ namespace QuanLyNhaTro.Views
             cbbGioitinh_khachtro.Items.Clear();
             cbbGioitinh_khachtro.Items.Add("Nam");
             cbbGioitinh_khachtro.Items.Add("Nữ");
+            txtWaterFirst.Validated += new System.EventHandler(this.CalcTotal);
+            txtWaterAfter.Validated += new System.EventHandler(this.CalcTotal);
+            txtElecFirst.Validated += new System.EventHandler(this.CalcTotal);
+            txtElecAfter.Validated += new System.EventHandler(this.CalcTotal);
+            txtWaterPrice.Validated += new System.EventHandler(this.CalcTotal);
+            txtElecPrice.Validated += new System.EventHandler(this.CalcTotal);
 
             foreach (Customer c in BLL_Customer.Instance.GetAllCustomer())
                 cbbUser_Stat.Items.Add(new CBBItems
@@ -1127,6 +1133,16 @@ namespace QuanLyNhaTro.Views
             pnTinhtientro.Visible = true;
             pnThongke.Visible = false;
             reload_ThanhToan();
+         
+
+        }
+        private void CalcTotal(object sender, EventArgs e)
+        {
+            int i, j, k, l, m, n;
+            if (int.TryParse(txtElecFirst.Text,out i)&& int.TryParse(txtElecAfter.Text, out j) && int.TryParse(txtElecPrice.Text, out k) && int.TryParse(txtWaterFirst.Text, out l) && int.TryParse(txtWaterAfter.Text, out m) && int.TryParse(txtWaterPrice.Text, out n))
+            {
+                lblTotal.Text = (Convert.ToInt32(txtPrice.Text) +(j-i)*k+(m-l)*n).ToString();
+            }
         }
 
         private void btnThongke_Click(object sender, EventArgs e)
@@ -1227,6 +1243,10 @@ namespace QuanLyNhaTro.Views
         {
             try
             {
+            if (cbbCustomer.SelectedIndex == -1)
+                {
+                    throw new Exception("Chưa chọn khách trọ");
+                }
             int ElecBefore = Convert.ToInt32(txtElecFirst.Text);
             int ElecAfter = Convert.ToInt32(txtElecAfter.Text);
             int WaterBefore = Convert.ToInt32(txtWaterFirst.Text);
@@ -1374,8 +1394,8 @@ namespace QuanLyNhaTro.Views
         }
         private void GetPreviousInfo()
         {
-            txtElecFirst.Text = BLL_Receipt.Instance.GetPreviousMonthElecAfter(Month.Value, ((CBBItems)cbbCustomer.SelectedValue).Value).ToString();
-            txtWaterFirst.Text = BLL_Receipt.Instance.GetPreviousMonthWaterAfter(Month.Value, ((CBBItems)cbbCustomer.SelectedValue).Value).ToString();
+            txtElecFirst.Text = BLL_Receipt.Instance.GetPreviousMonthElecAfter(Month.Value, ((CBBItems)cbbCustomer.SelectedItem).Value).ToString();
+            txtWaterFirst.Text = BLL_Receipt.Instance.GetPreviousMonthWaterAfter(Month.Value, ((CBBItems)cbbCustomer.SelectedItem).Value).ToString();
         }
 
         private void Month_ValueChanged(object sender, EventArgs e)
