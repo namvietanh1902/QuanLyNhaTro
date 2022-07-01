@@ -156,6 +156,10 @@ namespace QuanLyNhaTro.BLL
         {
             return db.Receipts.Where(p => p.isPaid).Select(p => p).Sum(p=> (int?)p.Total) ??  0;
         }
+        public int GetIncome(DateTime from, DateTime To)
+        {
+            return db.Receipts.Where(p => p.isPaid).Where(p => p.PaidDate >= from && p.PaidDate<=To).Select(p => p).Sum(p => (int?)p.Total) ?? 0;
+        }
         public void PaidReceipt(int id)
         {
             db.Receipts.Find(id).isPaid = true;
@@ -206,15 +210,18 @@ namespace QuanLyNhaTro.BLL
         }
         public List<Receipt_View> GetAllReceiptView()
         {         
-                return GetReceiptView(GetAllReceipt());    
+                return GetReceiptView(GetAllReceipt(),DateTime.MinValue,DateTime.MinValue);    
         }
         public Receipt GetReceiptByID(int id)
         {
             return db.Receipts.Find(id);
         }
-        public List<Receipt_View> GetReceiptView(List<Receipt> data)
+      
+        public List<Receipt_View> GetReceiptView(List<Receipt> data,DateTime a,DateTime b)
         {
             var list = new List<Receipt_View>();
+            if (a ==DateTime.MinValue || b == DateTime.MinValue)
+            {
             foreach (Receipt i in data)
             { 
                 list.Add(new Receipt_View
@@ -228,21 +235,43 @@ namespace QuanLyNhaTro.BLL
                 });
 
             }
+            }
+            else
+            {   
+                foreach (Receipt i in data)
+                {   
+                    if(((DateTime)i.PaidDate).Date >= a.Date && ((DateTime)i.PaidDate).Date <= b.Date)
+                    {
+
+                    list.Add(new Receipt_View
+                    {
+                        ReceiptID = i.ReceiptID,
+                        CustomerName = i.Contract.Customer.Name,
+                        Total = i.Total,
+                        CreatedAt = ((DateTime)i.PaidDate).ToString("dd-MM-yyyy"),
+                        isPaid = i.isPaid,
+                        ReceiptType = i is MonthlyReceipt ? "Hóa đơn tháng" : "Hóa đơn dịch vụ"
+                    });
+                    }
+
+                }
+
+            }
             return list;
         }
 
-        public List<Receipt_View> Search(int id, string Status, string Type)
+        public List<Receipt_View> Search(int id, string Status, string Type,DateTime from,DateTime to)
         {
             var list = new List<Receipt_View>();
             var data = new List<Receipt_View>();
             if (id == 0)
             {
-                list = GetReceiptView(GetAllReceipt());
+                list = GetReceiptView(GetAllReceipt(),from,to);
 
             }
             else
             {
-                list = GetReceiptView(GetReceiptByCusID(id));
+                list = GetReceiptView(GetReceiptByCusID(id),from,to);
             }
             if (Status == "All" && Type == "All")
             {

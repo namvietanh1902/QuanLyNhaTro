@@ -1356,7 +1356,7 @@ namespace QuanLyNhaTro.Views
 
             }
             else
-            dgvReceipt.DataSource = BLL_Receipt.Instance.Search(((CBBItems)cbbUser_Stat.SelectedItem).Value, cbbStatus_Stat.SelectedItem.ToString(), cbbType.SelectedItem.ToString());
+            dgvReceipt.DataSource = BLL_Receipt.Instance.Search(((CBBItems)cbbUser_Stat.SelectedItem).Value, cbbStatus_Stat.SelectedItem.ToString(), cbbType.SelectedItem.ToString(),DateTime.MinValue,DateTime.MinValue);
         }
 
         private void btnSortReceipt_Click(object sender, EventArgs e)
@@ -1407,6 +1407,21 @@ namespace QuanLyNhaTro.Views
             }
 
 
+        }
+
+        private void btnXacnhan_Kiemtoan_Click(object sender, EventArgs e)
+        {
+            if (cbbUser_Stat.SelectedIndex == -1 || cbbType.SelectedIndex == -1 || cbbStatus_Stat.SelectedIndex == -1)
+            {
+                MessageBox.Show("Bạn chưa chọn đủ chỉ mục tìm kiếm", "Thông báo lỗi");
+
+            }
+            else
+            {
+
+            txtDoanhThu.Text = BLL_Receipt.Instance.GetIncome(dtpFrom.Value, dtpTo.Value).ToString();
+            dgvReceipt.DataSource = BLL_Receipt.Instance.Search(((CBBItems)cbbUser_Stat.SelectedItem).Value, cbbStatus_Stat.SelectedItem.ToString(), cbbType.SelectedItem.ToString(), dtpFrom.Value, dtpTo.Value);
+            }
         }
     }
 }
