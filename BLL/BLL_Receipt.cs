@@ -64,6 +64,14 @@ namespace QuanLyNhaTro.BLL
             }
             return true;
         }
+        public int GetPreviousMonthElecAfter(DateTime a,int id)
+        {
+            return db.MonthlyReceipts.Where(c => c.ContractID == id).Where(p => p.Month.Month == a.Month - 1).Select(c =>(int?) c.ElecAfter).FirstOrDefault() ?? 0;
+        }
+        public int GetPreviousMonthWaterAfter(DateTime a, int id)
+        {
+            return db.MonthlyReceipts.Where(c => c.ContractID == id).Where(p => p.Month.Month == a.Month - 1).Select(c => (int?)c.WaterAfter).FirstOrDefault() ?? 0;
+        }
         public void AddMonthlyReceipt(MonthlyReceipt i)
         {
             if (!checkMonth(i))

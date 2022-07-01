@@ -122,6 +122,7 @@ namespace QuanLyNhaTro.Views
             RentDate.Value = (DateTime)data.Contract.CreatedAt;
             birthDate.Value = (DateTime)data.Birthday;
             txtPrice.Text = data.Contract.Room.Price.ToString();
+            GetPreviousInfo();
 
         }
         private void cbbCustomer_SelectedIndexChanged(object sender, EventArgs e)
@@ -1371,7 +1372,22 @@ namespace QuanLyNhaTro.Views
             frm.TopMost = true;
             frm.showAlert(msg, type);
         }
+        private void GetPreviousInfo()
+        {
+            txtElecFirst.Text = BLL_Receipt.Instance.GetPreviousMonthElecAfter(Month.Value, ((CBBItems)cbbCustomer.SelectedValue).Value).ToString();
+            txtWaterFirst.Text = BLL_Receipt.Instance.GetPreviousMonthWaterAfter(Month.Value, ((CBBItems)cbbCustomer.SelectedValue).Value).ToString();
+        }
 
+        private void Month_ValueChanged(object sender, EventArgs e)
+        {   
+            if(cbbCustomer.SelectedIndex != -1)
+            {
+
+                GetPreviousInfo();
+            }
+
+
+        }
     }
 }
 
