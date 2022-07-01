@@ -624,7 +624,7 @@ namespace QuanLyNhaTro.Views
                                     cbbGioitinh_khachtro.SelectedItem = "Nữ";
                                 dtpNgaysinh_khachtro.Value = acc.Birthday;
                                 reaload_user();
-                                click_khanhtro();
+                                btnKhachtro.PerformClick();
                                 break;
                             }
                             
@@ -938,6 +938,7 @@ namespace QuanLyNhaTro.Views
             }
             else
             {
+                
                 DialogResult ret = MessageBox.Show(
                     "Bạn có chắc muốn xóa",
                     "Thông báo",
@@ -949,10 +950,17 @@ namespace QuanLyNhaTro.Views
                     List<int> listdel = new List<int>();
                     foreach (DataGridViewRow row in dgvThongtin_phongtro.SelectedRows)
                     {
-                        listdel.Add(Convert.ToInt32(row.Cells["RoomId"].Value.ToString()));
+                        listdel.Add(Convert.ToInt32(row.Cells["RoomId"].Value.ToString()));                      
                     }
-                    BLL_Room.Instance.DeletePhongTro(listdel);
-                    this.Alert("Xóa thành công ...", ThongBao.enmType.Success);
+                    if (Convert.ToBoolean(dgvThongtin_phongtro.SelectedRows[0].Cells["isRent"].Value.ToString()))
+                    {
+                        MessageBox.Show("Phòng đang được cho thuê không được xóa","Thông báo");
+                    }
+                    else
+                    {
+                        BLL_Room.Instance.DeletePhongTro(listdel);
+                        this.Alert("Xóa thành công ...", ThongBao.enmType.Success);
+                    }
                     reaload_phongtro();
                 }
             } 
@@ -1143,19 +1151,24 @@ namespace QuanLyNhaTro.Views
             pnTinhtientro.Visible = true;
             pnThongke.Visible = false;
             reload_ThanhToan();
-         
-
         }
-        private void CalcTotal(object sender, EventArgs e)
+        private void CalcTotal(object sender, EventArgs e) 
         {
-            int i, j, k, l, m, n;
-            if (int.TryParse(txtElecFirst.Text,out i)&& int.TryParse(txtElecAfter.Text, out j) && int.TryParse(txtElecPrice.Text, out k) && int.TryParse(txtWaterFirst.Text, out l) && int.TryParse(txtWaterAfter.Text, out m) && int.TryParse(txtWaterPrice.Text, out n))
+            try
             {
-                lblTotal.Text = (Convert.ToInt32(txtPrice.Text) +(j-i)*k+(m-l)*n).ToString();
+                int i, j, k, l, m, n;
+                if (int.TryParse(txtElecFirst.Text,out i)&& int.TryParse(txtElecAfter.Text, out j) && int.TryParse(txtElecPrice.Text, out k) && int.TryParse(txtWaterFirst.Text, out l) && int.TryParse(txtWaterAfter.Text, out m) && int.TryParse(txtWaterPrice.Text, out n))
+                {
+                    lblTotal.Text = (Convert.ToInt32(txtPrice.Text) +(j-i)*k+(m-l)*n).ToString();
+                }
+                else
+                {
+                    //throw new Exception("Dữ liệu nhập vào phải là số");
+                }
             }
-            else
+            catch(Exception ex)
             {
-                throw new Exception("Dữ liệu nhập vào phải là số");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -1404,9 +1417,16 @@ namespace QuanLyNhaTro.Views
                 MessageBox.Show("Bạn chưa chọn đủ chỉ mục tìm kiếm", "Thông báo lỗi");
             }
             else
-            {              
-            txtDoanhThu.Text = BLL_Receipt.Instance.GetIncome(dtpFrom.Value, dtpTo.Value).ToString();
-            dgvReceipt.DataSource = BLL_Receipt.Instance.Search(((CBBItems)cbbUser_Stat.SelectedItem).Value, cbbStatus_Stat.SelectedItem.ToString(), cbbType.SelectedItem.ToString(), dtpFrom.Value, dtpTo.Value);
+            { 
+            if(dtpFrom.Value.Date > dtpTo.Value.Date)
+                {
+                    MessageBox.Show("Ngày đầu lớn hơn ngày cuối");
+                }
+                else
+                {
+                txtDoanhThu.Text = BLL_Receipt.Instance.GetIncome(dtpFrom.Value, dtpTo.Value).ToString();
+                dgvReceipt.DataSource = BLL_Receipt.Instance.Search(((CBBItems)cbbUser_Stat.SelectedItem).Value, cbbStatus_Stat.SelectedItem.ToString(), cbbType.SelectedItem.ToString(), dtpFrom.Value, dtpTo.Value);
+                }
             }
         }
     }

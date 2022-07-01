@@ -135,8 +135,6 @@
             this.btnAbort = new QuanLyNhaTro.VBButton();
             this.btnCalculate = new QuanLyNhaTro.VBButton();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvService = new System.Windows.Forms.DataGridView();
@@ -1604,8 +1602,6 @@
             // 
             this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.BackColor = System.Drawing.Color.White;
-            this.groupBox7.Controls.Add(this.label61);
-            this.groupBox7.Controls.Add(this.label13);
             this.groupBox7.Controls.Add(this.dgvOrder);
             this.groupBox7.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.ForeColor = System.Drawing.Color.Black;
@@ -1613,32 +1609,10 @@
             this.groupBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox7.Size = new System.Drawing.Size(795, 459);
+            this.groupBox7.Size = new System.Drawing.Size(795, 447);
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Danh sách dịch vụ được yêu cầu";
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Font = new System.Drawing.Font("Source Sans Pro", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.ForeColor = System.Drawing.Color.Red;
-            this.label61.Location = new System.Drawing.Point(179, 400);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(30, 36);
-            this.label61.TabIndex = 2;
-            this.label61.Text = "0";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Source Sans Pro", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(29, 401);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(140, 36);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Tổng tiền:";
             // 
             // dgvOrder
             // 
@@ -1698,8 +1672,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1942, 1102);
-            this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnDichdu);
+            this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnPhongtro);
             this.Controls.Add(this.pnHome);
             this.Controls.Add(this.panel10);
@@ -1744,7 +1718,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvThanhvienphongthue)).EndInit();
             this.pnDichdu.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
@@ -1843,8 +1816,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvService;
         private System.Windows.Forms.DataGridView dgvOrder;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label61;
         private VBButton btnDangxuat;
         private System.Windows.Forms.Button btnNav;
         private System.Windows.Forms.PictureBox pictureBox1;

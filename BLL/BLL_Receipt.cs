@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using QuanLyNhaTro.Models;
 using QuanLyNhaTro.DTO;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace QuanLyNhaTro.BLL
 {
@@ -117,11 +118,11 @@ namespace QuanLyNhaTro.BLL
             }
             return list;
         }
-        public void AddServiceReceipt(List<ServiceReceipt_View> data, int CustomerID)
+        public int AddServiceReceipt(List<ServiceReceipt_View> data, int CustomerID)
         {
+            int total = 0;
             if (data != null)
             {
-                int total = 0;
                 foreach (ServiceReceipt_View item in data)
                 {
                     total += item.Price * item.Number;
@@ -147,6 +148,7 @@ namespace QuanLyNhaTro.BLL
                 db.ServiceReceiptDetails.AddRange(details);
                 db.SaveChanges();
             }
+            return total;
         }
 
         public List<ServiceReceiptDetail> GetAllServiceReceiptDetails()
@@ -159,7 +161,7 @@ namespace QuanLyNhaTro.BLL
         }
         public int GetIncome(DateTime from, DateTime To)
         {
-            return db.Receipts.Where(p => p.isPaid).Where(p => p.PaidDate >= from && p.PaidDate<=To).Select(p => p).Sum(p => (int?)p.Total) ?? 0;
+            return db.Receipts.Where(p => p.isPaid).Where(p => DbFunctions.TruncateTime(p.PaidDate) >= DbFunctions.TruncateTime(from) && DbFunctions.TruncateTime(p.PaidDate) <= DbFunctions.TruncateTime(To)).Select(p => p).Sum(p => (int?)p.Total) ?? 0;
         }
         public void PaidReceipt(int id)
         {

@@ -258,7 +258,6 @@
             this.btnSortReceipt = new System.Windows.Forms.Button();
             this.cbbSort_Receipt = new System.Windows.Forms.ComboBox();
             this.pnNavagation = new System.Windows.Forms.Panel();
-            this.btnDangxuat = new QuanLyNhaTro.VBButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.lblThongke = new System.Windows.Forms.Label();
             this.lblTinhtientro = new System.Windows.Forms.Label();
@@ -279,6 +278,7 @@
             this.lblHethong = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnDangxuat = new QuanLyNhaTro.VBButton();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -2483,10 +2483,10 @@
             this.birthDate.CustomFormat = "dd/MM/yyyy";
             this.birthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.birthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.birthDate.Location = new System.Drawing.Point(219, 443);
+            this.birthDate.Location = new System.Drawing.Point(230, 443);
             this.birthDate.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.birthDate.Name = "birthDate";
-            this.birthDate.Size = new System.Drawing.Size(343, 30);
+            this.birthDate.Size = new System.Drawing.Size(332, 30);
             this.birthDate.TabIndex = 14;
             // 
             // txtCusSDT
@@ -2495,10 +2495,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCusSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusSDT.Location = new System.Drawing.Point(219, 372);
+            this.txtCusSDT.Location = new System.Drawing.Point(230, 372);
             this.txtCusSDT.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtCusSDT.Name = "txtCusSDT";
-            this.txtCusSDT.Size = new System.Drawing.Size(343, 30);
+            this.txtCusSDT.Size = new System.Drawing.Size(332, 30);
             this.txtCusSDT.TabIndex = 13;
             // 
             // txtCusCCCD
@@ -2507,10 +2507,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCusCCCD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusCCCD.Location = new System.Drawing.Point(219, 292);
+            this.txtCusCCCD.Location = new System.Drawing.Point(230, 292);
             this.txtCusCCCD.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtCusCCCD.Name = "txtCusCCCD";
-            this.txtCusCCCD.Size = new System.Drawing.Size(343, 30);
+            this.txtCusCCCD.Size = new System.Drawing.Size(332, 30);
             this.txtCusCCCD.TabIndex = 12;
             // 
             // txtCusJob
@@ -2519,10 +2519,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCusJob.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusJob.Location = new System.Drawing.Point(217, 519);
+            this.txtCusJob.Location = new System.Drawing.Point(230, 519);
             this.txtCusJob.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtCusJob.Name = "txtCusJob";
-            this.txtCusJob.Size = new System.Drawing.Size(343, 30);
+            this.txtCusJob.Size = new System.Drawing.Size(330, 30);
             this.txtCusJob.TabIndex = 15;
             // 
             // txtGender
@@ -2531,10 +2531,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGender.Location = new System.Drawing.Point(219, 219);
+            this.txtGender.Location = new System.Drawing.Point(229, 219);
             this.txtGender.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(343, 30);
+            this.txtGender.Size = new System.Drawing.Size(333, 30);
             this.txtGender.TabIndex = 10;
             // 
             // txtCusName_ThanhToan
@@ -2543,10 +2543,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCusName_ThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusName_ThanhToan.Location = new System.Drawing.Point(219, 147);
+            this.txtCusName_ThanhToan.Location = new System.Drawing.Point(229, 147);
             this.txtCusName_ThanhToan.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtCusName_ThanhToan.Name = "txtCusName_ThanhToan";
-            this.txtCusName_ThanhToan.Size = new System.Drawing.Size(343, 30);
+            this.txtCusName_ThanhToan.Size = new System.Drawing.Size(333, 30);
             this.txtCusName_ThanhToan.TabIndex = 10;
             // 
             // label7
@@ -2566,10 +2566,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCusID_ThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusID_ThanhToan.Location = new System.Drawing.Point(219, 71);
+            this.txtCusID_ThanhToan.Location = new System.Drawing.Point(229, 71);
             this.txtCusID_ThanhToan.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtCusID_ThanhToan.Name = "txtCusID_ThanhToan";
-            this.txtCusID_ThanhToan.Size = new System.Drawing.Size(343, 30);
+            this.txtCusID_ThanhToan.Size = new System.Drawing.Size(333, 30);
             this.txtCusID_ThanhToan.TabIndex = 9;
             // 
             // label8
@@ -2731,6 +2731,7 @@
             this.txtElecFirst.Location = new System.Drawing.Point(246, 126);
             this.txtElecFirst.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtElecFirst.Name = "txtElecFirst";
+            this.txtElecFirst.ReadOnly = true;
             this.txtElecFirst.Size = new System.Drawing.Size(152, 30);
             this.txtElecFirst.TabIndex = 9;
             // 
@@ -2791,6 +2792,7 @@
             this.txtWaterFirst.Location = new System.Drawing.Point(244, 310);
             this.txtWaterFirst.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtWaterFirst.Name = "txtWaterFirst";
+            this.txtWaterFirst.ReadOnly = true;
             this.txtWaterFirst.Size = new System.Drawing.Size(152, 30);
             this.txtWaterFirst.TabIndex = 5;
             // 
@@ -3446,30 +3448,6 @@
             this.pnNavagation.Size = new System.Drawing.Size(384, 1102);
             this.pnNavagation.TabIndex = 1;
             // 
-            // btnDangxuat
-            // 
-            this.btnDangxuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDangxuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(17)))));
-            this.btnDangxuat.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(17)))));
-            this.btnDangxuat.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnDangxuat.BorderRadius = 28;
-            this.btnDangxuat.BorderSize = 0;
-            this.btnDangxuat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDangxuat.FlatAppearance.BorderSize = 0;
-            this.btnDangxuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangxuat.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDangxuat.ImageList = this.imageList1;
-            this.btnDangxuat.Location = new System.Drawing.Point(115, 985);
-            this.btnDangxuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDangxuat.Name = "btnDangxuat";
-            this.btnDangxuat.Size = new System.Drawing.Size(156, 66);
-            this.btnDangxuat.TabIndex = 9;
-            this.btnDangxuat.Text = "Đăng xuất";
-            this.btnDangxuat.TextColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDangxuat.UseVisualStyleBackColor = false;
-            this.btnDangxuat.Click += new System.EventHandler(this.btnDangxuat_Click);
-            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -3738,6 +3716,30 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnDangxuat
+            // 
+            this.btnDangxuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDangxuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(17)))));
+            this.btnDangxuat.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(17)))));
+            this.btnDangxuat.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDangxuat.BorderRadius = 28;
+            this.btnDangxuat.BorderSize = 0;
+            this.btnDangxuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDangxuat.FlatAppearance.BorderSize = 0;
+            this.btnDangxuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangxuat.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDangxuat.ImageList = this.imageList1;
+            this.btnDangxuat.Location = new System.Drawing.Point(115, 985);
+            this.btnDangxuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDangxuat.Name = "btnDangxuat";
+            this.btnDangxuat.Size = new System.Drawing.Size(156, 66);
+            this.btnDangxuat.TabIndex = 9;
+            this.btnDangxuat.Text = "Đăng xuất";
+            this.btnDangxuat.TextColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDangxuat.UseVisualStyleBackColor = false;
+            this.btnDangxuat.Click += new System.EventHandler(this.btnDangxuat_Click);
             // 
             // GiaodienAdmin
             // 

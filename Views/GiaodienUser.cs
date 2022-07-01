@@ -254,7 +254,7 @@ namespace QuanLyNhaTro.Views
         {
             if(serviceList.Count>0)
             {
-                BLL_Receipt.Instance.AddServiceReceipt(serviceList,ID);
+                MessageBox.Show("Tổng tiền phải trả là :" + BLL_Receipt.Instance.AddServiceReceipt(serviceList, ID));
                 ClearOrder();
             }
             else

@@ -108,7 +108,6 @@ namespace QuanLyNhaTro.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            txtMaphongthue.Text = BLL_Room.Instance.GetNextID().ToString();
             txtTenphongthue.Text = "";
             txtGiaphongthue.Text = "";
             txtSoluong.Text = "";
