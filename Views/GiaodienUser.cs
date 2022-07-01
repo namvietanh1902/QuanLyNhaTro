@@ -296,9 +296,10 @@ namespace QuanLyNhaTro.Views
 
         private void dgvHDisPaid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-                int mahoadon = Convert.ToInt32((dgvHDisPaid.Rows[e.RowIndex].Cells["ReceiptID"].Value.ToString()));
-                Chitietdichvu frm = new Chitietdichvu(mahoadon);
-                frm.Show();
+            bool ispaid = Convert.ToBoolean(dgvHDisPaid.Rows[e.RowIndex].Cells["IsPaid"].Value.ToString());
+            int mahoadon = Convert.ToInt32(dgvHDisPaid.Rows[e.RowIndex].Cells["ReceiptID"].Value.ToString());
+            Chitietdichvu frm = new Chitietdichvu(mahoadon,ispaid);
+            frm.Show();
         }
     }
 }

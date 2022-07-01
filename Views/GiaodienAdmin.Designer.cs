@@ -1071,7 +1071,7 @@
             this.btnSort_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSort_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSort_user.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(14)))), ((int)(((byte)(63)))));
-            this.btnSort_user.Location = new System.Drawing.Point(1094, 32);
+            this.btnSort_user.Location = new System.Drawing.Point(1095, 33);
             this.btnSort_user.Margin = new System.Windows.Forms.Padding(4);
             this.btnSort_user.Name = "btnSort_user";
             this.btnSort_user.Size = new System.Drawing.Size(131, 48);
@@ -3569,7 +3569,7 @@
             // lblKhachtro
             // 
             this.lblKhachtro.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblKhachtro.Location = new System.Drawing.Point(-5, 427);
+            this.lblKhachtro.Location = new System.Drawing.Point(-3, 428);
             this.lblKhachtro.Name = "lblKhachtro";
             this.lblKhachtro.Size = new System.Drawing.Size(12, 70);
             this.lblKhachtro.TabIndex = 3;

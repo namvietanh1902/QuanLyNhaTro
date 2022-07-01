@@ -144,34 +144,9 @@ namespace QuanLyNhaTro.BLL
         {
             return db.ServiceReceiptDetails.Select(c => c).ToList();
         }  
-        public List<ReceiptPaid_View> GetAllReceiptPaid_Views()
-        {
-            List<ReceiptPaid_View> spv = new List<ReceiptPaid_View>();
-            foreach (MonthlyReceipt mr in getAllMonthlyReceipt())
-                if (!BLL_Customer.Instance.IsDelete(mr.ContractID))
-                {
-                    ReceiptPaid_View a = new ReceiptPaid_View();
-                    a.ReceiptID = mr.ReceiptID;
-                    a.Total = mr.Total;
-                    a.Month = mr.Month;
-                    a.IsPaid = mr.isPaid;
-                    a.WaterBefore = mr.WaterBefore;
-                    a.WaterAfter = mr.WaterAfter;
-                    a.WaterBill = mr.WaterBill;
-                    a.RoomBill = mr.RoomBill;
-                    a.ElecBefore = mr.ElecBefore;
-                    a.ElecAfter = mr.ElecAfter;
-                    a.ElecBill = mr.ElecBill;
-                    foreach (Customer c in BLL_Customer.Instance.GetAllCustomer())
-                        if (c.CustomerId == mr.ContractID)
-                            a.CustomerName = c.Name;
-                    spv.Add(a);
-                }
-            return spv;
-        }
         public int GetTotalIncome()
         {
-            return db.Receipts.Where(p => p.isPaid && !p.Contract.Customer.isDelete).Select(p => p).Sum(p=> (int?)p.Total) ??  0;
+            return db.Receipts.Where(p => p.isPaid).Select(p => p).Sum(p=> (int?)p.Total) ??  0;
         }
         public void PaidReceipt(int id)
         {
@@ -208,7 +183,7 @@ namespace QuanLyNhaTro.BLL
         {
             int Total = 0;
             foreach (Receipt spv in GetAllReceipt())
-                if (((DateTime)spv.PaidDate).Month == a.Month && ((DateTime)spv.PaidDate).Year == a.Year && spv.isPaid == true && spv.Contract.Customer.isDelete == false)
+                if (((DateTime)spv.PaidDate).Month == a.Month && ((DateTime)spv.PaidDate).Year == a.Year && spv.isPaid == true)
                     Total += spv.Total;
             return Total;
         }
@@ -216,7 +191,7 @@ namespace QuanLyNhaTro.BLL
         {
             int Total = 0;
             foreach (Receipt spv in GetAllReceipt())
-                if (((DateTime)spv.PaidDate).Year == a.Year && spv.isPaid == true && spv.Contract.Customer.isDelete == false)
+                if (((DateTime)spv.PaidDate).Year == a.Year && spv.isPaid == true)
                     Total += spv.Total;
 
             return Total;
@@ -233,8 +208,7 @@ namespace QuanLyNhaTro.BLL
         {
             var list = new List<Receipt_View>();
             foreach (Receipt i in data)
-            {
-                if(i.Contract.Customer.isDelete==false)
+            { 
                 list.Add(new Receipt_View
                 {
                     ReceiptID = i.ReceiptID,
@@ -307,7 +281,7 @@ namespace QuanLyNhaTro.BLL
             var list = new List<Receipt_View>();
             foreach (Receipt i in GetAllReceipt())
             {
-                if (i.Contract.Customer.isDelete == false && i.ContractID == id && i.isPaid == false)
+                if (i.ContractID == id && i.isPaid == false)
                     list.Add(new Receipt_View
                     {
                         ReceiptID = i.ReceiptID,

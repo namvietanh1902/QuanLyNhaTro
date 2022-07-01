@@ -63,6 +63,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnThanhToan = new QuanLyNhaTro.VBButton();
             this.SuspendLayout();
             // 
             // button1
@@ -96,7 +97,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkBlue;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(12, 588);
+            this.panel4.Location = new System.Drawing.Point(12, 656);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(978, 12);
             this.panel4.TabIndex = 11;
@@ -107,7 +108,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(990, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 588);
+            this.panel3.Size = new System.Drawing.Size(10, 656);
             this.panel3.TabIndex = 10;
             // 
             // panel2
@@ -116,7 +117,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(12, 588);
+            this.panel2.Size = new System.Drawing.Size(12, 656);
             this.panel2.TabIndex = 9;
             // 
             // panel1
@@ -132,7 +133,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Source Sans Pro", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(570, 500);
+            this.label2.Location = new System.Drawing.Point(575, 490);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 29);
             this.label2.TabIndex = 15;
@@ -143,7 +144,7 @@
             this.lblTongtien.AutoSize = true;
             this.lblTongtien.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongtien.ForeColor = System.Drawing.Color.Red;
-            this.lblTongtien.Location = new System.Drawing.Point(744, 500);
+            this.lblTongtien.Location = new System.Drawing.Point(724, 493);
             this.lblTongtien.Name = "lblTongtien";
             this.lblTongtien.Size = new System.Drawing.Size(90, 26);
             this.lblTongtien.TabIndex = 16;
@@ -372,7 +373,7 @@
             listViewItem1});
             this.listView1.Location = new System.Drawing.Point(132, 97);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(739, 372);
+            this.listView1.Size = new System.Drawing.Size(745, 372);
             this.listView1.TabIndex = 34;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -397,12 +398,32 @@
             this.columnHeader4.Text = "Price";
             this.columnHeader4.Width = 150;
             // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.BackColor = System.Drawing.Color.Red;
+            this.btnThanhToan.BackgroundColor = System.Drawing.Color.Red;
+            this.btnThanhToan.BorderColor = System.Drawing.Color.Red;
+            this.btnThanhToan.BorderRadius = 25;
+            this.btnThanhToan.BorderSize = 0;
+            this.btnThanhToan.FlatAppearance.BorderSize = 0;
+            this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThanhToan.ForeColor = System.Drawing.Color.White;
+            this.btnThanhToan.Location = new System.Drawing.Point(698, 555);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(148, 51);
+            this.btnThanhToan.TabIndex = 35;
+            this.btnThanhToan.Text = "Thanh Toán";
+            this.btnThanhToan.TextColor = System.Drawing.Color.White;
+            this.btnThanhToan.UseVisualStyleBackColor = false;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
+            // 
             // Chitietdichvu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.ClientSize = new System.Drawing.Size(1000, 668);
+            this.Controls.Add(this.btnThanhToan);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
@@ -478,5 +499,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private VBButton btnThanhToan;
     }
 }

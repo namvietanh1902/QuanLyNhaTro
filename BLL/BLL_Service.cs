@@ -26,20 +26,23 @@ namespace QuanLyNhaTro.BLL
         }
         public List<Service> GetAllService()
         {
-            return db.Services.Where(p => p.isDelete == false).Select(p => p).ToList();
+            return db.Services.Select(p => p).ToList();
         }
         public List<Service_View> GetViews()
         {
             List<Service_View> listView = new List<Service_View>();
             foreach (Service i in GetAllService())
             {
-                listView.Add(new Service_View
+                if(i.isDelete == false)
                 {
-                    ServiceId = i.ServiceId,
-                    Name = i.Name,
-                    Unit = i.Unit,
-                    Price = i.Price,
-                });
+                    listView.Add(new Service_View
+                    {
+                        ServiceId = i.ServiceId,
+                        Name = i.Name,
+                        Unit = i.Unit,
+                        Price = i.Price,
+                    });
+                }
             }
             return listView;
         }

@@ -96,7 +96,7 @@ namespace QuanLyNhaTro.Views
                 if (frm == null)
                 {
                     this.Name = fname;
-                    this.x = Screen.PrimaryScreen.WorkingArea.Width - this.Width + 40;
+                    this.x = Screen.PrimaryScreen.WorkingArea.Width - this.Width + 45;
                     this.y = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i - 30 * i;
                     this.Location = new Point(this.x, this.y);
                     break;
