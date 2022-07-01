@@ -49,21 +49,24 @@ namespace QuanLyNhaTro.BLL
             List<CBBItems> data = new List<CBBItems>();
             foreach (Room i in GetAllRoom())
             {
-                int dem = 0;
-                foreach (Contract contract in BLL_Contract.Instance.GetAllContract())
+                if(i.isDelete == false)
                 {
-                    if (i.isDelete == false && contract.RoomId == i.RoomId && db.Customers.Find(contract.ContractId).isDelete == false)
+                    int dem = 0;
+                    foreach (Contract contract in BLL_Contract.Instance.GetAllContract())
                     {
-                        dem++;
+                        if (i.isDelete == false && contract.RoomId == i.RoomId && db.Customers.Find(contract.ContractId).isDelete == false )
+                        {
+                            dem++;
+                        }
                     }
-                }
-                if (dem != i.Capacity)
-                {
-                    data.Add(new CBBItems
+                    if (dem != i.Capacity)
                     {
-                        Value = i.RoomId,
-                        Text = i.Name
-                    });
+                        data.Add(new CBBItems
+                        {
+                            Value = i.RoomId,
+                            Text = i.Name
+                        });
+                    }
                 }
             }
             return data;
@@ -72,7 +75,7 @@ namespace QuanLyNhaTro.BLL
         public void UpdateIsRentRoomWhenAddCustomer(Room room)
         {
             Room tam = db.Rooms.Find(room.RoomId);
-            if (tam != null) return;
+            if (tam == null) return;
             else
             {
                 tam.isRent = true;

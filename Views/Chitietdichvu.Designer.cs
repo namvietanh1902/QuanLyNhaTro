@@ -403,10 +403,11 @@
             this.btnThanhToan.BackColor = System.Drawing.Color.Red;
             this.btnThanhToan.BackgroundColor = System.Drawing.Color.Red;
             this.btnThanhToan.BorderColor = System.Drawing.Color.Red;
-            this.btnThanhToan.BorderRadius = 25;
+            this.btnThanhToan.BorderRadius = 18;
             this.btnThanhToan.BorderSize = 0;
             this.btnThanhToan.FlatAppearance.BorderSize = 0;
             this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThanhToan.ForeColor = System.Drawing.Color.White;
             this.btnThanhToan.Location = new System.Drawing.Point(698, 555);
             this.btnThanhToan.Name = "btnThanhToan";

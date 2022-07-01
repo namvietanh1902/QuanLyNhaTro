@@ -83,10 +83,16 @@ namespace QuanLyNhaTro.Views
                 }
                 else throw new FormatException("Số lượng phải là số");
                 new BLL.Common.ModelDataValidation().Validate(room);
+
+                if (BLL_Room.Instance.GetRoomModelByMaPhong(maphong) != null)
+                {
+                    this.Alert("Cập nhật thành công ...", ThongBao.enmType.Success);
+                }
+                else
+                {
+                    this.Alert("Thêm thành công ...", ThongBao.enmType.Success);
+                }
                 BLL_Room.Instance.AddAndUpdate(room);
-
-
-                 
                 d();
                 Close();
             }
@@ -106,6 +112,13 @@ namespace QuanLyNhaTro.Views
             txtTenphongthue.Text = "";
             txtGiaphongthue.Text = "";
             txtSoluong.Text = "";
+        }
+
+        public void Alert(string msg, ThongBao.enmType type)
+        {
+            ThongBao frm = new ThongBao();
+            frm.TopMost = true;
+            frm.showAlert(msg, type);
         }
     }
 }

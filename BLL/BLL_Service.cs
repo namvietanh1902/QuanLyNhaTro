@@ -74,6 +74,10 @@ namespace QuanLyNhaTro.BLL
             }
             return list;
         }
+        public Service GetServiceByID(int id)
+        {
+            return db.Services.Find(id);
+        }
         public void AddOrUpdate(bool isEdit, Service service)
         {
             if (isEdit == false)

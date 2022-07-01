@@ -49,7 +49,7 @@ namespace QuanLyNhaTro.BLL
         public bool checkMonth(MonthlyReceipt i)
         {   
             var contract = db.Contracts.Find(i.ContractID);
-            if (i.Month < contract.CreatedAt)
+            if (i.Month.Month < ((DateTime)contract.CreatedAt).Month)
             {
                 MessageBox.Show("Hợp đồng chưa tồn tại vào tháng này");
                 return false;
@@ -72,25 +72,26 @@ namespace QuanLyNhaTro.BLL
         {
             return db.MonthlyReceipts.Where(c => c.ContractID == id).Where(p => p.Month.Month == a.Month - 1).Select(c => (int?)c.WaterAfter).FirstOrDefault() ?? 0;
         }
-        public void AddMonthlyReceipt(MonthlyReceipt i)
+        public bool AddMonthlyReceipt(MonthlyReceipt i)
         {
             if (!checkMonth(i))
-            {               
-                return;
+            {
+                return false;
             }
             else
             {
                 try
                 {
-                new Common.ModelDataValidation().Validate(i);
-                db.MonthlyReceipts.Add(i);
-                db.SaveChanges();
+                    new Common.ModelDataValidation().Validate(i);
+                    db.MonthlyReceipts.Add(i);
+                    db.SaveChanges();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Thông báo lỗi");
                 }
             }
+            return true;
         }
         public List<ServiceReceipt_View> GetReceiptDetail(int mahoadon)
         {

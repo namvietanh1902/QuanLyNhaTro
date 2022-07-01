@@ -45,6 +45,14 @@ namespace QuanLyNhaTro.BLL
         {
             return db.Accounts.Find(id).Name;
         }
+        public bool checkUsername(string username)
+        {
+            return db.Accounts.Where(s=>s.Username == username && s.isDelete == false).Any();
+        }
+        public bool ssUsername(int id,string username)
+        {
+            return db.Accounts.Where(s => s.AccountId ==id && s.Username == username && s.isDelete == false).Any();
+        }
         public void ChangePass(int ID, string NewPass)
         {
             Account account = GetAccountByID(ID);

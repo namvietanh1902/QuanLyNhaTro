@@ -39,9 +39,6 @@ namespace QuanLyNhaTro.Views
         {
             this.Close();
         }
-
-      
-
         private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Dispose();
@@ -100,7 +97,6 @@ namespace QuanLyNhaTro.Views
                     this.y = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i - 30 * i;
                     this.Location = new Point(this.x, this.y);
                     break;
-
                 }
 
             }

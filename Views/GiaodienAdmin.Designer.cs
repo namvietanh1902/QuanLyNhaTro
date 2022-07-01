@@ -3254,7 +3254,6 @@
             this.dgvReceipt.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvReceipt.Size = new System.Drawing.Size(1526, 370);
             this.dgvReceipt.TabIndex = 2;
-            this.dgvReceipt.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReceipt_CellContentDoubleClick);
             // 
             // panel19
             // 
@@ -3747,8 +3746,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1942, 1102);
-            this.Controls.Add(this.pnThongke);
             this.Controls.Add(this.pnTinhtientro);
+            this.Controls.Add(this.pnThongke);
             this.Controls.Add(this.pnUser);
             this.Controls.Add(this.pnHome);
             this.Controls.Add(this.pnKhanhtro);

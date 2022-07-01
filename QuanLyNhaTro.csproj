@@ -94,9 +94,14 @@
     <Compile Include="Migrations\202206090804577_addCreated.designer.cs">
       <DependentUpon>202206090804577_addCreated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202207011138288_alo.cs" />
+    <Compile Include="Migrations\202207011138288_alo.designer.cs">
+      <DependentUpon>202207011138288_alo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Contract.cs" />
+    <Compile Include="Models\CreateDB.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MonthlyReceipt.cs" />
     <Compile Include="Models\QuanLy.cs" />
@@ -173,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206090804577_addCreated.resx">
       <DependentUpon>202206090804577_addCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207011138288_alo.resx">
+      <DependentUpon>202207011138288_alo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Chitietdichvu.resx">
       <DependentUpon>Chitietdichvu.cs</DependentUpon>

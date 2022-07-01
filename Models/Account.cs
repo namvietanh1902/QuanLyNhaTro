@@ -16,7 +16,7 @@ namespace QuanLyNhaTro.Models
         public int AccountId { get; set; }
         [Required(ErrorMessage ="Username không được để trống")]
         [StringLength(20, ErrorMessage ="Chiều dài tối đa của username là 20 kí tự")]
-        [Index(IsUnique = true)]
+        [RegularExpression(@"^\S*$", ErrorMessage = "Mật khẩu không thể có khoảng trống")]
         public string Username { get; set; }
         [Required(ErrorMessage = "Mật khẩu không được để trống")]
         //[Range(6,int.MaxValue,ErrorMessage = "Mật khẩu phải chứa ít nhất 6 kí tự")]

@@ -45,6 +45,8 @@ namespace QuanLyNhaTro.Views
 
         private void button1_Click(object sender, EventArgs e) //Lưu
         {
+            try
+            {
             Customer phuc = new Customer();
             phuc.CustomerId = Convert.ToInt32(textBox1.Text);
             
@@ -55,9 +57,17 @@ namespace QuanLyNhaTro.Views
             phuc.CMND = textBox5.Text;
             phuc.Job = textBox6.Text;
             phuc.Birthday = dateTimePicker1.Value;
-            BLL_Customer.Instance.UpdateKhachTro(phuc);
+            if (BLL_Account.Instance.CheckSDT(textBox4.Text) == true) throw new FormatException("Số điện thoại này đã tồn tại");
+            new BLL.Common.ModelDataValidation().Validate(phuc);
+             BLL_Customer.Instance.UpdateKhachTro(phuc);
             pdz();
             Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             
         }
 
