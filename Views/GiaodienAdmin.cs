@@ -26,12 +26,12 @@ namespace QuanLyNhaTro.Views
             cbbGioitinh_khachtro.Items.Clear();
             cbbGioitinh_khachtro.Items.Add("Nam");
             cbbGioitinh_khachtro.Items.Add("Nữ");
-            txtWaterFirst.Validated += new System.EventHandler(this.CalcTotal);
-            txtWaterAfter.Validated += new System.EventHandler(this.CalcTotal);
-            txtElecFirst.Validated += new System.EventHandler(this.CalcTotal);
-            txtElecAfter.Validated += new System.EventHandler(this.CalcTotal);
-            txtWaterPrice.Validated += new System.EventHandler(this.CalcTotal);
-            txtElecPrice.Validated += new System.EventHandler(this.CalcTotal);
+            txtWaterFirst.TextChanged += new System.EventHandler(this.CalcTotal);
+            txtWaterAfter.TextChanged += new System.EventHandler(this.CalcTotal);
+            txtElecFirst.TextChanged += new System.EventHandler(this.CalcTotal);
+            txtElecAfter.TextChanged += new System.EventHandler(this.CalcTotal);
+            txtWaterPrice.TextChanged += new System.EventHandler(this.CalcTotal);
+            txtElecPrice.TextChanged += new System.EventHandler(this.CalcTotal);
 
             foreach (Customer c in BLL_Customer.Instance.GetAllCustomer())
                 cbbUser_Stat.Items.Add(new CBBItems
